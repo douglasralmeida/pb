@@ -1,8 +1,13 @@
 FROM centos:7.2.1511
 MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
-ADD . /image_build
-RUN /image_build/preparar.sh
+RUN RUN apt-get update && apt-get install -y \
+	nginx
+
+ADD . /website
+WORKDIR /website
+
+ENTRYPOINT ["/usr/sbin/nginx"]
 
 EXPOSE 80
 
