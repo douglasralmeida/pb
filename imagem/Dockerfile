@@ -1,14 +1,31 @@
-FROM centos:7.2.1511
+FROM nginx/1.10
 MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
-RUN RUN apt-get update && apt-get install -y \
-	nginx
-
+# Adiciona os arquivos
 ADD . /website
 WORKDIR /website
 
+ADD . css/
+
+ADD . fonts/
+
+ADD . js/
+
+# "build/css/metro.css", 
+# "build/css/metro-icons.css", 
+# "build/css/metro-rtl.css", 
+# "build/css/metro-responsive.css", 
+# "build/css/metro-schemes.css", 
+# "build/fonts/metro.eot", 
+# "build/fonts/metro.svg", 
+# "build/fonts/metro.ttf", 
+# "build/fonts/metro.woff", 
+# "build/js/metro.js" 
+
+# Executa o servidor como padrao
 ENTRYPOINT ["/usr/sbin/nginx"]
 
+# Abre a porta 80 para acesso
 EXPOSE 80
 
 CMD ["/bin/bash"]
