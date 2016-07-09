@@ -1,15 +1,15 @@
-FROM nginx/1.10
+FROM nginx:1.10
 MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
 # Adiciona os arquivos
 ADD . /website
 WORKDIR /website
 
-ADD . css/
+# ADD . css/
 
-ADD . fonts/
+# ADD . fonts/
 
-ADD . js/
+# ADD . js/
 
 # "build/css/metro.css", 
 # "build/css/metro-icons.css", 
@@ -23,9 +23,8 @@ ADD . js/
 # "build/js/metro.js" 
 
 # Executa o servidor como padrao
-ENTRYPOINT ["/usr/sbin/nginx"]
+# ENTRYPOINT ["/usr/sbin/nginx"]
 
 # Abre a porta 80 para acesso
-EXPOSE 80
+# EXPOSE 80
 
-CMD ["/bin/bash"]
