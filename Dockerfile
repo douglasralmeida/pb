@@ -3,6 +3,7 @@ MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
 # Adiciona os arquivos
 ADD . /website
+ADD website /website
 WORKDIR /website
 
 # ADD . css/
