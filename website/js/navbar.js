@@ -7,5 +7,5 @@
 jQuery(document).ready(function($){
     "use strict";
 
-    $("<div/>").load("navbar.html").insertBefore($(".conteudo-pagina"));
+    $("<div/>").load("widgets/navbar.html").insertBefore($(".conteudo-pagina"));
 });

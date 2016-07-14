@@ -7,3 +7,5 @@ RUN apt-get update && apt-get dist-upgrade -y
 # Adiciona os arquivos
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY website /usr/share/nginx/html
+
+# Monta o volume de dados

@@ -1,0 +1,21 @@
+﻿{
+	"docs": [{
+		"categoria": "Perícia Médica",
+		"itens": [{
+			"nome": "Marcação de Perícia",
+			"link": "docs/forms/carta_marcacao.odt",
+			"tipo": 1
+		}, {
+			"nome": "Laudo para Isenção de IR",
+			"link": "docs/forms/med_isencaoir.pdf",
+			"tipo": 2
+		}]
+	}, {
+		"categoria": "Recurso e Revisão",
+		"itens": [{
+			"nome": "Requerimento de Recurso",
+			"link": "docs/forms/req_recurso.pdf",
+			"tipo": 2
+		}]
+	}]
+}
