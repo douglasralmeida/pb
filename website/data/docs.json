@@ -1,5 +1,32 @@
 ﻿{
 	"docs": [{
+	"categoria": "Documentos Genéricos",
+		"itens": [{
+			"nome": "Certidão de inexistência de dependentes",
+			"link": "docs/forms/cert_inexist.odt",
+			"tipo": 1
+		}, {
+			"nome": "Certidão para saque de PIS, PASEP e FGTS",
+			"link": "docs/forms/cert_pis.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Declaração de comparecimento",
+			"link": "docs/forms/dec_comparecimento.odt",
+			"tipo": 1
+		}, {
+			"nome": "Declaração de nada consta de benefício",
+			"link": "docs/forms/dec_ncosta.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Indeferimento do cancelamento da aposentadoria (desaposentação)",
+			"link": "docs/forms/carta_res_indcancela.odt",
+			"tipo": 1
+		}, {
+			"nome": "Procuração",
+			"link": "docs/forms/procuracao.odt",
+			"tipo": 1
+		}]
+	}, {
 		"categoria": "Perícia Médica",
 		"itens": [{
 			"nome": "Marcação de Perícia",
