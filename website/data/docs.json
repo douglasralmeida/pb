@@ -27,6 +27,13 @@
 			"tipo": 1
 		}]
 	}, {
+		"categoria": "Manutenção de Benefícios",
+		"itens": [{
+			"nome": "Autorização para Depósito em Conta Bancária",
+			"link": "docs/forms/autorizacao_dcc.odt",
+			"tipo": 1
+		}]
+	}, {
 		"categoria": "Perícia Médica",
 		"itens": [{
 			"nome": "Marcação de Perícia",
@@ -34,7 +41,7 @@
 			"tipo": 1
 		}, {
 			"nome": "Laudo para Isenção de IR",
-			"link": "docs/forms/med_isencaoir.pdf",
+			"link": "docs/forms/med_laudoir.pdf",
 			"tipo": 2
 		}]
 	}, {
