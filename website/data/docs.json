@@ -15,7 +15,11 @@
 			"tipo": 1
 		}, {
 			"nome": "Declaração de nada consta de benefício",
-			"link": "docs/forms/dec_ncosta.pdf",
+			"link": "docs/forms/dec_nconsta.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Guia da Previdência Social (GPS)",
+			"link": "docs/forms/gps.pdf",
 			"tipo": 2
 		}, {
 			"nome": "Indeferimento do cancelamento da aposentadoria (desaposentação)",
@@ -27,10 +31,52 @@
 			"tipo": 1
 		}]
 	}, {
+		"categoria": "Atualização Cadastral",
+		"itens": [{
+			"nome": "Despacho para Validação do Facultativo de Baixa Renda",
+			"link": "docs/forms/desp_fbr.odt",
+			"tipo": 1
+		}, {
+			"nome": "Requerimento de Atualização Cadastral",
+			"link": "docs/forms/req_cnis_acerto.odt",
+			"tipo": 1
+		}, {
+			"nome": "Requerimento de Cálculo de Contribuições em Atraso",
+			"link": "docs/forms/req_contrib_atras.odt",
+			"tipo": 1
+		}]
+	}, {
+		"categoria": "Concessão de Benefício Previdenciário",
+		"itens": [{
+			"nome": "Declaração da Desempregada para Salário Maternidade",
+			"link": "docs/forms/dec_salmat_desemp.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Termo de Responsabilidade para Pensão por Morte",
+			"link": "docs/forms/termo_respons_pensao.odt",
+			"tipo": 1
+		}]
+	}, {
 		"categoria": "Manutenção de Benefícios",
 		"itens": [{
 			"nome": "Autorização para Depósito em Conta Bancária",
 			"link": "docs/forms/autorizacao_dcc.odt",
+			"tipo": 1
+		}, {
+			"nome": "Reclamação sobre Irregularidaes no Empréstimo Consignado",
+			"link": "docs/forms/req_consig_reclama.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Requerimento para Bloqueio de Empréstimos Consignados",
+			"link": "docs/forms/req_consig_bloq.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Requerimento para Desbloqueio de Empréstimos Consignados",
+			"link": "docs/forms/req_consig_desbloq.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Requerimento Genérico para Atualização de Benefícios",
+			"link": "docs/forms/req_ben_diversos.odt",
 			"tipo": 1
 		}]
 	}, {
@@ -43,6 +89,14 @@
 			"nome": "Laudo para Isenção de IR",
 			"link": "docs/forms/med_laudoir.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Requerimento de Perícia em Trânsito",
+			"link": "docs/forms/req_pericia_transito.pdf",
+			"tipo": 2
+		}, {
+			"nome": "SIMA",
+			"link": "docs/forms/sima.odt",
+			"tipo": 1
 		}]
 	}, {
 		"categoria": "Recurso e Revisão",
@@ -50,6 +104,14 @@
 			"nome": "Requerimento de Recurso",
 			"link": "docs/forms/req_recurso.pdf",
 			"tipo": 2
+		},{
+			"nome": "Requerimento de Revisão de Benefícios",
+			"link": "docs/forms/req_ben_revisao.odt",
+			"tipo": 1
+		},{
+			"nome": "Requerimento de Revisão de CTC",
+			"link": "docs/forms/req_ctc_revisao.odt",
+			"tipo": 1
 		}]
 	}]
 }
