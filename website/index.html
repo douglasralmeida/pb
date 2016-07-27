@@ -5,8 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/metro.min.css" />
 <link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
 <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
-<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
-<script type='text/javascript' src="js/navbar.js"></script>
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
 <style type="text/css">
 .tabela-atalhos {
 	display: table;
@@ -47,8 +46,8 @@
 </style>
 <title>Portal da APS BH Sul</title>
 </head>
-<body>
-<div class="conteudo-pagina">
+<body ng-app="">
+<div ng-include="'widgets/navbar.html'"></div>
 <div class="flex-grid no-responsive-future" style="height: 100%;">
 <div class="row" style="height: 100%">
 <div class="cell size-x200" id="cell-sidebar" style="height: 100%">
@@ -176,7 +175,6 @@
 		<a href="https://servicosdoservidor.planejamento.gov.br">SIGEPE</a>
 		<a href="http://w3b2/pls/sco/seo0001$.startup">SISOBI</a>
 	</span>
-</div>
 </div>
 </div>
 </div>

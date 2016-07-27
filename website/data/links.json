@@ -1,0 +1,30 @@
+﻿{
+	"links": [{
+		"categoria": "Concessão de Benefícios",
+		"itens": [{
+			"nome": "CTC",
+			"atalho": "http://www"
+		}, {
+			"nome": "Requerimento de Seguro Defeso",
+			"atalho": "http://www"
+		}, {
+			"nome": "SIBE",
+			"atalho": "http://www-sibe/"
+		}]
+	},{
+		"categoria": "Sistemas de Cadastro",
+		"itens": [{
+			"nome": "Emissão de DRS-CI",
+			"atalho": "http://www"
+		}, {
+			"nome": "Portal CNIS",
+			"atalho": "http://www-portalcnis/"
+		}]
+	}, {
+		"categoria": "Gestão",
+		"itens": [{
+			"nome": "Link",
+			"atalho": "http://w"
+		}]
+	}]
+}

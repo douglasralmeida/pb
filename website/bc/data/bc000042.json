@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Como determinar a versão do navegador Internet Explorer do seu computador",
+	"id": 42,
+	"ultimaatualizacao": "26/07/2016 - 10:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "<p>Este artigo descreve como determinar manualmente qual versão do navegador Internet Explorer está instalada no seu computador.</p>"
+	}, {
+		"titulo": "Determinar manualmente qual versão do Internet Explorer você está usando",
+		"texto": "<p>Para visualizar as informações de versão no navegador, abra o Internet Explorer clicando no ícone do <img title='ícone do Internet Explorer' alt='ícone do Internet Explorer' src='img/ico_ie.png' />Internet Explorer na barra de tarefas ou na área de trabalho, clique no botão <img title='ícone de Ferramentas' alt='ícone de Configurações' src='img/ico_config.png' />Ferramentas (ou clique em Ajuda na barra de menus), e depois clique em Sobre o Internet Explorer.</p><p>A versão mais atual do Internet Explorer é 11. Caso você possua uma versão anterior instalada no seu computador, acesse a página de Aplicativos do Portal da BH Sul para obter a última versão do navegador.</p>"
+	}],
+	"aplicase": "Microsoft Internet Explorer"
+}

@@ -1,0 +1,11 @@
+﻿{
+	"titulo": "Windows",
+	"categorias": [{
+		"nome": "Tópicos mais populares",
+		"icone": "mif-star-empty",
+		"itens": [{
+			"nome": "Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows",
+			"data": "bc000041"
+		}]
+	}]
+}

@@ -1,6 +1,6 @@
 ﻿{
 	"docs": [{
-	"categoria": "Documentos Genéricos",
+		"categoria": "Documentos Genéricos",
 		"itens": [{
 			"nome": "Certidão de inexistência de dependentes",
 			"link": "docs/forms/cert_inexist.odt",
@@ -17,6 +17,10 @@
 			"nome": "Declaração de nada consta de benefício",
 			"link": "docs/forms/dec_nconsta.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Despacho Genérico´",
+			"link": "docs/forms/desp_generico.odt",
+			"tipo": 1
 		}, {
 			"nome": "Guia da Previdência Social (GPS)",
 			"link": "docs/forms/gps.pdf",
@@ -50,11 +54,50 @@
 			"tipo": 1
 		}]
 	}, {
+		"categoria": "Concessão de Benefício Assistencial",
+		"itens": [{
+			"nome": "Declaração de Separação de Fato",
+			"link": "docs/forms/req_bpc_separadofato.odt",
+			"tipo": 1
+		}, {
+			"nome": "Composição do Grupo Familiar",
+			"link": "docs/forms/req_bpc_familia.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Inexistência de Comprovação de Endereço",
+			"link": "docs/forms/req_bpc_naoenderec.odt",
+			"tipo": 1
+		}, {
+			"nome": "Renúncia de Benefício para Concessão de Outro Mais Vantajoso",
+			"link": "docs/forms/req_bpc_maisvantaj.odt",
+			"tipo": 1
+		}, {
+			"nome": "Requerimento de Benefício de Prestação Continuada",
+			"link": "docs/forms/req_bpc_principal.pdf",
+			"tipo": 2
+		}]
+	}, {
 		"categoria": "Concessão de Benefício Previdenciário",
 		"itens": [{
+			"nome": "Certidão de Tempo de Contribuição",
+			"link": "docs/forms/ctc.odt",
+			"tipo": 1
+		}, {
+			"nome": "Certidão de Tempo de Contribuição",
+			"link": "docs/forms/ctc_relaccontrib.odt",
+			"tipo": 1
+		}, {
 			"nome": "Declaração da Desempregada para Salário Maternidade",
 			"link": "docs/forms/dec_salmat_desemp.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Declaração de Tempo de Contribuição",
+			"link": "docs/forms/dtc.odt",
+			"tipo": 1
+		}, {
+			"nome": "Despacho da Análise Administrativa da Atividade Especial",
+			"link": "docs/forms/desp_aposespecial_admin.odt",
+			"tipo": 1
 		}, {
 			"nome": "Termo de Responsabilidade para Pensão por Morte",
 			"link": "docs/forms/termo_respons_pensao.odt",
@@ -67,7 +110,11 @@
 			"link": "docs/forms/autorizacao_dcc.odt",
 			"tipo": 1
 		}, {
-			"nome": "Reclamação sobre Irregularidaes no Empréstimo Consignado",
+			"nome": "Ofício ao Banco para Quitação de GPS em Conta Corrente",
+			"link": "docs/forms/oficio_banco_gps.odt",
+			"tipo": 1
+		}, {
+			"nome": "Reclamação sobre Irregularidades no Empréstimo Consignado",
 			"link": "docs/forms/req_consig_reclama.pdf",
 			"tipo": 2
 		}, {
@@ -79,14 +126,14 @@
 			"link": "docs/forms/req_consig_desbloq.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Requerimento Genérico para Atualização de Benefícios",
+			"nome": "Requerimento Genérico para Atualização de Benefício",
 			"link": "docs/forms/req_ben_diversos.odt",
 			"tipo": 1
 		}]
 	}, {
 		"categoria": "Perícia Médica",
 		"itens": [{
-			"nome": "Marcação de Perícia",
+			"nome": "Carta de Marcação de Perícia",
 			"link": "docs/forms/carta_marcacao.odt",
 			"tipo": 1
 		}, {
@@ -108,13 +155,17 @@
 			"nome": "Requerimento de Recurso",
 			"link": "docs/forms/req_recurso.pdf",
 			"tipo": 2
-		},{
-			"nome": "Requerimento de Revisão de Benefícios",
+		}, {
+			"nome": "Requerimento de Revisão de Benefício",
 			"link": "docs/forms/req_ben_revisao.odt",
 			"tipo": 1
-		},{
+		}, {
 			"nome": "Requerimento de Revisão de CTC",
 			"link": "docs/forms/req_ctc_revisao.odt",
+			"tipo": 1
+		}, {
+			"nome": "Revisão: Indeferimento da solicitação de não incidência do fator previdenciário",
+			"link": "docs/forms/carta_res_rev_ind_fator.odt",
 			"tipo": 1
 		}]
 	}]

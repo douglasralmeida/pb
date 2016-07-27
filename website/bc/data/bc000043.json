@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Categorias profissionais com enquadramento em atividade especial",
+	"id": 43,
+	"ultimaatualizacao": "26/07/2016 - 10:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "<p>De acordo com o art. 269º da IN 77/2015, é permitido o enquadramento de atividade especial por categoria profissional para atividades exercidas até 28 de abril 1995.</p><p>São enquadradas como especial as atividades profissionais arroladas no anexo do Decreto 53.831, a partir do código 2.0.0 e no anexo II do Decreto 83.080.</p><p><a href='http://sislex.previdencia.gov.br/paginas/38/inss-pres/2015/77.htm#capV'>Clique aqui para abrir a IN 77/2015.</a><p><a href='http://sislex.previdencia.gov.br/paginas/23/1964/53831.htm'>Clique aqui para abrir o Decreto 53.831/64.</a></p><p><a href='http://sislex.previdencia.gov.br/paginas/23/1979/83080.htm'>Clique aqui para abrir o Decreto 83.080/79.</a></p><p>Também são consideradas as atividades profissionais arroladas em outros atos administrativos, decretos ou leis previdenciárias que determinem o enquadramento por atividade para fins de caracterização de atividades exercida em condições especiais.</p>"
+	}, {
+		"titulo": "Lista de atividades",
+		"texto": "<p>As seguintes atividades listadas abaixo devem ser consideradas como atividade especial.</p><p>Este artigo está em construção. Volte mais tarde para ler o artigo completo.</p>"
+	}],
+	"aplicase": "Legislação Previdenciária"
+}

@@ -1,0 +1,11 @@
+﻿{
+	"titulo": "Benefícios por Incapacidade e SABI",
+	"categorias": [{
+		"nome": "Tópicos mais populares",
+		"icone": "mif-star-empty",
+		"itens": [{
+			"nome": "Alterações trazidas pela Medida Provisória 731",
+			"data": "bc000001"
+		}]
+	}]
+}

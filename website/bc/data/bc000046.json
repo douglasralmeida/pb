@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Alíquotas de contribuição previdenciária do contribuinte individual e do facultativo",
+	"id": 46,
+	"ultimaatualizacao": "26/07/2016 - 10:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "Este artigo contém as alíquotas de contribuição previdenciária após o Plano Real."
+	}, {
+		"titulo": "Alíquotas de Contribuição Previdenciária",
+		"texto": "<table class='table striped'><thead><tr><th>Início da Validade</th><th>Salário de Contribuição</th><th>Alíquota</th></tr></thead><tbody><tr><td>07/1994</td>	<td>De R$64,79 a R$233,14<br>De R$233,14 a 582.86</td><td>10.0%<br>20.0%</td></tr><tr><td>09/1994</td><td>De R$70,00 a R$233,14</td><td>10.0%<br>20.0%</td></tr></tbody></table><p>Este artigo está em construção. Volte mais tarde para ler o artigo completo.</p>"
+	}],
+	"aplicase": "Índices Financeiros"
+}
