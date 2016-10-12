@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Alterações trazidas pela Lei 13.135",
+	"id": 47,
+	"ultimaatualizacao": "12/09/2016 - 07:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "Este artigo contém as alterações na legislação previdenciária trazidas pela Lei 13.135 de 17 de Junho de 2015, convertida da Medida Provisória 664 de 30 de Dezembro de 2014."
+	}, {
+		"titulo": "Alterações no Auxílio Doença",
+		"texto": "<table class='table striped'><thead><tr><th></th><th>Antes de 01/03/2015</th><th>Entre 01/03/2015 e 16/06/2015</th><th>Após 17/06/15</th></tr></thead><tbody><tr><td>Valor</td><td>Média aritmética dos 80% maiores salários de contribuição após 07/1994.</td><td>O menor valor entre a média aritmética dos 80% maiores salários de contribuição após 07/1994 e a média aritmética dos 12 últimos salários de contribuição</td><td>Mantém a regra da coluna central.</td></tr><tr><td>Início do benefício</td> <td>Para segurados empregados, inicia-se no décimo sexto dia de afastamento.</td><td>Para segurados empregados, inicia-se no trigésimo primeiro dia de afastamento.</td><td>Volta-se a regra de início no décimo sexto dia de afastamento.</td></tr></tbody></table><p>Este artigo está em construção. Volte mais tarde para ler o artigo completo.</p>"
+	}],
+	"aplicase": "Índices Financeiros"
+}

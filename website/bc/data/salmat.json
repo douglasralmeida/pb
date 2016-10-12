@@ -3,9 +3,6 @@
 	"categorias": [{
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
-		"itens": [{
-			"nome": "Introdução ao salário-maternidade",
-			"data": "bc000001"
-		}]
+		"itens": []
 	}]
 }

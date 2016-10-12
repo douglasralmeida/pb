@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/auto-complete.css" />
+<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
+<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/docs.js"></script>
+<script type='text/javascript' src="js/autocomplete.js"></script>
+<style type="text/css">
+.cabecalho {
+	display: table;
+	border-collapse: collapse;	
+	border: 1px solid white;
+}
+
+.cabecalho a {
+	display: table-cell;
+	border-bottom: 3px solid white;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.cabecalho a:hover {
+	display: table-cell;
+	border-bottom: 3px solid #f84e29;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.tabela-documentos {
+	display: table;
+	border-spacing: 10px;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+.tabela-documentos a {
+	display: table-cell;
+	background-color: white;
+	border: 1px solid #ffffff;
+	text-align: center;
+	width: 120px;
+}
+
+.tabela-documentos a:hover {
+	background-color: #cce8ff;
+    border: 1px solid #99d1ff;
+}
+</style>
+<title>Modelos de Documentos</title>
+</head>
+<body ng-app="">
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="conteudo-pagina">
+	<div class="cabecalho">
+	</div>
+	<p>Os documentos abaixo requerem o aplicativo LibreOffice 5.0 ou superior com macros ativadas e o aplicativo Adobe Acrobat Reader DC ou superior.</p>
+	<div class="pesquisa align-center">
+		<form onsubmit="$('#edit-autocomplete').blur(); return false;">
+			<div class="input-control text" data-role="input" style = "width: 350px;">
+				<input name="editpesquisa" id="edit-autocomplete" aria-label="Pesquisar documentos" type="text" placeholder="Pesquisar documentos..." autocomplete="off" />
+				<button class="button">
+					<span class="mif-search"></span>
+				</button>
+			</div>
+		</form>
+	</div>
+	<div class="listagem">
+	</div>
+</div>
+</body>
+</html>

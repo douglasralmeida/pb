@@ -5,19 +5,10 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Alíquotas de contribuição previdenciária após o Plano Real",
-			"data": "bc000001"
+			"data": "bc000046"
 		}, {
 			"nome": "Tabela de salários mínimos após o Plano Real",
 			"data": "bc000045"
-		}, {
-			"nome": "Tabela do teto previdenciário após o Plano Real",
-			"data": "bc000001"
-		}, {
-			"nome": "Valores do limites máximo de remuneração para concessão do auxílio-reclusão",
-			"data": "bc000001"
-		}, {
-			"nome": "Valores do salário-família após o Plano Real",
-			"data": "bc000001"
 		}]
 	}]
 }

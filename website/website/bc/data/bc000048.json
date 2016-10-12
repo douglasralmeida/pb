@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Alterações trazidas pela Media Provisória 739",
+	"id": 48,
+	"ultimaatualizacao": "12/09/2016 - 07:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "Este artigo contém as alterações na legislação previdenciária trazidas pela Medida Provisória 739 de 07 de Julho de 2015."
+	}, {
+		"titulo": "Fim do um terço de carência",
+		"texto": "<p>Quando houver perda da qualidade de segurado, a carência necessária para a concessão de auxílio-doença, aposentadoria por invalidez e salário maternidade deverá, a contar da nova filiação, ser de 100% da carência exigida.</p>"
+	}],
+	"aplicase": "Índices Financeiros"
+}
