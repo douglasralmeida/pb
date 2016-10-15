@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-responsive.min.css" />
+<script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="/js/comentarios.js"></script>
+<title>Seus comentários</title>
+</head>
+<body>
+<div id="Cabecalho" ng-app="">
+  <div ng-include="'/widgets/navbar.html'"></div>
+</div>
+<div id="ComentariosApp" ng-app="enviarComentarios" ng-controller="formController" class="container page-content">
+<h3>Novo comentário</h3>
+<div class="grid">
+<form ng-submit="processarForm()">
+  <div class="row cells1">
+    <h5>Que tipo de comentário é esse?</h5>
+    <label class="input-control radio">
+      <input name="tipo" type="radio" ng-model="formData.tipo" value="problema">
+      <span class="check"></span>
+      <span class="caption">Problema</span>
+    </label>
+    <label class="input-control radio">
+      <input name="tipo" type="radio" ng-model="formData.tipo" value="sugestao">
+      <span class="check"></span>
+      <span class="caption">Sugestão</span>
+    </label>
+  </div>
+  <div class="row cells1">
+    <h5>Detalhes</h5>
+    <div class="input-control textarea full-size">
+      <textarea name="detalhes" ng-model="formData.detalhes"></textarea>
+    </div>
+  </div>
+  <div class="row cells1">
+  <ul>
+    <li>Envie apenas uma sugestão ou problema por comentário.</li>
+    <li>Torne o texto conciso e descritivo. Isso ajudará o desenvolvedor do site a entender seu comentário.</li>
+  </ul>
+  </div>
+  <div class="row cells1">
+    <button class="button primary" type="submit">Enviar</button>
+  </div>
+<pre>
+    {{ formData }}
+</pre>
+</form>
+</div> 
+</div> 
+</body>
+</html>
