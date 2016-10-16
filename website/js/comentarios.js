@@ -12,7 +12,7 @@ app.controller('formController', function ($scope, $http) {
     $scope.processarForm = function() {
 		$http({
             method  : 'POST',
-            url     : 'http://localhost/feedback',
+            url     : 'http://localhost:8080',
             data    : $scope.formData,
 			headers : {'Content-Type': 'application/json'}
         }).then(function successCallback(response) {
