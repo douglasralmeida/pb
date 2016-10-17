@@ -1,0 +1,11 @@
+{
+	"feedbacks": [{
+		"id": "001",
+		"tipo": 1,
+		"descricao": "Um teste"
+	}, {
+		"id": "002",
+		"tipo": 2,
+		"descricao": "Outro teste"
+	}]
+}

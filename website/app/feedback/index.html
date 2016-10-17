@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-responsive.min.css" />
+<script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/feedback.js"></script>
+<title>Gestão de Feedback dos Usuários do Portal da BH Sul</title>
+</head>
+<body>
+<div class="container page-content">
+	<div class="app-bar darcula">
+		<a class="app-bar-element" href="/">Home</a>
+	</div>
+	<h2>Feedback do Portal da BH Sul</h2>
+	<div class ="grid">
+	<div class="row cells1">
+		<ul class="h-menu compact">
+			<li><a href="#"><span class="icon mif-pencil"></span>Abrir</a></li>
+			<li><a href="#"><span class="icon mif-cabinet"></span>Arquivar</a></li>
+			<li><a href="#"><span class="icon mif-bin"></span>Excluir</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Exibir pendentes</a></li>
+			<li><a href="#">Exibir arquivados</a></li>
+			<li class="active"><a href="#">Exibir tudo</a></li>
+		</ul>
+	</div>
+	<p>
+	<div ng-app="GestaoFeedbackApp" class="row cells1">
+	<div ng-controller="feedbacksCtrl" class="listview" data-role="listview">
+		<div class="list" ng-repeat="x in feedbacks">
+			<span class="list-icon icon-bug"></span>
+			<span class="list-title">{{x.descricao}}</span>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
