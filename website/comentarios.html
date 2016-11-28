@@ -14,13 +14,13 @@
   <div ng-include="'/widgets/navbar.html'"></div>
 </div>
 <div id="ComentariosApp" ng-app="enviarComentarios" ng-controller="formController" class="container page-content">
-<h3>Novo comentário</h3>
+<h3>Enviar seus comentários sobre o Portal da BH Sul</h3>
 <div class="grid">
 <form ng-submit="processarForm()">
   <div class="row cells1">
     <h5>Que tipo de comentário é esse?</h5>
     <label class="input-control radio">
-      <input name="tipo" type="radio" ng-model="formData.tipo" value="problema">
+      <input name="tipo" type="radio" ng-model="formData.tipo" value="problema" autofocus>
       <span class="check"></span>
       <span class="caption">Problema</span>
     </label>
@@ -31,9 +31,10 @@
     </label>
   </div>
   <div class="row cells1">
-    <h5>Detalhes</h5>
+    <h5>Detalhes:</h5>
     <div class="input-control textarea full-size">
-      <textarea name="detalhes" ng-model="formData.detalhes"></textarea>
+      <textarea name="detalhes" ng-model="formData.detalhes" maxlength="128" placeholder="Digite aqui seu comentário."></textarea>
+	  <br>{{formData.detalhes.length+0}}/128
     </div>
   </div>
   <div class="row cells1">
@@ -43,11 +44,9 @@
   </ul>
   </div>
   <div class="row cells1">
-    <button class="button primary" type="submit">Enviar</button>
+    <button class="button primary" type="submit" ng-disabled="!(formData.detalhes && formData.tipo)">Enviar</button>
+	<a href="/" class="button">Cancelar</a>
   </div>
-<pre>
-    {{ formData }}
-</pre>
 </form>
 </div> 
 </div> 

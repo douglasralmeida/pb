@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Motivos de cessação, reativação e suspensão de benefícios",
+	"id": 49,
+	"ultimaatualizacao": "12/12/2016 - 07:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "Este artigo contém os motivos de cessação, reativação e suspensão de benefícios usados pelo Prisma e pelo SUB."
+	}, {
+		"titulo": "Motivos de cessação",
+		"texto": "<p>A tabela abaixo contém os motivos de cessação de benefício e os motivos de reativação correspondentes.</p><table class='table striped'><thead><tr><th></th><th>Código</th><th>Descrição do motivo</th><th>Reativação pelo Prisma</th><th>Reativação pelo SUB (REATNB)</th></tr></thead><tbody></tbody></table>"
+	}],
+	"aplicase": "Prisma e SUB"
+}

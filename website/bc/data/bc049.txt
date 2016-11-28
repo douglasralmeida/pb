@@ -1,0 +1,85 @@
+<tr><td>10</td><td>Cessação por suspeita óbito (vinculado ao Censo x HIPNet)</td><td></td><td>02,04,28</td></tr>
+<tr><td>11</td><td>Cessação por não comparecimento ao Censo</td><td>43</td><td>02,04,32</td></tr>
+<tr><td>12</td><td>Limite Médico</td><td>01,02,03,04,21,26,31</td><td>01,02,03,04,21,28,38</td></tr>
+<tr><td>13</td><td>Óbito Titular do Benefício</td><td></td><td>02,04,28</td></tr>
+<tr><td>14</td><td>Ação revisional compartilhada</td><td></td><td>02,04</td></tr>
+<tr><td>15</td><td>Opção Conc. Ben. Previdenciário (exclusivo sistema central) </td><td></td><td>02,03</td></tr>
+<tr><td>16</td><td>Casamento</td><td>02,03,04</td><td>02,03,04,28</td></tr>
+<tr><td>17</td><td>Reaparecimento do Instituidor.</td><td></td><td>04</td></tr>
+<tr><td>18</td><td>Desistência BPC-LOAS p/ titular</td><td></td><td>04</td></tr>
+<tr><td>19</td><td>Cessação da PA por cessação do benefício instituidor</td><td>01,04,15</td><td>02,04,28</td></tr>
+<tr><td>20</td><td>Desistência escrita do titular</td><td></td><td>02,03,04,28</td></tr>
+<tr><td>21</td><td>Transformação B 87 em B 88</td><td></td><td>04</td></tr>
+<tr><td>22</td><td>Prorrogação do benefício anterior</td><td>02,03,04</td><td>02,03,04,28</td></tr>
+<tr><td>23</td><td>Concessão de aposentadoria para recluso</td><td></td><td>13</td></tr>
+<tr><td>28</td><td>Transformação p/ outra espécie</td><td></td><td>02,03,04,26,28</td></tr>
+<tr><td>29</td><td>Concessão de outra espécie de benefício</td><td>38</td><td>02,03,04,26,28</td></tr>
+<tr><td>30</td><td>Constatação de fraude</td><td></td><td>02,03,04,28</td></tr>
+<tr><td>31</td><td>Irregularidade/Erro Administrativo</td><td>02,03,04</td><td>02,03,04,28</td></tr>
+<tr><td>32</td><td>Decisão de cessação p/ recurso</td><td>02,03,04</td><td>02,03,04,28</td></tr>
+<tr><td>33</td><td>Decisão Judicial</td><td>02,04</td><td>02,04,28</td></tr>
+<tr><td>34</td><td>Volta ao trabalho</td><td>01,02,03,04,26</td><td>01,02,03,04,28</td></tr>
+<tr><td>35</td><td>Benefício s/ dependente válido</td><td>04,14</td><td>02,04,28,40</td></tr>
+<tr><td>36</td><td>Acumulação indevida de benefício</td><td>34,38</td><td>02,03,04,28</td></tr>
+<tr><td>37</td><td>BI suspenso pelo SISOBI há mais de 06 meses</td><td></td><td>02,04,28</td></tr>
+<tr><td>38</td><td>Cessação de abono de permanência em serviço devido a concesão de aposentadoria</td><td></td><td>02,04,13,28</td></tr>
+<tr><td>39</td><td>Não atendimento convocação Inspetoria</td><td></td><td></td></tr>
+<tr><td>40</td><td>Cessação p/ recuperação total  da capacidade laborativa dentro de 5 anos</td><td></td><td></td></tr>
+<tr><td>41</td><td>Cessação p/ recuperação parcial da capacidade laborativa após 5 anos</td><td></td><td></td></tr>
+<tr><td>42</td><td>Cessação pelo SISOBI</td><td></td><td></td></tr>
+<tr><td>43</td><td>Cessação de auxílio reclusão por cumprimento de pena, liberdade condicional ou inicio de prisão em albergue</td><td></td><td></td></tr>
+<tr><td>44</td><td>Cessação de auxilio doença por não comparecimento do titular a perícia </td><td></td><td></td></tr>
+<tr><td>45</td><td>Cessação de abono permanência por emissão de CTS recíproca</td><td></td><td></td></tr>
+<tr><td>46</td><td>Cessação de benefício estatutário por transferência para órgão de origem</td><td></td><td></td></tr>
+<tr><td>47</td><td>Cessação de benefício por perda de qualidade de dependente. Por cessação de pensão a dependdente preferencial</td><td></td><td></td></tr>
+<tr><td>48</td><td>Cessação de benefício no sistema antigo</td><td></td><td></td></tr>
+<tr><td>49</td><td>Óbito informado pela Auditoria</td><td></td><td></td></tr>
+<tr><td>50</td><td>Cessação para concesão de auxilio funeral</td><td></td><td></td></tr>
+<tr><td>51</td><td>Cessação pela revisão rural</td><td></td><td></td></tr>
+<tr><td>52</td><td>Erro administrativo informado pela Auditoria</td><td></td><td></td></tr>
+<tr><td>53</td><td>Fraude informada pela Auditoria</td><td></td><td></td></tr>
+<tr><td>54</td><td>Limite médico p/ perícia médica</td><td></td><td></td></tr>
+<tr><td>55</td><td>Irregularidade/erro médico pericial</td><td></td><td></td></tr>
+<tr><td>56</td><td>Recuperação de lesão com descaracterização do BI</td><td></td><td></td></tr>
+<tr><td>57</td><td>Cessação de auxilio reclusão p/ fuga</td><td></td><td></td></tr>
+<tr><td>58</td><td>Benefício c/ DCI com mais de 60 dias</td><td></td><td></td></tr>
+<tr><td>59</td><td>Cessação por divergência de dados no CNIS</td><td></td><td></td></tr>
+<tr><td>60</td><td>Cessação de benefício fora do cadastro</td><td></td><td></td></tr>
+<tr><td>61</td><td>Recusa ao programa de reabilitação profissional</td><td></td><td></td></tr>
+<tr><td>62</td><td>Cessação pela revisão LOAS</td><td></td><td></td></tr>
+<tr><td>64</td><td>Óbito do instituidor do auxílio reclusão</td><td></td><td></td></tr>
+<tr><td>65</td><td>Benefício suspenso há mais de 6 meses</td><td></td><td></td></tr>
+<tr><td>66</td><td>Volta ao trabalho em atividade insalubre</td><td></td><td></td></tr>
+<tr><td>67</td><td>Cessação por concessão de B80</td><td></td><td></td></tr>
+<tr><td>68</td><td>Remuneração após a DIB</td><td></td><td></td></tr>
+<tr><td>69</td><td>Alta médica</td><td></td><td></td></tr>
+<tr><td>70</td><td>Retorno voluntário ao trabalho</td><td></td><td></td></tr>
+<tr><td>71</td><td>Erro técnico</td><td></td><td></td></tr>
+<tr><td>72</td><td>Não comparecimento</td><td></td><td></td></tr>
+<tr><td>73</td><td>Retorno/Permanência em atividade com condições especiais</td><td></td><td></td></tr>
+<tr><td>74</td><td>Cancelamento por fraude / Auditoria</td><td></td><td></td></tr>
+<tr><td>75</td><td>Cancelamento erro administrativo / Auditoria</td><td></td><td></td></tr>
+<tr><td>76</td><td>Cancelamento erro médico/ Auditoria</td><td></td><td></td></tr>
+<tr><td>77</td><td>Manutenção irregular PM / Auditorias</td><td></td><td></td></tr>
+<tr><td>78</td><td>Cessação B/80 com contrato temporário</td><td></td><td></td></tr>
+<tr><td>79</td><td>Cessação de B80 (120/134dias)</td><td></td><td></td></tr>
+<tr><td>80</td><td>Aborto não criminoso</td><td></td><td></td></tr>
+<tr><td>81</td><td>Óbito informado pela REVBPC</td><td></td><td></td></tr>
+<tr><td>82</td><td>Cessação de B80 (60 dias)</td><td></td><td></td></tr>
+<tr><td>83</td><td>Cessação de B80 (30 dias)</td><td></td><td></td></tr>
+<tr><td>84</td><td>Opção por recebimento pelo Ministério do Exército</td><td></td><td></td></tr>
+<tr><td>85</td><td>Benefício concedido com NIT errado</td><td></td><td></td></tr>
+<tr><td>86</td><td>Cessação de B94 e B95 por Parecer Médico Contrário</td><td></td><td></td></tr>
+<tr><td>87</td><td>Acumulação Indevida</td><td>Rev./03</td><td></td><td></td></tr>
+<tr><td>88</td><td>Não enquadramento BPC</td><td>LOAS Perícia Médica</td><td></td><td></td></tr>
+<tr><td>89</td><td>Cessação Amparo Lei 10559/02.</td><td></td><td></td></tr>
+<tr><td>90</td><td>Cessação PA por data limite</td><td></td><td></td></tr>
+<tr><td>91</td><td>Revisão de Acórdão</td><td></td><td></td></tr>
+<tr><td>92</td><td>Limite indefinido sem concessão de B32/92</td><td></td><td></td></tr>
+<tr><td>93</td><td>Cessação Batimento FUNASA</td><td></td><td></td></tr>
+<tr><td>94</td><td>Alta voluntária</td><td></td><td></td></tr>
+<tr><td>95</td><td>Não comparecimento a Reabilitação Profissional</td><td></td><td></td></tr>
+<tr><td>96</td><td>Transferência para Órgão de Origem</td><td>(Lei 8.878/94)</td><td></td><td></td></tr>
+<tr><td>97</td><td>Comprovada Má Fé do beneficiário</td><td></td><td></td></tr>
+<tr><td>98</td><td>Cessação por Lei</td><td></td><td></td></tr>
+<tr><td>99</td><td>Óbito informado pelo Censo (HIPNET)</td><td></td><td></td></tr>
