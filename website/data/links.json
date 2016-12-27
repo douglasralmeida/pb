@@ -66,6 +66,12 @@
 			"atalho": "http://www-sabi/versao.asp"
 		}]
 	}, {
+		"categoria": "Gestão de Pessoas",
+		"itens": [{
+			"nome": "Simulação de Aposentadoria de Serviço Público",
+			"atalho": "http://www.cgu.gov.br/simulador/"
+		}]
+	}, {
 		"categoria": "Outros",
 		"itens": [{
 			"nome": "Chamados para a Dataprev",
@@ -79,6 +85,12 @@
 		}, {
 			"nome": "SAPD",
 			"atalho": "http://www-sapd/"
+		}, {
+			"nome": "SIGEPE",
+			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
+		}, {
+			"nome": "SRAR - Reposição de Greve",
+			"atalho": "http://www-srar/"
 		}, {
 			"nome": "Tempo Real Dataprev",
 			"atalho": "http://www-temporeal/"

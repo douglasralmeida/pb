@@ -60,6 +60,10 @@
 	}, {
 		"categoria": "Concessão de Benefício Assistencial",
 		"itens": [{
+			"nome": "Carta de Exigência para Reanálise da Renda (ACP)",
+			"link": "docs/forms/carta_exig_bpc_reanaliserenda.odt",
+			"tipo": 1
+		}, {
 			"nome": "Declaração de Separação de Fato",
 			"link": "docs/forms/req_bpc_separadofato.odt",
 			"tipo": 1
@@ -114,6 +118,14 @@
 			"link": "docs/forms/autorizacao_dcc.odt",
 			"tipo": 1
 		}, {
+			"nome": "Calendário para Pagamento de Benefícios em 2017",
+			"link": "docs/outroa/tabelapag2017.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Carta de Resultado da Solicitação de Majoração de 25% da Renda",
+			"link": "docs/forms/carta_resultado_majo25p.odt",
+			"tipo": 1
+		}, {
 			"nome": "Ofício ao Banco para Quitação de GPS em Conta Corrente",
 			"link": "docs/forms/oficio_banco_gps.odt",
 			"tipo": 1
@@ -142,12 +154,12 @@
 			"tipo": 1
 		}, {
 			"nome": "Comunicado de Decisão da Cessação de BI Judicial",
-			"link": "docs/carta_rmbj_cessacao.odt",
+			"link": "docs/forms/carta_rmbj_cessacao.odt",
 			"tipo": 1
 		}, {
 			"nome": "Laudo para Isenção de IR",
-			"link": "docs/forms/med_laudoir.pdf",
-			"tipo": 2
+			"link": "docs/forms/med_laudoir.odt",
+			"tipo": 1
 		}, {
 			"nome": "Requerimento de Perícia em Trânsito",
 			"link": "docs/forms/req_pericia_transito.pdf",
@@ -174,6 +186,10 @@
 		}, {
 			"nome": "Revisão: Indeferimento da solicitação de não incidência do fator previdenciário",
 			"link": "docs/forms/carta_res_rev_ind_fator.odt",
+			"tipo": 1
+		}, {
+			"nome": "Revisão: Indeferimento para benefícios decadentes",
+			"link": "docs/forms/carta_res_decadente.odt",
 			"tipo": 1
 		}]
 	}]

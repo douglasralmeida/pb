@@ -1,0 +1,205 @@
+﻿{
+	"atalhos": [{
+		"categoria": "Sistemas Corporativos",
+		"icone": "ar.app.svg",
+		"itens": [{
+			"nome": "Portal do CNIS",
+			"atalho": "http://www-portalcnis/",
+			"imagem": "link.sibe.png"
+		}, {
+			"nome": "SIBE",
+			"atalho": "http://www-sibe/"
+		}, {
+			"nome": "Agendamento",
+			"atalho": "http://www-agendamento/"
+		}, {
+			"nome": "Requer. Seguro Defeso",
+			"atalho": "http://sd.mte.gov.br/sd"
+		}, {
+			"nome": "CTC",
+			"atalho": "http://www-ctc/"
+		}, {
+			"nome": "e-Recursos",
+			"atalho": "https://www-erecursos/"
+		}, {
+			"nome": "PDR",
+			"atalho": "http://www-pdr/"
+		}, {
+			"nome": "SIPPS",
+			"atalho": "http://www-sipps/"
+		}]
+	}, {
+		"categoria": "Páginas Institucionais",
+		"icone": "ar.instit.svg",
+		"itens": [{
+			"nome": "Portal Gex BH",
+			"atalho": "http://www-gexbhz/"
+		}, {
+			"nome": "Portal Super. Sudeste II",
+			"atalho": "http://www-sudeste2/"
+		}, {
+			"nome": "Intranet do INSS",
+			"atalho": "http://www-inss/"
+		}, {
+			"nome": "Site da Previdência",
+			"atalho": "http://www.inss.gov.br/"
+		}]
+	}, {
+		"categoria": "Consultas",
+		"icone": "ar.pesquisa.svg",
+		"itens": [{
+			"nome": "Consultar CPF",
+			"atalho": "http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/CPF/ConsultaPublica.asp"
+		}, {
+			"nome": "Consultar CEP",
+			"atalho": "http://www.buscacep.correios.com.br/"
+		}, {
+			"nome": "Consultar Opção pelo MEI",
+			"atalho": "http://www8.receita.fazenda.gov.br/SIMPLESNACIONAL/aplicacoes.aspx?id=21"
+		}, {
+			"nome": "Consultar Seguro Desemprego",
+			"atalho": "https://sd.maisemprego.mte.gov.br/sdweb/"
+		}, {
+			"nome": "LINK",
+			"atalho": "http://"
+		}, {
+			"nome": "Busca Servidor",
+			"atalho": "http://www-inss/pesquisa/pesquisa.php"
+		}, {
+			"nome": "Índice Legislativo",
+			"atalho": "http://www-maringa/legis/"
+		}, {
+			"nome": "Tabelas Corporativas",
+			"atalho": "http://www-sdc/menuconsulta.asp"
+		}, {
+			"nome": "Carta de Concessão",
+			"atalho": "https://www8.dataprev.gov.br/SipaINSS/pages/concal/concalInicio.xhtml"
+		}, {
+			"nome": "Histórico de Consignações",
+			"atalho": "http://w3b2/ConsigWEB"
+		}, {
+			"nome": "Histórico de Créditos",
+			"atalho": "http://www-hiscreweb/"
+		}, {
+			"nome": "Extrato para Declaração de IR",
+			"atalho": "https://extratoir.inss.gov.br/"
+		}, {
+			"nome": "Consulta Processual TRF1",
+			"atalho": "https://processual.trf1.jus.br/consultaProcessual/numeroProcesso.php?secao=MG"
+		}, {
+			"nome": "Consulta Processual TRT3",
+			"atalho": "http://as1.trt3.jus.br/consulta/consulta.htm"
+		}, {
+			"nome": "Pesquisa de APS",
+			"atalho": "http://www010.dataprev.gov.br/enderecoAPS/mps1.asp"
+		}, {
+			"nome": "Pesquisa por CID",
+			"atalho": "http://www.datasus.gov.br/cid10/V2008/webhelp/cid10.htm"
+		}]
+	}, {
+		"categoria": "Agendamento",
+		"icone": "ar.agenda.svg",
+		"itens": [{
+			"nome": "Agendar Atendimento",
+			"atalho": "http://agendamento/"
+		}, {
+			"nome": "Agendar Primeira Perícia",
+			"atalho": "http://www2.dataprev.gov.br/sabiweb/agendamento/inicio.view"
+		}, {
+			"nome": "Agendar PP",
+			"atalho": "http://www2.dataprev.gov.br/sabiweb/fechado/pppr/inicio.view"
+		}, {
+			"nome": "Agendar Reavaliação R2",
+			"atalho": "http://www2.dataprev.gov.br/sabiweb/fechado/revisao/inicio.view"
+		}]
+	}, {
+		"categoria": "Contribuinte Individual",
+		"icone": "ar.pessoa.svg",
+		"itens": [{
+			"nome": "CADSENHA",
+			"atalho": "http://pcnisapr01/cadsenha-aps-web"
+		}, {
+			"nome": "Emissão de DRS-CI",
+			"atalho": "http://pcnisapr01/DRSCIIntranet/"
+		}, {
+			"nome": "GFIP Web",
+			"atalho": "http://w3b2/gfipweb/"
+		}, {
+			"nome": "SAL Web",
+			"atalho": "http://w3b2.prevnet/PortalSalIntranet/"
+		}]
+	}, {
+		"categoria": "Saúde e Social",
+		"icone": "ar.saude.svg",
+		"itens": [{
+			"nome": "CADUNICO",
+			"atalho": "https://www.cadastrounico.caixa.gov.br/"
+		}, {
+			"nome": "Pesquisa CRM MG",
+			"atalho": "http://sistemas.crmmg.org.br/v2/sys-php/pesquisa-medicos"
+		}, {
+			"nome": "Pesquisa CRESS MG",
+			"atalho": "http://www.conselhos.com.br/siscafwebj/carregaConselho.do?tipoAcesso=4&s=1&tipoConsulta=pf&controle=0&sigla=cressmg"
+		}]
+	}, {
+		"categoria": "Gestão",
+		"icone": "ar.gestao.svg",
+		"itens": [{
+			"nome": "Gestão da Ouvidoria",
+			"atalho": "http://ouvidoria.previdencia.gov.br/souweb/"
+		}, {
+			"nome": "Homologação do SISREF",
+			"atalho": "http://www-sisref/sisref/chefia.php"
+		}, {
+			"nome": "SIS GDASS",
+			"atalho": "http://w3b2/sgdass/"
+		}, {
+			"nome": "Sala de Monitoramento",
+			"atalho": "http://www-sala/"
+		}]
+	}, {
+		"categoria": "Gestão de Acesso e Senhas",
+		"icone": "ar.seguranca.svg",
+		"itens": [{
+			"nome": "GERID",
+			"atalho": "https://geridinss.dataprev.gov.br/gpa/"
+		}, {
+			"nome": "Gestão do SAA",
+			"atalho": "https://www2.dataprev.gov.br/saa/"
+		}, {
+			"nome": "Consulta Acessos no Domínio",
+			"atalho": "http://www-acesso/"
+		}, {
+			"nome": "Senha do Usuário no Domínio",
+			"atalho": "https://correio.inss.gov.br/trocasenha/"
+		}]
+	}, {
+		"categoria": "Outros",
+		"icone": "ar.outros.svg",
+		"itens": [{
+			"nome": "App Consultar",
+			"atalho": "http://www-consultar/"
+		}, {
+			"nome": "CMOBEN",
+			"atalho": "http://www-santos3/cmoben/"
+		}, {
+			"nome": "COMPREV",
+			"atalho": "http://w3b8.prevnet/CV3/"
+		}, {
+			"nome": "Escola Virtual",
+			"atalho": "http://escolavirtual.inss.gov.br/"
+		}, {
+			"nome": "SDM - Chamados Dataprev",
+			"atalho": "http://www-sdm/"
+		}, {
+			"nome": "SICAU",
+			"atalho": "http://sicau.agu.gov.br/"
+		}, {
+			"nome": "SIGEPE",
+			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
+		}, {
+			"nome": "SISOBI",
+			"atalho": "http://w3b2/pls/sco/seo0001$.startup"
+		}]
+	}]
+}
