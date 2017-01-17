@@ -14,6 +14,9 @@
 	},{
 		"categoria": "Sistemas de Cadastro",
 		"itens": [{
+			"nome": "Consultar CNPJ",
+			"atalho": "https://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao.asp"
+		}, {
 			"nome": "Consultas da Página da DICF.N",
 			"atalho": "http://www-dicfn/consultas.asp?pagina=Consultas&codigo=37"
 		}, {
@@ -43,6 +46,12 @@
 		}, {
 			"nome": "Pesquisar Atos e Normas",
 			"atalho": "http://www-normas/"
+		}, {
+			"nome": "Sistema de Consultas da DIRBEN",
+			"atalho": "http://www-siscon/"
+		}, {
+			"nome": "SISLEX",
+			"atalho": "http://sislex.previdencia.gov.br/"
 		}]
 	}, {
 		"categoria": "Gestão",
@@ -58,6 +67,9 @@
 		}, {
 			"nome": "Sala de Monitoramento",
 			"atalho": "http://www-sala/"
+		}, {
+			"nome": "SAG Gestão",
+			"atalho": "http://www-saggestao/"
 		}]
 	}, {
 		"categoria": "Sistemas e Aplicativos",
@@ -70,6 +82,9 @@
 		"itens": [{
 			"nome": "Simulação de Aposentadoria de Serviço Público",
 			"atalho": "http://www.cgu.gov.br/simulador/"
+		}, {
+			"nome": "Consulta Servidor no Portal da Transparência",
+			"atalho": "http://www.portaltransparencia.gov.br/servidores/Servidor-ListaServidores.asp"
 		}]
 	}, {
 		"categoria": "Outros",
@@ -88,6 +103,12 @@
 		}, {
 			"nome": "SIGEPE",
 			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
+		}, {
+			"nome": "SIGMA",
+			"atalho": "http://www-sigma/"
+		}, {
+			"nome": "SUIBE",
+			"atalho": "http://www-suibe/"
 		}, {
 			"nome": "SRAR - Reposição de Greve",
 			"atalho": "http://www-srar/"

@@ -9,6 +9,12 @@
 		}, {
 			"nome": "Tabela de salários mínimos após o Plano Real",
 			"data": "bc000045"
+		}, {
+			"nome": "Valores do salário-família após o Plano Real",
+			"data": "bc000050"
+		}, {
+			"nome": "Valores do limite máximo de remuneração para concessão do auxílio-reclusão",
+			"data": "bc000051"
 		}]
 	}]
 }

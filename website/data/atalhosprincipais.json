@@ -35,8 +35,8 @@
 			"nome": "Portal Gex BH",
 			"atalho": "http://www-gexbhz/"
 		}, {
-			"nome": "Portal Super. Sudeste II",
-			"atalho": "http://www-sudeste2/"
+			"nome": "Intranet da Dataprev",
+			"atalho": "http://www-dtpnet/"
 		}, {
 			"nome": "Intranet do INSS",
 			"atalho": "http://www-inss/"
@@ -54,14 +54,14 @@
 			"nome": "Consultar CEP",
 			"atalho": "http://www.buscacep.correios.com.br/"
 		}, {
+			"nome": "Consultar CNAE",
+			"atalho": "http://www.cnae.ibge.gov.br/"
+		}, {
 			"nome": "Consultar Opção pelo MEI",
 			"atalho": "http://www8.receita.fazenda.gov.br/SIMPLESNACIONAL/aplicacoes.aspx?id=21"
 		}, {
 			"nome": "Consultar Seguro Desemprego",
 			"atalho": "https://sd.maisemprego.mte.gov.br/sdweb/"
-		}, {
-			"nome": "LINK",
-			"atalho": "http://"
 		}, {
 			"nome": "Busca Servidor",
 			"atalho": "http://www-inss/pesquisa/pesquisa.php"
@@ -101,7 +101,7 @@
 		"icone": "ar.agenda.svg",
 		"itens": [{
 			"nome": "Agendar Atendimento",
-			"atalho": "http://agendamento/"
+			"atalho": "http://www-agendamento/"
 		}, {
 			"nome": "Agendar Primeira Perícia",
 			"atalho": "http://www2.dataprev.gov.br/sabiweb/agendamento/inicio.view"
@@ -140,6 +140,9 @@
 		}, {
 			"nome": "Pesquisa CRESS MG",
 			"atalho": "http://www.conselhos.com.br/siscafwebj/carregaConselho.do?tipoAcesso=4&s=1&tipoConsulta=pf&controle=0&sigla=cressmg"
+		}, {
+			"nome": "SIGEBI",
+			"atalho": "http://10.120.1.120/"
 		}]
 	}, {
 		"categoria": "Gestão",
@@ -156,6 +159,9 @@
 		}, {
 			"nome": "Sala de Monitoramento",
 			"atalho": "http://www-sala/"
+		}, {
+			"nome": "Desempenho no Plano de Ação",
+			"atalho": "http://www-planoacao/frontend/"
 		}]
 	}, {
 		"categoria": "Gestão de Acesso e Senhas",
@@ -170,7 +176,7 @@
 			"nome": "Consulta Acessos no Domínio",
 			"atalho": "http://www-acesso/"
 		}, {
-			"nome": "Senha do Usuário no Domínio",
+			"nome": "Alteraçao de Senha no Domínio",
 			"atalho": "https://correio.inss.gov.br/trocasenha/"
 		}]
 	}, {

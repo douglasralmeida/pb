@@ -42,13 +42,13 @@ $(document).ready(function($){
 	jQuery.getJSON("data/docs.json", function(data){
 		var code = "";
 		$.each(data.docs, function(i, grupo) {
-			code += "<a href=\"#categoria" + i + "\">" + grupo.categoria + "</a>";
+			code += "<a href=\"#categoria" + i + "\"  target=\"_self\">" + grupo.categoria + "</a>";
 		});
 		$(code).appendTo(".cabecalho");
 		
 		var code = "";
 		$.each(data.docs, function(i, grupo) {
-			code += "<h3 id=categoria" + i + ">" + grupo.categoria + "</h3>";		
+			code += "<h3 id=categoria" + i + ">" + grupo.categoria + "</h3>";
 			code += "<div class=\"tabela-documentos\">";
 			$.each(grupo.itens, function(j, item) {
 				code += "<a href=\"" + item.link + "\">";
