@@ -30,10 +30,6 @@
 			"link": "docs/forms/gps.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Indeferimento do cancelamento da aposentadoria (desaposentação)",
-			"link": "docs/forms/carta_res_indcancela.odt",
-			"tipo": 1
-		}, {
 			"nome": "Procuração",
 			"link": "docs/forms/procuracao.pdf",
 			"tipo": 2
@@ -64,23 +60,31 @@
 			"link": "docs/forms/carta_exig_bpc_reanaliserenda.odt",
 			"tipo": 1
 		}, {
-			"nome": "Declaração de Separação de Fato",
+			"nome": "Requerimento de Benefício de Prestação Continuada",
+			"link": "docs/forms/req_bpc_requerimento.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Declaração de Renda do Grupo Familiar",
+			"link": "docs/forms/req_bpc_grupo.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Atualização do Benefício de Prestação Continuada",
+			"link": "docs/forms/req_bpc_atualizacao.pdf",
+			"tipo": 1
+		}, {
+			"nome": "(DER anterior a 04/01) Declaração de Separação de Fato",
 			"link": "docs/forms/req_bpc_separadofato.odt",
 			"tipo": 1
 		}, {
-			"nome": "Composição do Grupo Familiar",
+			"nome": "(DER anterior a 04/01) Composição do Grupo Familiar",
 			"link": "docs/forms/req_bpc_familia.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Inexistência de Comprovação de Endereço",
+			"nome": "(DER anterior a 04/01) Inexistência de Comprovação de Endereço",
 			"link": "docs/forms/req_bpc_naoenderec.odt",
 			"tipo": 1
 		}, {
-			"nome": "Renúncia de Benefício para Concessão de Outro Mais Vantajoso",
-			"link": "docs/forms/req_bpc_maisvantaj.odt",
-			"tipo": 1
-		}, {
-			"nome": "Requerimento de Benefício de Prestação Continuada",
+			"nome": "(DER anterior a 04/01) Requerimento de Benefício de Prestação Continuada",
 			"link": "docs/forms/req_bpc_principal.pdf",
 			"tipo": 2
 		}]
@@ -106,6 +110,10 @@
 			"nome": "Despacho da Análise Administrativa da Atividade Especial",
 			"link": "docs/forms/desp_aposespecial_admin.odt",
 			"tipo": 1
+		}, {
+			"nome": "Perfil Profissiográfico Previdenciário (PPP)",
+			"link": "docs/forms/ppp.pdf",
+			"tipo": 2
 		}, {
 			"nome": "Termo de Responsabilidade para Pensão por Morte",
 			"link": "docs/forms/termo_respons_pensao.odt",
