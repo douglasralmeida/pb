@@ -7,7 +7,7 @@ var app = angular.module('GestaoFeedbackApp', []);
  
 app.controller('feedbacksCtrl', function($scope, $http) {
     $http.get('http://' + location.host + ':8080')
-    .then(function (response) {$scope.feedbacks = response.data.feedbacks;});
+    .then(function (response) {$scope.feedbacks = response.data;});
 });
 
 /*angular.element(document).ready(function() {
