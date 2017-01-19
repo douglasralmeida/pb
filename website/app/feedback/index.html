@@ -32,7 +32,7 @@
 	<div ng-controller="feedbacksCtrl" class="listview" data-role="listview">
 		<div class="list" ng-repeat="x in feedbacks">
 			<span class="list-icon icon-bug"></span>
-			<span class="list-title">{{x.descricao}}</span>
+			<span data-id="{{x.id}}" class="list-title">{{x.descricao}}</span>
 		</div>
 	</div>
 	</div>
