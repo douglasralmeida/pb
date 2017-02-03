@@ -6,10 +6,20 @@
 <link rel="stylesheet" type="text/css" href="/css/metro-icons.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive.min.css" />
 <script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="/js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="/js/widgets.js"></script>
+<script type='text/javascript' src="/js/listview.js"></script>
 <script type='text/javascript' src="js/feedback.js"></script>
 <title>Gestão de Feedback dos Usuários do Portal da BH Sul</title>
 </head>
 <body>
+<div class="padding20 dialog" id="dialog" data-role="dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" style="visibility: hidden; width: auto; height: auto; ">
+    <h1>Comentário</h1>
+	<p>ID:</p>
+	<p>Tipo:</p>
+    <p>Descrição: Texto TextoTextoTexto TextoTexto  Texto TextoTexto Texto Texto  Texto</p>
+    <span class="dialog-close-button"></span>
+</div>
 <div class="container page-content">
 	<div class="app-bar darcula">
 		<a class="app-bar-element" href="/">Home</a>
@@ -29,7 +39,7 @@
 	</div>
 	<p>
 	<div ng-app="GestaoFeedbackApp" class="row cells1">
-	<div ng-controller="feedbacksCtrl" class="listview" data-role="listview">
+	<div ng-controller="feedbacksCtrl" class="listview" id="lv1" data-role="listview">
 		<div class="list" ng-repeat="x in feedbacks">
 			<span class="list-icon icon-bug"></span>
 			<span data-id="{{x.id}}" class="list-title">{{x.descricao}}</span>
