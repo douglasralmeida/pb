@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="css/pagdownload.css" />
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('TabelaDownloads', []);
+	app.controller('downloadsCtrl',  function($scope, $http) {
+		$http.get("download/categorias.json").then(function(response) {$scope.categorias = response.data.categorias;});
+	});
+</script>
+<title>Novidades do Portal da BH Sul</title>
+</head>
+<body ng-app="TabelaDownloads" ng-controller="downloadsCtrl">
+<div ng-app="" ng-include="'widgets/navbar.html'"></div>
+<h3 style="text-align: center;">Categorias de Download</h3>
+<div class="tabela-categorias">
+  <span>
+  <a ng-repeat="x in categorias" href="download/lista.html?cat={{x.id-1}}">
+    <img src="img/{{x.icone}}"/>
+	{{x.nome}}
+  </a>
+  </span>
+</div>
+</body>
+</html>

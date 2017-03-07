@@ -1,0 +1,36 @@
+﻿{
+	"nome": "Peazip 6.4",
+	"id": "peazip64",
+	"versao": "6.4",
+	"publicadoem": "16/03/2017",
+	"descricao": "O Peazip é um utilitário para comprimir e descomprimir arquivos com suporte a vários formatos, incluindo ZIP, RAR e 7Z.",
+	"detalhes": "O Peazip é um aplicativo para comprimir e descomprimir arquivos. Ele suporta mais de 180 formatos de compressão, incluindo 7Z, ACE, ARC, CAB, ISO, RAR e ZIP.",
+	"imagens": [{
+		"arquivo": "tela01.png",
+		"mini": "minitela01.png",
+		"descricao": "Aplicativo"
+	}, {
+		"arquivo": "tela02.png",
+		"mini": "minitela02.png",
+		"descricao": "Tela de extração"
+	}],
+	"arquivos": [{
+		"nome": "peazip64_x86.msi",
+		"tamanho": "0 MB",
+		"plataforma": "x86"
+	}, {
+		"nome": "peazip64_x64.msi",
+		"tamanho": "0 MB",
+		"plataforma": "x64"
+	}],
+	"subitens": [{
+		"id": "reqsis",
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows XP SP3</li><li>Windows Vista</li><li>Windows 7</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul>"
+	}, {
+		"id": "instalinstruc",
+		"conteudo": "<b>Instalando o Peazip</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o Peazip, abra um arquivo compactado qualquer disponível no seu computador.</p><b>Removendo o Peazip</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione Peazip e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
+	}, {
+		"id": "resrelac",
+		"conteudo": "<a href='docs.html'>Modelos de Documentos</a>"
+	}]
+}

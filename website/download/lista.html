@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="PaginaDownloads" ng-controller="PageCtrl">
+<head>
+<meta charset="UTF-8" />
+<base href="/">
+<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/angular-sanitize-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="js/geturl.js"></script>
+<script type="text/javascript">
+	var app = angular.module('PaginaDownloads', ['ngSanitize']);
+	var param = getUrlParameter('cat');
+	app.controller('PageCtrl', function($scope, $http) {
+		$http.get("download/categorias.json").then(function(response) {
+		$scope.id = param;
+		$scope.titulo = response.data.categorias[param].nome;
+		$scope.itens = response.data.categorias[param].itens;});
+	});
+</script>
+<style type="text/css">
+	img {		
+		float: left;
+		height: 64px;
+		margin-right: 25px;
+		width: 64px;
+	}
+	.lista {
+		list-style-type: none;
+	}
+	.item {
+		border-bottom-color: rgb(210, 210, 210);
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		padding-bottom: 25px;
+		padding-top: 16px;
+	}
+	.item a {
+		display: block;
+	}
+	.subtitulo {
+		border-bottom-color: rgb(210, 210, 210);
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		padding-top: 16px;
+	}
+</style>
+<title ng-bind="titulo"></title>
+</head>	
+<body>
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="container page-content">
+	<h2 ng-bind="titulo"></h2>
+	<ul class="lista">
+		<li class="subtitulo">
+		<h3>Lista de Downloads</h3>
+		<li class="item" ng-repeat="x in itens">
+			<a href="download/detalhes.html?id={{x.id}}">
+				<img src ="download/icones/{{x.icone}}">
+				<h4>{{x.nome}}</h4>
+			</a>
+			<div>{{x.descricao}}</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

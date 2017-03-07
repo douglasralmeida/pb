@@ -1,0 +1,30 @@
+.tabela-categorias {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 10px;	
+}
+
+.tabela-categorias span {
+	display: table-row;
+}
+
+.tabela-categorias span a {
+    display: table-cell;
+	border: 2px solid #ffffff;
+	height: 170px;
+	padding: 18px 0 18px 0;
+    width: 16.6%;
+	text-align: center;
+}
+
+.tabela-categorias span a:hover {
+    border: 2px solid rgba(0,0,0,.2);
+}
+
+.tabela-categorias span a img {
+	display: block;
+	margin: auto;
+	height: 64px; 
+	width: 64px;
+}
+

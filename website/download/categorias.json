@@ -1,0 +1,63 @@
+﻿{
+	"categorias": [{
+		"id": "1",
+		"nome": "Aplicativos de Escritório",
+		"icone": "down_escritorio.svg",
+		"itens": [{
+			"nome": "LibreOffice 5.3",
+			"descricao": "O LibreOffice é um pacote de aplicativos de escritório que inclui planilha, editor de textos, produtor de apresentações entre outros.",
+			"id": "libreoffice53",
+			"icone": "libreoffice.svg"
+		}, {
+			"nome": "Adobe Acrobat Reader DC",
+			"descricao": "Use o Adobe Acrobat Reader para visualizar, imprimir arquivos e preencher formulários no formato PDF.",
+			"id": "acrobatreaderdc",
+			"icone": "acrobatreaderdc.png"
+		}, {
+			"nome": "PDFCreator 2.5",
+			"descricao": "O PDFCreator permite criar, dividir e combinar arquivos no formato PDF.",
+			"id": "pdfcreator25",
+			"icone": "exe.png"
+		}]
+	}, {
+		"id": "2",
+		"nome": "Componentes do Sistema",
+		"icone": "down_sistema.svg",
+		"itens": [{
+			"nome": "Microsoft .net Framework 4.7",
+			"descricao": ".",
+			"id": "msdotnet47",
+			"icone": "msdotnet.png"
+		}]
+	}, {
+		"id": "3",
+		"nome": "Programas para Internet",
+		"icone": "down_internet.svg",
+		"itens": [{
+			"nome": "Microsoft Internet Explorer 11",
+			"descricao": "Use o Internet Explorer para abrir páginas da internet e da intranet do INSS.",
+			"id": "msie11",
+			"icone": "ie.png"
+		}]
+	}, {
+		"id": "4",
+		"nome": "Programas para o INSS",
+		"icone": "down_inss.png",
+		"itens": [{
+			"nome": "Carta de Acidente de Trabalho 4.0",
+			"descricao": "O CAT 4.0 permite registrar as cartas de acidente de trabalho junto ao INSS.",
+			"id": "cat40",
+			"icone": "exe.png"
+		}]
+	}, {
+		"id": "5",
+		"nome": "Utilitários",
+		"icone": "down_utilitario.svg",
+		"itens": [{
+			"nome": "Peazip 6.4",
+			"descricao": "O Peazip é um utilitário para comprimir e descomprimir arquivos com suporte a vários formatos, incluindo ZIP, RAR e 7Z.",
+			"id": "peazip64",
+			"icone": "peazip.png"
+		}]
+	}]
+}

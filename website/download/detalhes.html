@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="PaginaDownload" ng-controller="PageCtrl">
+<head>
+<meta charset="UTF-8" />
+<base href="/">
+<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/angular-sanitize-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="js/geturl.js"></script>
+<script type='text/javascript' src="js/metro.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('PaginaDownload', ['ngSanitize']);
+	var param = getUrlParameter('id');
+	app.controller('PageCtrl', function($scope, $http) {	
+		$http.get("download/itens/" + param + "/info.json").then(function(response) {
+			$scope.data = response.data;
+			$scope.nomeBaixar = function(id, count) {
+				if (count == 1)
+					return "Baixar";
+				else {
+					if (id = "x86")
+						return "Baixar versão de 32 bits";
+					else if (id = "x64")
+						return "Baixar versão de 64 bits";
+					else if (id = "all")
+						return "Baixar";
+				}
+			};
+			$scope.nomeId = function(codigo) {
+				if (codigo == "detalhes")
+					return "Detalhes";
+				else if (codigo == "reqsis")
+					return "Requisitos de Sistema";
+				else if (codigo == "instalinstruc")
+					return "Instruções de Instalação";
+				else if (codigo == "resrelac")
+					return "Recursos Relacionados";
+				return "Sem descrição";
+			};
+		});
+	});	
+</script>
+<style type="text/css">
+	.duascolunas {
+		columns: 2 200px;
+	}
+	.quadrocinza {
+		background-color: rgb(238, 238, 238);
+		display: block;
+		height: 134px;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		padding-right: 20px;
+	}
+	.quadrocinza a {
+		background-color: rgb(214, 49, 5);
+		border-color: transparent;
+		border-style: solid;
+		border-color: transparent;
+		color: rgb(255, 255, 255);
+		clear: both;
+		display: block;
+		font-weight: 700;
+		float: right;
+		height: 40px;
+		margin: 4px;
+		line-height: 34px;
+		text-align: center;
+	}
+	.telaprograma {
+		cursor: pointer;
+		transition: 0.3s;
+	}
+	.telaprograma {opacity: 0.7;}
+</style>
+<title ng-bind="titulo"></title>
+</head>	
+<body>
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="container page-content">
+	<h3 ng-bind="data.nome"></h3>	
+	<div class="quadrocinza">
+		<a href="/download/itens/{{data.id}}/{{w.nome}}" ng-bind="nomeBaixar(w.plataforma, $length)" ng-repeat="w in data.arquivos"></a>
+	</div>
+	<h4 ng-bind="data.descricao"></h4>
+	<div class="grid">
+	<div class="row cells6">
+		<div class="cell" ng-repeat="y in data.imagens">
+			<div class="image-container bordered">
+			<div class="frame"><img class="telaprograma" src="/download/itens/{{data.id}}/{{y.mini}}" alt="{{y.descricao}" title="{{y.descricao}}"></div>
+		</div></div>
+	</div></div>
+	<div class="accordion" data-role="accordion" data-close-any="true">
+		<div class="frame">
+			<div class="heading">
+				Detalhes
+			</div>
+			<div class="content">
+				<div class='quadrocinza'>
+					<div class="duascolunas">
+						<div class="itemcoluna">
+							<b>Versão:</b><div ng-bind="data.versao"></div>
+						</div>
+						<div class="itemcoluna">
+							<b>Nome do arquivo:</b><div ng-repeat="w in data.arquivos">{{w.nome}}</div>
+						</div>
+						<div class="itemcoluna">
+							<b>Publicado em:</b><div ng-bind="data.publicadoem"></div>
+						</div>
+						<div class="itemcoluna">
+							<b>Tamanho do arquivo:</b><div ng-repeat="w in data.arquivos">{{w.tamanho}}</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<p ng-bind="data.detalhes">Descrição detalhada.</p>
+				</div>
+			</div>
+		</div>
+		<div class="frame" ng-repeat="x in data.subitens">
+			<div class="heading" ng-bind="nomeId(x.id)">
+			</div>
+			<div class="content" ng-bind-html="x.conteudo">
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

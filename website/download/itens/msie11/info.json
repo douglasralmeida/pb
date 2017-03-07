@@ -1,0 +1,36 @@
+﻿{
+	"nome": "Microsoft Internet Explorer 11",
+	"id": "msie11",
+	"versao": "11.0",
+	"publicadoem": "14/03/2017",
+	"descricao": "Use o Internet Explorer para abrir páginas da internet e da intranet do INSS.",
+	"detalhes": "O Internet Explorer 11 permite navegar pelas páginas da inernet e da intranet do INSS. Certos sites funcionarão apenas no Internet Explorer.</p><p>Sites que funcionam apenas no Internet Exporer:</p><p>Sites que não funcionam corretamente no Internet Explorer:",
+	"imagens": [{
+		"arquivo": "tela01.png",
+		"mini": "minitela01.png",
+		"descricao": "Aplicativo"
+	}, {
+		"arquivo": "tela02.png",
+		"mini": "minitela02.png",
+		"descricao": "Tela de extração"
+	}],
+	"arquivos": [{
+		"nome": "peazip64_x86.msi",
+		"tamanho": "0 MB",
+		"plataforma": "x86"
+	}, {
+		"nome": "peazip64_x64.msi",
+		"tamanho": "0 MB",
+		"plataforma": "x64"
+	}],
+	"subitens": [{
+		"id": "reqsis",
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li></ul>"
+	}, {
+		"id": "instalinstruc",
+		"conteudo": "<b>Instalando o Internet Explorer</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o Internet Explorer, clique no seu ícone disponível no menu Iniciar do Windows.</p>"
+	}, {
+		"id": "resrelac",
+		"conteudo": "<a href='conhecimento.html'>Banco de Conhecimentos</a>"
+	}]
+}
