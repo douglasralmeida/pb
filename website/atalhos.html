@@ -30,7 +30,7 @@
 </head>
 <body ng-app="TabelaLinks" ng-controller="linksCtrl">
 	<div ng-include="'widgets/navbar.html'"></div>
-	<div ng-repeat="x in dados">		
+	<div ng-repeat="x in dados">
 		<h4>{{x.categoria}}</h4>
 		<div class="trescolunas">
 			<div class="itemcoluna" ng-repeat="y in x.itens">

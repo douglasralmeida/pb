@@ -1,0 +1,9 @@
+[aria-disabled], html {
+    cursor: default;
+}
+
+*::-moz-selection {
+    background-color: #b3d4fc;
+    color: #000;
+    text-shadow: none;
+}
