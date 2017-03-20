@@ -17,7 +17,7 @@ app.controller('feedbacksCtrl', function($scope, $http) {
 
 $("lv1").listview({
     onListClick: function(_list){
-        alert(list.attr('id'));
+        alert(_list.attr('id'));
 }
 });
 
