@@ -1,11 +1,14 @@
 ﻿{
-	"titulo": "Índices Financeiros",
+	"titulo": "Tabelas e Índices Financeiros",
 	"categorias": [{
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Alíquotas de contribuição previdenciária após o Plano Real",
 			"data": "bc000046"
+		}, {
+			"nome": "Lista de CNPJ mais utilizados para emissão de CTC em Belo Horizonte",
+			"data": "bc000052"
 		}, {
 			"nome": "Tabela de salários mínimos após o Plano Real",
 			"data": "bc000045"

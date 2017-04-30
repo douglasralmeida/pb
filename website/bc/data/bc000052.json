@@ -1,0 +1,14 @@
+﻿{
+	"titulo": "Lista de CNPJs mais utilizados para emissão de CTC em Belo Horizonte",
+	"id": 52,
+	"ultimaatualizacao": "09/05/2017 - 10:00",
+	"revisao": "1.0",
+	"categorias": [{
+		"titulo": "Introdução",
+		"texto": "Este artigo contém alguns CNPJ de órgão públicos mais utilizados para emissão de certidão de tempo de contribuição."
+	}, {
+		"titulo": "CNPJ",
+		"texto": "<table class='table striped'><thead><tr><th>Órgão</th><th>Número</th><th>Enderço</th></tr></thead><tbody><tr><td>Assembléia Legislativa do Estado de Minas Gerais</td><td>17.516.113/0001-47</td><td>Rua Rodrigues Caldas, 30<br>B. Santo Agostinho<br>Belo Horizonte/MG<br>CEP: 30.190-921</td></tr><tr><td>Corpo de Bombeiros Militar do Estado de Minas Gerais</td><td>03.389.126/0001-98</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Fundação Hospitalar do Estado de Minas Gerais</td><td>19.843.929/0001-00</td><td>Al. Vereador Alvaro Celso, 100<br>B. Santa Efigênia<br>CEP: 30.150-260</td></tr><tr><td>Polícia Civil do Estado de Minas Gerais</td><td>18.715.532/0001-70</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Polícia Militar do Estado de Minas Gerais</td><td>16.695.025/0001-97</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Prefeitura Municipal de Belo Horizonte</td><td>18.715.383/0001-40</td><td>Av. Afonso Pena, 1212<br>B. Centro<br>Belo Horizonte/MG<br>CEP: 30.130-003</td></tr><tr><td>Prefeitura Municipal de Contagem</td><td>18.715.508/0001-31</td><td>Pça. Presid. Tancredo Neves, 200<br>B. Camilo Alves<br>Contagem/MG<br>CEP: 32.017-900</td></tr><tr><td>Tribunal de Justiça do Estado de Minas Gerais</td><td>21.154.554/0001-13</td><td>Av. Afonso Pena, 4001<br>B. Serra<br>CEP: 30.130-924</td></tr><tr><td>Secretaria de Estado de Educação</td><td>18.715.599/0001-05</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Secretaria de Estado de Planejamento e Gestão</td><td>05.461.142/0001-70</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Secretaria de Estado de Saúde</td><td>18.715.516/0001-88</td><td>Cidade Administrativa<br>B. Serra Verde<br>Belo Horizonte/MG<br>CEP: 31630-900</td></tr><tr><td>Tribunal de Contas do Estado de Minas Gerais</td><td>21.154.877/0001-07</td><td>Av. Raja Gabaglia 1.315<br>B. Luxemburgo <br>Belo Horizonte/MG<br>CEP: 30.380-435</td></tr></tbody></table>"
+	}],
+	"aplicase": "Índices Financeiros"
+}
