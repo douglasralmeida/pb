@@ -9,10 +9,10 @@
 var app = angular.module('GestaoFeedbackApp', []);
  
 app.controller('feedbacksCtrl', function($scope, $http) {
-    //$http.get('http://' + location.host + ':8080')
-    //.then(function (response) {$scope.feedbacks = response.data;});
+    $http.get('http://' + location.host + ':8080')
+    .then(function (response) {$scope.feedbacks = response.data;});
 	
-	$scope.feedbacks = [{"id":1,"tipo":1,"descricao":"Um teste"},{"id":2,"tipo":2,"descricao":"Outro teste"}];
+	//$scope.feedbacks = [{"id":1,"tipo":1,"descricao":"Um teste"},{"id":2,"tipo":2,"descricao":"Outro teste"}];
 });
 
 $("lv1").listview({
