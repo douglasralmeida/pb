@@ -1,11 +1,14 @@
 ARTIGOS A FAZER
 ===============
 
-Índices financeiros:
+Tabelas e Índices financeiros:
+> Feriados e pontos facultativos de 2017
 > Tabela do teto previdenciário após o Plano Real
 
 Benefícios por incapacidade:
 > Alterações trazidas pela Medida Provisória 767
+> Situações que geram concessão de auxílio-acidente
+> Doenças que isentam carência
 
 Salário maternidade:
 > Introdução ao salário-maternidade
