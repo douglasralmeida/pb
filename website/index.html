@@ -27,6 +27,7 @@
 html, body {
     height: 100%;
 }
+
 .page-content {
     min-height: 100%;
     height: 100%;
@@ -86,12 +87,12 @@ html, body {
 				</div>
 				<div class="cell auto-size padding20 bg-white" id="cell-content">
 					<div class="tabela-atalhos" ng-repeat="x in dados">
-						<span class="titulo">
+						<span ng-cloak class="titulo">
 							<img ng-src="/img/{{x.icone}}" height="48" width="48">
 							{{x.categoria}}
 						</span>
 						<ul class="lista-atalhos unstyled-list">
-							<a ng-repeat="y in x.itens" href="{{y.atalho}}">{{y.nome}}</a>
+							<a ng-cloak ng-repeat="y in x.itens" href="{{y.atalho}}">{{y.nome}}</a>
 						</ul>
 					</div>
 				</div>
