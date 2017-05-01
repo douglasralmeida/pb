@@ -5,12 +5,14 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <meta name="description" content="O Portal da BH Sul contém atalhos úteis, aplicativos para download, banco de conhecimento e os formulários mais usados no dia a dia."/>
-<meta name="keywords" content="inss, previdência, aps, belo horizonte, sul, bh, bhsul, portal, atalho, aplicativo, download, banco, conhecimento, formulário, documento" />
+<meta name="keywords" content="inss, previdência, aps, belo horizonte, sul, bh, bhsul, portal, atalho, aplicativo, download, banco, conhecimento, formulário, documento, modelo" />
 <link rel="sortcut icon" href="/favicon.png" type="image/png"/>
 <link rel="stylesheet" type="text/css" href="css/metro.min.css" />
 <link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
 <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
 <link rel="stylesheet" type="text/css" href="css/bhsul.css" />
+<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="js/metro.min.js"></script>
 <script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('TabelaAtalhos', []);	
@@ -18,7 +20,7 @@
 		$scope.dados = [];
 		$http.get("/data/atalhosprincipais.json").then(function(response) {$scope.dados = response.data.atalhos;}, function(error) {
 			alert(error.message);
-});
+		});
 	});
 </script>
 <style type="text/css">
@@ -83,13 +85,13 @@ html, body {
 						<a href="http://10.32.97.205:8080/atendimento"><img src="/img/capa_atende.svg" height="48" width="48">Atendimento</a>
 						<a href="http://www-sisref"><img src="/img/capa_ponto.svg" height="48" width="48">Ponto Eletrônico</a>
 						<a href="novidades.html"><img src="/img/capa_noticia.svg" height="48" width="48">Novidades</a>
-						<!a href="comentarios.html"><!img src="/img/capa_feedback.svg" height="48" width="48"><!/a>
+						<!-- a href="comentarios.html"><!img src="/img/capa_feedback.svg" height="48" width="48"></a !-->
 					</ul>
 				</div>
 				<div class="cell auto-size padding20 bg-white" id="cell-content">
 					<div class="tabela-atalhos" ng-repeat="x in dados">
 						<span class="titulo">
-							<img src="/img/{{x.icone}}" height="48" width="48">
+							<img ng-src="/img/{{x.icone}}" height="48" width="48">
 							{{x.categoria}}
 						</span>
 						<ul class="lista-atalhos unstyled-list">
