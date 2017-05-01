@@ -11,7 +11,7 @@
 			"nome": "SIBE",
 			"atalho": "http://www-sibe/"
 		}]
-	},{
+	}, {
 		"categoria": "Sistemas de Cadastro",
 		"itens": [{
 			"nome": "Consultar CNPJ",
@@ -22,6 +22,9 @@
 		}, {
 			"nome": "Emissão de DRS-CI",
 			"atalho": "http://pcnisapr01/DRSCIIntranet/"
+		}, {
+			"nome": "GFIP Web",
+			"atalho": "http://w3b2/gfipweb/"
 		}, {
 			"nome": "Portal CNIS",
 			"atalho": "http://www-portalcnis/"
@@ -47,7 +50,7 @@
 			"nome": "Pesquisar Atos e Normas",
 			"atalho": "http://www-normas/"
 		}, {
-			"nome": "Sistema de Consultas da DIRBEN",
+			"nome": "Sistema de Consultas (SISCON)",
 			"atalho": "http://www-siscon/"
 		}, {
 			"nome": "SISLEX",
@@ -72,10 +75,46 @@
 			"atalho": "http://www-saggestao/"
 		}]
 	}, {
+		"categoria": "Demandas Judiciais",
+		"itens": [{
+			"nome": "Consulta Processual do TRF1",
+			"atalho": "https://processual.trf1.jus.br/consultaProcessual/numeroProcesso.php?secao=MG"
+		}, {
+			"nome": "Consulta Processual do TRT3",
+			"atalho": "http://as1.trt3.jus.br/consulta/consulta.htm"
+		}, {
+			"nome": "Depósito Judicial da Justiça Federal",
+			"atalho": "https://depositojudicial.caixa.gov.br/sigsj_internet/depositos-judiciais/justica-federal/"
+		}, {
+			"nome": "Depósito Judicial do TJMG",
+			"atalho": "https://depox.tjmg.jus.br/depox/pages/guia/publica/"
+		}, {
+			"nome": "SAPIENS da AGU",
+			"atalho": "http://sapiens.agu.gov.br/"
+		}, {
+			"nome": "SICAU",
+			"atalho": "http://sicau.agu.gov.br/"
+		}]
+	}, {
 		"categoria": "Sistemas e Aplicativos",
 		"itens": [{
+			"nome": "e-recursos",
+			"atalho": "http://www-erecursos/"
+		}, {
+			"nome": "e-tarefas",
+			"atalho": "http://www-eintegracao/sistemas/contexto/id/5"
+		}, {
+			"nome": "PDR",
+			"atalho": "http://www-pdr/"
+		}, {
 			"nome": "SABI",
 			"atalho": "http://www-sabi/versao.asp"
+		}, {
+			"nome": "SAPD",
+			"atalho": "http://www-sapd/"
+		}, {
+			"nome": "SIPPS",
+			"atalho": "http://www-sipps/"
 		}]
 	}, {
 		"categoria": "Gestão de Pessoas",
@@ -95,11 +134,11 @@
 			"nome": "COMPREV",
 			"atalho": "http://w3b8.prevnet/CV3/"
 		}, {
+			"nome": "Meu INSS",
+			"atalho": "http://servicos.inss.gov.br/"
+		}, {
 			"nome": "Portal da Central 135",
 			"atalho": "http://www-portal135/"
-		}, {
-			"nome": "SAPD",
-			"atalho": "http://www-sapd/"
 		}, {
 			"nome": "SIGEPE",
 			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"

@@ -19,6 +19,9 @@
 			"nome": "CTC",
 			"atalho": "http://www-ctc/"
 		}, {
+			"nome": "e-Tarefas",
+			"atalho": "http://www-eintegracao/sistemas/contexto/id/5"
+		}, {
 			"nome": "e-Recursos",
 			"atalho": "https://www-erecursos/"
 		}, {
@@ -41,7 +44,7 @@
 			"nome": "Intranet do INSS",
 			"atalho": "http://www-inss/"
 		}, {
-			"nome": "Site da Previdência",
+			"nome": "Site do INSS",
 			"atalho": "http://www.inss.gov.br/"
 		}]
 	}, {
@@ -64,7 +67,7 @@
 			"atalho": "https://sd.maisemprego.mte.gov.br/sdweb/"
 		}, {
 			"nome": "Busca Servidor",
-			"atalho": "http://www-inss/pesquisa/pesquisa.php"
+			"atalho": "http://www-inss/utilidade/pesquisa-servidor-2/"
 		}, {
 			"nome": "Índice Legislativo",
 			"atalho": "http://www-maringa/legis/"
@@ -90,10 +93,10 @@
 			"nome": "Consulta Processual TRT3",
 			"atalho": "http://as1.trt3.jus.br/consulta/consulta.htm"
 		}, {
-			"nome": "Pesquisa de APS",
+			"nome": "Pesquisar por APS",
 			"atalho": "http://www010.dataprev.gov.br/enderecoAPS/mps1.asp"
 		}, {
-			"nome": "Pesquisa por CID",
+			"nome": "Pesquisar por CID",
 			"atalho": "http://www.datasus.gov.br/cid10/V2008/webhelp/cid10.htm"
 		}]
 	}, {
@@ -160,6 +163,9 @@
 			"nome": "Sala de Monitoramento",
 			"atalho": "http://www-sala/"
 		}, {
+			"nome": "Supervisão",
+			"atalho": "http://www-supervisao/"
+		}, {
 			"nome": "Desempenho no Plano de Ação",
 			"atalho": "http://www-planoacao/frontend/"
 		}]
@@ -183,7 +189,7 @@
 		"categoria": "Outros",
 		"icone": "ar.outros.svg",
 		"itens": [{
-			"nome": "App Consultar",
+			"nome": "Consultar",
 			"atalho": "http://www-consultar/"
 		}, {
 			"nome": "CMOBEN",
@@ -198,8 +204,8 @@
 			"nome": "SDM - Chamados Dataprev",
 			"atalho": "http://www-sdm/"
 		}, {
-			"nome": "SICAU",
-			"atalho": "http://sicau.agu.gov.br/"
+			"nome": "SAPIENS da AGU",
+			"atalho": "http://sapiens.agu.gov.br/"
 		}, {
 			"nome": "SIGEPE",
 			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
