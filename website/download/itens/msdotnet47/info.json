@@ -1,17 +1,17 @@
 ﻿{
-	"nome": "Microsoft .NET Framework 4.6.3",
+	"nome": "Microsoft .NET Framework 4.7",
 	"id": "msdotnet47",
-	"versao": "4.6.3",
-	"publicadoem": "07/03/2017",
+	"versao": "4.7",
+	"publicadoem": "09/05/2017",
 	"descricao": "O .NET Framework é um conjunto de componentes para execução de aplicativos em Windows.",
 	"detalhes": "Instale o .NET Framework apenas em caso de necessidade.",
 	"imagens": [],
 	"arquivos": [{
-		"nome": "peazip64_x86.msi",
+		"nome": "msdotnet_x86.msi",
 		"tamanho": "0 MB",
 		"plataforma": "x86"
 	}, {
-		"nome": "peazip64_x64.msi",
+		"nome": "msdotnet_x64.msi",
 		"tamanho": "0 MB",
 		"plataforma": "x64"
 	}],
