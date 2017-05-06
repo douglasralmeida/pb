@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="NormaBC" ng-controller="PageCtrl">
+<head>
+<meta charset="UTF-8" />
+<base href="/">
+<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="css/bhsul.css" />
+<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/angular-sanitize-1.5.8.min.js"></script>
+<script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="js/geturl.js"></script>
+<script type="text/javascript">
+	var app = angular.module('NormaBC', ['ngSanitize']).config(function($sceDelegateProvider) {
+		$sceDelegateProvider.resourceUrlWhitelist([
+		// Allow same origin resource loads.
+		'self',
+		// Allow loading from our assets domain.  Notice the difference between * and **.
+		'http://www.planalto.gov.br/**'
+		]);
+	});
+	var norma = getUrlParameter('id');
+	app.controller('PageCtrl', function($scope) {
+		$scope.templates =
+			[{ name: 'blank', titulo: '', url: '(blank)'},
+			 { name: 'dec3048', titulo: 'Decreto 3.048', url: 'http://www.planalto.gov.br/ccivil_03/decreto/D3048.htm'}];
+		$scope.template = $scope.templates[1];
+	});
+</script>
+<style type="text/css">
+	img {
+		vertical-align: middle;
+	}
+	@media print {
+		.app-bar {
+			display: none;
+		}
+	}
+</style>
+<title ng-bind="template.titulo"></title>
+</head>	
+<body>
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="container page-content">
+	<h2 ng-bind="template.titulo"></h2>
+	<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
+	<div ng-include="template.url">
+	</div>
+</div>
+</body>
+</html>

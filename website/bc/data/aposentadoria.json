@@ -5,13 +5,16 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Introdução a aposentadoria",
-			"data": "bc000040"
+			"data": "bc000040",
+			"tipo": "artigo"
 		}, {
 			"nome": "Sobre a aposentadoria da pessoa com deficiência",
-			"data": "bc000044"
+			"data": "bc000044",
+			"tipo": "artigo"
 		}, {
 			"nome": "Categorias profissionais com enquadramento em atividade especial",
-			"data": "bc000043"
+			"data": "bc000043",
+			"tipo": "artigo"
 		}]
 	}]
 }

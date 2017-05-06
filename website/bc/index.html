@@ -35,7 +35,8 @@
 				<span class="{{x.icone}} icon"></span>
 			</div>
 			<div class="content">
-				<p ng-repeat="y in x.itens"><a href="bc/artigo.html?id={{y.data}}">{{y.nome}}</a></p>
+				<p ng-repeat="y in x.itens | filter:artigo:y.tipo"><a href="bc/artigo.html?id={{y.data}}">{{y.nome}}</a></p>
+				<p ng-repeat="y in x.itens | filter:norma:y.tipo"><a href="bc/norma.html?id={{y.data}}">{{y.nome}}</a></p>
 			</div>
 		</div>
 	</div>
