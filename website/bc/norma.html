@@ -12,20 +12,33 @@
 <script type='text/javascript' src="js/jquery-3.1.0.min.js"></script>
 <script type='text/javascript' src="js/geturl.js"></script>
 <script type="text/javascript">
-	var app = angular.module('NormaBC', ['ngSanitize']).config(function($sceDelegateProvider) {
-		$sceDelegateProvider.resourceUrlWhitelist([
-		// Allow same origin resource loads.
-		'self',
-		// Allow loading from our assets domain.  Notice the difference between * and **.
-		'http://www.planalto.gov.br/**'
-		]);
-	});
+	var app = angular.module('NormaBC', ['ngSanitize']);
 	var norma = getUrlParameter('id');
-	app.controller('PageCtrl', function($scope) {
+	var normahtml = '(branco)';
+	app.controller('PageCtrl', function($scope, $http) {
 		$scope.templates =
 			[{ name: 'blank', titulo: '', url: '(blank)'},
-			 { name: 'dec3048', titulo: 'Decreto 3.048', url: 'http://www.planalto.gov.br/ccivil_03/decreto/D3048.htm'}];
+			 { name: 'dec3048', titulo: 'Decreto 3.048', url: 'http://www.planalto.gov.br/ccivil_03/decreto/D3048.htm'}];			 
 		$scope.template = $scope.templates[1];
+		
+		function loadData() {
+			var req = {
+				url: 'http://' + location.host + ':8081',
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				data: 'endereco=' + $scope.template.url
+			};			
+            $http(req).then(function(res) {
+                $scope.normahtml = res.data;
+            })
+			.catch(function(error) {
+				$scope.error = error;
+			});
+		};
+		
+		loadData();
 	});
 </script>
 <style type="text/css">
@@ -44,9 +57,11 @@
 <div ng-include="'widgets/navbar.html'"></div>
 <div class="container page-content">
 	<h2 ng-bind="template.titulo"></h2>
-	<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
-	<div ng-include="template.url">
+	<div style="margin: 10px 0">
+		<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
 	</div>
+	<div>{{normahtml}}</div>
+	<div ng-show="error">Ocorreu um erro.</div>
 </div>
 </body>
 </html>

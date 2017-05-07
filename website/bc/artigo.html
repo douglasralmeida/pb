@@ -36,7 +36,9 @@
 <div ng-include="'widgets/navbar.html'"></div>
 <div class="container page-content">
 	<h2 ng-bind="titulo"></h2>
-	<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
+	<div style="margin: 10px 0">
+		<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
+	</div>
 	<div ng-repeat="x in dados">
 		<h3>{{x.titulo}}</h3>
 		<div ng-bind-html="x.texto"></div>
