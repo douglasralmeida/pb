@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=11">
+<title>Automatizador de Tarefa</title>
+
+<HTA:APPLICATION 
+     APPLICATIONNAME="Automatizador de Tarefa - Cálculo de Contribuições"
+	 ICON="prog.ico"
+	 INNERBORDER="no"
+     MAXIMIZEBUTTON="no"
+	 SELECTION="NO"
+     SINGLEINSTANCE="no"
+	 VERSON="1.1"
+>
+</head>
+<script language="javascript">
+"use strict";
+	var salariominimo = [
+  {
+    "mes": "01/07/1994",
+    "valor": 64.79
+  },
+  {
+    "mes": "01/09/1994",
+    "valor": 70.00
+  },
+  {
+    "mes": "01/05/1995",
+    "valor": 100.00
+  },
+  {
+    "mes": "01/05/1996",
+    "valor": 112.00
+  },
+  {
+    "mes": "01/05/1997",
+    "valor": 120.00
+  },
+  {
+    "mes": "01/05/1998",
+    "valor": 130.00
+  },
+  {
+    "mes": "01/05/1999",
+    "valor": 136.00
+  },
+  {
+    "mes": "01/04/2000",
+    "valor": 151.00
+  },
+  {
+    "mes": "01/04/2001",
+    "valor": 180.00
+  },
+  {
+    "mes": "01/04/2002",
+    "valor": 200.00
+  },
+  {
+    "mes": "01/04/2003",
+    "valor": 240.00
+  },
+  {
+    "mes": "01/05/2004",
+    "valor": 260.00
+  },
+  {
+    "mes": "01/05/2005",
+    "valor": 300.00
+  },
+  {
+    "mes": "01/04/2006",
+    "valor": 350.00
+  },
+  {
+    "mes": "01/04/2007",
+    "valor": 380.00
+  },
+  {
+    "mes": "01/03/2008",
+    "valor": 415.00
+  },
+  {
+    "mes": "01/02/2009",
+    "valor": 465.00
+  },
+  {
+    "mes": "01/01/2010",
+    "valor": 510.00
+  },
+  {
+    "mes": "01/01/2011",
+    "valor": 540.00
+  },
+  {
+    "mes": "01/03/2011",
+    "valor": 545.00
+  },
+  {
+    "mes": "01/01/2012",
+    "valor": 622.00
+  },
+  {
+    "mes": "01/01/2013",
+    "valor": 678.00
+  },
+  {
+    "mes": "01/01/2014",
+    "valor": 724.00
+  },
+  {
+    "mes": "01/01/2015",
+    "valor": 788.00
+  },
+  {
+    "mes": "01/01/2016",
+    "valor": 880.00
+  }
+];
+
+	var nitvalido = false;
+	var radioValor = "minimo";
+
+	window.resizeTo(600, 590);
+	
+	function ChecarNIT(nit) {
+		var i;
+		var total = 0;
+		var resto = 0;
+		var temp = 0;
+		var resultado = 0;
+		var resto = "";
+		var ftap = "3298765432";
+		var strResto = "";
+		
+		temp = nit;
+		if (temp == "" || temp == null) {
+		    document.getElementById('erronit').innerHTML = "Não esqueça do NIT!";
+			return false;
+		}
+		for (i = 0; i <= 9; i++) {
+			resultado = (temp.slice(i, i+1)) * (ftap.slice(i, i+1));
+			total = total + resultado;
+		}
+		resto = total % 11;
+		if (resto != 0)
+			resto = 11 - resto;
+		if (resto == 10 || resto == 11) {
+			strResto = resto + "";
+			resto = strResto.slice(1, 2);
+		}
+		if (resto != temp.slice(10, 11)) {
+			document.getElementById('erronit').innerHTML = "NIT inválido.";
+			return false;
+		}
+		
+		document.getElementById('erronit').innerHTML = "";
+		return true;
+	}
+	
+	function FormatarNIT(nit) {
+		var novonit;
+			
+		//novonit = nit.substring(0, 1) + "." + nit.substring(1, 4) + "." + nit.substring(4, 7) + "." + nit.substring(7, 10) + "-" + nit.substring(10, 1);
+		//alert(novonit);
+	
+		return nit;
+	}
+	
+	function GerarDatas(inicio, fim) {
+		var dataInicio = new Date(inicio);
+		var dataFim = new Date(fim);		
+			
+		var data = new Date(inicio);
+		var resultado = [];
+		var i = 0;
+
+		//dataFim.setMonth(dataFim.getMonth() + 1);
+		while (data <= dataFim) {
+			if (data.getMonth() < 9) {
+				resultado[i] = "0" + (data.getMonth() + 1) + "/" + data.getFullYear();
+			} else {
+				resultado[i] = data.getMonth() + 1 + "/" + data.getFullYear();
+			}
+			data.setMonth(data.getMonth() + 1);
+			i++;
+		}
+		
+		return resultado;
+	}
+	
+	function GerarValores(periodo, tipoSal, valor, quant) {
+		var resultado = [];
+		
+		if (tipoSal == 1) {
+			for (i = 0; i < quant; i++) {
+				resultado[i] = valor;
+			}
+		} else {
+			for (i = 0; i < quant; i++) {
+				resultado[i] = (ObterSalMinimo(periodo[i]) * valor) + "";
+				if (resultado[i] - Math.floor(resultado[i]) == 0)
+					resultado[i] = resultado[i] + ",00"
+				else
+					resultado[i] = resultado[i].replace(".", ",");				
+			}
+		}	
+		
+		return resultado;
+	}
+
+	function InverterData(data)	{
+		var novadata;
+	
+		switch (data.length) {
+			case 4: // 1/99
+				if (data.substring(2) > 70) {
+					novadata = "19";
+				}
+				else {
+					novadata = "20";
+				}
+				novadata = novadata + data.substring(2) + "/0" + data.substring(0, 1);
+				break;
+			case 5: // 01/99
+				if (data.substring(3) > 70) {
+					novadata = "19";
+				}
+				else {
+					novadata = "20";
+				}
+				novadata = novadata + data.substring(3) + "/" + data.substring(0, 2);
+				break;
+			case 6: // 1/1999
+				novadata = data.substring(2) + "/0" + data.substring(0, 1);
+				break;
+			case 7: // 01/1999
+				novadata = data.substring(3) + "/" + data.substring(0, 2);
+				break;
+			default:
+				novadata = "0";
+		}		
+		return novadata;
+	}
+	
+	function ObterRadioContribValor()
+	{
+		if (radioContrib[0].checked)
+			return radioContrib[0].value
+		else if (radioContrib[1].checked)
+			return (radioContrib[1].value)
+		else (radioContrib[2].checked)
+			return (radioContrib[2].value);
+	}
+	
+	function ObterSalMinimo(data) {
+		var dataComparar;
+		var dataPassada = new Date("01/" + data);
+		var i;
+				
+		for (i = salariominimo.length - 1; i >= 0; i--){
+			dataComparar = new Date(salariominimo[i].mes);
+			if (dataPassada >= dataComparar)				
+				return salariominimo[i].valor;
+			}
+		return 0.00;
+	}
+	
+	function ProcessarTarefa(Dados) {
+		var wb = new ActiveXObject("InternetExplorer.Application");
+		wb.Visible = true;
+		var i;
+		var quant;
+
+		wb.Navigate("http://w3b2.prevnet/PortalSalIntranet/faces/pages/calcContribuicoesCI/filiadosApos/selecionarOpcoesCalculoApos.xhtml");
+		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+		}
+		if (wb.Document.URL.substring(0, 6) == "res://")
+		{
+			alert("Ocoreu algum erro ao abrir a página de cálculo.");
+			return;
+		}
+		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:categoria")[0].value = Dados.Tipo;
+		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:nome")[0].value = Dados.Nit;
+		
+		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:botaoConfirmar")[0].click();
+		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+		}
+		
+		wb.Document.getElementsByName("formDadosCadastraisCalcContribuicoesCI:btnBotaoConfirmar")[0].click();
+		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+		}
+
+		quant = Dados.Periodo.length;
+		for (i = 0; i < quant; i++) {
+			wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputCompetencia")[0].value = Dados.Periodo[i];
+			wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputValorContribuicao")[0].value = Dados.Valores[i];		
+		}
+	}
+
+	function ExecutarCalculo(){
+		var Dados = {
+					Periodo: "", 
+					Valores: "", 
+					Calculo: 0,
+					Nit: document.getElementById('nit').value,
+					Tipo: ObterRadioContribValor()
+					};
+		var dataconvertida1;
+		var dataconvertida2;
+		var quant;
+		
+		if (radioSalario[0].checked)
+			Dados.Calculo = 0
+		else if (radioSalario[1].checked)
+			Dados.Calculo = 1;		
+		
+		dataconvertida1 = InverterData(document.getElementById('datainicio').value);
+		dataconvertida2 = InverterData(document.getElementById('datafinal').value);		
+		//Checar validade das datas
+		if (dataconvertida1 == "0" || dataconvertida2 == "0")
+		{
+			document.getElementById('errodata').innerHTML = "Competências estão num formato irreconhecível.";
+			exit;
+		}
+		Dados.Periodo = GerarDatas(dataconvertida1 + "/01", dataconvertida2 + "/01");
+		quant = Dados.Periodo.length;
+		document.getElementById('errodata').innerHTML = "";
+		if (ChecarNIT(Dados.Nit)) {
+			Dados.Nit = FormatarNIT(Dados.Nit);
+			Dados.Valores = GerarValores(Dados.Periodo, Dados.Calculo, document.getElementById('valor').value, quant);
+			ProcessarTarefa(Dados);
+			close();
+		}
+	}
+	
+	function radioClick(Radio) {
+		if (radioValor != Radio.Value) {
+			radioValor = Radio.value;
+			if (radioValor == "minimo") {
+				document.getElementById("textoSal").innerHTML = "Quantidade:";
+			}
+			else {
+				document.getElementById("textoSal").innerHTML = "Valor:";
+			}
+		}
+	}
+</script>
+
+<style type="text/css">
+body {
+	background-color: #fff;
+    box-sizing: border-box;
+	color: #000;
+	font-family: "Segoe UI","Segoe UI Web","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+    font-size: 0.93rem;
+	font-weight: 400;
+	line-height: 1.3333;
+	padding-bottom: 0.23px;
+    padding-top: 0.23px;
+    outline: none;
+	word-wrap: break-word;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+h1 {
+	font-size: 2.12rem;
+    font-weight: 200;	
+	line-height: 1.1764;
+	margin: .67em 0;
+	min-height: 1px;
+	padding: 0;
+	position: relative;
+	width: 75%;
+}
+
+h2 {
+	font-size: 1.75rem;
+    font-weight: 200;	
+	line-height: 1.1764;
+	margin: .67em 0;
+	min-height: 1px;
+	padding: 0;
+	position: relative;
+	width: 75%;
+}
+
+button, input[type=number], input[type=text], input[type=radio] {
+	font: inherit;
+	line-height: inherit;
+}
+
+button {
+    display: inline-block;
+    background-color: #0078d7;
+	border-color: transparent;
+	border-width: 2px;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	float: right !important;
+    min-width: 120px;
+    padding: 4px 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+	margin: 0;
+	max-width: 100%;
+    position: relative;
+    overflow: hidden;
+	text-align: center;
+    text-overflow: clip;
+    touch-action: manipulation;
+	text-transform: none;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+input[type=text], input[type=number] {
+	background-image: none;
+	border-color: rgba(0,0,0,.4);
+	border-style: solid;
+	border-width: 2px;
+	box-sizing: border-box;
+	color: inherit;
+	display: block;
+	margin: 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: 4px 8px;
+}
+
+input[type=text]:active, input[type=number]:active {
+    background-color: #fff;
+    border-color: #0078d7;
+	outline: 0;
+}
+
+input[type=text]:hover, input[type=number]:hover {
+	border-color: rgba(0,0,0,.6);
+}
+
+input[type=radio] {
+    box-sizing: border-box;
+	color: inherit;
+	height: 20px;
+	margin: 0;
+	max-width: 100%;
+	outline: none;
+	padding: 0;
+	width: 20px;
+	word-wrap: break-word;
+}
+</style>
+
+<body scroll="no">
+<img style="display: block; float: left;" width="48" height="48" src="data:image/png;base64,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">
+<h2>Cálculo de Contribuições</h2>
+<p>Este aplicativo irá automatizar a geração da planilha para cálculo de contribuições em atraso.<br>Inicialmente, ele suporta apenas 12 contribuições por vez.</p>
+<p id="resultado"></p>
+<p>
+<div class="form-group">
+	NIT: <input type="number" id="nit" onblur="ChecarNIT(document.getElementById('nit').value)" maxlength="11" autofocus><span id="erronit" style="display: inline;"></span>
+</div>
+<div class="form-group">
+	Filiação:
+	<input type="radio" name="radioContrib" id="tipocont" value="AUTONOMO" checked>Contribuinte Individual
+	<input type="radio" name="radioContrib" id="tipocont" value="DOMESTICO">Doméstico
+	<input type="radio" name="radioContrib" id="tipocont" value="FACULTATIVO">Facultativo
+</div>
+<div class="form-group">
+	Competência inicial: <input type="text" name="datainicio" maxlength="7"><br>
+	Competência final: <input type="text" name="datafinal" maxlength="7"><div id="errodata"></div>
+</div>
+<div class="form-group">
+	Salário de contribuição:
+	<input type="radio" name="radioSalario" id="tiposal" onclick="radioClick(this);" value="minimo" checked>Salário Mínimo
+	<input type="radio" name="radioSalario" id="tiposal" onclick="radioClick(this);" value="fixo">Valor fixo
+	<br>
+	<div id="textoSal">Quantidade:</div><input type="text" id="valor">
+</div>
+<div class="form-group">
+	<button type="button" onclick="ExecutarCalculo()">Executar</button>
+</div>
+</p>
+</body>
+</html>

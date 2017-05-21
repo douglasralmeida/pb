@@ -1,8 +1,8 @@
 ﻿{
 	"nome": "Adobe Acrobat Reader DC",
 	"id": "acrobatreaderdc",
-	"versao": "2015.20.20039",
-	"publicadoem": "14/03/2017",
+	"versao": "2017.09.20044",
+	"publicadoem": "23/05/2017",
 	"descricao": "Use o Adobe Acrobat Reader para visualizar, imprimir arquivos e preencher formulários no formato PDF.",
 	"detalhes": "Descrição detalhada.",
 	"imagens": [{
@@ -11,8 +11,8 @@
 		"descricao": "Acrobat Reader"
 	}],
 	"arquivos": [{
-		"nome": "arquivo32.msi",
-		"tamanho": "0.00 MB",
+		"nome": "AcroRdrDC.msi",
+		"tamanho": "106 MB",
 		"plataforma": "all"
 	}],
 	"subitens": [{

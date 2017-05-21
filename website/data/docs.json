@@ -2,6 +2,10 @@
 	"docs": [{
 		"categoria": "Documentos Genéricos",
 		"itens": [{
+			"nome": "Carta de Agendamento de Atendimento",
+			"link": "docs/forms/carta_marcacao.odt",
+			"tipo": 1
+		}, {		
 			"nome": "Capa de Processo",
 			"link": "docs/forms/capaprocesso.pdf",
 			"tipo": 2
@@ -71,22 +75,6 @@
 			"nome": "Atualização do Benefício de Prestação Continuada",
 			"link": "docs/forms/req_bpc_atualizacao.pdf",
 			"tipo": 1
-		}, {
-			"nome": "(DER anterior a 04/01) Declaração de Separação de Fato",
-			"link": "docs/forms/req_bpc_separadofato.odt",
-			"tipo": 1
-		}, {
-			"nome": "(DER anterior a 04/01) Composição do Grupo Familiar",
-			"link": "docs/forms/req_bpc_familia.pdf",
-			"tipo": 2
-		}, {
-			"nome": "(DER anterior a 04/01) Inexistência de Comprovação de Endereço",
-			"link": "docs/forms/req_bpc_naoenderec.odt",
-			"tipo": 1
-		}, {
-			"nome": "(DER anterior a 04/01) Requerimento de Benefício de Prestação Continuada",
-			"link": "docs/forms/req_bpc_principal.pdf",
-			"tipo": 2
 		}]
 	}, {
 		"categoria": "Concessão de Benefício Previdenciário",
@@ -103,21 +91,25 @@
 			"link": "docs/forms/dec_salmat_desemp.pdf",
 			"tipo": 2
 		}, {
+			"nome": "Declaração de Inexistência de Dependentes Preferenciais",
+			"link": "docs/forms/dec_inexist_depen.odt",
+			"tipo": 1
+		}, {
 			"nome": "Declaração de Tempo de Contribuição",
 			"link": "docs/forms/dtc.odt",
 			"tipo": 1
 		}, {
 			"nome": "Despacho da Análise Administrativa da Atividade Especial",
-			"link": "docs/forms/desp_aposespecial_admin.odt",
+			"link": "docs/forms/desp_aposespecial_admin.ott",
 			"tipo": 1
 		}, {
 			"nome": "Perfil Profissiográfico Previdenciário (PPP)",
 			"link": "docs/forms/ppp.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Termo de Responsabilidade para Pensão por Morte",
-			"link": "docs/forms/termo_respons_pensao.odt",
-			"tipo": 1
+			"nome": "Requerimento de Justificação Administrativa",
+			"link": "docs/forms/ja_requerimento.odt",
+			"tipo": 2
 		}]
 	}, {
 		"categoria": "Manutenção de Benefícios",
@@ -152,6 +144,10 @@
 		}, {
 			"nome": "Requerimento Genérico para Atualização de Benefício",
 			"link": "docs/forms/req_ben_diversos.odt",
+			"tipo": 1
+		}, {
+			"nome": "Termo de Responsabilidade para Representante Legal",
+			"link": "docs/forms/termo_respons_rl.odt",
 			"tipo": 1
 		}]
 	}, {

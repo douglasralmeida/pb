@@ -65,6 +65,9 @@
 			"nome": "Controle de Material de Consumo",
 			"atalho": "http://www-cmcweb/"
 		}, {
+			"nome": "Monitor do SAT Central",
+			"atalho": "http://www-satcentral/satcentral"
+		}, {
 			"nome": "Painel de Desempenho",
 			"atalho": "http://www-plano2013/frontend/"
 		}, {

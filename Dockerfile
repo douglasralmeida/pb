@@ -10,4 +10,7 @@ COPY config/nginx.conf config/expires.conf config/mime.types /etc/nginx/
 # Adiciona o website
 COPY website /usr/share/nginx/html
 
+# Download de aplicativos
+RUN curl -v -o /usr/share/nginx/html/download/itens/acrobatreaderdc/AcroRdrDC.msi http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1700920044/AcroRdrDC1700920044_pt_BR.exe
+
 # Monta o volume de dados
