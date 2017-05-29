@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <base href="/">
-<link rel="stylesheet" type="text/css" href="css/metro.min.css" />
-<link rel="stylesheet" type="text/css" href="css/metro-icons.min.css" />
-<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css" />
-<link rel="stylesheet" type="text/css" href="css/bhsul.css" />
-<script type='text/javascript' src="js/angular-1.5.8.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/metro.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-icons.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/bhsul.css" />
+<script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('TabelaLinks', []);
 	app.controller('linksCtrl',  function($scope, $http) {
@@ -30,7 +30,7 @@
 <title>Página de Atalhos</title>
 </head>
 <body ng-app="TabelaLinks" ng-controller="linksCtrl">
-	<div ng-include="'widgets/navbar.html'"></div>
+	<div ng-include="'/widgets/navbar.html'"></div>
 	<div class="page-content">
 		<div ng-repeat="x in dados">
 			<h4>{{x.categoria}}</h4>

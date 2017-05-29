@@ -27,7 +27,7 @@
 			"tipo": 2
 		}, {
 			"nome": "Despacho Genérico´",
-			"link": "docs/forms/desp_generico.odt",
+			"link": "docs/forms/desp_generico.ott",
 			"tipo": 1
 		}, {
 			"nome": "Guia da Previdência Social (GPS)",
@@ -41,20 +41,16 @@
 	}, {
 		"categoria": "Atualização Cadastral",
 		"itens": [{
-			"nome": "Despacho para Validação do Facultativo de Baixa Renda",
-			"link": "docs/forms/desp_fbr.odt",
-			"tipo": 1
-		}, {
 			"nome": "Modelo Portaria",
 			"link": "docs/forms/modelo_portaria.odt",
 			"tipo": 1
 		}, {
 			"nome": "Requerimento de Atualização Cadastral",
-			"link": "docs/forms/req_cnis_acerto.odt",
+			"link": "docs/forms/req_cnis_acerto.ott",
 			"tipo": 1
 		}, {
 			"nome": "Requerimento de Cálculo de Contribuições em Atraso",
-			"link": "docs/forms/req_contrib_atras.odt",
+			"link": "docs/forms/req_contrib_atras.ott",
 			"tipo": 1
 		}]
 	}, {
@@ -92,7 +88,7 @@
 			"tipo": 2
 		}, {
 			"nome": "Declaração de Inexistência de Dependentes Preferenciais",
-			"link": "docs/forms/dec_inexist_depen.odt",
+			"link": "docs/forms/dec_inexist_depen.ott",
 			"tipo": 1
 		}, {
 			"nome": "Declaração de Tempo de Contribuição",
@@ -106,20 +102,16 @@
 			"nome": "Perfil Profissiográfico Previdenciário (PPP)",
 			"link": "docs/forms/ppp.pdf",
 			"tipo": 2
-		}, {
-			"nome": "Requerimento de Justificação Administrativa",
-			"link": "docs/forms/ja_requerimento.odt",
-			"tipo": 2
 		}]
 	}, {
-		"categoria": "Manutenção de Benefícios",
+		"categoria": "Manutenção de Benefício",
 		"itens": [{
 			"nome": "Autorização para Depósito em Conta Bancária",
-			"link": "docs/forms/autorizacao_dcc.odt",
+			"link": "docs/forms/autorizacao_dcc.ott",
 			"tipo": 1
 		}, {
 			"nome": "Calendário para Pagamento de Benefícios em 2017",
-			"link": "docs/outroa/tabelapag2017.pdf",
+			"link": "docs/outros/tabelapag2017.pdf",
 			"tipo": 2
 		}, {
 			"nome": "Carta de Resultado da Solicitação de Majoração de 25% da Renda",
@@ -143,11 +135,11 @@
 			"tipo": 2
 		}, {
 			"nome": "Requerimento Genérico para Atualização de Benefício",
-			"link": "docs/forms/req_ben_diversos.odt",
+			"link": "docs/forms/req_ben_diversos.ott",
 			"tipo": 1
 		}, {
 			"nome": "Termo de Responsabilidade para Representante Legal",
-			"link": "docs/forms/termo_respons_rl.odt",
+			"link": "docs/forms/termo_respons_rl.ott",
 			"tipo": 1
 		}]
 	}, {
@@ -158,11 +150,11 @@
 			"tipo": 1
 		}, {
 			"nome": "Comunicado de Decisão da Cessação de BI Judicial",
-			"link": "docs/forms/carta_rmbj_cessacao.odt",
+			"link": "docs/forms/carta_rmbj_cessacao.ott",
 			"tipo": 1
 		}, {
 			"nome": "Laudo para Isenção de IR",
-			"link": "docs/forms/med_laudoir.odt",
+			"link": "docs/forms/med_laudoir.ott",
 			"tipo": 1
 		}, {
 			"nome": "Requerimento de Perícia em Trânsito",
@@ -170,7 +162,7 @@
 			"tipo": 2
 		}, {
 			"nome": "SIMA",
-			"link": "docs/forms/sima.odt",
+			"link": "docs/forms/sima.ott",
 			"tipo": 1
 		}]
 	}, {
@@ -181,11 +173,11 @@
 			"tipo": 2
 		}, {
 			"nome": "Requerimento de Revisão de Benefício",
-			"link": "docs/forms/req_ben_revisao.odt",
+			"link": "docs/forms/req_ben_revisao.ott",
 			"tipo": 1
 		}, {
 			"nome": "Requerimento de Revisão de CTC",
-			"link": "docs/forms/req_ctc_revisao.odt",
+			"link": "docs/forms/req_ctc_revisao.ott",
 			"tipo": 1
 		}, {
 			"nome": "Revisão: Indeferimento da solicitação de não incidência do fator previdenciário",
@@ -195,6 +187,13 @@
 			"nome": "Revisão: Indeferimento para benefícios decadentes",
 			"link": "docs/forms/carta_res_decadente.odt",
 			"tipo": 1
+		}]
+	}, {
+		"categoria": "Justificação Administrativa",
+		"itens": [{		
+			"nome": "Requerimento de Justificação Administrativa",
+			"link": "docs/forms/ja_requerimento.pdf",
+			"tipo": 2
 		}]
 	}]
 }

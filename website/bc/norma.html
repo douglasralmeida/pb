@@ -13,7 +13,7 @@
 <script type='text/javascript' src="js/geturl.js"></script>
 <script type="text/javascript">
 	var app = angular.module('NormaBC', ['ngSanitize']);
-	var norma = getUrlParameter('id');
+		var norma = getUrlParameter('id');
 	var normahtml = '(branco)';
 	app.controller('PageCtrl', function($scope, $http) {
 		$scope.templates =

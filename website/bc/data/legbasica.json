@@ -5,7 +5,7 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Decreto 3.048",
-			"data": "dec3048",
+			"data": "http://www.planalto.gov.br/ccivil_03/decreto/d3048compilado.htm",
 			"tipo": "norma"
 		}]
 	}]

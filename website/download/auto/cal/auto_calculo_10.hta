@@ -117,7 +117,11 @@
   {
     "mes": "01/01/2016",
     "valor": 880.00
-  }
+  },
+  {
+    "mes": "01/01/2017",
+    "valor": 937.00
+  }  
 ];
 
 	var nitvalido = false;
@@ -193,6 +197,7 @@
 	
 	function GerarValores(periodo, tipoSal, valor, quant) {
 		var resultado = [];
+		var i;
 		
 		if (tipoSal == 1) {
 			for (i = 0; i < quant; i++) {
@@ -268,41 +273,91 @@
 		return 0.00;
 	}
 	
-	function ProcessarTarefa(Dados) {
-		var wb = new ActiveXObject("InternetExplorer.Application");
-		wb.Visible = true;
+	function ProcessarCalculo(Dados, wb, j) {
+	  var i;
+	  
+	  wb.Document.getElementsByName("opcoesCalcContribuicoesCI:categoria")[0].value = Dados.Tipo;
+	  wb.Document.getElementsByName("opcoesCalcContribuicoesCI:nome")[0].value = Dados.Nit;
+	  wb.Document.getElementsByName("opcoesCalcContribuicoesCI:botaoConfirmar")[0].click();
+	  while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+	  }
+	  wb.Document.getElementsByName("formDadosCadastraisCalcContribuicoesCI:btnBotaoConfirmar")[0].click();
+	  while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+	  }
+	  
+      for (i = 0; i < 12; i++) {
+	    wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputCompetencia")[0].value = Dados.Periodo[i+j];
+	    wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputValorContribuicao")[0].value = Dados.Valores[i+j];		
+	  }	  
+	}
+	
+	function ProcessarTarefa(Dados) {		
 		var i;
 		var quant;
-
-		wb.Navigate("http://w3b2.prevnet/PortalSalIntranet/faces/pages/calcContribuicoesCI/filiadosApos/selecionarOpcoesCalculoApos.xhtml");
-		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
-			
-		}
-		if (wb.Document.URL.substring(0, 6) == "res://")
-		{
-			alert("Ocoreu algum erro ao abrir a página de cálculo.");
-			return;
-		}
-		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:categoria")[0].value = Dados.Tipo;
-		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:nome")[0].value = Dados.Nit;
+		var janelas;
 		
-		wb.Document.getElementsByName("opcoesCalcContribuicoesCI:botaoConfirmar")[0].click();
-		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
-			
-		}
-		
-		wb.Document.getElementsByName("formDadosCadastraisCalcContribuicoesCI:btnBotaoConfirmar")[0].click();
-		while ((wb.ReadyState != 4) || (wb.Busy == true)) {
-			
-		}
-
 		quant = Dados.Periodo.length;
-		for (i = 0; i < quant; i++) {
-			wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputCompetencia")[0].value = Dados.Periodo[i];
-			wb.Document.getElementsByName("informarSalariosContribuicaoDomestico:gridSelectSalarios:"+i+":inputValorContribuicao")[0].value = Dados.Valores[i];		
+		janelas = (quant - 1) / 12 + 1;
+		
+		for (i = 0; i < janelas; i++) {
+		  var wb = new ActiveXObject("InternetExplorer.Application");
+		  wb.Visible = true;
+		  wb.Navigate("http://w3b2.prevnet/PortalSalIntranet/faces/pages/calcContribuicoesCI/filiadosApos/selecionarOpcoesCalculoApos.xhtml");  
+		  while ((wb.ReadyState != 4) || (wb.Busy == true)) {
+			
+		  }
+		  if (wb.Document.URL.substring(0, 6) == "res://") {
+			alert("Ocoreu algum erro ao abrir a página de cálculo do SALWEB.");
+			return;
+		  }
+		  ProcessarCalcular(Dados, wb, i);
 		}
 	}
 
+	function ValidarDatas(tipo, datainicio, datafim) {
+	  var anoinicio;
+	  var mesinicio;
+	  var anofim;
+	  var mesfim;
+	  var data;
+	
+	  if (datainicio == "0" || datafim == "0") {
+	    document.getElementById('errodata').innerHTML = "Competências estão num formato irreconhecível.";
+	    return false;
+      }
+	  data = new Date();
+	  anoinicio = datainicio.substring(0, 4);
+	  mesinicio = datainicio.substring(5, 7);
+	  anofim = datafim.substring(0, 4);
+	  mesfim = datafim.substring(5, 7);
+	  
+	  //CI ou Facultativo
+	  if (tipo == 0 || tipo == 2) {
+		if (anoinicio < (data.getFullYear() - 6)) {
+		  document.getElementById('errodata').innerHTML = "Período prescrito.";
+	      return false;
+		}
+		if (anoinicio == data.getFullYear - 6 && mesinicio < 12) {
+		  document.getElementById('errodata').innerHTML = "Período prescrito.";
+	      return false;
+		}		
+	  }
+	  //Domestica
+	  if (tipo == 1) {
+	    if (anofim > 2016) {		
+		  document.getElementById('errodata').innerHTML = "Período do eSocial.";
+	      return false;
+		}
+		if (anofim == 2015 && mesfim > 08) {
+		  document.getElementById('errodata').innerHTML = "Período do eSocial.";
+	      return false;
+		}
+	  }
+	  return true;
+	}
+	
 	function ExecutarCalculo(){
 		var Dados = {
 					Periodo: "", 
@@ -315,27 +370,38 @@
 		var dataconvertida2;
 		var quant;
 		
+		if (!ChecarNIT(Dados.Nit))
+		  return false;
+		  
+		if (document.getElementById('valor').value.length == 0) {
+		  alert("Preenche o campo Quantidade/Valor.");
+		  return false;
+		}
+		
 		if (radioSalario[0].checked)
-			Dados.Calculo = 0
+		  Dados.Calculo = 0 //CI
 		else if (radioSalario[1].checked)
-			Dados.Calculo = 1;		
+		  Dados.Calculo = 1; //Domestica
+		else if (radioSalario[2].checked)
+		  Dados.Calculo = 2; //Facultativo
 		
 		dataconvertida1 = InverterData(document.getElementById('datainicio').value);
-		dataconvertida2 = InverterData(document.getElementById('datafinal').value);		
+		dataconvertida2 = InverterData(document.getElementById('datafinal').value);
 		//Checar validade das datas
-		if (dataconvertida1 == "0" || dataconvertida2 == "0")
-		{
-			document.getElementById('errodata').innerHTML = "Competências estão num formato irreconhecível.";
-			exit;
-		}
+		if (!ValidarDatas(Dados.Calculo, dataconvertida1, dataconvertida2))
+		  return;
+		
 		Dados.Periodo = GerarDatas(dataconvertida1 + "/01", dataconvertida2 + "/01");
 		quant = Dados.Periodo.length;
-		document.getElementById('errodata').innerHTML = "";
-		if (ChecarNIT(Dados.Nit)) {
-			Dados.Nit = FormatarNIT(Dados.Nit);
-			Dados.Valores = GerarValores(Dados.Periodo, Dados.Calculo, document.getElementById('valor').value, quant);
-			ProcessarTarefa(Dados);
-			close();
+		if (quant == 0) {
+		  document.getElementById('errodata').innerHTML = "Sem competências para calcular.";
+	      return;
+		 } else {
+	  	  document.getElementById('errodata').innerHTML = "";
+		  Dados.Nit = FormatarNIT(Dados.Nit);
+		  Dados.Valores = GerarValores(Dados.Periodo, Dados.Calculo, document.getElementById('valor').value, quant);
+		  ProcessarTarefa(Dados);
+		  close();
 		}
 	}
 	
@@ -463,7 +529,8 @@ input[type=radio] {
 <body scroll="no">
 <img style="display: block; float: left;" width="48" height="48" src="data:image/png;base64,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">
 <h2>Cálculo de Contribuições</h2>
-<p>Este aplicativo irá automatizar a geração da planilha para cálculo de contribuições em atraso.<br>Inicialmente, ele suporta apenas 12 contribuições por vez.</p>
+<p>Versão 1.0.0 - <a href="http://10.32.97.160/">Página inicial</a></p>
+<p>Este aplicativo irá automatizar a geração da planilha para cálculo de contribuições em atraso.</p>
 <p id="resultado"></p>
 <p>
 <div class="form-group">
@@ -476,8 +543,8 @@ input[type=radio] {
 	<input type="radio" name="radioContrib" id="tipocont" value="FACULTATIVO">Facultativo
 </div>
 <div class="form-group">
-	Competência inicial: <input type="text" name="datainicio" maxlength="7"><br>
-	Competência final: <input type="text" name="datafinal" maxlength="7"><div id="errodata"></div>
+	Competência inicial: <input type="text" id="datainicio" maxlength="7"><br>
+	Competência final: <input type="text" id="datafinal" maxlength="7"><div id="errodata"></div>
 </div>
 <div class="form-group">
 	Salário de contribuição:
