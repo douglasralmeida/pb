@@ -8,16 +8,25 @@
 <link rel="stylesheet" type="text/css" href="/css/bhsul.css" />
 <script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
 <title>BH Sul Labs</title>
+<style type="text/css">
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+</style>
 </head>
 <body ng-app="">
 <div ng-include="'/widgets/navbar.html'"></div>
+<div class="container page-content">
 <h2>BH Sul Labs</h2>
-<p>Os recursos disponíveis nesta página estão em fase experimental e podem não se transformar em produto final. Use-os por sua conta e risco.</p>
+<img title="Foto do laboratório de computadores" alt="Foto do laboratório de computadores" src="/img/labs.jpg">
+<p>A página Labs contém pesquisas, testes e recursos que estão em fase experimental e, talvez, sequer devem se transformar em produto final. Experimente-os por sua conta e risco.</p>
 <h3>Projetos</h3>
 <h4>Automatizadores de tarefas</h4>
 <p>Scripts que automatizam tarefas repetitivas. Requer Internet Explorer 11.</p>
-<p><a href="/download/auto/auto_calculo_10.hta">Cálculo de GPS</a>: Automatiza o cálculo de GPS em atraso com várias competências de valores iguais.</p>
-<p>Cálculo de Diferenças: Automatiza o cálculo de diferença de contribuições devidas em certos cenários.</p>
+<p><a href="/download/auto/cal/auto_calculo_10.hta"><span class="mif-arrow-right"></span>Cálculo de GPS</a>: Automatiza o cálculo de GPS em atraso com várias competências de valores iguais.</p>
+<p><a href="/download/auto/dif/auto_diferenca_10.hta"><span class="mif-arrow-right"></span>Cálculo de Diferenças (Protótipo)</a>: Automatiza o cálculo de diferença de contribuições devidas em certos cenários.</p>
 <h4>Comunicador da BH Sul</h4>
 <p>Aplicativo para comunicação interna da APS. Uso exclusivo da APS BH Sul.</p>
 <p>Roadmap:</p>
@@ -32,5 +41,8 @@
 <p>Usuários do Portal da BH Sul poderão enviar suas opniões, críticas e sugestões para a equipe de desenvolvimento da página.</p>
 <p><a href="/comentarios.html">Página experimental para envio de comentários</a></p>
 <p><a href="/app/feedback/">Página experimental para gestão de comentários</a></p>
+<h4>Páginas do Portal</h4>
+<p><a href="/download.html">Downloads</a>. Página com aplicativos para uso diário.</p>
+</div>
 </body>
 </html>
