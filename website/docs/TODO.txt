@@ -1,7 +1,7 @@
 Faltam:
 
-[ ] Carta de exigencia BPC/ACP
 [ ] Carta de Resultado da Sol. Majoração 25%
 [ ] Declaração de Comparecimento
+[ ] Ofício sobre saque PIS/PASEP/FGTS
 [ ] Oficio para Banco para quitação de GPS em CC
 [ ] Revisão: Carta de Indeferimento para ben. decadentes

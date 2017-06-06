@@ -83,6 +83,10 @@
 			"link": "docs/forms/ctc_relaccontrib.odt",
 			"tipo": 1
 		}, {
+			"nome": "Declaração da CI com contribuições após o fato gerador para Salário Maternidade",
+			"link": "docs/forms/dec_salmat_ciaposfato.ott",
+			"tipo": 1
+		}, {
 			"nome": "Declaração da Desempregada para Salário Maternidade",
 			"link": "docs/forms/dec_salmat_desemp.pdf",
 			"tipo": 2
@@ -116,6 +120,10 @@
 		}, {
 			"nome": "Carta de Resultado da Solicitação de Majoração de 25% da Renda",
 			"link": "docs/forms/carta_resultado_majo25p.odt",
+			"tipo": 1
+		}, {
+			"nome": "Ofício à Caixa ou Banco do Brasil solicitando info. sobre saque de PIS/PASEP/FGTS",
+			"link": "docs/forms/oficio_cancelaaposenta.odt",
 			"tipo": 1
 		}, {
 			"nome": "Ofício ao Banco para Quitação de GPS em Conta Corrente",
@@ -163,6 +171,13 @@
 		}, {
 			"nome": "SIMA",
 			"link": "docs/forms/sima.ott",
+			"tipo": 1
+		}]
+	}, {
+		"categoria": "Serviço Social",
+		"itens": [{
+			"nome": "Parecer Social",
+			"link": "docs/forms/soc_parecer.ott",
 			"tipo": 1
 		}]
 	}, {
