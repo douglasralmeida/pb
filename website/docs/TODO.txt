@@ -1,7 +1,11 @@
 Faltam:
 
 [ ] Carta de Resultado da Sol. Majoração 25%
+[ ] Oficio para Banco para quitação de GPS em CC
+
+Adiconar caixa de diálogo:
 [ ] Declaração de Comparecimento
 [ ] Ofício sobre saque PIS/PASEP/FGTS
-[ ] Oficio para Banco para quitação de GPS em CC
-[ ] Revisão: Carta de Indeferimento para ben. decadentes
+
+Adicionar validadores na caixa de diálogo:
+[X] Revisão: Carta de Indeferimento para ben. decadentes

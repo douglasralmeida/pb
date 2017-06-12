@@ -28,6 +28,9 @@
 			"nome": "PDR",
 			"atalho": "http://www-pdr/"
 		}, {
+			"nome": "SAPD",
+			"atalho": "http://www-sapd/"	
+		}, {
 			"nome": "SIPPS",
 			"atalho": "http://www-sipps/"
 		}]
