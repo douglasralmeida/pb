@@ -1,6 +1,5 @@
 Faltam:
 
-[ ] Carta de Resultado da Sol. Majoração 25%
 [ ] Oficio para Banco para quitação de GPS em CC
 
 Adiconar caixa de diálogo:
@@ -9,3 +8,4 @@ Adiconar caixa de diálogo:
 
 Adicionar validadores na caixa de diálogo:
 [X] Revisão: Carta de Indeferimento para ben. decadentes
+[X] Carta de Resultado da Sol. Majoração 25%

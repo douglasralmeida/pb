@@ -119,11 +119,11 @@
 			"tipo": 2
 		}, {
 			"nome": "Carta de Resultado da Solicitação de Majoração de 25% da Renda",
-			"link": "docs/forms/carta_resultado_majo25p.odt",
+			"link": "docs/forms/carta_res_majo25p.odt",
 			"tipo": 1
 		}, {
 			"nome": "Ofício à Caixa ou Banco do Brasil solicitando info. sobre saque de PIS/PASEP/FGTS",
-			"link": "docs/forms/oficio_cancelaaposenta.odt",
+			"link": "docs/forms/oficio_cancelaaposenta.ott",
 			"tipo": 1
 		}, {
 			"nome": "Ofício ao Banco para Quitação de GPS em Conta Corrente",
