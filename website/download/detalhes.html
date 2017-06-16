@@ -84,7 +84,7 @@
 <div class="container page-content">
 	<h3 ng-bind="data.nome"></h3>	
 	<div class="quadrocinza">
-		<a href="/download/itens/{{data.id}}/{{w.nome}}" ng-bind="nomeBaixar(w.plataforma, $length)" ng-repeat="w in data.arquivos"></a>
+		<a href="/download/arquivos/{{w.nome}}" ng-bind="nomeBaixar(w.plataforma, $length)" ng-repeat="w in data.arquivos"></a>
 	</div>
 	<h4 ng-bind="data.descricao"></h4>
 	<div class="grid">
