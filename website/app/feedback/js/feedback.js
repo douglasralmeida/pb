@@ -3,8 +3,6 @@
  * Douglas Rodrigues de Almeida
  * douglasralmeida@live.com
  */
- 
-
 
 var app = angular.module('GestaoFeedbackApp', []);
  
