@@ -1,7 +1,9 @@
 /*!
- * Obtem os parametros da URL - requer JQuery
+ * Obtem os parametros da URL
  * Douglas Rodrigues de Almeida
  * douglasralmeida@live.com
+ *
+ * requer jQuery
  */
 
 var getUrlParameter = function getUrlParameter(sParam) {

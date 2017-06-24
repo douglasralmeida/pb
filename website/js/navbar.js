@@ -2,6 +2,8 @@
  * Barra de Navegacao do Portal da BHSul
  * Douglas Rodrigues de Almeida
  * douglasralmeida@live.com
+ * 
+ * Requer jQuery
  */
 
 jQuery(document).ready(function($){
