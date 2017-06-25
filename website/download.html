@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<link rel="stylesheet" type="text/css" href="/css/pagdownload.css" />
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('TabelaDownloads', []);
@@ -19,7 +18,7 @@
 <body ng-app="TabelaDownloads" ng-controller="downloadsCtrl">
 <div ng-app="" ng-include="'widgets/navbar.html'"></div>
 <h3 style="text-align: center;">Categorias de Download</h3>
-<div class="tabela-categorias">
+<div class="tab-download-categorias">
   <span>
   <a ng-repeat="x in categorias" href="download/lista.html?cat={{x.id-1}}">
     <img src="img/{{x.icone}}"/>

@@ -12,10 +12,32 @@
     padding-top: 48px;
 }
 
-.volta-ao-topo {
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: block;
+.tab-download-categorias {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 10px;	
+}
+
+.tab-download-categorias span {
+	display: table-row;
+}
+
+.tab-download-categorias span a {
+    display: table-cell;
+	border: 2px solid #ffffff;
+	height: 170px;
+	padding: 18px 0 18px 0;
+    width: 16.6%;
+	text-align: center;
+}
+
+.tab-download-categorias span a:hover {
+    border: 2px solid rgba(0,0,0,.2);
+}
+
+.tab-download-categorias span a img {
+	display: block;
+	margin: auto;
+	height: 64px; 
+	width: 64px;
 }
