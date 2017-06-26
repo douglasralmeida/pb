@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="PesquisaBC" ng-controller="PageCtrl">
+<head>
+<meta charset="UTF-8" />
+<base href="/">
+<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+<script type='text/javascript' src="/js/geturl.js"></script>
+<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('PesquisaBC', []);
+	var param = getUrlParameter('consulta');
+	app.controller('PageCtrl',  function($scope, $http) {
+		$scope.consulta = param;
+		$scope.quant = 0;
+	});
+</script>
+<title>Resultado da Pesquisa no Banco de Conhecimentos</title>
+</head>
+<body>
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="page-content">
+	<div class="container-pesquisa">	
+		<form class="form-pesquisa">
+			<input class="texto-pesquisa" placeholder="Procure ajuda" autocomplete="off"/>
+		</form>
+	</div>
+	<div class="container">
+	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>". <span ng-bind="quant"></span> resultados encontrados.</p>
+	<div class="lista-pesquisa">
+		<div class="pesquisa-item">
+			<div class="pesquisa-item-titulo">Título do Item</div>
+			<div class="pesquisa-item-endereco">http://www.link.com/teste</div>
+			<div class="pesquisa-item-descricao">Uma descrição detalhada do item encontrado na pesquisa.</div>
+		</div>
+		<div class="pesquisa-item">
+			<div class="pesquisa-item-titulo">Título do Outro Item</div>
+			<div class="pesquisa-item-endereco">http://www.outrolink.com/teste</div>
+			<div class="pesquisa-item-descricao">Outra descrição detalhada do outro item encontrado na pesquisa.</div>
+		</div>		
+	</div>	
+</div></div>
+</body>
+</html>

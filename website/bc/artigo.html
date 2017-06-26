@@ -2,22 +2,45 @@
 <html ng-app="ArtigoBC" ng-controller="PageCtrl">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <base href="/">
 <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.5.8.min.js"></script>
-<script type='text/javascript' src="/js/angular-sanitize-1.5.8.min.js"></script>
 <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+<script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
+<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 <script type='text/javascript' src="/js/geturl.js"></script>
 <script type="text/javascript">
 	var app = angular.module('ArtigoBC', ['ngSanitize']);
 	var param = getUrlParameter('id');
-	app.controller('PageCtrl', function($scope, $http) {
-		$http.get("bc/data/" + param + ".json").then(function(response) {
-		$scope.titulo = response.data.titulo;
-		$scope.dados = response.data.categorias;});
+	app.controller('PageCtrl', function($scope, $http, $location) {		
+		$http.get("/bc/artigos/" + param + ".html").then(function(response) {
+			$scope.bcid = param;
+			$scope.arquivohtml = response.data;
+			$scope.secoes = [];
+			$scope.manipularHtml($scope.arquivohtml);
+		});
+
+		$scope.manipularHtml = function (htmldata) {			
+				var parser = new DOMParser();
+				var data = parser.parseFromString(htmldata, "text/html");
+				var h3elems = [];
+
+				$scope.titulo = data.querySelector('meta[name="DC.Title"]').getAttribute("content");
+				$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
+				$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
+				$scope.aplicase = data.querySelector('meta[name="aplicase"]').getAttribute("content");
+				$scope.rev = data.querySelector('meta[name="revisao"]').getAttribute("content");
+				$scope.paginaurl = $location.absUrl();
+				$scope.categoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
+				h3elems = data.querySelectorAll('h3');
+				for (var i = 0; i < h3elems.length; i++) {
+					$scope.secoes.push(h3elems[i].innerHTML);
+				}
+			};
 	});
 </script>
 <style type="text/css">
@@ -34,15 +57,52 @@
 </head>	
 <body>
 <div ng-include="'/widgets/navbar.html'"></div>
-<div class="container page-content">
-	<h2 ng-bind="titulo"></h2>
-	<div style="margin: 10px 0">
-		<a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a>
-	</div>
-	<div ng-repeat="x in dados">
-		<h3>{{x.titulo}}</h3>
-		<div ng-bind-html="x.texto"></div>
-	</div>
+<div class="enquete">
+	<button class="button primary" id="enquete-botao" onclick="metroDialog.toggle('#dialogo-enquete')">Feedback</button>
 </div>
+<div data-role="dialog" id="dialogo-enquete" class="padding20" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+	<h2>Enviar seus comentários</h2>
+    <p>Que tipo de comentário é esse?</p>
+	<div class="input-control textarea full-size ng-binding">
+      <textarea name="detalhes" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="128" placeholder="Digite aqui seu comentário."></textarea>
+	  <br>0/128
+    </div>
+	<div style="height: 30px;"></div>
+	<button class="button js-dialog-close" style="position: absolute; bottom: 8px; right: 16px;">Cancelar</button>
+    <span class="dialog-close-button"></span>
+</div>
+<div class="container page-content">
+<ul class="breadcrumbs">
+	<li><a href="/bc/index.html?tipo={{categoria}}">Aposentadorias</a></li>
+	<li><a href="" ng-bind="titulo"></a></li>
+</ul>
+<div class="flex-grid">
+<div class="row">
+	<main class="cell colspan10">
+		<div ng-bind="titulo" class="artigobc-titulo"></div>
+		<div ng-bind-html="arquivohtml" class="artigobc-conteudo"></div>
+		<div class="artigobc-conteudo">
+			<section>
+				<h3>Propriedades</h3>
+				<p>ID do artigo: <span ng-bind="id"></span></p>
+				<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - hh:mm'"></span></p>
+				<p>Revisão: <span ng-bind="rev"></span></p>
+				<p>A informação contida neste artigo aplica-se a: <span ng-bind="aplicase"></span></p>
+			</section>
+		</div>
+	</main>
+	<div class="cell colspan4">
+		<ul class="artigobc-listaacoes">
+			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
+			<li><a href="mailto:?Artigo do banco de conhecimentos&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
+		</ul>
+		<nav class="artigo-navegador" style="display: block;">
+			<h4 style="display: block;">Neste artigo</h4>
+			<ol>
+				<li ng-repeat="x in secoes"><a href="/bc/artigo.html?id={{bcid}}#ancora{{$index}}" ng-bind="x"></a></li>
+			</ol>
+		</nav>
+	</div>
+</div></div></div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 	"titulo": "Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows",
 	"id": 41,
 	"ultimaatualizacao": "29/05/2017 - 10:00",
-	"revisao": "1.1",
+	"revisao": "2",
 	"categorias": [{
 		"titulo": "Introdução",
 		"texto": "<p>Este artigo descreve como determinar manualmente se um computador está usando a versão de 32 bits ou de 64 bits do sistema operacional Windows. Geralmente, a contagem de bits de um computador indica quantos dados ele pode processar, a velocidade com a qual ele processa os dados e a capacidade máxima da memória. Durante a instalação de um aplicativo, é recomendável usar a versão apropriada para o sistema operacional correspondente em bits.</p>"

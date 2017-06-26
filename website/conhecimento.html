@@ -46,7 +46,15 @@
 <body ng-app="">
 <div ng-include="'/widgets/navbar.html'"></div>
 <div class="page-content">
-<h3 style="text-align: center;">Eu preciso de ajuda com...</h3>
+<div class="container-pesquisa">
+	<h2>Como podemos te ajudar?</h2>
+	<form class="form-pesquisa">
+		<input class="texto-pesquisa" placeholder="Procure ajuda" autocomplete="off"/>
+	</form>
+</div>
+<div class="container-titulo">
+	<h3 style="text-align: center;">Em qual área você precisa de ajuda?</h3>
+</div>
 <div class="tabela-conhecimento">
 	<span>
 		<a href="bc/index.html?tipo=aposentadoria">
@@ -54,7 +62,7 @@
 			<p>Aposentadorias</p>
 		</a>
 		<a href="bc/index.html?tipo=pensao">
-			<img src="bc/img/bc_pensaoreclusao.svg"/ >
+			<img src="bc/img/bc_pensaoreclusao.svg" />
 			<p>Auxílio Reclusão e Pensão por Morte</p>
 		</a>
 		<a href="bc/index.html?tipo=bi">
@@ -73,8 +81,8 @@
 			<img src="bc/img/bc_terminal.svg" />
 			<p>Prisma e SUB</p>
 		</a>
-		</span>
-		<span>
+	</span>
+	<span>
 		<a href="bc/index.html?tipo=salmat">
 			<img src="bc/img/bc_salmatern.svg"/>
 			<p>Salário Maternidade</p>
@@ -83,7 +91,15 @@
 			<img src="bc/img/bc_windows.svg"/>
 			<p>Aplicativos e Windows</p>
 		</a>
-		</span>
+		<a href="bc/index.html?tipo=cnis">
+			<img src="bc/img/bc_cnis.svg"/>
+			<p>CNIS</p>
+		</a>
+		<a href="bc/index.html?tipo=sibe">
+			<img src="bc/img/bc_sibe.svg"/>
+			<p>SIBE</p>
+		</a>
+	</span>
 </div>
 </div>
 </body>

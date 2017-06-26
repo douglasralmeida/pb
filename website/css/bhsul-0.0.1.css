@@ -8,8 +8,97 @@
     text-shadow: none;
 }
 
+.artigobc-titulo {	
+	font:500 1.875rem/1.1 "Segoe UI","Open Sans",sans-serif,serif;
+	margin: 0 0 32px;	
+}
+
+.artigobc-conteudo section h3 {
+	border-bottom: 1px solid rgba(0,0,0,.3);
+	font:500 1.125rem/1.1 "Segoe UI","Open Sans",sans-serif,serif;
+    padding-bottom: 8px;
+}
+
+.artigobc-conteudo section p {
+	text-align: justify;
+	line-height: 160%;
+}
+
+.artigobc-listaacoes {
+	list-style: none;
+	padding: 0;
+}
+
+.artigobc-listaacoes a span {
+	padding: 0 6px 4px 0;
+}
+
 .page-content {
     padding-top: 48px;
+}
+
+.container-pesquisa {
+	background-color: #0078d7;
+	color: #ffffff;
+	padding-bottom: 24px;
+	padding-top: 24px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.enquete {	
+	top: 70%;
+	transform: rotate(270deg);
+	position: fixed;
+	right: 37.5px;
+	z-index: 400;
+}
+
+.enquete button {
+	position: absolute;
+	width: 120px;
+}
+
+.pesquisa-item {
+	margin-bottom: 39px;
+}
+
+.pesquisa-item-titulo {
+	color: rgb(0, 108, 216);
+	cursor: pointer;
+	font-size: 0.93rem;
+}
+
+.pesquisa-item-titulo:hover {
+	color: #666;
+}
+
+.pesquisa-item-endereco {
+	color: #107c10;
+	font-size: 0.93rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pesquisa-item-descricao {
+	font-size: 0.93rem;
+}
+
+.pesquisa-resultados-descricao {
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 0.81rem;
+	margin-bottom: 24px;
+}
+
+.texto-pesquisa {
+	background: rgba(255, 255, 255, 0.8);
+	border: none;
+    border-radius: 0;
+	box-sizing: border-box;
+	height: 40px;
+	max-width: 796px;
+	padding: 9px 24px 11px 12px;
+	width: 100%;
 }
 
 .tab-download-categorias {
@@ -39,5 +128,5 @@
 	display: block;
 	margin: auto;
 	height: 64px; 
-	width: 64px;
+	width: 64px;	
 }
