@@ -48,8 +48,13 @@
 <div class="page-content">
 <div class="container-pesquisa">
 	<h2>Como podemos te ajudar?</h2>
-	<form class="form-pesquisa">
-		<input class="texto-pesquisa" placeholder="Procure ajuda" autocomplete="off"/>
+	<form class="form-pesquisa" action="/bc/pesquisa.html" method="get">
+		<div class="input-control text" data-role="input" style = "width: 800px;">
+			<input class="texto-pesquisa" name="consulta" placeholder="Procure ajuda" autocomplete="off"/>
+			<button class="button" style="background-color:#007daa; border-color:#007daa; color: #ffffff;" onclick="/bc/pesquisa.html">
+				<span class="mif-search mif-lg"></span>
+			</button>
+		</div>
 	</form>
 </div>
 <div class="container-titulo">
@@ -57,6 +62,10 @@
 </div>
 <div class="tabela-conhecimento">
 	<span>
+		<a href="bc/index.html?tipo=windows">
+			<img src="bc/img/bc_windows.svg"/>
+			<p>Aplicativos e Windows</p>
+		</a>
 		<a href="bc/index.html?tipo=aposentadoria">
 			<img src="bc/img/bc_aposentadoria.svg"/>
 			<p>Aposentadorias</p>
@@ -69,36 +78,32 @@
 			<img src="bc/img/bc_pericia.svg"/>
 			<p>Benefícios por Incapacidade e SABI</p>
 		</a>
-		<a href="bc/normas.html">
-			<img src="bc/img/bc_legisla.svg"/>
-			<p>Legislação Básica</p>
-		</a>
-		<a href="bc/index.html?tipo=financ">
-			<img src="bc/img/bc_dinheiro.svg" />
-			<p>Tabelas e Índices Financeiros</p>
-		</a>
-		<a href="bc/index.html?tipo=prismasub">
-			<img src="bc/img/bc_terminal.svg" />
-			<p>Prisma e SUB</p>
-		</a>
-	</span>
-	<span>
-		<a href="bc/index.html?tipo=salmat">
-			<img src="bc/img/bc_salmatern.svg"/>
-			<p>Salário Maternidade</p>
-		</a>				
-		<a href="bc/index.html?tipo=windows">
-			<img src="bc/img/bc_windows.svg"/>
-			<p>Aplicativos e Windows</p>
-		</a>
 		<a href="bc/index.html?tipo=cnis">
 			<img src="bc/img/bc_cnis.svg"/>
 			<p>CNIS</p>
 		</a>
+	</span>
+	<span>
+		<a href="bc/normas.html">
+			<img src="bc/img/bc_legisla.svg"/>
+			<p>Legislação Básica</p>
+		</a>		
+		<a href="bc/index.html?tipo=prismasub">
+			<img src="bc/img/bc_terminal.svg" />
+			<p>Prisma e SUB</p>
+		</a>
+		<a href="bc/index.html?tipo=salmat">
+			<img src="bc/img/bc_salmatern.svg"/>
+			<p>Salário Maternidade</p>
+		</a>								
 		<a href="bc/index.html?tipo=sibe">
 			<img src="bc/img/bc_sibe.svg"/>
 			<p>SIBE</p>
 		</a>
+		<a href="bc/index.html?tipo=financ">
+			<img src="bc/img/bc_dinheiro.svg" />
+			<p>Tabelas e Índices Financeiros</p>
+		</a>		
 	</span>
 </div>
 </div>

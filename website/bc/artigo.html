@@ -21,10 +21,18 @@
 			$scope.bcid = param;
 			$scope.arquivohtml = response.data;
 			$scope.secoes = [];
-			$scope.manipularHtml($scope.arquivohtml);
+			manipularHtml($scope.arquivohtml);
 		});
 
-		$scope.manipularHtml = function (htmldata) {			
+		pesquisarCat = function(categoria) {
+			if (categoria == "aposentadoria")
+				return "Aposentadorias"
+			else if (categoria == "windows")
+				return "Apps e Windows"
+			else return "Categoria Desconhecida";
+		}
+
+		manipularHtml = function (htmldata) {			
 				var parser = new DOMParser();
 				var data = parser.parseFromString(htmldata, "text/html");
 				var h3elems = [];
@@ -36,6 +44,7 @@
 				$scope.rev = data.querySelector('meta[name="revisao"]').getAttribute("content");
 				$scope.paginaurl = $location.absUrl();
 				$scope.categoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
+				$scope.categorianome = pesquisarCat($scope.categoria);
 				h3elems = data.querySelectorAll('h3');
 				for (var i = 0; i < h3elems.length; i++) {
 					$scope.secoes.push(h3elems[i].innerHTML);
@@ -73,7 +82,7 @@
 </div>
 <div class="container page-content">
 <ul class="breadcrumbs">
-	<li><a href="/bc/index.html?tipo={{categoria}}">Aposentadorias</a></li>
+	<li><a href="/bc/index.html?tipo={{categoria}}" ng-bind="categorianome"></a></li>
 	<li><a href="" ng-bind="titulo"></a></li>
 </ul>
 <div class="flex-grid">

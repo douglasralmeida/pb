@@ -14,9 +14,14 @@
 <script type="text/javascript">
 	var app = angular.module('PesquisaBC', []);
 	var param = getUrlParameter('consulta');
+
 	app.controller('PageCtrl',  function($scope, $http) {
 		$scope.consulta = param;
-		$scope.quant = 0;
+		$scope.resultados = [];
+
+		$scope.resultados.push({"titulo": "Introdução a aposentadoria", "endereco": "http://localhost/bc/artigo.html?id=bc000040", "descricao": "Este artigo descreve as aposentadorias que atualmente são previstas no Regime Geral de Previdência Social."});
+		$scope.resultados.push({"titulo": "Sobre a aposentadoria por deficiência", "endereco": "http://localhost/bc/artigo.html?id=bc000044", "descricao": "Este artigo descreve as duas novas modalidades de aposentadoria introduzidas pela Lei Complementar 142."});
+		$scope.resultados.push({"titulo": "Categorias profissionais com enquadramento em atividade especial", "endereco": "http://localhost/bc/artigo.html?id=bc000043", "descricao": "É permitido o enquadramento de atividade especial por categoria profissional para atividades exercidas até 28 de abril 1995..."});		
 	});
 </script>
 <title>Resultado da Pesquisa no Banco de Conhecimentos</title>
@@ -25,23 +30,23 @@
 <div ng-include="'widgets/navbar.html'"></div>
 <div class="page-content">
 	<div class="container-pesquisa">	
-		<form class="form-pesquisa">
-			<input class="texto-pesquisa" placeholder="Procure ajuda" autocomplete="off"/>
+		<form class="form-pesquisa" action="/bc/pesquisa.html" method="get">
+			<div class="input-control text" data-role="input" style = "width: 800px;">
+				<input class="texto-pesquisa" name="consulta" placeholder="Procure ajuda" autocomplete="off"/>
+				<button class="button" style="background-color:#007daa; border-color:#007daa; color: #ffffff;">
+					<span class="mif-search mif-lg"></span>
+				</button>
+			</div>
 		</form>
 	</div>
 	<div class="container">
-	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>". <span ng-bind="quant"></span> resultados encontrados.</p>
+	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>": <span ng-bind="resultados.length"></span> resultados encontrados.</p>
 	<div class="lista-pesquisa">
-		<div class="pesquisa-item">
-			<div class="pesquisa-item-titulo">Título do Item</div>
-			<div class="pesquisa-item-endereco">http://www.link.com/teste</div>
-			<div class="pesquisa-item-descricao">Uma descrição detalhada do item encontrado na pesquisa.</div>
+		<div class="pesquisa-item" ng-repeat="x in resultados">
+			<div class="pesquisa-item-titulo"><a ng-bind="x.titulo" href="{{x.endereco}}"></a></div>
+			<div class="pesquisa-item-endereco" ng-bind="x.endereco"></div>
+			<div class="pesquisa-item-descricao" ng-bind="x.descricao"></div>
 		</div>
-		<div class="pesquisa-item">
-			<div class="pesquisa-item-titulo">Título do Outro Item</div>
-			<div class="pesquisa-item-endereco">http://www.outrolink.com/teste</div>
-			<div class="pesquisa-item-descricao">Outra descrição detalhada do outro item encontrado na pesquisa.</div>
-		</div>		
 	</div>	
 </div></div>
 </body>

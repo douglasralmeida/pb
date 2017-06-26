@@ -101,6 +101,12 @@
 	width: 100%;
 }
 
+.texto-pesquisa::selection {
+    background-color: #007daa;
+    color: #fff;
+    text-shadow: none;
+}
+
 .tab-download-categorias {
 	display: table;
 	border-collapse: separate;
