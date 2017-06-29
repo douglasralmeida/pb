@@ -40,8 +40,8 @@
 				$scope.titulo = data.querySelector('meta[name="DC.Title"]').getAttribute("content");
 				$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
 				$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
-				$scope.aplicase = data.querySelector('meta[name="aplicase"]').getAttribute("content");
-				$scope.rev = data.querySelector('meta[name="revisao"]').getAttribute("content");
+				$scope.aplicase = data.querySelector('meta[name="KB.AplicaSe"]').getAttribute("content");
+				$scope.rev = data.querySelector('meta[name="KB.NumRevisao"]').getAttribute("content");
 				$scope.paginaurl = $location.absUrl();
 				$scope.categoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
 				$scope.categorianome = pesquisarCat($scope.categoria);
@@ -104,6 +104,7 @@
 		<ul class="artigobc-listaacoes">
 			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
 			<li><a href="mailto:?Artigo do banco de conhecimentos&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
+			<li><a href="#"><span class="mif-file-pdf"></span>Baixar como PDF</a></li>
 		</ul>
 		<nav class="artigo-navegador" style="display: block;">
 			<h4 style="display: block;">Neste artigo</h4>

@@ -24,6 +24,10 @@
 	line-height: 160%;
 }
 
+.artigobc-img {	
+	padding: 0 6px 2px 0;
+}
+
 .artigobc-listaacoes {
 	list-style: none;
 	padding: 0;
