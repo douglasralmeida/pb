@@ -5,22 +5,22 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Alíquotas de contribuição previdenciária após o Plano Real",
-			"data": "bc000046"
+			"data": "bc46"
 		}, {
 			"nome": "Feriados e pontos facultativos do ano de 2017",
-			"data": "bc000053"
+			"data": "bc53"
 		}, {
 			"nome": "Lista de CNPJ mais utilizados para emissão de CTC em Belo Horizonte",
-			"data": "bc000052"
+			"data": "bc52"
 		}, {
 			"nome": "Tabela de salários mínimos após o Plano Real",
-			"data": "bc000045"
+			"data": "bc45"
 		}, {
 			"nome": "Valores do salário-família após o Plano Real",
-			"data": "bc000050"
+			"data": "bc50"
 		}, {
 			"nome": "Valores do limite máximo de remuneração para concessão do auxílio-reclusão",
-			"data": "bc000051"
+			"data": "bc51"
 		}]
 	}]
 }

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<meta content="http://10.32.97.160/favicon.png">
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Remover edição ao vivo de um formulário">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Ao tentar abrir um formulário do Modelos de Documentos pelo navegador Internet Explorer...">
+		<meta name="DC.Modified" content="2011-01-15T01:00-03:00">
+		<meta name="DC.Identifier" content="23">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="navegador,internet explorer,web,openoffice,open office,modelo,documento">
+		<meta name="DC.IsPartOf" content="A2">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="true">
+	</head>
+	<body>
+		<article>
+			<section>
+				<h3>Sintomas</h3>
+				<p>Ao tentar abrir um formulário do Modelos de Documentos diretamente pelo navegador Internet Explorer você pode encontrar algum dos problemas descritos abaixo:</p>
+				<ul>
+					<li>Metade da área do navegador fica preenchido por um quadro branco inutilizável.</li>
+					<li>Você não consegue alterar o texto do formulário.</li>
+					<li>É necessário clicar com o botão direito do mouse numa área do texto e, em seguida, clicar na opção Editar.</li>
+					<li>O formulário não é exibido pelo navegador.</li>
+					<li>O Internet Explorer para de responder ou fecha automaticamente.</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Causas</h3>
+				<p>Os formulários OpenDocumento necessitam do Openoffice para serem editados, entranto, o Internet Explorer possui vários problemas de compatibilidade com o OpenOffice. É recomendável abrir os formulários usando uma janela separada do OpenOffice.</p>
+			</section>
+			<section>
+				<h3>Soluções</h3>
+				<p>Para resolver este problema é necessário desativar o controle ActiveX do OpenOffice que é usado pelo Internet Explorer para exibir os documentos no formato OpenDocument. Depois de removido, ao clicar num atalho para um formulário do Modelos de Documentos, o Internet Explorer perguntará qual ação será feita com o documento e, assim, abrirá o formulário em uma janela separada do OpenOffice.</p>
+				<i>Corrigir sozinho:</i>
+				<p>Apague do Registro do Windows as seguintes chaves:</p>
+				<ul>
+					<li>HKEY_CLASSES_ROOT\CLSID\{61FA3F13-8061-4796-B055-3697ED28CB38}</li>
+					<li>HKEY_CLASSES_ROOT\CLSID\{67F2A879-82D5-4A6D-8CC5-FFB3C114B69D}</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Mais informações</h3>
+				<p>Para reverter as alterações feitas, reinstale o OpenOffice novamente.</p>				
+			</section>
+		</article>
+	</body>
+</html>

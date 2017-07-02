@@ -5,10 +5,13 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows",
-			"data": "bc000041"
+			"data": "bc41"
 		}, {
 			"nome": "Como determinar a versão do navegador Internet Explorer do seu computador",
-			"data": "bc000042"
+			"data": "bc42"
+		}, {
+			"nome": "Informações importantes sobre o Internet Explorer 9",
+			"data": "bc26"
 		}]
 	}]
 }

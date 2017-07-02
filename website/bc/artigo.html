@@ -18,33 +18,37 @@
 	var param = getUrlParameter('id');
 	app.controller('PageCtrl', function($scope, $http, $location) {		
 		$http.get("/bc/artigos/" + param + ".html").then(function(response) {
+			$scope.artigoexiste = true;
 			$scope.bcid = param;
 			$scope.arquivohtml = response.data;
 			$scope.secoes = [];
 			manipularHtml($scope.arquivohtml);
+		}, function(response) {
+			$scope.artigoexiste = false;
 		});
 
 		pesquisarCat = function(categoria) {
-			if (categoria == "aposentadoria")
-				return "Aposentadorias"
-			else if (categoria == "windows")
-				return "Apps e Windows"
-			else return "Categoria Desconhecida";
+			return categoria[0];
+		}
+
+		pesquisarSubCat = function(subcategoria) {
+			return subcategoria;
 		}
 
 		manipularHtml = function (htmldata) {			
 				var parser = new DOMParser();
 				var data = parser.parseFromString(htmldata, "text/html");
-				var h3elems = [];
+				var h3elems = [];				
 
 				$scope.titulo = data.querySelector('meta[name="DC.Title"]').getAttribute("content");
 				$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
 				$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
-				$scope.aplicase = data.querySelector('meta[name="KB.AplicaSe"]').getAttribute("content");
-				$scope.rev = data.querySelector('meta[name="KB.NumRevisao"]').getAttribute("content");
+				$scope.rev = data.querySelector('meta[name="BC.NumRevisao"]').getAttribute("content");
 				$scope.paginaurl = $location.absUrl();
+				$scope.estaDescontinuado = (data.querySelector('meta[name="BC.estaDescontinuado"]').getAttribute("content") == 'true');
 				$scope.categoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
 				$scope.categorianome = pesquisarCat($scope.categoria);
+				$scope.subcategorianome = pesquisarSubCat($scope.categoria);
 				h3elems = data.querySelectorAll('h3');
 				for (var i = 0; i < h3elems.length; i++) {
 					$scope.secoes.push(h3elems[i].innerHTML);
@@ -53,11 +57,8 @@
 	});
 </script>
 <style type="text/css">
-	img {
-		vertical-align: middle;
-	}
 	@media print {
-		.app-bar {
+		.app-bar, .artigobc-painelacoes, .breadcrumbs, .enquete {
 			display: none;
 		}
 	}
@@ -70,7 +71,7 @@
 	<button class="button primary" id="enquete-botao" onclick="metroDialog.toggle('#dialogo-enquete')">Feedback</button>
 </div>
 <div data-role="dialog" id="dialogo-enquete" class="padding20" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
-	<h2>Enviar seus comentários</h2>
+	<h3>Enviar seus comentários</h3>
     <p>Que tipo de comentário é esse?</p>
 	<div class="input-control textarea full-size ng-binding">
       <textarea name="detalhes" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="128" placeholder="Digite aqui seu comentário."></textarea>
@@ -80,7 +81,12 @@
 	<button class="button js-dialog-close" style="position: absolute; bottom: 8px; right: 16px;">Cancelar</button>
     <span class="dialog-close-button"></span>
 </div>
-<div class="container page-content">
+<div class="container page-content align-center" ng-show="!artigoexiste" ngcloak style="margin-top: 10px;">
+	<div class="mif-blocked mif-4x"></div>
+	<h1>Artigo não econtrado</h1>
+	<p>Tente pesquisar o que você está precisando.</p>
+</div>
+<div class="container page-content" ng-show="artigoexiste" ngcloak>
 <ul class="breadcrumbs">
 	<li><a href="/bc/index.html?tipo={{categoria}}" ng-bind="categorianome"></a></li>
 	<li><a href="" ng-bind="titulo"></a></li>
@@ -88,22 +94,27 @@
 <div class="flex-grid">
 <div class="row">
 	<main class="cell colspan10">
+		<div ng-show="estaDescontinuado" ng-cloak>
+			<div class="popover marker-on-left bg-darkRed fg-white">
+            	AVISO: Este artigo trata de um assunto cuja legislação não está mais em vigor ou seu entendimento foi alterado ou trata de um aplicativo que está em desuso no instituto.
+            </div>
+		</div>
 		<div ng-bind="titulo" class="artigobc-titulo"></div>
 		<div ng-bind-html="arquivohtml" class="artigobc-conteudo"></div>
 		<div class="artigobc-conteudo">
 			<section>
 				<h3>Propriedades</h3>
 				<p>ID do artigo: <span ng-bind="id"></span></p>
-				<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - hh:mm'"></span></p>
+				<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - HH:mm'"></span></p>
 				<p>Revisão: <span ng-bind="rev"></span></p>
-				<p>A informação contida neste artigo aplica-se a: <span ng-bind="aplicase"></span></p>
+				<p>A informação contida neste artigo aplica-se a: <span ng-bind="subcategorianome"></span></p>
 			</section>
 		</div>
 	</main>
-	<div class="cell colspan4">
+	<div class="cell colspan4 artigobc-painelacoes">
 		<ul class="artigobc-listaacoes">
 			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
-			<li><a href="mailto:?Artigo do banco de conhecimentos&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
+			<li><a href="mailto:?Artigo do banco de conhecimento&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
 			<li><a href="#"><span class="mif-file-pdf"></span>Baixar como PDF</a></li>
 		</ul>
 		<nav class="artigo-navegador" style="display: block;">
