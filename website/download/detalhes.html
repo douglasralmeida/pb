@@ -6,27 +6,29 @@
 <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/fancybox-3.1.20.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
 <script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
 <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
 <script type='text/javascript' src="/js/geturl.js"></script>
 <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+<script type='text/javascript' src="/js/fancybox-3.1.20.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('PaginaDownload', ['ngSanitize']);
 	var param = getUrlParameter('id');
-	app.controller('PageCtrl', function($scope, $http) {	
+	app.controller('PageCtrl', function($scope, $http) {
 		$http.get("download/itens/" + param + "/info.json").then(function(response) {
-			$scope.data = response.data;
+			$scope.data = response.data;						
 			$scope.nomeBaixar = function(id, count) {
-				if (count == 1)
+				if (count < 2)
 					return "Baixar";
 				else {
-					if (id = "x86")
+					if (id == "x86")
 						return "Baixar versão de 32 bits";
-					else if (id = "x64")
+					else if (id == "x64")
 						return "Baixar versão de 64 bits";
-					else if (id = "all")
+					else if (id == "all")
 						return "Baixar";
 				}
 			};
@@ -42,7 +44,16 @@
 				return "Sem descrição";
 			};
 		});
-	});	
+	});
+
+	$(document).ready(function() {
+    	$(".fancybox").fancybox({
+	        buttons : ['close'],
+	        lang    : 'pt-br',
+			loop	: true,
+    	    i18n    : {'pt-br': {"CLOSE": "Fechar", "NEXT": "Próximo", "PREV": "Anterior", "ERROR": "A imagem requisitada não pode ser carregada.<br/>Tente mais tarde.",	"PLAY_START": "Começar exibição automática", "PLAY_STOP": "Parar exibição automática", "FULL_SCREEN": "Tela cheia", "THUMBS": "Miniaturas"}},
+    	});
+	});
 </script>
 <style type="text/css">
 	.duascolunas {
@@ -63,19 +74,26 @@
 		border-color: transparent;
 		color: rgb(255, 255, 255);
 		clear: both;
-		display: block;
-		font-weight: 700;
+		display: block;		
+		font-weight: bold;
 		float: right;
-		height: 40px;
+		height: 2.5em;
+		line-height: 32px;
 		margin: 4px;
-		line-height: 34px;
+		min-width: 200px;
 		text-align: center;
 	}
-	.telaprograma {
-		cursor: pointer;
-		transition: 0.3s;
+	.quadrocinza a:focus {
+		border-style: dotted;
+		border-color: rgb(255, 255, 255);
+		border-width: 3px;
+		outline: none;
 	}
-	.telaprograma {opacity: 0.7;}
+	.fancybox-caption {
+		font-family: "Segoe UI","Open Sans",sans-serif,serif;
+		font-size: 0.87rem;
+		font-weight: 400;
+	}
 </style>
 <title ng-bind="titulo"></title>
 </head>	
@@ -91,7 +109,11 @@
 	<div class="row cells6">
 		<div class="cell" ng-repeat="y in data.imagens">
 			<div class="image-container bordered">
-			<div class="frame"><img class="telaprograma" src="/download/itens/{{data.id}}/{{y.mini}}" alt="{{y.descricao}" title="{{y.descricao}}"></div>
+			<div class="frame">
+				<a class="fancybox" data-fancybox="gallery" href="/download/itens/{{data.id}}/{{y.arquivo}}" data-caption="{{y.descricao}}">
+					<img ng-src="/download/itens/{{data.id}}/{{y.mini}}" alt="{{y.descricao}}">
+				</a>
+			</div>
 		</div></div>
 	</div></div>
 	<div class="accordion" data-role="accordion" data-close-any="true">
@@ -106,13 +128,13 @@
 							<b>Versão:</b><div ng-bind="data.versao"></div>
 						</div>
 						<div class="itemcoluna">
-							<b>Nome do arquivo:</b><div ng-repeat="w in data.arquivos">{{w.nome}}</div>
+							<b>Nome do arquivo:</b><div ng-repeat="w in data.arquivos" ng-bind="w.nome"></div>
 						</div>
 						<div class="itemcoluna">
 							<b>Publicado em:</b><div ng-bind="data.publicadoem"></div>
 						</div>
 						<div class="itemcoluna">
-							<b>Tamanho do arquivo:</b><div ng-repeat="w in data.arquivos">{{w.tamanho}}</div>
+							<b>Tamanho do arquivo:</b><div ng-repeat="w in data.arquivos" ng-bind="w.tamanho"></div>
 						</div>
 					</div>
 				</div>

@@ -8,6 +8,7 @@ Bibliotecas utilizadas:
 * jQuery 3.2.1 - http://jquery.com/
 * Angular JS 1.6.4 - https://angularjs.org/
 * Metro UI CSS 3.0.17 - http://metroui.org.ua/
+* FancyBox 3.1.20 - http://fancyapps.com/fancybox/3/
 
 Para implantar:
 ```
