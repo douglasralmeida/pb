@@ -1,10 +1,10 @@
 ﻿{
 	"nome": "PDFCreator 2.5",
 	"id": "pdfcreator25",
-	"versao": "2.5.1",
+	"versao": "2.5.3",
 	"publicadoem": "17/02/2017",
 	"descricao": "O PDFCreator permite criar, dividir e combinar arquivos no formato PDF.",
-	"detalhes": "O PDFCreator usa uma impressora virtual para converter qualquer documento imprimível em arquivo no formato PDF. Ele suporta assinatura digital, formato PDF/A e permite combinar vários arquivos em um.",
+	"detalhes": "O PDFCreator usa uma impressora virtual para converter qualquer documento imprimível em arquivo no formato PDF. Ele suporta assinatura digital, formato PDF/A e permite combinar vários arquivos em apenas um.",
 	"imagens": [{
 		"arquivo": "tela01.png",
 		"mini": "minitela01.png",

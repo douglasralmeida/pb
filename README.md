@@ -6,8 +6,8 @@ Projeto para uso interno no INSS.
 
 Bibliotecas utilizadas:
 * jQuery 3.2.1 - http://jquery.com/
-* Angular JS 1.5.8 - https://angularjs.org/
-* Metro UI CSS 3.0.15 - http://metroui.org.ua/
+* Angular JS 1.6.4 - https://angularjs.org/
+* Metro UI CSS 3.0.17 - http://metroui.org.ua/
 
 Para implantar:
 ```

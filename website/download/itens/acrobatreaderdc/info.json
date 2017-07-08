@@ -17,7 +17,7 @@
 	}],
 	"subitens": [{
 		"id": "reqsis",
-		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul>"
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul><p><b>Componentes necessários:</b></p><ul><li><a href='/download/detalhes.html?id=msdotnet47'>Microsoft .NET Framework 4.0 ou superior</a>.</li></ul>"
 	}, {
 		"id": "instalinstruc",
 		"conteudo": "<b>Instalando o Adobe Acrobat Reader DC</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar apropriado para o seu sistema operacional.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o Adobe Acrobat DC, basta clicar em um arquivo no formato PDF qualquer no seu computador.</p><b>Removendo o Adobe Acrobat Reader DC</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione Adobe Acrobat Reader DC e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
