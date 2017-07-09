@@ -59,7 +59,7 @@
 		<h3>Lista de Downloads</h3>
 		<li class="item" ng-repeat="x in itens">
 			<a href="download/detalhes.html?id={{x.id}}">
-				<img src ="download/icones/{{x.icone}}">
+				<img ng-src ="download/icones/{{x.icone}}">
 				<h4>{{x.nome}}</h4>
 			</a>
 			<div>{{x.descricao}}</div>
