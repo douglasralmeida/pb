@@ -27,47 +27,6 @@
 		});
 	});
 </script>
-<style type="text/css">
-.tab-doc-cabecalho {
-	display: table;
-	border-collapse: collapse;	
-	border: 1px solid white;
-}
-
-.tab-doc-cabecalho a {
-	display: table-cell;
-	border-bottom: 3px solid white;
-	vertical-align: middle;
-	padding: 5px;
-}
-
-.tab-doc-cabecalho a:hover {
-	display: table-cell;
-	border-bottom: 3px solid #f84e29;
-	vertical-align: middle;
-	padding: 5px;
-}
-
-.tab-doc {
-	display: table;
-	border-spacing: 10px;
-	border-collapse: separate;
-	border-spacing: 1px;
-}
-
-.tab-doc a {
-	display: table-cell;
-	background-color: white;
-	border: 1px solid #ffffff;
-	text-align: center;
-	width: 120px;
-}
-
-.tab-doc a:hover {
-	background-color: #cce8ff;
-    border: 1px solid #99d1ff;
-}
-</style>
 <title>Formulários e Modelos de Documentos</title>
 </head>
 <body ng-app="TabelaDocumentos" ng-controller="docsCtrl">
@@ -77,11 +36,11 @@
 		<a ng-repeat="x in dados" href="#categoria{{$index}}\"  target="_self\" ng-bind="x.categoria"></a>
 	</div>
 	<p>Os documentos abaixo requerem o aplicativo LibreOffice 5.0 ou superior com macros ativadas e o aplicativo Adobe Acrobat Reader DC ou superior.</p>
-	<div class="pesquisa align-center">
+	<div class="edit-pesquisa align-center">
 		<form onsubmit="$('#edit-autocomplete').blur(); return false;">
 			<div class="input-control text" data-role="input" style = "width: 400px;">
 				<input name="editpesquisa" id="edit-autocomplete" aria-label="Pesquisar documentos" type="text" placeholder="Pesquisar documentos..." autocomplete="off" />
-				<button class="button" style="background-color:#007daa; border-color:#007daa; color: #ffffff;">
+				<button class="button bto-pesquisa">
 					<span class="mif-search"></span>
 				</button>
 			</div>

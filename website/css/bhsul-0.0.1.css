@@ -4,7 +4,7 @@
 
 *::selection {
     background-color: #b3d4fc;
-    color: #000;
+    color: black;
     text-shadow: none;
 }
 
@@ -47,6 +47,22 @@
 	padding: 0 6px 4px 0;
 }
 
+.bto-pesquisa {
+	background-color:rgb(0, 125, 170);
+	border: 3px solid rgb(0, 125, 170);
+	color: white;
+}
+
+.bto-pesquisa:hover {
+	background-color:rgb(0, 94, 128);
+	border: 3px solid rgb(0, 94, 128);
+}
+
+.bto-pesquisa:focus {
+	border: 3px dotted white;
+	outline: none;
+}
+
 .page-content {
     padding-top: 48px;
 }
@@ -58,12 +74,6 @@
 	padding-top: 24px;
 	text-align: center;
 	vertical-align: middle;
-}
-
-.container-pesquisa-botao {
-	background-color:#002642;
-	border-color:#002642; 
-	color: #ffffff;
 }
 
 .enquete {	
@@ -129,6 +139,65 @@
     background-color: #007daa;
     color: #fff;
     text-shadow: none;
+}
+
+.tab-doc-cabecalho {
+	display: table;
+	border-collapse: collapse;	
+	border: 1px solid white;
+}
+
+.tab-doc-cabecalho a {
+	display: table-cell;
+	border-bottom: 3px solid white;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.tab-doc-cabecalho a:hover {	
+	border-bottom: 3px solid #f84e29;
+}
+
+.tab-doc-cabecalho a:focus {
+	border: 3px dotted black;
+	outline: none;
+}
+
+.tab-doc-cabecalho a:focus:hover {
+	border: 3px dotted black;
+	border-bottom: 3px dotted #f84e29;
+	outline: none;
+}
+
+.tab-doc {
+	display: table;
+	border-spacing: 10px;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+.tab-doc a {
+	display: table-cell;
+	background-color: white;
+	border: 3px solid #ffffff;
+	text-align: center;
+	width: 120px;
+}
+
+.tab-doc a:hover {
+	background-color: #cce8ff;
+    border: 3px solid #99d1ff;
+}
+
+.tab-doc a:focus {
+	border: 3px dotted black;
+	outline: none;
+}
+
+.tab-doc a:focus:hover {
+	background-color: #cce8ff;
+	border: 3px dotted #99d1ff;	
+	outline: none;
 }
 
 .tab-download-categorias {
