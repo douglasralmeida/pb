@@ -29,15 +29,8 @@
 <body>
 <div ng-include="'widgets/navbar.html'"></div>
 <div class="page-content">
-	<div class="container-pesquisa">	
-		<form class="form-pesquisa" action="/bc/pesquisa.html" method="get">
-			<div class="input-control text" data-role="input" style = "width: 800px;">
-				<input class="texto-pesquisa" name="consulta" placeholder="Procure ajuda" autocomplete="off"/>
-				<button class="button" style="background-color:#007daa; border-color:#007daa; color: #ffffff;">
-					<span class="mif-search mif-lg"></span>
-				</button>
-			</div>
-		</form>
+	<div class="container-pesquisa">
+		<div ng-include="'/widgets/pesquisabc.html'"></div>
 	</div>
 	<div class="container">
 	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>": <span ng-bind="resultados.length"></span> resultados encontrados.</p>

@@ -48,14 +48,7 @@
 <div class="page-content">
 <div class="container-pesquisa">
 	<h2>Como podemos te ajudar?</h2>
-	<form class="form-pesquisa" action="/bc/pesquisa.html" method="get">
-		<div class="input-control text" data-role="input" style = "width: 800px;">
-			<input class="texto-pesquisa" name="consulta" placeholder="Procure ajuda" autocomplete="off"/>
-			<button class="button container-pesquisa-botao">
-				<span class="mif-search mif-lg"></span>
-			</button>
-		</div>
-	</form>
+	<div ng-include="'/widgets/pesquisabc.html'"></div>
 </div>
 <div class="container-titulo">
 	<h3 style="text-align: center;">Em qual área você precisa de ajuda?</h3>
