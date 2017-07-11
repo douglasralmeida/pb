@@ -3,73 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="O Portal da BH Sul contém atalhos úteis, aplicativos para download, banco de conhecimento e os formulários mais usados no dia a dia."/>
 <meta name="keywords" content="inss, previdência, aps, belo horizonte, sul, bh, bhsul, portal, atalhos, aplicativos, download, banco, conhecimento, formulários, documentos, modelos" />
 <link rel="sortcut icon" href="/favicon.png" type="image/png"/>
 <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
-<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
 <script type="text/javascript">
-	var app = angular.module('TabelaAtalhos', []);	
+	var app = angular.module('TabelaAtalhos', []);
 	app.controller('atalhosCtrl',  function($scope, $http) {
 		$scope.dados = [];
-		$http.get("/data/atalhosprincipais.json").then(function(response) {$scope.dados = response.data.atalhos;}, function(error) {
+		$http.get("/data/atalhosprincipais.json").then(function(response) {
+			$scope.dados = response.data.atalhos;
+		}, function(error) {
 			alert(error.message);
 		});
 	});
 </script>
-<style type="text/css">
-html, body {
-    height: 100%;
-}
-
-.page-content {
-    min-height: 100%;
-    height: 100%;
-}
-
-.titulo {
-	font: 500 1.125rem/1.1 "Segoe UI","Open Sans",sans-serif,serif;
-}
-
-.lista-atalhos a {
-	background-color: rgb(0, 125, 170);
-	border: 4px solid white;
-    color: white;
-	display: inline-block;
-    padding: 10px;
-	text-align: center;
-    width: 25%;
-}
-
-.lista-atalhos a:hover {
-    background-color: hsl(100%, 120%, 120%);
-}
-
-.lista-lateral {
-	text-align: center;
-}
-
-.lista-lateral a {
-	background-color: rgb(0, 53, 106);
-	border: 4px solid white;
-	color: white;
-	padding: 10px;
-	display: block;
-}
-
-.lista-lateral a img {
-	display: block;
-	margin-bottom: 4px;
-	margin-left: auto;
-	margin-right: auto;
-}
-</style>
 <title>Portal Corporativo da APS BH Sul</title>
 </head>
 <body ng-app="TabelaAtalhos" ng-controller="atalhosCtrl">
@@ -78,27 +30,26 @@ html, body {
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
 			<div class="row" style="height: 100%">
 				<div class="cell size-x200" id="cell-sidebar" style="height: 100%">
-					<ul class="lista-lateral unstyled-list">
+					<ul class="tab-inicial-lateral unstyled-list">
 						<a href="http://10.32.97.205:8080/atendimento"><img src="/img/capa_atende.svg" height="48" width="48">Atendimento</a>
 						<a href="http://www-sisref"><img src="/img/capa_ponto.svg" height="48" width="48">Ponto Eletrônico</a>
-						<a href="novidades.html"><img src="/img/capa_noticia.svg" height="48" width="48">Novidades</a>
-						<!-- a href="comentarios.html"><!img src="/img/capa_feedback.svg" height="48" width="48"></a !-->
+						<a href="novidades.html"><img src="/img/capa_noticia.svg" height="48" width="48">Novidades</a>						
 					</ul>
 				</div>
-				<div class="cell auto-size padding20 bg-white" id="cell-content">
-					<div class="tabela-atalhos" ng-repeat="x in dados">
-						<span ng-cloak class="titulo">
+				<div class="cell auto-size padding20 bg-white">
+					<div ng-repeat="x in dados">
+						<div ng-cloak>
 							<img ng-src="/img/{{x.icone}}" height="48" width="48">
-							{{x.categoria}}
-						</span>
-						<ul class="lista-atalhos unstyled-list">
-							<a ng-cloak ng-repeat="y in x.itens" href="{{y.atalho}}">{{y.nome}}</a>
-						</ul>						
+							<span class="tab-inicial-titulo" ng-bind="x.categoria"></span>
+						</div>
+						<ul class="tab-inicial unstyled-list">
+							<a ng-repeat="y in x.itens" href="{{y.atalho}}" ng-bind="y.nome" ng-cloak></a>
+						</ul>
 					</div>
 					<p style="text-align: right;">Versão prerelease</p>
 				</div>
 			</div>
-		</div>		
+		</div>
 	</div>
 </body>
 </html>

@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
 <link rel="stylesheet" type="text/css" href="/css/auto-complete.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
@@ -9,37 +12,50 @@
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
 <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/docs.js"></script>
 <script type='text/javascript' src="/js/autocomplete.js"></script>
+<script type='text/javascript' src="/js/docs.js"></script>
+<script type="text/javascript">
+	var app = angular.module('TabelaDocumentos', []);	
+	app.controller('docsCtrl',  function($scope, $http) {
+		$scope.dados = [];
+		$scope.tipodoc = ["ODT", "PDF"];
+		$scope.fileimg = ["img/odt.png", "img/pdf.png"];
+		$http.get("/data/docs.json").then(function(response) {
+			$scope.dados = response.data.docs;
+		}, function(error) {
+			alert(error.message);
+		});
+	});
+</script>
 <style type="text/css">
-.cabecalho {
+.tab-doc-cabecalho {
 	display: table;
 	border-collapse: collapse;	
 	border: 1px solid white;
 }
 
-.cabecalho a {
+.tab-doc-cabecalho a {
 	display: table-cell;
 	border-bottom: 3px solid white;
 	vertical-align: middle;
 	padding: 5px;
 }
 
-.cabecalho a:hover {
+.tab-doc-cabecalho a:hover {
 	display: table-cell;
 	border-bottom: 3px solid #f84e29;
 	vertical-align: middle;
 	padding: 5px;
 }
 
-.tabela-documentos {
+.tab-doc {
 	display: table;
 	border-spacing: 10px;
 	border-collapse: separate;
 	border-spacing: 1px;
 }
 
-.tabela-documentos a {
+.tab-doc a {
 	display: table-cell;
 	background-color: white;
 	border: 1px solid #ffffff;
@@ -47,17 +63,18 @@
 	width: 120px;
 }
 
-.tabela-documentos a:hover {
+.tab-doc a:hover {
 	background-color: #cce8ff;
     border: 1px solid #99d1ff;
 }
 </style>
 <title>Formulários e Modelos de Documentos</title>
 </head>
-<body ng-app="">
+<body ng-app="TabelaDocumentos" ng-controller="docsCtrl">
 <div ng-include="'/widgets/navbar.html'"></div>
-<div class="page-content conteudo-pagina">
-	<div class="cabecalho">
+<div class="page-content">
+	<div class="tab-doc-cabecalho">
+		<a ng-repeat="x in dados" href="#categoria{{$index}}\"  target="_self\" ng-bind="x.categoria"></a>
 	</div>
 	<p>Os documentos abaixo requerem o aplicativo LibreOffice 5.0 ou superior com macros ativadas e o aplicativo Adobe Acrobat Reader DC ou superior.</p>
 	<div class="pesquisa align-center">
@@ -70,7 +87,14 @@
 			</div>
 		</form>
 	</div>
-	<div class="listagem">
+	<div ng-repeat="x in dados">
+		<h3 id="categoria{{$index}}" ng-bind="x.categoria"></h3>
+		<div class="tab-doc">
+			<a ng-repeat="y in x.itens" href="{{y.link}}">
+				<img alt="{{tipodoc[y.tipo-1]}}" ng-src="{{fileimg[y.tipo-1]}}" />
+				<p ng-bind="y.nome"></p>
+			</a>
+		</div>
 	</div>
 </div>
 </body>
