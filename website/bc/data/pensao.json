@@ -5,7 +5,8 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Alterações trazidas pela Lei 13.135",
-			"data": "bc47"
+			"data": "bc47",
+			"tipo": "artigo"
 		}]
 	}]
 }

@@ -5,10 +5,12 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Crítica de revisão: FILIACAO INVALIDA P/ESP",
-			"data": "bc54"
+			"data": "bc54",
+			"tipo": "artigo"
 		}, {
 			"nome": "Motivos de cessação, suspensão e reativação de benefícios",
-			"data": "bc49"
+			"data": "bc49",
+			"tipo": "artigo"
 		}]
 	}]
 }

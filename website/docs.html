@@ -33,7 +33,7 @@
 <div ng-include="'/widgets/navbar.html'"></div>
 <div class="page-content">
 	<div class="tab-doc-cabecalho">
-		<a ng-repeat="x in dados" href="#categoria{{$index}}\"  target="_self\" ng-bind="x.categoria"></a>
+		<a ng-repeat="x in dados" href="#categoria{{$index}}"  target="_self" ng-bind="x.categoria"></a>
 	</div>
 	<p>Os documentos abaixo requerem o aplicativo LibreOffice 5.0 ou superior com macros ativadas e o aplicativo Adobe Acrobat Reader DC ou superior.</p>
 	<div class="edit-pesquisa align-center">
@@ -46,8 +46,8 @@
 			</div>
 		</form>
 	</div>
-	<div ng-repeat="x in dados">
-		<h3 id="categoria{{$index}}" ng-bind="x.categoria"></h3>
+	<div ng-repeat="x in dados" id="categoria{{$index}}">
+		<h3 ng-bind="x.categoria"></h3>
 		<div class="tab-doc">
 			<a ng-repeat="y in x.itens" href="{{y.link}}">
 				<img alt="{{tipodoc[y.tipo-1]}}" ng-src="{{fileimg[y.tipo-1]}}" />

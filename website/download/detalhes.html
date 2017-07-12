@@ -16,14 +16,16 @@
 <script type='text/javascript' src="/js/fancybox-3.1.20.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('PaginaDownload', ['ngSanitize']);
-	var param = getUrlParameter('id');
+	var param = getUrlParameter('id');	
 	app.controller('PageCtrl', function($scope, $http) {
+		$scope.isx86x64 = false;
 		$http.get("download/itens/" + param + "/info.json").then(function(response) {
 			$scope.data = response.data;						
 			$scope.nomeBaixar = function(id, count) {
-				if (count < 2)
+				if (count < 2)					
 					return "Baixar";
 				else {
+					$scope.isx86x64 = true;
 					if (id == "x86")
 						return "Baixar versão de 32 bits";
 					else if (id == "x64")
@@ -57,38 +59,37 @@
 </script>
 <style type="text/css">
 	.duascolunas {
-		columns: 2 200px;
+		columns: 2 200px;		
+	}
+	.itemcoluna {
+		padding: 16px;
 	}
 	.quadrocinza {
-		background-color: rgb(238, 238, 238);
-		display: block;
-		height: 134px;
-		padding-bottom: 20px;
-		padding-top: 20px;
-		padding-right: 20px;
-	}
+		background-color: rgb(238, 238, 238);		
+		display: table;
+		height: auto;		
+		width: 100%;
+	}	
+
 	.quadrocinza a {
 		background-color: rgb(214, 49, 5);
 		border-color: transparent;
-		border-style: solid;
-		border-color: transparent;
-		color: rgb(255, 255, 255);
-		clear: both;
+		border-style: solid;		
+		color: rgb(255, 255, 255);		
 		display: block;		
 		font-weight: bold;
-		float: right;
-		height: 2.5em;
-		line-height: 32px;
-		margin: 4px;
-		min-width: 200px;
+		float: left;
+		line-height: 32px;		
+		margin: 16px 0px 16px 16px;
 		text-align: center;
+		width: 40%;
 	}
 	.quadrocinza a:focus {
 		border-style: dotted;
 		border-color: rgb(255, 255, 255);
 		border-width: 3px;
 		outline: none;
-	}
+	}	
 	.fancybox-caption {
 		font-family: "Segoe UI","Open Sans",sans-serif,serif;
 		font-size: 0.87rem;
@@ -102,25 +103,21 @@
 <div class="container page-content">
 	<h3 ng-bind="data.nome"></h3>	
 	<div class="quadrocinza">
-		<a href="/download/arquivos/{{w.nome}}" ng-bind="nomeBaixar(w.plataforma, $length)" ng-repeat="w in data.arquivos"></a>
+		<a ng-repeat="w in data.arquivos" href="/download/arquivos/{{w.nome}}" ng-bind="nomeBaixar(w.plataforma, data.arquivos.length)"></a>
 	</div>
 	<h4 ng-bind="data.descricao"></h4>
-	<div class="grid">
-	<div class="row cells6">
+	<div class="grid"><div class="row cells6">
 		<div class="cell" ng-repeat="y in data.imagens">
-			<div class="image-container bordered">
-			<div class="frame">
+			<div class="image-container bordered"><div class="frame">
 				<a class="fancybox" data-fancybox="gallery" href="/download/itens/{{data.id}}/{{y.arquivo}}" data-caption="{{y.descricao}}">
 					<img ng-src="/download/itens/{{data.id}}/{{y.mini}}" alt="{{y.descricao}}">
 				</a>
-			</div>
-		</div></div>
+			</div></div>
+		</div>
 	</div></div>
 	<div class="accordion" data-role="accordion" data-close-any="true">
 		<div class="frame">
-			<div class="heading">
-				Detalhes
-			</div>
+			<div class="heading">Detalhes</div>
 			<div class="content">
 				<div class='quadrocinza'>
 					<div class="duascolunas">
@@ -144,9 +141,12 @@
 			</div>
 		</div>
 		<div class="frame" ng-repeat="x in data.subitens">
-			<div class="heading" ng-bind="nomeId(x.id)">
-			</div>
-			<div class="content" ng-bind-html="x.conteudo">
+			<div class="heading" ng-bind="nomeId(x.id)"></div>			
+			<div class="content">
+				<div ng-if="isx86x64 && x.id == 'instalinstruc'">
+					<b>Antes de começar</b><p>Para obter ajuda sobre como identificar se seu sistema operacional é de 32 bits ou de 64 bits, consulte o artigo: <div class='artigobc-ident'><a href='/bc/artigo.html?id=bc41'>BC41</a> Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows.</div></p>
+				</div>
+				<div ng-bind-html="x.conteudo"></div>						
 			</div>
 		</div>
 	</div>

@@ -38,6 +38,10 @@
 	padding: 0 4px 5px 0;
 }
 
+.artigobc-ident {
+	padding: 8px 16px;
+}
+
 .artigobc-listaacoes {
 	list-style: none;
 	padding: 0;

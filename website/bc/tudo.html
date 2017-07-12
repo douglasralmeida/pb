@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="TudoBC" ng-controller="PageCtrl">
+<head>
+<base href="/">
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+<script type='text/javascript' src="/js/geturl.js"></script>
+<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module('TudoBC', []);
+	var param = getUrlParameter('tipo');
+	app.controller('PageCtrl',  function($scope, $http) {
+		$http.get("bc/data/tudo.json").then(function(response) {
+		$scope.dados = response.data.categorias;});
+	});
+</script>
+<title nb-bind="titulo"></title>
+</head>
+<body>
+<div ng-include="'widgets/navbar.html'"></div>
+<div class="container page-content">
+	<h4 ng-bind="titulo"></h4>
+	<div class="accordion" data-role="accordion" data-close-any="true">
+		<div class="frame active" ng-repeat="x in dados">
+			<div class="heading" ng-bind="x.nome"></div>
+			<div class="content">
+				<p ng-repeat="y in x.itens"><a href="bc/artigo.html?id={{y.data}}" ng-bind="y.data.toUpperCase() + ' ' + y.nome"></a></p>
+			</div>
+		</div>
+	</div>	
+</div>
+</body>
+</html>

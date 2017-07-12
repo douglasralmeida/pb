@@ -5,7 +5,8 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Como determinar a versão do navegador Internet Explorer do seu computador",
-			"data": "bc42"
+			"data": "bc42",
+			"tipo": "artigo"
 		}]
 	}]
 }
