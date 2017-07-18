@@ -1,0 +1,76 @@
+﻿[{
+	"id": "A",
+	"nome": "Apps e Windows",
+	"sigla": "appswindows",
+	"imagem": "bc_windows.svg"
+}, {
+	"id": "B",
+	"nome": "Aposentadoria",
+	"sigla": "aposentadoria",
+	"imagem": "bc_aposentadoria.svg"
+}, {
+	"id": "C",
+	"nome": "Benefícios para Dependentes",
+	"sigla": "bendepen",
+	"imagem": "bc_bendepende.svg"
+}, {
+	"id": "D",
+	"nome": "Benefícios por Incapacidade e SABI",
+	"sigla": "beninca",
+	"imagem": "bc_benincapaz.svg"
+}, {
+	"id": "E",
+	"nome": "Benefícios Assistenciais",
+	"sigla": "benassis",
+	"imagem": "bc_assisten.svg"
+}, {
+	"id": "F",
+	"nome": "CNIS",
+	"sigla": "cnis",
+	"imagem": "bc_cnis.svg"
+}, {
+	"id": "G",
+	"nome": "Legislação",
+	"sigla": "legisla",
+	"imagem": "bc_legisla.svg"
+}, {
+	"id": "H",
+	"nome": "Processos de Trabalho",
+	"sigla": "proctrab",
+	"imagem": "bc_processos.svg"
+}, {
+	"id": "I",
+	"nome": "Prisma e SUB",
+	"sigla": "prismasub",
+	"imagem": "bc_terminal.svg"
+}, {
+	"id": "J",
+	"nome": "Salário Maternidade",
+	"sigla": "salmat",
+	"imagem": "bc_salmat.svg"
+}, {
+	"id": "K",
+	"nome": "SIBE",
+	"sigla": "sibe",
+	"imagem": "bc_sibe.svg"
+}, {
+	"id": "L",
+	"nome": "Tabelas e Índices Financeiros",
+	"sigla": "tabfinanc",
+	"imagem": "bc_dinheiro.svg"
+}, {
+	"id": "M",
+	"nome": "Benefícios Especiais",
+	"sigla": "benespec",
+	"imagem": "bc_especial.svg"
+}, {
+	"id": "N",
+	"nome": "Contagem Recíproca",
+	"sigla": "contrecip",
+	"imagem": "bc_ctc.svg"
+}, {
+	"id": "Z",
+	"nome": "Outros tipos de artigos",
+	"sigla": "outros",
+	"imagem": "bc_windows.svg"
+}]

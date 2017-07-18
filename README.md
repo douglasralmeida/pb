@@ -21,4 +21,7 @@ Para atualizar:
     docker stop portalbhsul
     docker rm portalbhsul
     docker run --name portalbhsul -d -p 80:80 --restart unless-stopped douglasralmeida/portalbhsul
-````
+```
+
+## Mais informações
+[Categorias do Banco de Conhecimento](docs/bc-categorias.md)
