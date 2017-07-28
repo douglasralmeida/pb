@@ -1,0 +1,20 @@
+﻿{
+	"titulo": "Benefícios por Incapacidade e SABI",
+	"categorias": [{
+		"nome": "Tópicos mais populares",
+		"icone": "mif-star-empty",
+		"itens": [{
+			"nome": "Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto",
+			"data": "bc8",
+			"tipo": "artigo"
+		}, {
+			"nome": "Alterações trazidas pela Lei 13.135",
+			"data": "bc47",
+			"tipo": "artigo"
+		}, {
+			"nome": "Análise da carência na refiliação ao RGPS",
+			"data": "bc55",
+			"tipo": "artigo"
+		}]
+	}]
+}

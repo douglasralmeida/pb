@@ -54,4 +54,20 @@
 	"id": "14",
 	"nome": "LibreOffice 6.0",
 	"sigla": "lo60"
+}, {
+	"id": "15",
+	"nome": "Tabelas e Índices Financeiros",
+	"sigla": "tabfinanc"
+}, {
+	"id": "16",
+	"nome": "Prisma",
+	"sigla": "prisma"
+}, {
+	"id": "17",
+	"nome": "Auxiliar 1.0",
+	"sigla": "auxiliar10"
+}, {
+	"id": "18",
+	"nome": "SABI",
+	"sigla": "sabi"
 }]

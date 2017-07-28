@@ -1,0 +1,8 @@
+﻿{
+	"titulo": "Outros",
+	"categorias": [{
+		"nome": "Tópicos mais populares",
+		"icone": "mif-star-empty",
+		"itens": []
+	}]
+}

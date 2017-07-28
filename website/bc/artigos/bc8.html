@@ -1,25 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">				
-		<meta content="http://10.32.97.160/favicon.png">
+		<meta charset="UTF-8">
 		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
-		<meta name="DC.Title" content="">
+		<meta name="DC.Title" content="Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto">
 		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
-		<meta name="DC.Description" content="...">
-		<meta name="DC.Modified" content="2011-01-01T07:00-03:00">
-		<meta name="DC.Identifier" content="1">
+		<meta name="DC.Description" content="Quando alguem tenta marcar uma perícia, seja no SABI, na Internet ou na Central 135...">
+		<meta name="DC.Modified" content="2008-11-24T07:00-03:00">
+		<meta name="DC.Identifier" content="8">
 		<meta name="DC.Type" content="Text">
-		<meta name="DC.Subject" content="">
-		<meta name="DC.IsPartOf" content="Z9">
-		<meta name="BC.NumRevisao" content="1">
-		<meta name="BC.estaDescontinuado" content="true">
+		<meta name="DC.Subject" content="erro,pericia,sabi,agendamento,pp,pedido,prorrogacao,dcb">
+		<meta name="DC.IsPartOf" content="D6">
+		<meta name="DC.Relation" content="aplicase sabi">
+		<meta name="BC.NumRevisao" content="3">
+		<meta name="BC.estaDescontinuado" content="false">
 	</head>
 	<body>
 		<article>
 			<section>
-				<h3>Introdução</h3>
-				<p></p>
+				<h3>Sintomas</h3>
+				<p>Quando alguem tenta marcar uma perícia, seja no SABI, na Internet ou na Central 135, o SABI exibe uma mensagem de erro avisando que não pode marcar a perícia pois já existe um requerimento em aberto.</p>
+			</section>
+			<section>
+				<h3>Causa</h3>
+				<p>Este erro é mais comum em agendamentos de PP e PR. Ele ocorre por uma falha no Sistema de Administração de Benefícios por Incapacidade que não consegue ler corretamente a DCB do último benefício concedido.</p>
+				<p>Este erro irá ocorrer quando a perícia for registrada no Prisma.</p>
+				<p>Este erro poderá ocorrer quando um benefício for indeferido para reestabelecimento do benefício anterior.</p>
+			</section>
+			<section>
+				<h3>Resolução</h3>
+				<p>É necessário acesso ao Controle Operacional do SABI e está matriculado na agência mantenedora do benefício para resolver este problema.</p>
+				<p>Primeiro, deve ser observado se realmente não existe um requerimento em aberto através do Controle Operacional do SABI. Requerimentos de recurso e revisão em aberto não impedem a abertura de novo requerimento de AX1 nem PP. Requerimentos Normal, Internet, PP, PP Web, PR e PR Web com status Normal impedem novo requerimento.</p>
+				<p>Segundo, o usuário deverá povoar o último benefício concedido, quando o erro ocorrer no agendamento de novo benefício. Após o povoamento, o SABI permitirá novos agendamentos.</p>
+				<p>Quando a mensagem de erro ocorre no agendamento de Pedido de Prorrogação, o benefício em questão também deverá ser povoado.</p>
+			</section>
+			<section>
+				<h3>Situação</h3>
+				<p>Este é um problema do SABI versão 9.</p>
+				<p>Este é um problema do SABI versão 10.</p>
+				<p>Este é um problema do SABI versão 11.</p>
+				<p>Este é um problema do SABI versão 12.</p>
 			</section>
 		</article>
 	</body>

@@ -4,6 +4,46 @@
 		"nome": "Todos os artigos",
 		"icone": "mif-star-empty",
 		"itens": [{
+			"nome": "O comprovante de agendamento é impresso com texto errado",
+			"data": "bc2",
+			"tipo": "artigo"
+		}, {
+			"nome": "Não é possível fazer seu cadastro no Auxiliar de Trabalho",
+			"data": "bc3",
+			"tipo": "artigo"
+		}, {
+			"nome": "Informações sobre o Auxiliar gama1",
+			"data": "bc4",
+			"tipo": "artigo"
+		}, {
+			"nome": "O Auxiliar de Trabalho exibe uma mensagem de erro no soquete TCP",
+			"data": "bc5",
+			"tipo": "artigo"
+		}, {
+			"nome": "Informações sobre o Auxiliar gama2",
+			"data": "bc6",
+			"tipo": "artigo"
+		}, {
+			"nome": "Informações sobre o Auxiliar gama3",
+			"data": "bc7",
+			"tipo": "artigo"
+		}, {
+			"nome": "Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto",
+			"data": "bc8",
+			"tipo": "artigo"
+		}, {
+			"nome": "Motivos de cessação, suspensão e reativação de benefícios",
+			"data": "bc9",
+			"tipo": "artigo"
+		}, {
+			"nome": "Usando o Auxiliar versão Treinamento",
+			"data": "bc10",
+			"tipo": "artigo"
+		}, {
+			"nome": "Como usar os formulários do Modelos de Documentos 2010",
+			"data": "bc11",
+			"tipo": "artigo"
+		}, {
 			"nome": "Remover edição ao vivo de um formulário",
 			"data": "bc23",
 			"tipo": "artigo"
@@ -52,7 +92,7 @@
 			"data": "bc47",
 			"tipo": "artigo"		
 		}, {
-			"nome": "Motivos de cessação, suspensão e reativação de benefícios",
+			"nome": "XXXXXXX",
 			"data": "bc49",
 			"tipo": "artigo"
 		}, {

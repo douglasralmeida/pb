@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/">
 <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
@@ -14,7 +13,7 @@
 <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 <script type='text/javascript' src="/js/geturl.js"></script>
 <script type="text/javascript">
-	var app = angular.module('ArtigoBC', ['ngSanitize']);
+	var app = angular.module('ArtigoBC', ['ngSanitize']);	
 	var param = getUrlParameter('id');
 	app.controller('PageCtrl', function($scope, $http, $location) {
 		$http.get("/bc/servicos.json").then(function(response) {

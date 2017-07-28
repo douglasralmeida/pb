@@ -3,7 +3,9 @@
 ###A - Aplicativos e Windows
     A1 - Configurações do Windows
     A2 - Internet Explorer e Microsoft Edge
-    A3- Libreoffice
+    A3 - Libreoffice
+    A4 - Modelos de Documentos
+    A5 - Auxiliar 1.0
     A9 - Outros aplicativos
 ###B - Aposentadoria
     B1 - Reconhecimento de direito
@@ -17,6 +19,7 @@
     D3 - Críticas de Concessão do SABI
     D4 - Críticas de Revisão do SABI
     D5 - Como fazer
+    D6 - Mensagens de erros do SABI
     D9 - Outros artigos sobre benefícios por incapacidade
 ###E - Benefícios Assistenciais
     E1 - Reconhecimento de Direito
@@ -58,6 +61,7 @@
     K9 - Outros artigos sobre o SIBE
 ###L - Tabelas e Índices Financeiros
     L1 - Salários e Contribuições Previdenciárias
+    L2 - Calendário e Datas Importantes
     L9 - Outros tipos de tabelas e índices
 ###M - Benefícios Especiais
     M1 - Reconhecimento de Direito
