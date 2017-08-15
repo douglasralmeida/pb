@@ -51,6 +51,14 @@
 	padding: 0 6px 4px 0;
 }
 
+.artigo-tags span {
+	background-color:rgb(0, 108, 216);
+	border: 6px solid rgb(0, 108, 216);
+	color: white;
+	margin: 4px;
+	display: inline-block;
+}
+
 .bto-pesquisa {
 	background-color:rgb(0, 125, 170);
 	border: 3px solid rgb(0, 125, 170);
@@ -72,7 +80,7 @@
 }
 
 .container-pesquisa {
-	background-color: #0078d7;
+	background-color: rgb(0, 108, 216);
 	color: #ffffff;
 	padding-bottom: 24px;
 	padding-top: 24px;
@@ -319,4 +327,4 @@
 .tab-doc a:hover {
 	background-color: #cce8ff;
     border: 1px solid #99d1ff;
-}
+}	

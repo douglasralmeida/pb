@@ -70,6 +70,7 @@
 				$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
 				$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
 				$scope.rev = data.querySelector('meta[name="BC.NumRevisao"]').getAttribute("content");
+				$scope.tags = data.querySelector('meta[name="DC.Subject"]').getAttribute("content");
 				$scope.paginaurl = $location.absUrl();
 				$scope.estaDescontinuado = (data.querySelector('meta[name="BC.estaDescontinuado"]').getAttribute("content") == 'true');
 				$scope.subcategoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
@@ -77,11 +78,17 @@
 					$scope.relacaplicase = data.querySelector('meta[name="DC.Relation"]').getAttribute("content");
 				pesquisarCat($scope.subcategoria);
 				pesquisarServicos($scope.relacaplicase.substring(9, $scope.relacaplicase.length));
+				manipularTags($scope.tags);
 				h3elems = data.querySelectorAll('h3');
 				for (var i = 0; i < h3elems.length; i++) {
 					$scope.secoes.push(h3elems[i].innerHTML);
 				}
 			};
+
+		manipularTags = function(tags) {
+			//$scope.tags = $scope.tags.replace(/,/g, " ");
+			$scope.tags = $scope.tags.split(",");
+		};
 	});
 </script>
 <style type="text/css">
@@ -121,7 +128,7 @@
 </ul>
 <div class="flex-grid">
 <div class="row">
-	<main class="cell colspan10">
+	<main class="cell colspan9">
 		<div ng-show="estaDescontinuado" ng-cloak>
 			<div class="popover marker-on-left bg-darkRed fg-white">
             	AVISO: Este artigo trata de um assunto cuja legislação não está mais em vigor ou seu entendimento foi alterado ou trata de um aplicativo que está em desuso no instituto.
@@ -139,16 +146,20 @@
 			</section>
 		</div>
 	</main>
-	<div class="cell colspan4 artigobc-painelacoes">
+	<div class="cell colspan3 artigobc-painelacoes" style="margin-left: 12px;">
 		<ul class="artigobc-listaacoes">
 			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
 			<li><a href="mailto:?Artigo do banco de conhecimento&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
 		</ul>
-		<nav class="artigo-navegador" style="display: block;">
-			<h4 style="display: block;">Neste artigo</h4>
+		<nav class="artigo-navegador">
+			<h4>Neste artigo</h4>
 			<ol>
 				<li ng-repeat="x in secoes"><a href="/bc/artigo.html?id={{bcid}}#ancora{{$index}}" ng-bind="x"></a></li>
 			</ol>
+		</nav>
+		<nav class="artigo-tags"">
+			<h4>Tags</h4>
+			<span ng-repeat="x in tags" ng-bind="x"></span>
 		</nav>
 	</div>
 </div></div></div>
