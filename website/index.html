@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="O Portal da BH Sul contém atalhos úteis, aplicativos para download, banco de conhecimento e os formulários mais usados no dia a dia."/>
@@ -11,42 +11,31 @@
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type="text/javascript">
-	var app = angular.module('TabelaAtalhos', []);
-	app.controller('atalhosCtrl',  function($scope, $http) {
-		$scope.dados = [];
-		$http.get("/data/atalhosprincipais.json").then(function(response) {
-			$scope.dados = response.data.atalhos;
-		}, function(error) {
-			alert(error.message);
-		});
-	});
-</script>
+<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
 <title>Portal Corporativo da APS BH Sul</title>
 </head>
-<body ng-app="TabelaAtalhos" ng-controller="atalhosCtrl">
+<body ng-app="PortalBHSul" ng-controller="paginicialCtrl">
 	<div ng-include="'widgets/navbar.html'"></div>
 	<div class="page-content">
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
 			<div class="row" style="height: 100%">
 				<div class="cell size-x200" id="cell-sidebar" style="height: 100%">
-					<ul class="tab-inicial-lateral unstyled-list">
-						<a href="http://10.32.97.205:8080/atendimento"><img src="/img/capa_atende.svg" height="48" width="48">Atendimento</a>
-						<a href="http://www-sisref"><img src="/img/capa_ponto.svg" height="48" width="48">Ponto Eletrônico</a>
-						<a href="novidades.html"><img src="/img/capa_noticia.svg" height="48" width="48">Novidades</a>						
+					<ul class="tab-inicial-lateral unstyled-list" ng-repeat="x in listalateral">
+						<a href="{{x.atalho}}"><img ng-src="/img/{{x.imagem}}" height="48" width="48"/><span ng-bind="x.nome"></span></a>
 					</ul>
 				</div>
-				<div class="cell auto-size padding20 bg-white">
-					<div ng-repeat="x in dados">
+				<div id="lista-atalhos" class="cell auto-size padding20 bg-white">
+					<div ng-repeat="y in listaatalhos">
 						<div ng-cloak>
-							<img ng-src="/img/{{x.icone}}" height="48" width="48">
-							<span class="tab-inicial-titulo" ng-bind="x.categoria"></span>
+							<img ng-src="/img/{{y.icone}}" height="48" width="48" />
+							<span class="tab-inicial-titulo" ng-bind="y.categoria"></span>
 						</div>
 						<ul class="tab-inicial unstyled-list">
-							<a ng-repeat="y in x.itens" href="{{y.atalho}}" ng-bind="y.nome" ng-cloak></a>
+							<a ng-repeat="z in y.itens" href="{{z.atalho}}" ng-bind="z.nome" ng-cloak></a>
 						</ul>
 					</div>
-					<p style="text-align: right;">Versão prerelease</p>
+					<div ng-hide="!erro" ng-cloak><p>Erro ao abrir lista de atalhos.</p></div>
+					<p style="text-align: right;" ng-bind="versao" ng-cloak></p>
 				</div>
 			</div>
 		</div>
