@@ -1,10 +1,10 @@
 ﻿	{
 	"nome": "Adobe Acrobat Reader DC",
 	"id": "acrobatreaderdc",
-	"versao": "2017.09.20044",
-	"publicadoem": "23/05/2017",
+	"versao": "2017.12.20093",
+	"publicadoem": "11/09/2017",
 	"descricao": "Use o Adobe Acrobat Reader para visualizar, imprimir arquivos e preencher formulários no formato PDF.",
-	"detalhes": "Descrição detalhada.",
+	"detalhes": "Não é necessário a instalação desse aplicativo em computadores com o Windows 10 Atualização de Outono para Criadores pois esse sistema já possui visualizador de arquivos PDF integrado.",
 	"imagens": [{
 		"arquivo": "tela01.png",
 		"mini": "minitela01.png",
@@ -12,7 +12,7 @@
 	}],
 	"arquivos": [{
 		"nome": "AcroRdrDC.msi",
-		"tamanho": "106 MB",
+		"tamanho": "158 MB",
 		"plataforma": "all"
 	}],
 	"subitens": [{
@@ -23,6 +23,6 @@
 		"conteudo": "<b>Instalando o Adobe Acrobat Reader DC</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar apropriado para o seu sistema operacional.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o Adobe Acrobat DC, basta clicar em um arquivo no formato PDF qualquer no seu computador.</p><b>Removendo o Adobe Acrobat Reader DC</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione Adobe Acrobat Reader DC e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
 	}, {
 		"id": "resrelac",
-		"conteudo": "<a href='docs.html'>Modelos de Documentos</a>"
+		"conteudo": "<p><a href='docs.html'>Modelos de Documentos</a></p><p><a href='/download/detalhes.html?id=msdotnet47'>Microsoft .NET Framework 4.7</a></p>"
 	}]
 }

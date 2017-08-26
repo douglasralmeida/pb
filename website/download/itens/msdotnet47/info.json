@@ -2,25 +2,21 @@
 	"nome": "Microsoft .NET Framework 4.7",
 	"id": "msdotnet47",
 	"versao": "4.7",
-	"publicadoem": "09/05/2017",
+	"publicadoem": "11/09/2017",
 	"descricao": "O .NET Framework é um conjunto de componentes para execução de aplicativos em Windows.",
 	"detalhes": "Instale o .NET Framework apenas em caso de necessidade.",
 	"imagens": [],
 	"arquivos": [{
-		"nome": "msdotnet_x86.msi",
-		"tamanho": "0 MB",
-		"plataforma": "x86"
-	}, {
-		"nome": "msdotnet_x64.msi",
-		"tamanho": "0 MB",
-		"plataforma": "x64"
+		"nome": "msdotnet_47.exe",
+		"tamanho": "59 MB",
+		"plataforma": "all"
 	}],
 	"subitens": [{
 		"id": "reqsis",
 		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8.1</li></ul>"
 	}, {
 		"id": "instalinstruc",
-		"conteudo": "<b>Instalando o .NET Framework</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação.</li>"
+		"conteudo": "<b>Instalando o .NET Framework</b><ol><li>Baixe a instalação abaixo conforme seu sistema operacional: <ul><li><a href='kb4019990-x86.msu'>Windows 7 SP1 de 32 bits</a></li><li><a href='kb4019990-x64.msu'>Windows 7 SP1 de 64 bits</a></li></ul></li><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação da atualização baixada.</li><li>Execute o programa de instalação.</li>"
 	}, {
 		"id": "resrelac",
 		"conteudo": "<a href='conhecimento.html'>Banco de Conhecimentos</a>"

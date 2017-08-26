@@ -4,9 +4,9 @@
 		"nome": "Aplicativos de Escritório",
 		"icone": "down_escritorio.svg",
 		"itens": [{
-			"nome": "LibreOffice 5.3",
+			"nome": "LibreOffice 5.4",
 			"descricao": "O LibreOffice é um pacote de aplicativos de escritório que inclui planilha, editor de textos, produtor de apresentações entre outros.",
-			"id": "libreoffice53",
+			"id": "libreoffice54",
 			"icone": "libreoffice.svg"
 		}, {
 			"nome": "Adobe Acrobat Reader DC",

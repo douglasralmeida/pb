@@ -2,7 +2,7 @@
 	"nome": "Carta de Acidente de Trabalho 4.0",
 	"id": "cat40",
 	"versao": "4.0",
-	"publicadoem": "01/01/2015",
+	"publicadoem": "11/09/2017",
 	"descricao": "O CAT 4.0 permite registrar as cartas de acidente de trabalho junto ao INSS.",
 	"detalhes": "O CAT 4.0 permite registrar as cartas de acidente de trabalho junto ao INSS.",
 	"imagens": [{
@@ -16,7 +16,7 @@
 	}],
 	"arquivos": [{
 		"nome": "cat40.exe",
-		"tamanho": "0 MB",
+		"tamanho": "5 MB",
 		"plataforma": "all"
 	}],
 	"subitens": [{

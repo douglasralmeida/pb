@@ -2,7 +2,7 @@
 	"nome": "PDFCreator 2.5",
 	"id": "pdfcreator25",
 	"versao": "2.5.3",
-	"publicadoem": "17/02/2017",
+	"publicadoem": "05/07/2017",
 	"descricao": "O PDFCreator permite criar, dividir e combinar arquivos no formato PDF.",
 	"detalhes": "O PDFCreator usa uma impressora virtual para converter qualquer documento imprimível em arquivo no formato PDF. Ele suporta assinatura digital, formato PDF/A e permite combinar vários arquivos em apenas um.",
 	"imagens": [{
@@ -16,17 +16,17 @@
 	}],
 	"arquivos": [{
 		"nome": "pdfcreator-setup.exe",
-		"tamanho": "27.6 MB",
+		"tamanho": "27.7 MB",
 		"plataforma": "all"
 	}],
 	"subitens": [{
 		"id": "reqsis",
-		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows XP SP3</li><li>Windows Vista</li><li>Windows 7</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul>"
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows XP SP3</li><li>Windows Vista</li><li>Windows 7</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul><p><b>Componentes necessários:</b></p><ul><li><a href='/download/detalhes.html?id=msdotnet47'>Microsoft .NET Framework 4.0 ou superior</a>.</li></ul>"
 	}, {
 		"id": "instalinstruc",
 		"conteudo": "<b>Instalando o PDFCreator</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o PDFCreator, abra o arquivo a ser convertido e use a opção Imprimir do aplicativo. Selecione a impressora PDFCreator.</p><b>Removendo o PDFCreator</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione PDFCreator e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
 	}, {
 		"id": "resrelac",
-		"conteudo": "<a href='docs.html'>Modelos de Documentos</a>"
+		"conteudo": "<p><a href='docs.html'>Modelos de Documentos</a></p><p><a href='/download/detalhes.html?id=msdotnet47'>Microsoft .NET Framework 4.7</a></p>"
 	}]
 }
