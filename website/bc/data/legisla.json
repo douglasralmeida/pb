@@ -1,0 +1,120 @@
+﻿{
+	"titulo": "Legislação Básica",
+	"categorias": [{
+		"nome": "Tópicos mais populares",
+		"icone": "mif-star-empty",
+		"itens": [{
+			"nome": "Constituição de 1988",
+			"data": "http://www.planalto.gov.br/ccivil_03/Constituicao/ConstituicaoCompilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Decreto 3.048 - Regulamento da Previdência Social",
+			"data": "http://www.planalto.gov.br/ccivil_03/decreto/d3048compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Decreto 6.214 - Regulamento do Benefício de Prestação Continuada",
+			"data": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2007/Decreto/D6214.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 8.112 - Regime Jurídico Único dos servidores públicos",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/L8112compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 8.212 - Plano de custeio da Seguridade Social",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/L8112compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 8.213 - Plano de Benefícios da Previdência Social",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/L8213compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 8.742 - Lei Orgânica da Assistência Social",
+			"data": "http://www.planalto.gov.br/ccivil_03/leis/L8742compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Instrução Normativa do INSS 77 - Rotinas para o reconhecimento de direitos",
+			"data": "http://sislex.previdencia.gov.br/paginas/38/inss-pres/2015/77.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Instrução Normativa do INSS 79 - Procedimentos relativos ao seguro defeso",
+			"data": "http://sislex.previdencia.gov.br/paginas/38/INSS-PRES/2015/79.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Instrução Normativa do INSS 74 - Procedimentos para apuração e cobrança administrativa",
+			"data": "http://sislex.previdencia.gov.br/paginas/38/INSS-PRES/2014/74.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Instrução Normativa do INSS 31 - Procedimentos referentes ao Nexo Técnico Epidemiológico Previdenciário (NTEP)",
+			"data": "http://sislex.previdencia.gov.br/paginas/38/inss-pres/2008/31.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Portaria Conjunta MDSA/INSS 1/2017 - Regulamenta regras e procedimentos relativos ao Benefício de Prestação Continuada",
+			"data": "http://sislex.previdencia.gov.br/paginas/64/MDSA-INSS/2017/1.htm",
+			"tipo": "externo"
+		}]
+	}, {
+		"nome": "Arrecadação",
+		"icone": "",
+		"itens": [{
+			"nome": "Lei Complementar 123 - Institui a microempresa e o microempreendedor",
+			"data": "https://www.planalto.gov.br/ccivil_03/LEIS/LCP/Lcp123.htm",
+			"tipo": "externo"
+		}]
+	}, {
+		"nome": "Benefícios",
+		"icone": "",
+		"itens": [{
+			"nome": "Lei Complementar 11 - Institui o Programa de Assistência do Trabalhador Rural",
+			"data": "http://www.planalto.gov.br/ccivil_03/Leis/LCP/Lcp11.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 7.070 - Dispõe sobre a pensão especial da Síndrome da Talidomida",
+			"data": "https://www.planalto.gov.br/ccivil_03/LEIS/1980-1988/L7070.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei Complementar 142 - Regulamenta a aposentadoria da pessoa com deficiência",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/LCP/Lcp142.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 10.666 - Dispõe sobre a aposentadoria especial ao cooperado",
+			"data": "https://www.planalto.gov.br/ccivil_03/LEIS/2003/L10.666.htm",
+			"tipo": "externo"
+		}]
+	}, {
+		"nome": "Trabalho",
+		"icone": "",
+		"itens": [{
+			"nome": "Decreto-Lei 5.452 - Consolidação das Leis do Trabalho (CLT)",
+			"data": "http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del5452compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei Complementar 150 - Dispõe sobre o contrato de trabalho doméstico",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/LCP/Lcp150.htm",
+			"tipo": "externo"
+		}]
+	}, {
+		"nome": "Outros",
+		"icone": "",
+		"itens": [{
+			"nome": "Lei 10.406 - Código Civil",
+			"data": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10406compilada.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Decreto-Lei 2.848 - Código Penal",
+			"data": "http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del2848compilado.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 9.784 - Regula o processo administrativo na Administração Pública Federal",
+			"data": "http://www.planalto.gov.br/ccivil_03/Leis/L9784.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Lei 12.527 - Lei do acesso a informações",
+			"data": "http://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2011/Lei/L12527.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Decreto 7.724 - Regulamenta a Lei do acesso a informações",
+			"data": "http://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2012/Decreto/D7724.htm",
+			"tipo": "externo"
+		}]
+	}]
+}

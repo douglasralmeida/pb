@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
 <script type='text/javascript' src="/js/geturl.js"></script>
 <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 <script type="text/javascript">
@@ -26,14 +25,16 @@
 <div ng-include="'widgets/navbar.html'"></div>
 <div class="container page-content">
 	<h4 ng-bind="titulo"></h4>
-	<div class="accordion" data-role="accordion" data-close-any="true">
-		<div class="frame active" ng-repeat="x in dados">
-			<div class="heading">
-				{{x.nome}}
+	<div class="accordion" data-role="accordion" data-close-any="true" ng-cloak>
+		<div class="frame" ng-class="{'active': $first}" ng-repeat="x in dados">
+			<div class="heading" ng-bind="x.nome">
 				<span class="{{x.icone}} icon"></span>
 			</div>
 			<div class="content">
-				<p ng-repeat="y in x.itens"><a href="bc/artigo.html?id={{y.data}}">{{y.nome}}</a></p>
+				<p ng-repeat="y in x.itens">
+					<a ng-if="y.tipo == 'artigo'" href="bc/artigo.html?id={{y.data}}" ng-bind="y.nome"></a>
+					<a ng-if="y.tipo == 'externo'" href="{{y.data}}" ng-bind="y.nome"></a>
+				</p>
 			</div>
 		</div>
 	</div>	

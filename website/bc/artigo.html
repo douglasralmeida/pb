@@ -86,7 +86,6 @@
 			};
 
 		manipularTags = function(tags) {
-			//$scope.tags = $scope.tags.replace(/,/g, " ");
 			$scope.tags = $scope.tags.split(",");
 		};
 	});
@@ -116,7 +115,7 @@
 	<button class="button js-dialog-close" style="position: absolute; bottom: 8px; right: 16px;">Cancelar</button>
     <span class="dialog-close-button"></span>
 </div>
-<div class="container page-content align-center ng-hide" ng-show="!artigoexiste" style="margin-top: 10px;" ngcloak>
+<div class="container page-content align-center ng-hide" ng-hide="artigoexiste" style="margin-top: 10px;" ngcloak>
 	<div class="mif-blocked mif-4x"></div>
 	<h1>Artigo não econtrado</h1>
 	<p>Tente pesquisar o que você está precisando.</p>
@@ -129,7 +128,7 @@
 <div class="flex-grid">
 <div class="row">
 	<main class="cell colspan9">
-		<div ng-show="estaDescontinuado" ng-cloak>
+		<div ng-hide="!estaDescontinuado" ng-cloak>
 			<div class="popover marker-on-left bg-darkRed fg-white">
             	AVISO: Este artigo trata de um assunto cuja legislação não está mais em vigor ou seu entendimento foi alterado ou trata de um aplicativo que está em desuso no instituto.
             </div>
@@ -137,7 +136,7 @@
 		<div ng-bind="titulo" class="artigobc-titulo"></div>
 		<div ng-bind-html="arquivohtml" class="artigobc-conteudo"></div>
 		<div class="artigobc-conteudo">
-			<section>
+			<section ng-cloak>
 				<h3>Propriedades</h3>
 				<p>ID do artigo: <span ng-bind="id"></span></p>
 				<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - HH:mm'"></span></p>
@@ -146,7 +145,7 @@
 			</section>
 		</div>
 	</main>
-	<div class="cell colspan3 artigobc-painelacoes" style="margin-left: 12px;">
+	<div class="cell colspan3 artigobc-painelacoes" style="margin-left: 12px;" ng-cloak>
 		<ul class="artigobc-listaacoes">
 			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
 			<li><a href="mailto:?Artigo do banco de conhecimento&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
@@ -157,7 +156,7 @@
 				<li ng-repeat="x in secoes"><a href="/bc/artigo.html?id={{bcid}}#ancora{{$index}}" ng-bind="x"></a></li>
 			</ol>
 		</nav>
-		<nav class="artigo-tags"">
+		<nav class="artigo-tags">
 			<h4>Tags</h4>
 			<span ng-repeat="x in tags" ng-bind="x"></span>
 		</nav>
