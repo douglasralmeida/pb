@@ -1,15 +1,17 @@
 01/09/08,Introdução ao Banco de Conhecimento,
-01/09/08,O comprovante de agendamento é impresso com texto errado,
-01/09/08,Não é possível fazer seu cadastro no Auxiliar de Trabalho,
-10/09/08,Informações sobre o Auxiliar gama1,
-10/09/08,O Auxiliar de Trabalho exibe uma mensagem de erro no soquete TCP,
-09/10/08,Informações sobre o Auxiliar gama2,
-04/11/08,Informações sobre o Auxiliar gama3,
-24/11/08,"Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto",
-24/08/09,"Motivos de cessação, reativação e suspensão de benefícios",
-17/08/09,Usando o Auxiliar versão Treinamento,
-25/02/10,Como usar os formulários do Modelos de Documentos 2010,
-12/02/10,INTERROG BPC nº2,A FAZER
+01/09/08,O comprovante de agendamento é impresso com texto errado,FEITO
+01/09/08,Não é possível fazer seu cadastro no Auxiliar de Trabalho,FEITO
+10/09/08,Informações sobre o Auxiliar gama1,FEITO
+10/09/08,O Auxiliar de Trabalho exibe uma mensagem de erro no soquete TCP,FEITO
+09/10/08,Informações sobre o Auxiliar gama2,FEITO
+04/11/08,Informações sobre o Auxiliar gama3,FEITO
+24/11/08,"Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto",FEITO
+24/08/09,"Motivos de cessação, reativação e suspensão de benefícios",FEITO
+17/08/09,Usando o Auxiliar versão Treinamento,FEITO
+25/02/10,Como usar os formulários do Modelos de Documentos 2010,FEITO
+,,
+,,
+30/07/10,Notas de Versão do SABI 9.5,
 ,,
 ,,
 ,,
@@ -18,38 +20,41 @@
 ,,
 ,,
 ,,
+15/01/11,Remover edição ao vivo de um formulário,FEITO
+,,
+16/02/11,Indenização por danos morais devida às vítimas da Talidomida,FEITO
+15/03/11,Informações importantes sobre o Internet Explorer 9,FEITO
+22/03/11,Entendimentos do Parecer do Consultor Jurídico do MPS 616/2010,FEITO
 ,,
 ,,
-15/01/11,Remover edição ao vivo de um formulário,
-,,
-16/02/11,Indenização por danos morais devida às vítimas da Talidomida,
-15/03/11,Informações importantes sobre o Internet Explorer 9,
-,,
-22/03/11,Entendimentos do Parecer do Consultor Jurídico do MPS 616/2010,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-26/07/16,Introdução a aposentadoria,
-29/05/16,Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows,
-29/05/16,Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows,
-29/05/16,Categorias profissionais com enquadramento em atividade especial,
-12/09/16,Sobre a aposentadoria da pessoa com deficiência,
-06/02/17,Tabela de salários mínimos após o Plano Real,
-17/01/17,Alíquotas de contribuição previdenciária,
-09/08/17,Alterações trazidas pela Lei 13.135,
-12/09/16,Alterações trazidas pela Media Provisória 739,
-,,
-26/07/17,Valores do salário-família após o Plano Real,
-17/01/17,Valores do limite máximo de remuneração para concessão do auxílio-reclusão,
-09/05/17,Lista de CNPJs mais utilizados para emissão de CTC em Belo Horizonte,
-29/05/17,Feriados e Pontos Facultativos do ano de 2017,
-29/05/17,CRÍTICA: FILIACAO INVALIDA P/ESP,
-09/08/17,Análise da carência na refiliação ao RGPS,
+06/02/15,Guia Rápido do CNIS 4.0,
+03/03/15,Notas de Versão do SABI 10.0,
+23/05/15,Guia Rápido do SIBE 4.0,
+11/06/15,Notas de Versão do SIBE 4.0.2,
+05/12/15,Notas de Versão do SABI 10.1 e 10.2,
+17/12/15,Relatório de versão do Prisma 9.5f,
+17/05/16,Relatório de versão do Prisma 9.5g,
+24/05/16,Relatório de versão do Prisma 9.5g1,
+30/06/16,Relatório de versão do Prisma 9.5h,
+26/07/16,Relatório de versão do Prisma 9.5i,
+26/07/16,Introdução a aposentadoria,FEITO
+29/05/16,Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows,FEITO
+29/05/16,Como determinar se seu computador está usando uma versão de 32 bits ou de 64 bits do Windows,FEITO
+29/05/16,Categorias profissionais com enquadramento em atividade especial,FEITO
+12/09/16,Sobre a aposentadoria da pessoa com deficiência,FEITO
+06/02/17,Tabela de salários mínimos após o Plano Real,FEITO
+17/01/17,Alíquotas de contribuição previdenciária,FEITO
+09/08/17,Alterações trazidas pela Lei 13.135,FEITO
+04/04/17,Notas de Versão do SABI 11.0,
+26/04/17,Notas de Versão do SABI 11.1,
+26/07/17,Valores do salário-família após o Plano Real,FEITO
+17/01/17,Valores do limite máximo de remuneração para concessão do auxílio-reclusão,FEITO
+09/05/17,Lista de CNPJs mais utilizados para emissão de CTC em Belo Horizonte,FEITO
+29/05/17,Feriados e Pontos Facultativos do ano de 2017,FEITO
+29/05/17,CRÍTICA: FILIACAO INVALIDA P/ESP,FEITO
+03/07/17,Notas de Versão do SABI 12.0,
+15/07/17,Notas de Versão do SABI 12.0.1,
+20/07/17,Relatório de versão do Prisma 9.5k,
+09/08/17,Análise da carência na refiliação ao RGPS,FEITO
+10/11/16,Relatório de versão do Prisma 9.5j,
+02/02/17,Relatório de versão do Prisma 9.5k,

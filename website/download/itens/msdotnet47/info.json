@@ -16,7 +16,7 @@
 		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8.1</li></ul>"
 	}, {
 		"id": "instalinstruc",
-		"conteudo": "<b>Instalando o .NET Framework</b><ol><li>Baixe a instalação abaixo conforme seu sistema operacional: <ul><li><a href='kb4019990-x86.msu'>Windows 7 SP1 de 32 bits</a></li><li><a href='kb4019990-x64.msu'>Windows 7 SP1 de 64 bits</a></li></ul></li><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação da atualização baixada.</li><li>Execute o programa de instalação.</li>"
+		"conteudo": "<b>Instalando o .NET Framework</b><ol><li>Se você possui o Windows 7, baixe uma das atualizações abaixo conforme seu sistema operacional: <ul><li><a href='kb4019990-x86.msu'>Windows 7 SP1 de 32 bits</a></li><li><a href='kb4019990-x64.msu'>Windows 7 SP1 de 64 bits</a></li></ul></li><li>Baixe o instalador para seu computador clicando no botão Baixar.</li><li>Execute o programa de instalação da atualização baixada.</li><li>Execute o programa de instalação.</li>"
 	}, {
 		"id": "resrelac",
 		"conteudo": "<a href='conhecimento.html'>Banco de Conhecimentos</a>"
