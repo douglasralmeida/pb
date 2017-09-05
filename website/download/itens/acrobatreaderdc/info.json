@@ -6,9 +6,13 @@
 	"descricao": "Use o Adobe Acrobat Reader para visualizar, imprimir arquivos e preencher formulários no formato PDF.",
 	"detalhes": "Não é necessário a instalação desse aplicativo em computadores com o Windows 10 Atualização de Outono para Criadores pois esse sistema já possui visualizador de arquivos PDF integrado.",
 	"imagens": [{
-		"arquivo": "tela01.png",
-		"mini": "minitela01.png",
-		"descricao": "Acrobat Reader"
+		"arquivo": "tela1.png",
+		"mini": "minitela1.png",
+		"descricao": "Acrobat Acrobat Reader"
+	}, {
+		"arquivo": "tela2.png",
+		"mini": "minitela2.png",
+		"descricao": "Janela par impressão do Aobe Acrobat Reader"
 	}],
 	"arquivos": [{
 		"nome": "AcroRdrDC.msi",
