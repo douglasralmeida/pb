@@ -15,12 +15,12 @@
 		"descricao": "Tela de extração"
 	}],
 	"arquivos": [{
-		"nome": "ie11_x86.msi",
-		"tamanho": "0 MB",
+		"nome": "ie11x86.exe",
+		"tamanho": "30 MB",
 		"plataforma": "x86"
 	}, {
-		"nome": "ie11_x64.msi",
-		"tamanho": "0 MB",
+		"nome": "ie11x64.exe",
+		"tamanho": "56 MB",
 		"plataforma": "x64"
 	}],
 	"subitens": [{

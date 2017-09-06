@@ -15,11 +15,11 @@
 		"descricao": "Planilha Calc"		
 	}],
 	"arquivos": [{
-		"nome": "loffice_542_x86.msi",
+		"nome": "lo541_x86.msi",
 		"tamanho": "213 MB",
 		"plataforma": "x86"
 	}, {
-		"nome": "loffice_542_x64.msi",
+		"nome": "lo541_x64.msi",
 		"tamanho": "233 MB",
 		"plataforma": "x64"
 	}],

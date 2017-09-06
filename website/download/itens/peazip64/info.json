@@ -16,11 +16,11 @@
 	}],
 	"arquivos": [{
 		"nome": "peazip641_x86.exe",
-		"tamanho": "7 MB",
+		"tamanho": "6 MB",
 		"plataforma": "x86"
 	}, {
 		"nome": "peazip641_x64.exe",
-		"tamanho": "8 MB",
+		"tamanho": "7 MB",
 		"plataforma": "x64"
 	}],
 	"subitens": [{

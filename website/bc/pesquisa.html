@@ -13,11 +13,20 @@
 <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 <script type="text/javascript">
 	var app = angular.module('PesquisaBC', []);
-	var param = getUrlParameter('consulta');
+	var param = getUrlParameter('q');
 
 	app.controller('PageCtrl',  function($scope, $http) {
+		var url = 'http://' + location.host + ':5055';
+		$scope.consultarespondida = false;
 		$scope.consulta = param;
 		$scope.resultados = [];
+
+		$http.post(url, consulta).then(function(response) {
+			$scope.consultarespondida = true;
+			
+		}, function(response) {
+			$scope.consultarespondida = false;
+		});
 
 		$scope.resultados.push({"titulo": "Introdução a aposentadoria", "endereco": "http://localhost/bc/artigo.html?id=bc000040", "descricao": "Este artigo descreve as aposentadorias que atualmente são previstas no Regime Geral de Previdência Social."});
 		$scope.resultados.push({"titulo": "Sobre a aposentadoria por deficiência", "endereco": "http://localhost/bc/artigo.html?id=bc000044", "descricao": "Este artigo descreve as duas novas modalidades de aposentadoria introduzidas pela Lei Complementar 142."});
