@@ -16,21 +16,25 @@
 	var param = getUrlParameter('q');
 
 	app.controller('PageCtrl',  function($scope, $http) {
-		var url = 'http://' + location.host + ':5055';
+		var url = 'http://' + location.host + ':5055/kb';
 		$scope.consultarespondida = false;
 		$scope.consulta = param;
+		$scope.consultajson = {"consulta": param};
+		$scope.endereco = 'http://' + location.host;
 		$scope.resultados = [];
 
-		$http.post(url, consulta).then(function(response) {
+		$http.post(url, $scope.consultajson).then(function(response) {
 			$scope.consultarespondida = true;
-			
+			$scope.resultados = response.data;
 		}, function(response) {
 			$scope.consultarespondida = false;
 		});
 
+		/*
 		$scope.resultados.push({"titulo": "Introdução a aposentadoria", "endereco": "http://localhost/bc/artigo.html?id=bc000040", "descricao": "Este artigo descreve as aposentadorias que atualmente são previstas no Regime Geral de Previdência Social."});
 		$scope.resultados.push({"titulo": "Sobre a aposentadoria por deficiência", "endereco": "http://localhost/bc/artigo.html?id=bc000044", "descricao": "Este artigo descreve as duas novas modalidades de aposentadoria introduzidas pela Lei Complementar 142."});
-		$scope.resultados.push({"titulo": "Categorias profissionais com enquadramento em atividade especial", "endereco": "http://localhost/bc/artigo.html?id=bc000043", "descricao": "É permitido o enquadramento de atividade especial por categoria profissional para atividades exercidas até 28 de abril 1995..."});		
+		$scope.resultados.push({"titulo": "Categorias profissionais com enquadramento em atividade especial", "endereco": "http://localhost/bc/artigo.html?id=bc000043", "descricao": "É permitido o enquadramento de atividade especial por categoria profissional para atividades exercidas até 28 de abril 1995..."});
+		*/
 	});
 </script>
 <title>Resultado da Pesquisa no Banco de Conhecimentos</title>
@@ -42,11 +46,11 @@
 		<div ng-include="'/widgets/pesquisabc.html'"></div>
 	</div>
 	<div class="container">
-	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>": <span ng-bind="resultados.length"></span> resultados encontrados.</p>
+	<p class="pesquisa-resultados-descricao">Resultado da pesquisa para "<span ng-bind="consulta"></span>": <span ng-bind="resultados.length"></span> resultado(s) encontrado(s).</p>
 	<div class="lista-pesquisa">
 		<div class="pesquisa-item" ng-repeat="x in resultados">
-			<div class="pesquisa-item-titulo"><a ng-bind="x.titulo" href="{{x.endereco}}"></a></div>
-			<div class="pesquisa-item-endereco" ng-bind="x.endereco"></div>
+			<div class="pesquisa-item-titulo"><a ng-bind="x.titulo" href="{{x.link}}"></a></div>
+			<div class="pesquisa-item-endereco" ng-bind-template="{{endereco}}{{x.link}}"></div>
 			<div class="pesquisa-item-descricao" ng-bind="x.descricao"></div>
 		</div>
 	</div>	

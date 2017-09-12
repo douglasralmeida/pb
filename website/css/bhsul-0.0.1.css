@@ -101,6 +101,10 @@
 	width: 120px;
 }
 
+.lista-pesquisa {
+	width: 560px;
+}
+
 .pesquisa-item {
 	margin-bottom: 39px;
 }
@@ -108,7 +112,9 @@
 .pesquisa-item-titulo {
 	color: rgb(0, 108, 216);
 	cursor: pointer;
-	font-size: 0.93rem;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
 }
 
 .pesquisa-item-titulo:hover {
@@ -117,7 +123,8 @@
 
 .pesquisa-item-endereco {
 	color: #107c10;
-	font-size: 0.93rem;
+	font-size: 13px;
+	line-height: 17px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
