@@ -22,7 +22,7 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 			"imagem": "capa_ponto.svg"
 		}, {
 			"nome": "Novidades",
-			"atalhos": "novidades.html",
+			"atalho": "novidades.html",
 			"imagem": "capa_noticia.svg"
 		}];
 
