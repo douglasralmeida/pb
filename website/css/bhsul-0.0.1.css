@@ -1,21 +1,30 @@
 [aria-disabled], html {
-    cursor: default;
+	cursor: default;
 }
 
 *::selection {
-    background-color: #b3d4fc;
-    color: black;
-    text-shadow: none;
+	background-color: #b3d4fc;
+	color: black;
+	text-shadow: none;
 }
 
-.app-bar-element:focus{
+.app-bar {
+	box-shadow: 0px 6px 23px -6px rgba(0, 114, 198, 0.16);
+}
+
+.app-bar-element:focus {
 	border: 3px dotted white;
 	outline: none;
 }
 
-.app-bar-menu a:focus{
+.app-bar-link:focus {
 	border: 3px dotted white;
 	outline: none;
+	text-decoration: underline solid white;
+}
+
+.app-bar-link:hover {
+	text-decoration: underline solid white;
 }
 
 .artigobc-titulo {	
@@ -251,34 +260,49 @@
 
 .tab-inicial a {
 	background-color: rgb(0, 125, 170);
-	border: 3px solid white;
-    color: white;
-	display: inline-block;
-    padding: 10px;
+	border: 3px solid rgb(0, 125, 170);
+	color: white;
+	float: left;
+	padding: 8px;
+	margin: 4px;
 	text-align: center;
-    width: 25%;
-}
-
-.tab-inicial a:hover {
-    background-color: rgb(0, 94, 128);
+	width: 24%;
 }
 
 .tab-inicial a:focus {
 	border: 3px dotted white;
-	outline: none;
+}
+
+.tab-inicial a:hover {
+	background-color: rgb(0, 94, 128);
+	border: 3px solid rgb(0, 94, 128);
+	box-shadow: 0px 8px 16px 0px rgba(0, 94, 128, 0.7);
+}
+
+.tab-inicial-secao {
+	display: block;
+	clear: both;
+	padding-top: 4px;
+	position: relative;
 }
 
 .tab-inicial-titulo {
 	font: 500 1.125rem/1.1 "Segoe UI","Open Sans",sans-serif,serif;
+	margin: 0 8px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .tab-inicial-lateral {
 	text-align: center;
+	margin-top: 16px;
+	margin-right: 16px;
 }
 
 .tab-inicial-lateral a {
 	background-color: rgb(0, 53, 106);
-	border: 3px solid white;
+	border: 3px solid rgb(0, 53, 106);
 	color: white;
 	padding: 10px;
 	display: block;
@@ -287,6 +311,12 @@
 .tab-inicial-lateral a:focus {
 	border: 3px dotted white;
 	outline: none;
+}
+
+.tab-inicial-lateral a:hover {
+	background-color: rgb(0, 53, 106);
+	border: 3px solid rgb(0, 53, 106);
+	box-shadow: 0px 8px 16px 0px rgba(0, 53, 106, 0.7);
 }
 
 .tab-inicial-lateral a img {
@@ -334,4 +364,4 @@
 .tab-doc a:hover {
 	background-color: #cce8ff;
     border: 1px solid #99d1ff;
-}	
+}

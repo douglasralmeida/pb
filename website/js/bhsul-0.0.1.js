@@ -17,6 +17,10 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 			"atalho": "http://10.32.97.205:8080/atendimento",
 			"imagem": "capa_atende.svg"
 		}, {
+			"nome": "Tarefas",
+			"atalho": "http://www-get/",
+			"imagem": "capa_tarefas.svg"
+		}, {
 			"nome": "Ponto Eletrônico",
 			"atalho": "http://www-sisref/",
 			"imagem": "capa_ponto.svg"
