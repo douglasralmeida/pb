@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="O Portal da BH Sul contém atalhos úteis, aplicativos para download, banco de conhecimento e os formulários mais usados no dia a dia."/>
-<meta name="keywords" content="inss, previdência, aps, belo horizonte, sul, bh, bhsul, portal, atalhos, aplicativos, download, banco, conhecimento, formulários, documentos, modelos" />
-<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
-<title>Portal Corporativo da APS BH Sul</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="O Portal da BH Sul contém atalhos úteis, aplicativos para download, banco de conhecimento e os formulários mais usados no dia a dia."/>
+	<meta name="keywords" content="inss, previdência, aps, belo horizonte, sul, bh, bhsul, portal, atalhos, aplicativos, download, banco, conhecimento, formulários, documentos, modelos" />
+	<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
+	<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+	<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+	<title>Portal Corporativo da APS BH Sul</title>
 </head>
-<body ng-app="PortalBHSul" ng-controller="paginicialCtrl">
-	<div ng-include="'widgets/navbar.html'"></div>
-	<div class="page-content">
+<body ng-app="PortalBHSul" ng-controller="paginicialCtrl" ng-çloak>
+	<div ng-include="'widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+	<div class="conteudo-pagina" ng-show="exibirPagina">
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
 			<div class="row" style="height: 100%">
-				<div class="cell size-x200" id="cell-sidebar" style="height: 100%">
+				<div class="cell size-x200 barra-lateral" id="lista-lateral">
 					<ul class="tab-inicial-lateral unstyled-list" ng-repeat="x in listalateral">
 						<a href="{{x.atalho}}"><img ng-src="/img/{{x.imagem}}" height="48" width="48"/><span ng-bind="x.nome"></span></a>
 					</ul>
 				</div>
-				<div id="lista-atalhos" class="cell auto-size padding20 bg-white">
+				<div class="cell auto-size padding20 bg-white" id="lista-atalhos" style="margin-left: 156px;">
 					<div class="tab-inicial-secao" ng-repeat="y in listaatalhos">
 						<div ng-cloak>
 							<img ng-src="/img/{{y.icone}}" height="48" width="48" />
@@ -34,8 +36,10 @@
 							<a ng-repeat="z in y.itens" href="{{z.atalho}}" ng-bind="z.nome" ng-cloak></a>
 						</ul>
 					</div>
+					<footer>
+						<p style="text-align: right;" ng-bind="versao" ng-cloak></p>
+					</footer>
 					<div ng-hide="!erro" ng-cloak><p>Erro ao abrir lista de atalhos.</p></div>
-					<p style="text-align: right;" ng-bind="versao" ng-cloak></p>
 				</div>
 			</div>
 		</div>

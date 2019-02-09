@@ -1,5 +1,8 @@
-<header class="app-bar fixed-top">
-  <a class="app-bar-element branding" href="index.html">Portal da BH Sul</a>
+<header class="app-bar fixed-top" data-role="appbar">
+  <a class="app-bar-element branding" href="index.html">
+    <img src="/img/logo32.png" style="margin-top: -6px;">
+    <span>Portal da BH Sul</span>
+  </a>
   <span class="app-bar-divider"></span>
   <ul class="app-bar-menu">
     <li ng-class="{active: pagina === 0}" data-flexorderorigin="0" data-flexorder="1"><a class="app-bar-link" href="/docs.html">Documentos</a></li>
@@ -12,9 +15,5 @@
     <span class="mif-mail-icon"></span>Email Expresso
   </a>
   <span class="app-bar-divider place-right"></span>
-  <div class="app-bar-pullbutton automatic" style="display: none;"></div>
-  <div class="clearfix" style="width: 0;"></div>
-  <nav class="app-bar-pullmenu hidden flexstyle-app-bar-menu" style="display: none;">
-    <ul class="app-bar-pullmenubar app-bar-menu hidden" style="display: none;"></ul>
-  </nav>
+  <span class="app-bar-pull"></span>
 </header>

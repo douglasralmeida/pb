@@ -11,8 +11,13 @@ var ver = "Versão prerelease";
 app.controller('paginicialCtrl',  function($scope, $http) {
 	$scope.listaatalhos = [];
 	$scope.listalateral = [];
+	$scope.exibirPagina = false;
 	$scope.erro = false;
 	$scope.versao = ver;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
 
 	$scope.listalateral = [{
 			"nome": "Atendimento",
@@ -42,9 +47,14 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 //Controlador da página de formulários
 app.controller('docsCtrl',  function($scope, $http) {
 	$scope.dados = [];
+	$scope.exibirPagina = false;
 	$scope.tipodoc = ["ODT", "PDF"];
 	$scope.fileimg = ["img/odt.png", "img/pdf.png"];
 	$scope.pagina = 0;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
 
 	$http.get("/data/docs.json").then(function(response) {
 		$scope.dados = response.data.docs;

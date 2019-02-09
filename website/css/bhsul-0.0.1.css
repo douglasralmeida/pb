@@ -3,14 +3,18 @@
 }
 
 *::selection {
-	background-color: #b3d4fc;
+	background-color: #e5f3fb;
 	color: black;
 	text-shadow: none;
 }
 
-.ancora {
-	padding-top: 54px;
-	margin-top: -54px;
+.ancora::before {
+	content: '';
+	display: block;
+	padding-top: 44px;
+	position: relative;
+	margin-top: -44px;
+	width: 0;
 }
 
 .app-bar {
@@ -95,6 +99,12 @@
 	display: inline-block;
 }
 
+.barra-lateral {
+	box-shadow: 0px -9px 15px 4px #e1dfdd;
+	height: 100%;
+	position: fixed;
+}
+
 .bto-pesquisa {
 	background-color:rgb(0, 125, 170);
 	border: 3px solid rgb(0, 125, 170);
@@ -111,10 +121,6 @@
 	outline: none;
 }
 
-.page-content {
-	margin-top: 54px;
-}
-
 .container-pesquisa {
 	background-color: rgb(0, 108, 216);
 	color: #ffffff;
@@ -122,6 +128,11 @@
 	padding-top: 24px;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.conteudo-pagina {
+	padding-top: 44px;
+	margin: 0 auto;
 }
 
 .enquete {	
@@ -205,7 +216,7 @@
 
 .tab-doc a {
 	background-color: white;
-	border: 3px dotted transparent;
+	border: 1px dotted transparent;
 	outline: none;
 	padding: 2px;
 	text-align: center;
@@ -214,8 +225,8 @@
 }
 
 .tab-doc a:hover {
-	background-color: #cce8ff;
-	border: 1px solid #99d1ff;
+	background-color: #e5f3fb;
+	border: 1px solid #64b4db;
 }
 
 .tab-doc a:focus {
@@ -223,36 +234,13 @@
 }
 
 .tab-doc a:focus:hover {
-	background-color: #cce8ff;
-	border: 3px dotted #99d1ff;	
+	background-color: #e5f3fb;
+	border: 3px dotted #64b4db;	
 }
 
-.tab-doc-cabecalho {
-	display: table;
-	border-collapse: collapse;
-}
-
-.tab-doc-cabecalho a {
-	display: table-cell;
-	background-color: white;
-	border: 3px dotted transparent;
-	vertical-align: middle;
-	outline: none;
-	margin-left: 6px;
-	transition: 0.2s;
-}
-
-.tab-doc-cabecalho a:hover {	
-	border-bottom: 3px solid #f84e29;
-}
-
-.tab-doc-cabecalho a:focus {
-	border: 3px dotted black;
-}
-
-.tab-doc-cabecalho a:focus:hover {
-	border: 3px dotted black;
-	border-bottom: 3px solid #f84e29;
+.tab-doc-cat {
+	margin-top: 18px;
+	margin-right: 2px;	
 }
 
 .tab-download-categorias {
@@ -318,7 +306,6 @@
 .tab-inicial-secao {
 	display: block;
 	clear: both;
-	padding-top: 4px;
 	position: relative;
 }
 
@@ -332,8 +319,8 @@
 
 .tab-inicial-lateral {
 	text-align: center;
-	margin-top: 16px;
-	margin-right: 16px;
+	margin-top: 18px;
+	margin-right: 8px;
 }
 
 .tab-inicial-lateral a {

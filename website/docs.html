@@ -10,21 +10,22 @@
 	<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
 	<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
 	<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
 	<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
 	<script type='text/javascript' src="/js/autocomplete.js"></script>
 	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
-	<script type='text/javascript' src="/js/docs.js"></script>
+	<script type='text/javascript' src="/js/docs-0.0.1.js"></script>
 	<title>Formulários e Modelos de Documentos</title>
 </head>
 <body ng-app="PortalBHSul" ng-controller="docsCtrl">
-	<div ng-include="'/widgets/navbar.html'"></div>
-	<div class="page-content">
+	<div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+	<div class="conteudo-pagina" ng-show="exibirPagina">
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
 			<div class="row" style="height: 100%">
-				<div class="cell size2" id="lista-categorias" style="height: 100%; margin-right: 8px;">
-					<div style="position: fixed; width: 250px;">
-						<h3 class="uppercase"><small>Categorias</small></h3>
+				<div class="cell size2 barra-lateral" id="lista-categorias" style="height: 100%; width: 248px;">
+					<div class="tab-doc-cat">
+						<h3 class="uppercase" style="margin-left: 8px;"><small>Categorias</small></h3>
 						<div class="listview">
 							<div class="list" ng-repeat="x in dados">
 								<a class="list-tile" href="#categoria{{$index}}" target="_self" ng-bind="x.categoria"></a>
@@ -32,7 +33,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cell auto-size padding20 bg-white" id="pagina-docs">
+				<div class="cell auto-size padding20 bg-white" id="pagina-docs" style="margin-left: 248px;">
 					<div>
 						<h1 class="align-center">Formulários e Modelos</h1>
 						<h3 class="align-center">
