@@ -2,7 +2,6 @@
     text-align: left; 
 	cursor: default; 
 	border: 1px solid #787878;
-	border-top: 1;
 	background: #fff; 
 	box-shadow: -1px 1px 3px rgba(0,0,0,.1);
 	
@@ -33,5 +32,5 @@
 }
 
 .autocomplete-suggestion.selected {
-	background: #f0f0f0;
+	background: #cce8ff;
 }

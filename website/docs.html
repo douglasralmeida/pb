@@ -13,23 +13,11 @@
 <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
 <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
 <script type='text/javascript' src="/js/autocomplete.js"></script>
+<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
 <script type='text/javascript' src="/js/docs.js"></script>
-<script type="text/javascript">
-	var app = angular.module('TabelaDocumentos', []);	
-	app.controller('docsCtrl',  function($scope, $http) {
-		$scope.dados = [];
-		$scope.tipodoc = ["ODT", "PDF"];
-		$scope.fileimg = ["img/odt.png", "img/pdf.png"];
-		$http.get("/data/docs.json").then(function(response) {
-			$scope.dados = response.data.docs;
-		}, function(error) {
-			alert(error.message);
-		});
-	});
-</script>
 <title>Formulários e Modelos de Documentos</title>
 </head>
-<body ng-app="TabelaDocumentos" ng-controller="docsCtrl">
+<body ng-app="PortalBHSul" ng-controller="docsCtrl">
 <div ng-include="'/widgets/navbar.html'"></div>
 <div class="page-content">
 	<div class="tab-doc-cabecalho">

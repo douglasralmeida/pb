@@ -5,12 +5,14 @@
  */
 
 var app = angular.module('PortalBHSul', []);
+var ver = "Versão prerelease";
 
+//Controlador da página inicial
 app.controller('paginicialCtrl',  function($scope, $http) {
 	$scope.listaatalhos = [];
 	$scope.listalateral = [];
 	$scope.erro = false;
-	$scope.versao = "Versão prerelease";
+	$scope.versao = ver;
 
 	$scope.listalateral = [{
 			"nome": "Atendimento",
@@ -37,7 +39,24 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 	});
 });
 
+//Controlador da página de formulários
+app.controller('docsCtrl',  function($scope, $http) {
+	$scope.dados = [];
+	$scope.tipodoc = ["ODT", "PDF"];
+	$scope.fileimg = ["img/odt.png", "img/pdf.png"];
+	$scope.pagina = 0;
+
+	$http.get("/data/docs.json").then(function(response) {
+		$scope.dados = response.data.docs;
+	}, function(error) {
+		alert(error.message);
+	});
+});
+
+//Controlador do banco de conhecimentos
 app.controller('conhecimentoCtrl',  function($scope, $http) {
+	$scope.pagina = 3;
+
 	$http.get("/bc/categorias.json").then(function(response) {
 		$scope.dados = response.data;
 	}, function(error) {
