@@ -14,29 +14,35 @@
 	}, {
 		"categoria": "Sistemas de Cadastro",
 		"itens": [{
+			"nome": "Consulta FBR",
+			"atalho": "http://www-fbr/"
+		}, {
 			"nome": "Consultar CNPJ",
 			"atalho": "https://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao.asp"
 		}, {
-			"nome": "Consultas da Página da DICF.N",
+			"nome": "Consultas da DICF.N",
 			"atalho": "http://www-dicfn/consultas.asp?pagina=Consultas&codigo=37"
 		}, {
 			"nome": "Emissão de DRS-CI",
 			"atalho": "http://pcnisapr01/DRSCIIntranet/"
 		}, {
-			"nome": "GFIP Web",
-			"atalho": "http://w3b2/gfipweb/"
+			"nome": "MV2",
+			"atalho": "http://w3b9.sec.prevnet/MV2"
 		}, {
 			"nome": "Portal CNIS",
 			"atalho": "http://www-portalcnis/"
 		}, {
 			"nome": "SAL Web",
-			"atalho": "http://w3b2.prevnet/PortalSalIntranet/faces/pages/index.xhtml"
+			"atalho": "http://www-salweb/"
 		}]
 	}, {
 		"categoria": "Manutenção de Benefícios e Pagamento",
 		"itens": [{
 			"nome": "APWeb - Autorização de Pagamento",
 			"atalho": "http://www-apweb/"
+		}, {
+			"nome": "Portal SIBE PU",
+			"atalho": "http://www-portalsibe/"
 		}]
 	}, {
 		"categoria": "Normas e Legislação Previdenciária",
@@ -47,8 +53,11 @@
 			"nome": "Pareceres do Consultor Jurídico",
 			"atalho": "http://www-pfeinss/pfeinss/index.php?option=com_content&view=article&id=133&Itemid=122"
 		}, {
-			"nome": "Pesquisar Atos e Normas",
+			"nome": "Pesquisar Atos e Normas (antigo)",
 			"atalho": "http://www-normas/"
+		}, {
+			"nome": "Pesquisar Normas (novo)",
+			"atalho": "http://www-inss.prevnet/norma/"
 		}, {
 			"nome": "Sistema de Consultas (SISCON)",
 			"atalho": "http://www-siscon/"
@@ -90,7 +99,7 @@
 			"atalho": "https://depositojudicial.caixa.gov.br/sigsj_internet/depositos-judiciais/justica-federal/"
 		}, {
 			"nome": "Depósito Judicial do TJMG",
-			"atalho": "https://depox.tjmg.jus.br/depox/pages/guia/publica/"
+			"atalho": "https://depox.tjmg.jus.br/portaltjmg/pages/guia/publica/"
 		}, {
 			"nome": "SAPIENS da AGU",
 			"atalho": "http://sapiens.agu.gov.br/"
@@ -106,6 +115,9 @@
 		}, {
 			"nome": "e-tarefas",
 			"atalho": "http://www-eintegracao/sistemas/contexto/id/5"
+		}, {
+			"nome": "GET",
+			"atalho": "http://www-get/"
 		}, {
 			"nome": "PDR",
 			"atalho": "http://www-pdr/"
@@ -127,10 +139,16 @@
 		}, {
 			"nome": "Consulta Servidor no Portal da Transparência",
 			"atalho": "http://www.portaltransparencia.gov.br/servidores/Servidor-ListaServidores.asp"
+		}, {
+			"nome": "SIGRH",
+			"atalho": "http://www-siginss/"
 		}]
 	}, {
 		"categoria": "Outros",
 		"itens": [{
+			"nome": "ADMPER",
+			"atalho": "http://www-admper/"
+		}, {	
 			"nome": "Chamados para a Dataprev",
 			"atalho": "http://www-sdm/"
 		}, {
@@ -144,7 +162,7 @@
 			"atalho": "http://www-portal135/"
 		}, {
 			"nome": "SIGEPE",
-			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
+			"atalho": "https://servidor.sigepe.planejamento.gov.br/"
 		}, {
 			"nome": "SIGMA",
 			"atalho": "http://www-sigma/"

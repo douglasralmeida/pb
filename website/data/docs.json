@@ -3,7 +3,7 @@
 		"categoria": "Documentos Genéricos",
 		"itens": [{
 			"nome": "Carta de Agendamento de Atendimento",
-			"link": "docs/forms/carta_marcacao.odt",
+			"link": "docs/forms/carta_marcacao.ott",
 			"tipo": 1
 		}, {		
 			"nome": "Capa de Processo",
@@ -26,8 +26,12 @@
 			"link": "docs/forms/dec_nconsta.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Despacho Genérico´",
+			"nome": "Despacho Genérico",
 			"link": "docs/forms/desp_generico.ott",
+			"tipo": 1
+		}, {
+			"nome": "Despacho de Encaminhamento de Requerimento",
+			"link": "docs/forms/desp_encaminha.ott",
 			"tipo": 1
 		}, {
 			"nome": "Guia da Previdência Social (GPS)",
@@ -41,6 +45,18 @@
 	}, {
 		"categoria": "Atualização Cadastral",
 		"itens": [{
+			"nome": "Declaração de Tempo de Contribuição",
+			"link": "docs/forms/dtc.odt",
+			"tipo": 1
+		}, {
+			"nome": "Declaração do Pescador Artesanal",
+			"link": "docs/forms/dec_se_pa.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Declaração do Trabalhador Rural",
+			"link": "docs/forms/dec_se_tr.pdf",
+			"tipo": 2
+		}, {
 			"nome": "Modelo Portaria",
 			"link": "docs/forms/modelo_portaria.odt",
 			"tipo": 1
@@ -57,20 +73,12 @@
 		"categoria": "Concessão de Benefício Assistencial",
 		"itens": [{
 			"nome": "Carta de Exigência para Reanálise da Renda (ACP)",
-			"link": "docs/forms/carta_exig_bpc_reanaliserenda.odt",
+			"link": "docs/forms/carta_exig_bpc_reanaliserenda.ott",
 			"tipo": 1
 		}, {
 			"nome": "Requerimento de Benefício de Prestação Continuada",
 			"link": "docs/forms/req_bpc_requerimento.pdf",
 			"tipo": 2
-		}, {
-			"nome": "Declaração de Renda do Grupo Familiar",
-			"link": "docs/forms/req_bpc_grupo.pdf",
-			"tipo": 2
-		}, {
-			"nome": "Atualização do Benefício de Prestação Continuada",
-			"link": "docs/forms/req_bpc_atualizacao.pdf",
-			"tipo": 1
 		}]
 	}, {
 		"categoria": "Concessão de Benefício Previdenciário",
@@ -95,10 +103,6 @@
 			"link": "docs/forms/dec_inexist_depen.ott",
 			"tipo": 1
 		}, {
-			"nome": "Declaração de Tempo de Contribuição",
-			"link": "docs/forms/dtc.odt",
-			"tipo": 1
-		}, {
 			"nome": "Despacho da Análise Administrativa da Atividade Especial",
 			"link": "docs/forms/desp_aposespecial_admin.ott",
 			"tipo": 1
@@ -119,7 +123,7 @@
 			"tipo": 2
 		}, {
 			"nome": "Carta de Resultado da Solicitação de Majoração de 25% da Renda",
-			"link": "docs/forms/carta_res_majo25p.odt",
+			"link": "docs/forms/carta_res_majo25p.ott",
 			"tipo": 1
 		}, {
 			"nome": "Ofício à Caixa ou Banco do Brasil solicitando info. sobre saque de PIS/PASEP/FGTS",
@@ -142,8 +146,12 @@
 			"link": "docs/forms/req_consig_desbloq.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Requerimento Genérico para Atualização de Benefício",
+			"nome": "Requerimento de Atualização de Previdenciário",
 			"link": "docs/forms/req_ben_diversos.ott",
+			"tipo": 1
+		}, {
+			"nome": "Requerimento de Atualização de BPC",
+			"link": "docs/forms/req_bpc_atualizacao.pdf",
 			"tipo": 1
 		}, {
 			"nome": "Termo de Responsabilidade para Representante Legal",
@@ -160,6 +168,10 @@
 			"nome": "Comunicado de Decisão da Cessação de BI Judicial",
 			"link": "docs/forms/carta_rmbj_cessacao.ott",
 			"tipo": 1
+		}, {
+			"nome": "CPM",
+			"link": "docs/forms/cpm.pdf",
+			"tipo": 2
 		}, {
 			"nome": "Laudo para Isenção de IR",
 			"link": "docs/forms/med_laudoir.ott",

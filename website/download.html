@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="/">
-<meta charset="UTF-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type="text/javascript">
-	var app = angular.module('TabelaDownloads', []);
-	app.controller('downloadsCtrl',  function($scope, $http) {
-		$http.get("download/categorias.json").then(function(response) {$scope.categorias = response.data.categorias;});
-	});
-</script>
-<title>Central de Download</title>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="sortcut icon" href="/favicon.png" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+  <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+  <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+  <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+  <script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+  <title>Central de Downloads</title>
 </head>
-<body ng-app="TabelaDownloads" ng-controller="downloadsCtrl">
-<div ng-app="" ng-include="'widgets/navbar.html'"></div>
-<h3 style="text-align: center;">Categorias de Download</h3>
-<div class="tab-download-categorias">
-  <span>
-  <a ng-repeat="x in categorias" href="download/lista.html?cat={{x.id-1}}">
-    <img ng-src="img/{{x.icone}}"/>
-	{{x.nome}}
-  </a>
-  </span>
-</div>
+<body ng-app="PortalBHSul" ng-controller="downloadsCtrl">
+  <div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+  <div class="conteudo-pagina" ng-show="exibirPagina" style="margin-left: 16px;">
+    <div>
+      <h1 class="align-center">Central de Donwloads</h1>
+      <h3 class="align-center">
+        <small>Principais categorias de download</small>
+      </h3>
+    </div>
+    <div class="tab-apps-cat">
+      <a ng-repeat="x in categorias" href="download/lista.html?cat={{x.id-1}}">
+        <img ng-src="img/{{x.icone}}"/>
+        <h4 ng-bind="x.nome"></h4>
+        <h5 ng-bind="x.desc"></h5>
+      </a>
+    </div>
+  </div>
 </body>
 </html>

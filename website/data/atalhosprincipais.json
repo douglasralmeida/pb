@@ -10,8 +10,14 @@
 			"nome": "SIBE",
 			"atalho": "http://www-sibe/"
 		}, {
+			"nome": "Portal SIBE PU",
+			"atalho": "http://www-portalsibe/"
+		}, {
 			"nome": "Agendamento",
 			"atalho": "http://www-agendamento/"
+		}, {
+			"nome": "GET",
+			"atalho": "http://www-get/"
 		}, {
 			"nome": "Requer. Seguro Defeso",
 			"atalho": "http://sd.mte.gov.br/sd"
@@ -31,8 +37,14 @@
 			"nome": "SAPD",
 			"atalho": "http://www-sapd/"	
 		}, {
+			"nome": "SAT Central",
+			"atalho": "http://www-satcentral/satcentral"
+		}, {
 			"nome": "SIPPS",
 			"atalho": "http://www-sipps/"
+		}, {
+			"nome": "Hipnet",
+			"atalho": "http://www-hipnet/"
 		}]
 	}, {
 		"categoria": "Páginas Institucionais",
@@ -60,11 +72,17 @@
 			"nome": "Consultar CEP",
 			"atalho": "http://www.buscacep.correios.com.br/"
 		}, {
+			"nome": "Consultar CBO",
+			"atalho": "http://www.mtecbo.gov.br/cbosite/pages/pesquisas/BuscaPorTitulo.jsf"
+		}, {
 			"nome": "Consultar CNAE",
 			"atalho": "http://www.cnae.ibge.gov.br/"
 		}, {
 			"nome": "Consultar Opção pelo MEI",
 			"atalho": "http://www8.receita.fazenda.gov.br/SIMPLESNACIONAL/aplicacoes.aspx?id=21"
+		}, {
+			"nome": "Consulta FBR",
+			"atalho": "http://www-fbr/"
 		}, {
 			"nome": "Consultar Seguro Desemprego",
 			"atalho": "https://sd.maisemprego.mte.gov.br/sdweb/"
@@ -78,9 +96,6 @@
 			"nome": "Tabelas Corporativas",
 			"atalho": "http://www-sdc/menuconsulta.asp"
 		}, {
-			"nome": "Carta de Concessão",
-			"atalho": "https://www8.dataprev.gov.br/SipaINSS/pages/concal/concalInicio.xhtml"
-		}, {
 			"nome": "Histórico de Consignações",
 			"atalho": "http://w3b2/ConsigWEB"
 		}, {
@@ -93,6 +108,9 @@
 			"nome": "Consulta Processual TRF1",
 			"atalho": "https://processual.trf1.jus.br/consultaProcessual/numeroProcesso.php?secao=MG"
 		}, {
+			"nome": "Consulta Processual TRF1 (eProc)",
+			"atalho": "https://pje1g.trf1.jus.br/consultapublica/ConsultaPublica/listView.seam"
+		}, {
 			"nome": "Consulta Processual TRT3",
 			"atalho": "http://as1.trt3.jus.br/consulta/consulta.htm"
 		}, {
@@ -100,7 +118,13 @@
 			"atalho": "http://www010.dataprev.gov.br/enderecoAPS/mps1.asp"
 		}, {
 			"nome": "Pesquisar por CID",
-			"atalho": "http://www.datasus.gov.br/cid10/V2008/webhelp/cid10.htm"
+			"atalho": "https://www.cid10.com.br/"
+		}, {
+			"nome": "BPC da NT20",
+			"atalho": "http://www-portalmob/nt20/2via/"
+		},{
+			"nome": "Qualificação do e-Social",
+			"atalho": "http://consultacadastral.inss.gov.br/"
 		}]
 	}, {
 		"categoria": "Agendamento",
@@ -128,11 +152,8 @@
 			"nome": "Emissão de DRS-CI",
 			"atalho": "http://pcnisapr01/DRSCIIntranet/"
 		}, {
-			"nome": "GFIP Web",
-			"atalho": "http://w3b2/gfipweb/"
-		}, {
 			"nome": "SAL Web",
-			"atalho": "http://w3b2.prevnet/PortalSalIntranet/"
+			"atalho": "http://www-salweb/"
 		}]
 	}, {
 		"categoria": "Saúde e Social",
@@ -155,16 +176,16 @@
 		"icone": "ar.gestao.svg",
 		"itens": [{
 			"nome": "Gestão da Ouvidoria",
-			"atalho": "http://ouvidoria.previdencia.gov.br/souweb/"
+			"atalho": " http://aplicacoes.mds.gov.br/souweb/"
 		}, {
 			"nome": "Homologação do SISREF",
-			"atalho": "http://www-sisref/sisref/chefia.php"
+			"atalho": "http://www-sisref/chefia"
 		}, {
 			"nome": "SIS GDASS",
-			"atalho": "http://w3b2/sgdass/"
+			"atalho": "https://www-sisad.prevnet/sisgdass/"
 		}, {
 			"nome": "Sala de Monitoramento",
-			"atalho": "http://www-sala/"
+			"atalho": "http://www-casa/"
 		}, {
 			"nome": "Supervisão",
 			"atalho": "http://www-supervisao/"
@@ -211,7 +232,7 @@
 			"atalho": "http://sapiens.agu.gov.br/"
 		}, {
 			"nome": "SIGEPE",
-			"atalho": "https://servidor.sigepe.planejamento.gov.br/SIGEPE-PortalServidor"
+			"atalho": "https://servidor.sigepe.planejamento.gov.br/"
 		}, {
 			"nome": "SISOBI",
 			"atalho": "http://w3b2/pls/sco/seo0001$.startup"

@@ -5,6 +5,7 @@
  */
 
 var app = angular.module('PortalBHSul', []);
+var appSanitize = angular.module('AppSanitize', ['ngSanitize']);
 var ver = "Versão prerelease";
 
 //Controlador da página inicial
@@ -63,8 +64,79 @@ app.controller('docsCtrl',  function($scope, $http) {
 	});
 });
 
+//Controlador da central de downloads
+app.controller('downloadsCtrl',  function($scope, $http) {
+	$scope.categorias = [];
+	$scope.exibirPagina = false;
+	$scope.pagina = 1;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+	
+	$http.get("download/categorias.json").then(function(response) {
+		$scope.categorias = response.data.categorias;
+	});
+});
+
+var cat = getUrlParameter('cat');
+
+appSanitize.controller('listaDonwloadsCtrl', function($scope, $http) {
+	$scope.exibirPagina = false;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+
+	$http.get("download/categorias.json").then(function(response) {
+		$scope.id = cat;
+		$scope.titulo = response.data.categorias[cat].nome;
+		$scope.itens = response.data.categorias[cat].itens;
+	});
+});
+
+var id = getUrlParameter('id');	
+
+appSanitize.controller('detalheDonwloadCtrl', function($scope, $http) {
+	$scope.exibirPagina = false;
+	$scope.isx86x64 = false;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+
+	$http.get("download/itens/" + id + "/info.json").then(function(response) {
+		$scope.data = response.data;
+		$scope.nomeBaixar = function(platform, count) {
+			if (count < 2)
+				return "Baixar";
+			else {
+				$scope.isx86x64 = true;
+				if (platform == "x86")
+					return "Baixar versão de 32 bits";
+				else if (platform == "x64")
+					return "Baixar versão de 64 bits";
+				else if (platform == "all")
+					return "Baixar";
+			}
+		};
+		$scope.nomeId = function(codigo) {
+			if (codigo == "detalhes")
+				return "Detalhes";
+			else if (codigo == "reqsis")
+				return "Requisitos de Sistema";
+			else if (codigo == "instalinstruc")
+				return "Instruções de Instalação";
+			else if (codigo == "resrelac")
+				return "Recursos Relacionados";
+			return "Sem descrição";
+		};
+	});
+});
+
 //Controlador do banco de conhecimentos
-app.controller('conhecimentoCtrl',  function($scope, $http) {
+app.
+controller('conhecimentoCtrl',  function($scope, $http) {
 	$scope.pagina = 3;
 
 	$http.get("/bc/categorias.json").then(function(response) {

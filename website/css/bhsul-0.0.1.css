@@ -207,6 +207,50 @@
     text-shadow: none;
 }
 
+.tab-apps-cat {
+	border-collapse: separate;
+	border-spacing: 10px;
+	display: flex;
+	flex-flow: row wrap;
+	margin-top: 8px;
+}
+
+.tab-apps-cat a {
+	background-color: white;
+	border: 3px dotted transparent;
+	color: #000;
+	height: 240px;
+	outline: none;
+	padding: 18px 0 18px 0;
+	text-align: center;
+	transition-duration: 0.2s;
+	width: 16.6%;
+	text-align: center;
+}
+
+.tab-apps-cat a:hover {
+	border: 3px solid rgba(0,0,0,.2);
+}
+
+.tab-apps-cat a:focus {
+	border: 3px dotted rgba(0,0,0);
+}
+
+.tab-apps-cat a:focus:hover {
+	border: 3px dotted rgba(0,0,0, 0.2);
+}
+
+.tab-apps-cat a h5 {
+	color: rgba(0,0,0,.7);
+}
+
+.tab-apps-cat a img {
+	display: block;
+	margin: auto;
+	height: 64px; 
+	width: 64px;	
+}
+
 .tab-doc {
 	border-collapse: separate;
 	border-spacing: 1px;
@@ -241,36 +285,6 @@
 .tab-doc-cat {
 	margin-top: 18px;
 	margin-right: 2px;	
-}
-
-.tab-download-categorias {
-	display: table;
-	border-collapse: separate;
-	border-spacing: 10px;	
-}
-
-.tab-download-categorias span {
-	display: table-row;
-}
-
-.tab-download-categorias span a {
-    display: table-cell;
-	border: 2px solid #ffffff;
-	height: 170px;
-	padding: 18px 0 18px 0;
-    width: 16.6%;
-	text-align: center;
-}
-
-.tab-download-categorias span a:hover {
-    border: 2px solid rgba(0,0,0,.2);
-}
-
-.tab-download-categorias span a img {
-	display: block;
-	margin: auto;
-	height: 64px; 
-	width: 64px;	
 }
 
 .tab-inicial a {

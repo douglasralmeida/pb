@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="PaginaDownloads" ng-controller="PageCtrl">
+<html ng-app="AppSanitize" ng-controller="listaDonwloadsCtrl">
 <head>
-<meta charset="UTF-8" />
-<base href="/">
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
-<script type='text/javascript' src="/js/geturl.js"></script>
-<script type="text/javascript">
-	var app = angular.module('PaginaDownloads', ['ngSanitize']);
-	var param = getUrlParameter('cat');
-	app.controller('PageCtrl', function($scope, $http) {
-		$http.get("download/categorias.json").then(function(response) {
-		$scope.id = param;
-		$scope.titulo = response.data.categorias[param].nome;
-		$scope.itens = response.data.categorias[param].itens;});
-	});
-</script>
+	<base href="/">
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+	<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+	<script type='text/javascript' src="/js/geturl.js"></script>
+  	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
 <style type="text/css">
 	img {		
 		float: left;
@@ -48,23 +40,23 @@
 		padding-top: 16px;
 	}
 </style>
-<title ng-bind="titulo"></title>
+	<title ng-bind="titulo"></title>
 </head>	
 <body>
-<div ng-include="'widgets/navbar.html'"></div>
-<div class="container page-content">
-	<h2 ng-bind="titulo"></h2>
-	<ul class="lista">
-		<li class="subtitulo">
-		<h3>Lista de Downloads</h3>
-		<li class="item" ng-repeat="x in itens">
-			<a href="download/detalhes.html?id={{x.id}}">
-				<img ng-src ="download/icones/{{x.icone}}">
-				<h4>{{x.nome}}</h4>
-			</a>
-			<div>{{x.descricao}}</div>
-		</li>
-	</ul>
-</div>
+	<div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+	<div class="container conteudo-pagina" ng-show="exibirPagina">
+		<h2 ng-bind="titulo"></h2>
+		<ul class="lista">
+			<li class="subtitulo">
+			<h3>Lista de Downloads</h3>
+			<li class="item" ng-repeat="x in itens">
+				<a href="download/detalhes.html?id={{x.id}}">
+					<img ng-src ="download/icones/{{x.icone}}">
+					<h4>{{x.nome}}</h4>
+				</a>
+				<div>{{x.descricao}}</div>
+			</li>
+		</ul>
+	</div>
 </body>
 </html>

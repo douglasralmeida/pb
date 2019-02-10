@@ -1,0 +1,36 @@
+﻿{
+	"nome": "LibreOffice 6.2",
+	"id": "libreoffice62",
+	"versao": "6.0.2",
+	"publicadoem": "12/02/2019",
+	"descricao": "O LibreOffice é um pacote de aplicativos de escritório que inclui planilha, editor de textos, produtor de apresentações entre outros.",
+	"detalhes": "O LibreOffice inclui processador de textos, planilha eletrônica, criador de apresentações, aplicativo de desenho e banco de dados. É compatível com o formato aberto ODF.",
+	"imagens": [{
+		"arquivo": "tela01.png",
+		"mini": "minitela01.png",
+		"descricao": "Processador de textos Writer"
+	}, {
+		"arquivo": "tela02.png",
+		"mini": "minitela02.png",
+		"descricao": "Planilha Calc"		
+	}],
+	"arquivos": [{
+		"nome": "lo620_x86.msi",
+		"tamanho": "265 MB",
+		"plataforma": "x86"
+	}, {
+		"nome": "lo620_x64.msi",
+		"tamanho": "285 MB",
+		"plataforma": "x64"
+	}],
+	"subitens": [{
+		"id": "reqsis",
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul>"
+	}, {
+		"id": "instalinstruc",
+		"conteudo": "<b>Instalando o LibreOffice</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar apropriado para o seu sistema operacional.</li><li>Execute o programa de instalação.</li></ol><b>Instruções de uso</b><p>Para usar o Libreoffice, basta clicar no seu ícone disponível no menu Iniciar.</p><b>Removendo o LibreOffice</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione LibreOffice 6.2.0.2 e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
+	}, {
+		"id": "resrelac",
+		"conteudo": "<a href='docs.html'>Modelos de Documentos</a>"
+	}]
+}
