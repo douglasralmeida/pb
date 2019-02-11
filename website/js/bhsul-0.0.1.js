@@ -8,6 +8,15 @@ var app = angular.module('PortalBHSul', []);
 var appSanitize = angular.module('AppSanitize', ['ngSanitize']);
 var ver = "Versão prerelease";
 
+//Controlador genérico
+app.controller('padraoCtrl',  function($scope) {
+	$scope.exibirPagina = false;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+});
+
 //Controlador da página inicial
 app.controller('paginicialCtrl',  function($scope, $http) {
 	$scope.listaatalhos = [];
@@ -62,6 +71,41 @@ app.controller('docsCtrl',  function($scope, $http) {
 	}, function(error) {
 		alert(error.message);
 	});
+});
+
+//Controlador da página de atalhos
+app.controller('atalhosCtrl',  function($scope, $http) {
+	$scope.exibirPagina = false;
+	$scope.pagina = 2;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+	
+	$http.get("data/links.json").then(function(response) {
+		$scope.dados = response.data.links;
+	});
+});
+
+//Controlador do banco de conhecimentos
+app.controller('conhecimentoCtrl',  function($scope, $http) {
+	$scope.pagina = 3;
+
+	$http.get("/bc/categorias.json").then(function(response) {
+		$scope.dados = response.data;
+	}, function(error) {
+		alert(error.message);
+	});
+});	
+
+//Controlador do labs
+app.controller('labsCtrl',  function($scope) {
+	$scope.exibirPagina = false;
+	$scope.pagina = 4;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
 });
 
 //Controlador da central de downloads
@@ -131,17 +175,5 @@ appSanitize.controller('detalheDonwloadCtrl', function($scope, $http) {
 				return "Recursos Relacionados";
 			return "Sem descrição";
 		};
-	});
-});
-
-//Controlador do banco de conhecimentos
-app.
-controller('conhecimentoCtrl',  function($scope, $http) {
-	$scope.pagina = 3;
-
-	$http.get("/bc/categorias.json").then(function(response) {
-		$scope.dados = response.data;
-	}, function(error) {
-		alert(error.message);
 	});
 });

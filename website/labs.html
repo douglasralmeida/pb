@@ -1,53 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
-<base href="/">
-<meta charset="UTF-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<title>BH Sul Labs</title>
-<style type="text/css">
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto
-}
-</style>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="sortcut icon" href="/favicon.png" type="image/png"/>
+  <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+  <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+  <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+  <title>BH Sul Labs</title>
+  <style type="text/css">
+    .imagem {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+  </style>
 </head>
-<body ng-app="">
-<div ng-include="'/widgets/navbar.html'"></div>
-<div class="container page-content">
-<h2>BH Sul Labs</h2>
-<img title="Foto do laboratório de computadores" alt="Foto do laboratório de computadores" src="/img/labs.jpg">
-<p>A página Labs contém pesquisas, testes e recursos que estão em fase experimental e, talvez, sequer devem se transformar em produto final. Experimente-os por sua conta e risco.</p>
-<h3>Projetos</h3>
-<h4>Automatizadores de tarefas</h4>
-<p>Scripts que automatizam tarefas repetitivas. Requer Internet Explorer 11.</p>
-<p><a href="/download/auto/cal/auto_calculo_10.hta"><span class="mif-arrow-right"></span>Cálculo de GPS</a>: Automatiza o cálculo de GPS em atraso com várias competências de valores iguais.</p>
-<p><a href="/download/auto/dif/auto_diferenca_10.hta"><span class="mif-arrow-right"></span>Cálculo de Diferenças (Protótipo)</a>: Automatiza o cálculo de diferença de contribuições devidas em certos cenários.</p>
-<p>Planejamento: Planilha de Cálculo de Pagamentos e Cobranças. Automatiza o cálculo de PAB e complementos negativos.</p>
-<h4>Comunicador da BH Sul</h4>
-<p>Aplicativo para comunicação interna da APS. Uso exclusivo da APS BH Sul.</p>
-<p>Roadmap:</p>
-<ol>
-<li>Implantar container com o servidor de comunicação: A FAZER</li>
-<li>Testar a comunicação entre dois computadores na rede: A FAZER</li>
-<li>Compilar o cliente de comunicação: A FAZER</li>
-<li>Testar o aplicativo de comunicação na APS: A FAZER</li>
-<li>Distribuir o aplicativo de comunitação para os computadores da APS: A FAZER</li>
-</ol>
-<h4>Feedback</h4>
-<p>Usuários do Portal da BH Sul poderão enviar suas opniões, críticas e sugestões para a equipe de desenvolvimento da página.</p>
-<p><a href="/comentarios.html">Página experimental para envio de comentários</a></p>
-<p><a href="/app/feedback/">Página experimental para gestão de comentários</a></p>
-<h4>Páginas do Portal</h4>
-<p><a href="/download.html">Downloads</a>. Futura página de downloads de aplicativos para uso diário.</p>
-</div>
+<body ng-app="PortalBHSul" ng-controller="labsCtrl">
+    <div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+    <div class="container conteudo-pagina" ng-show="exibirPagina">
+      <div>
+        <h1 class="align-center">BH Sul Labs</h1>
+        <h3 class="align-center">
+          <small>Mais produtividade com inovação.</small>
+        </h3>
+      </div>
+    <img class="imagem" title="Foto do laboratório de computadores" alt="Foto do laboratório de computadores" src="/img/labs.jpg" />
+    <p>A página Labs contém pesquisas, testes e recursos que estão em fase experimental e, talvez, sequer devem se transformar em produto final. Experimente-os por sua conta e risco.</p>
+    <h3>Projetos</h3>
+    <h4>Automatizadores de tarefas</h4>
+    <p>Scripts que automatizam tarefas repetitivas. Requer Internet Explorer 11.</p>
+    <p><a href="/download/auto/cal/auto_calculo_10.hta"><span class="mif-arrow-right"></span>Cálculo de GPS</a>: Automatiza o cálculo de GPS em atraso com várias competências de valores iguais.</p>
+    <p><a href="/download/auto/dif/auto_diferenca_10.hta"><span class="mif-arrow-right"></span>Cálculo de Diferenças (Protótipo)</a>: Automatiza o cálculo de diferença de contribuições devidas em certos cenários.</p>
+    <p>Planejamento: Planilha de Cálculo de Pagamentos e Cobranças. Automatiza o cálculo de PAB e complementos negativos.</p>
+    <h4>Comunicador da BH Sul</h4>
+    <p>Aplicativo para comunicação interna da APS. Uso exclusivo da APS BH Sul.</p>
+    <p>Roadmap:</p>
+    <ol>
+      <li>Implantar container com o servidor de comunicação: A FAZER</li>
+      <li>Testar a comunicação entre dois computadores na rede: A FAZER</li>
+      <li>Compilar o cliente de comunicação: A FAZER</li>
+      <li>Testar o aplicativo de comunicação na APS: A FAZER</li>
+      <li>Distribuir o aplicativo de comunitação para os computadores da APS: A FAZER</li>
+    </ol>
+    <h4>Feedback</h4>
+    <p>Usuários do Portal da BH Sul poderão enviar suas opniões, críticas e sugestões para a equipe de desenvolvimento da página.</p>
+    <p><a href="/comentarios.html">Página experimental para envio de comentários</a></p>
+    <p><a href="/app/feedback/">Página experimental para gestão de comentários</a></p>
+  </div>
 </body>
 </html>
