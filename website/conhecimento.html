@@ -1,77 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 <head>
-<base href="/">
-<meta charset="UTF-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
-<style type="text/css">
-.cartao {
-	background-position: 4px 50%;
-	background-repeat: no-repeat;
-	background-size: 64px 64px;
-	font-size: 24px;
-	height: 120px;
-	padding-left: 72px;
-	display: table-cell;
-	vertical-align: middle;
-	margin: auto;
-	min-width: 300px;	
-}
-
-.tab-grande {
-	display: flex;
-	flex-wrap: wrap;
-	width: 99%;
-}
-
-.tab-grande > li {
-	border: 3px solid transparent;
-	flex: 0 1 100%;	
-	list-style-type: none;
-}
-
-.tab-grande > li:hover {
-	border: 3px solid rgba(0,0,0,.2);
-}
-
-@media only screen and (min-width: 769px) {
-	.tab-grande > li {
-	    flex: 0 1 50%;
-  	}
-}
-
-@media only screen and (min-width: 1024px) {
-	.tab-grande > li {
-		flex: 0 1 33%;
-  	}
-}
-
-@media only screen and (min-width: 1281px) {
-	.tab-grande > li {
-		flex: 0 1 25%;
-	}
-}
-
-@media print {
-	.tab-grande > li {
-	    flex: 0 1 50%;
-  	}
-}
-</style>
-<title>Banco de Conhecimento</title>
+	<base href="/">
+	<meta charset="UTF-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
+	<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+	<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+	<title>Banco de Conhecimento</title>
 </head>
 <body ng-app="PortalBHSul" ng-controller="conhecimentoCtrl">
-	<div ng-include="'/widgets/navbar.html'"></div>
-	<div class="page-content">
-		<div class="container-pesquisa">
+	<div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+	<div class="conteudo-pagina" ng-show="exibirPagina">
+		<div class="container-pesquisa" hidden>
 			<h2>Como podemos te ajudar?</h2>
 			<div ng-include="'/widgets/pesquisabc.html'"></div>
 		</div>
@@ -79,12 +27,10 @@
 	<div class="container-titulo" ng-cloak>
 		<h3 style="text-align: center;">Em qual área você precisa de ajuda?</h3>
 	</div>
-	<ul class="tab-grande">
-		<li ng-repeat="x in dados">
-			<a title="{{x.nome}}" href="bc/index.html?tipo={{x.sigla}}">
-				<div class="cartao" style="background-image: url('bc/img/{{x.imagem}}');" ng-bind="x.nome"></div>
-			</a>
-		</li>
-	</ul>
+	<div class="tab-conhecimento">
+		<a title="{{x.nome}}" href="bc/index.html?tipo={{x.sigla}}" ng-repeat="x in dados">
+			<div class="tab-conhecimento-item" style="background-image: url('bc/img/{{x.imagem}}');" ng-bind="x.nome"></div>
+		</a>
+	</div>
 </body>
 </html>

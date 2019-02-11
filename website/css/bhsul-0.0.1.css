@@ -251,6 +251,69 @@
 	width: 64px;	
 }
 
+.tab-conhecimento {
+	display: flex;
+	flex-wrap: wrap;
+	width: 99%;
+}
+
+.tab-conhecimento > a {
+	border: 3px solid transparent;
+	flex: 0 1 100%;
+	outline: none;
+	transition-duration: 0.2s;
+}
+
+.tab-conhecimento > a:hover {
+	border: 3px solid rgba(0,0,0,.2);
+}
+
+.tab-conhecimento > a:focus {
+	border: 3px dotted rgba(0,0,0);
+}
+
+.tab-conhecimento > a:focus:hover {
+	border: 3px dotted rgba(0,0,0, 0.2);
+}
+
+
+@media only screen and (min-width: 769px) {
+	.tab-conhecimento > a {
+		flex: 0 1 50%;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.tab-conhecimento > a {
+		flex: 0 1 33%;
+	}
+}
+
+@media only screen and (min-width: 1281px) {
+	.tab-conhecimento > a {
+		flex: 0 1 25%;
+	}
+}
+
+@media print {
+	.tab-conhecimento > a {
+		flex: 0 1 50%;
+	}
+}
+
+.tab-conhecimento-item {
+	background-position: 4px 50%;
+	background-repeat: no-repeat;
+	background-size: 64px 64px;
+	display: table-cell;
+	font-size: 24px;
+	height: 120px;
+	margin: auto;
+	min-width: 300px;
+	padding-left: 72px;
+	vertical-align: middle;
+}
+
 .tab-doc {
 	border-collapse: separate;
 	border-spacing: 1px;

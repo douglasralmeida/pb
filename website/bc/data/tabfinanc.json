@@ -4,28 +4,32 @@
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
 		"itens": [{
-			"nome": "Alíquotas de contribuição previdenciária após o Plano Real",
-			"data": "bc46",
+			"nome": "Feriados e pontos facultativos do ano de 2019",
+			"data": "bc106",
 			"tipo": "artigo"
 		}, {
-			"nome": "Feriados e pontos facultativos do ano de 2017",
-			"data": "bc53",
+			"nome": "Alíquotas de contribuição previdenciária após o Plano Real",
+			"data": "bc57",
 			"tipo": "artigo"
 		}, {
 			"nome": "Lista de CNPJ mais utilizados para emissão de CTC em Belo Horizonte",
-			"data": "bc52",
+			"data": "bc64",
 			"tipo": "artigo"
 		}, {
 			"nome": "Tabela de salários mínimos após o Plano Real",
-			"data": "bc45",
+			"data": "bc59",
 			"tipo": "artigo"
 		}, {
 			"nome": "Valores do salário-família após o Plano Real",
-			"data": "bc50",
+			"data": "bc71",
 			"tipo": "artigo"
 		}, {
 			"nome": "Valores do limite máximo de remuneração para concessão do auxílio-reclusão",
-			"data": "bc51",
+			"data": "bc56",
+			"tipo": "artigo"
+		}, {
+			"nome": "Feriados e pontos facultativos do ano de 2017",
+			"data": "bc66",
 			"tipo": "artigo"
 		}]
 	}]

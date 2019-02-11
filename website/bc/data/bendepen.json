@@ -3,6 +3,18 @@
 	"categorias": [{
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
-		"itens": []
+		"itens": [{
+			"nome": "Análise da carência na refiliação ao RGPS",
+			"data": "bc73",
+			"tipo": "artigo"
+		}, {
+			"nome": "Alterações trazidas pela Lei 13.135",
+			"data": "bc72",
+			"tipo": "artigo"
+		}, {
+			"nome": "Valores do limite máximo de remuneração para concessão do auxílio-reclusão",
+			"data": "bc56",
+			"tipo": "artigo"
+		}]
 	}]
 }

@@ -5,7 +5,15 @@
 		"icone": "mif-star-empty",
 		"itens": [{
 			"nome": "Como determinar a versão do navegador Internet Explorer do seu computador",
-			"data": "bc42",
+			"data": "bc47",
+			"tipo": "artigo"
+		}, {
+			"nome": "Informações importantes sobre o Internet Explorer 9",
+			"data": "bc16",
+			"tipo": "artigo"
+		}, {
+			"nome": "Remover edição ao vivo de um formulário",
+			"data": "bc14",
 			"tipo": "artigo"
 		}]
 	}]

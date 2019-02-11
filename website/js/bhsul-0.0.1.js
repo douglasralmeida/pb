@@ -89,7 +89,12 @@ app.controller('atalhosCtrl',  function($scope, $http) {
 
 //Controlador do banco de conhecimentos
 app.controller('conhecimentoCtrl',  function($scope, $http) {
+	$scope.exibirPagina = false;
 	$scope.pagina = 3;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
 
 	$http.get("/bc/categorias.json").then(function(response) {
 		$scope.dados = response.data;
@@ -176,4 +181,102 @@ appSanitize.controller('detalheDonwloadCtrl', function($scope, $http) {
 			return "Sem descrição";
 		};
 	});
+});
+
+//BC
+var tipo = getUrlParameter('tipo');
+
+appSanitize.controller('indiceBCCtrl', function($scope, $http) {
+	$scope.exibirPagina = false;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+
+	$http.get("bc/data/" + tipo + ".json").then(function(response) {
+		$scope.titulo = "Banco de Conhecimento - " + response.data.titulo;
+		$scope.dados = response.data.categorias;
+	});
+});
+
+appSanitize.controller('artigoBCCtrl', function($scope, $http, $location) {
+	$scope.exibirPagina = false;
+
+	$scope.navbarCarregada = function() {
+		$scope.exibirPagina = true;
+	};
+	$http.get("/bc/servicos.json").then(function(response) {
+		$scope.servicos = response.data;
+	});
+	$http.get("/bc/categorias.json").then(function(response) {
+		$scope.categorias = response.data;
+	});
+	$http.get("/bc/artigos/" + id + ".html").then(function(response) {
+		$scope.artigoexiste = true;
+		$scope.bcid = id;
+		$scope.arquivohtml = response.data;
+		$scope.secoes = [];
+		manipularHtml($scope.arquivohtml);
+	}, function(response) {
+		$scope.artigoexiste = false;
+	});
+
+	getServicoNome = function(servicoid) {
+		var serviconome = "";
+
+		$scope.servicos.forEach(function(item, index) {
+			if (item.sigla == servicoid) 
+				serviconome = item.nome;
+		});
+		return serviconome;
+	}
+
+	pesquisarCat = function(categoria) {			
+		$scope.categorias.forEach(function(item, index) {
+			if (item.id == categoria[0]) {
+				$scope.categoria = item.sigla;
+				$scope.categorianome = item.nome;					
+			}
+		});
+	}
+
+	pesquisarServicos = function(servicos) {
+		var arrayServicos = servicos.split(",");
+		var nomes = "";
+
+		arrayServicos.forEach(function(item, index) {
+			nomes = nomes + getServicoNome(item);				
+			if (index < arrayServicos.length-1)
+				nomes = nomes + ", ";
+		});
+		$scope.aplicase = nomes;
+	}
+
+	manipularHtml = function (htmldata) {			
+			var parser = new DOMParser();
+			var data = parser.parseFromString(htmldata, "text/html");
+			var h3elems = [];
+
+			$scope.titulo = data.querySelector('meta[name="DC.Title"]').getAttribute("content");
+			$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
+			$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
+			$scope.rev = data.querySelector('meta[name="BC.NumRevisao"]').getAttribute("content");
+			$scope.tags = data.querySelector('meta[name="DC.Subject"]').getAttribute("content");
+			$scope.paginaurl = $location.absUrl();
+			$scope.estaDescontinuado = (data.querySelector('meta[name="BC.estaDescontinuado"]').getAttribute("content") == 'true');
+			$scope.subcategoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
+			if (data.querySelector('meta[name="DC.Relation"]').getAttribute("content").startsWith("aplicase"))
+				$scope.relacaplicase = data.querySelector('meta[name="DC.Relation"]').getAttribute("content");
+			pesquisarCat($scope.subcategoria);
+			pesquisarServicos($scope.relacaplicase.substring(9, $scope.relacaplicase.length));
+			manipularTags($scope.tags);
+			h3elems = data.querySelectorAll('h3');
+			for (var i = 0; i < h3elems.length; i++) {
+				$scope.secoes.push(h3elems[i].innerHTML);
+			}
+		};
+
+	manipularTags = function(tags) {
+		$scope.tags = $scope.tags.split(",");
+	};
 });

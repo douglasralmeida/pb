@@ -4,21 +4,21 @@
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
 		"itens": [{
-			"nome": "Introdução a aposentadoria",
-			"data": "bc40",
-			"tipo": "artigo"
-		}, {
-			"nome": "Entendimentos do Parecer do Consultor Jurídico do MPS 616/2010",
-			"data": "bc28",
-			"tipo": "artigo"
-		}, {
 			"nome": "Sobre a aposentadoria da pessoa com deficiência",
-			"data": "bc44",
+			"data": "bc53",
+			"tipo": "artigo"
+		}, {
+			"nome": "Introdução a aposentadoria",
+			"data": "bc50",
 			"tipo": "artigo"
 		}, {
 			"nome": "Categorias profissionais com enquadramento em atividade especial",
-			"data": "bc43",
+			"data": "bc46",
 			"tipo": "artigo"
-		}]
+		}, {
+			"nome": "Entendimentos do Parecer do Consultor Jurídico do MPS 616/2010",
+			"data": "bc17",
+			"tipo": "artigo"
+		}, ]
 	}]
 }

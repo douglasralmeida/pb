@@ -1,166 +1,79 @@
 <!DOCTYPE html>
-<html ng-app="ArtigoBC" ng-controller="PageCtrl">
+<html ng-app="AppSanitize" ng-controller="artigoBCCtrl"  lang="pt-br" dir="ltr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
-<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
-<script type='text/javascript' src="/js/geturl.js"></script>
-<script type="text/javascript">
-	var app = angular.module('ArtigoBC', ['ngSanitize']);	
-	var param = getUrlParameter('id');
-	app.controller('PageCtrl', function($scope, $http, $location) {
-		$http.get("/bc/servicos.json").then(function(response) {
-			$scope.servicos = response.data;
-		});
-		$http.get("/bc/categorias.json").then(function(response) {
-			$scope.categorias = response.data;
-		});
-		$http.get("/bc/artigos/" + param + ".html").then(function(response) {
-			$scope.artigoexiste = true;
-			$scope.bcid = param;
-			$scope.arquivohtml = response.data;
-			$scope.secoes = [];
-			manipularHtml($scope.arquivohtml);
-		}, function(response) {
-			$scope.artigoexiste = false;
-		});
-
-		getServicoNome = function(servicoid) {
-			var serviconome = "";
-			$scope.servicos.forEach(function(item, index) {
-				if (item.sigla == servicoid) 
-					serviconome = item.nome;
-			});
-			return serviconome;
+	<base href="/" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+	<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/angular-sanitize-1.6.4.min.js"></script>
+	<script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+	<script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+	<script type='text/javascript' src="/js/geturl.js"></script>
+	<script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+	<style type="text/css">
+		@media print {
+			.app-bar, .artigobc-painelacoes, .breadcrumbs, .enquete {
+				display: none;
+			}
 		}
-
-		pesquisarCat = function(categoria) {			
-			$scope.categorias.forEach(function(item, index) {
-				if (item.id == categoria[0]) {
-					$scope.categoria = item.sigla;
-					$scope.categorianome = item.nome;					
-				}
-			});
-		}
-
-		pesquisarServicos = function(servicos) {
-			var arrayServicos = servicos.split(",");
-			var nomes = "";
-			arrayServicos.forEach(function(item, index) {
-				nomes = nomes + getServicoNome(item);				
-				if (index < arrayServicos.length-1)
-					nomes = nomes + ", ";
-			});
-			$scope.aplicase = nomes;
-		}
-
-		manipularHtml = function (htmldata) {			
-				var parser = new DOMParser();
-				var data = parser.parseFromString(htmldata, "text/html");
-				var h3elems = [];
-
-				$scope.titulo = data.querySelector('meta[name="DC.Title"]').getAttribute("content");
-				$scope.id = data.querySelector('meta[name="DC.Identifier"]').getAttribute("content");
-				$scope.ultimarev = new Date(data.querySelector('meta[name="DC.Modified"]').getAttribute("content"));
-				$scope.rev = data.querySelector('meta[name="BC.NumRevisao"]').getAttribute("content");
-				$scope.tags = data.querySelector('meta[name="DC.Subject"]').getAttribute("content");
-				$scope.paginaurl = $location.absUrl();
-				$scope.estaDescontinuado = (data.querySelector('meta[name="BC.estaDescontinuado"]').getAttribute("content") == 'true');
-				$scope.subcategoria = data.querySelector('meta[name="DC.IsPartOf"]').getAttribute("content");
-				if (data.querySelector('meta[name="DC.Relation"]').getAttribute("content").startsWith("aplicase"))
-					$scope.relacaplicase = data.querySelector('meta[name="DC.Relation"]').getAttribute("content");
-				pesquisarCat($scope.subcategoria);
-				pesquisarServicos($scope.relacaplicase.substring(9, $scope.relacaplicase.length));
-				manipularTags($scope.tags);
-				h3elems = data.querySelectorAll('h3');
-				for (var i = 0; i < h3elems.length; i++) {
-					$scope.secoes.push(h3elems[i].innerHTML);
-				}
-			};
-
-		manipularTags = function(tags) {
-			$scope.tags = $scope.tags.split(",");
-		};
-	});
-</script>
-<style type="text/css">
-	@media print {
-		.app-bar, .artigobc-painelacoes, .breadcrumbs, .enquete {
-			display: none;
-		}
-	}
-</style>
-<title ng-bind="titulo"></title>
+	</style>
+	<title ng-bind="titulo"></title>
 </head>	
 <body>
-<div ng-include="'/widgets/navbar.html'"></div>
-<div class="enquete">
-	<button class="button primary" id="enquete-botao" onclick="metroDialog.toggle('#dialogo-enquete')">Feedback</button>
-</div>
-<div data-role="dialog" id="dialogo-enquete" class="padding20" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
-	<h3>Enviar seus comentários</h3>
-    <p>Que tipo de comentário é esse?</p>
-	<div class="input-control textarea full-size ng-binding">
-      <textarea name="detalhes" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="128" placeholder="Digite aqui seu comentário."></textarea>
-	  <br>0/128
-    </div>
-	<div style="height: 30px;"></div>
-	<button class="button js-dialog-close" style="position: absolute; bottom: 8px; right: 16px;">Cancelar</button>
-    <span class="dialog-close-button"></span>
-</div>
-<div class="container page-content align-center ng-hide" ng-hide="artigoexiste" style="margin-top: 10px;" ngcloak>
-	<div class="mif-blocked mif-4x"></div>
-	<h1>Artigo não econtrado</h1>
-	<p>Tente pesquisar o que você está precisando.</p>
-</div>
-<div class="container page-content" ng-show="artigoexiste" ngcloak>
-<ul class="breadcrumbs">
-	<li><a href="/bc/index.html?tipo={{categoria}}" ng-bind="categorianome"></a></li>
-	<li><a href="" ng-bind="titulo"></a></li>
-</ul>
-<div class="flex-grid">
-<div class="row">
-	<main class="cell colspan9">
-		<div ng-hide="!estaDescontinuado" ng-cloak>
-			<div class="popover marker-on-left bg-darkRed fg-white">
-            	AVISO: Este artigo trata de um assunto cuja legislação não está mais em vigor ou seu entendimento foi alterado ou trata de um aplicativo que está em desuso no instituto.
-            </div>
-		</div>
-		<div ng-bind="titulo" class="artigobc-titulo"></div>
-		<div ng-bind-html="arquivohtml" class="artigobc-conteudo"></div>
-		<div class="artigobc-conteudo">
-			<section ng-cloak>
-				<h3>Propriedades</h3>
-				<p>ID do artigo: <span ng-bind="id"></span></p>
-				<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - HH:mm'"></span></p>
-				<p>Revisão: <span ng-bind="rev"></span></p>
-				<p>A informação contida neste artigo aplica-se a: <span ng-bind="aplicase"></span></p>
-			</section>
-		</div>
-	</main>
-	<div class="cell colspan3 artigobc-painelacoes" style="margin-left: 12px;" ng-cloak>
-		<ul class="artigobc-listaacoes">
-			<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
-			<li><a href="mailto:?Artigo do banco de conhecimento&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
-		</ul>
-		<nav class="artigo-navegador">
-			<h4>Neste artigo</h4>
-			<ol>
-				<li ng-repeat="x in secoes"><a href="/bc/artigo.html?id={{bcid}}#ancora{{$index}}" ng-bind="x"></a></li>
-			</ol>
-		</nav>
-		<nav class="artigo-tags">
-			<h4>Tags</h4>
-			<span ng-repeat="x in tags" ng-bind="x"></span>
-		</nav>
+	<div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+	<div ng-include="'/widgets/feedback.html'"></div>
+	<div class="conteudo-pagina container align-center ng-hide" ng-hide="!exibirPagina || artigoexiste" style="margin-top: 10px;" ngcloak>
+		<div class="mif-blocked mif-4x"></div>
+		<h1>Artigo não econtrado</h1>
+		<p>Tente pesquisar o que você está precisando.</p>
 	</div>
-</div></div></div>
+	<div class="container conteudo-pagina" ng-show="exibirPagina && artigoexiste" ngcloak>
+		<ul class="breadcrumbs">
+			<li><a href="/bc/index.html?tipo={{categoria}}" ng-bind="categorianome"></a></li>
+			<li><a href="" ng-bind="titulo"></a></li>
+		</ul>
+		<div class="flex-grid">
+			<div class="row">
+				<main class="cell colspan9">
+					<div ng-hide="!estaDescontinuado" ng-cloak>
+						<div class="popover marker-on-left bg-darkRed fg-white">
+            				AVISO: Este artigo trata de um assunto cuja legislação não está mais em vigor ou seu entendimento foi alterado ou trata de um aplicativo que está em desuso no instituto.
+            			</div>
+					</div>
+					<div ng-bind="titulo" class="artigobc-titulo"></div>
+					<div ng-bind-html="arquivohtml" class="artigobc-conteudo"></div>
+					<div class="artigobc-conteudo">
+						<section ng-cloak>
+							<h3>Propriedades</h3>
+							<p>ID do artigo: <span ng-bind="id"></span></p>
+							<p>Última revisão: <span ng-bind="ultimarev | date: 'dd/MM/yyyy - HH:mm'"></span></p>
+							<p>Revisão: <span ng-bind="rev"></span></p>
+							<p>A informação contida neste artigo aplica-se a: <span ng-bind="aplicase"></span></p>
+						</section>
+					</div>
+				</main>
+				<div class="cell colspan3 artigobc-painelacoes" style="margin-left: 12px;" ng-cloak>
+					<ul class="artigobc-listaacoes">
+						<li><a href="javascript:window.print();"><span class="mif-printer"></span>Imprimir</a></li>
+						<li><a href="mailto:?Artigo do banco de conhecimento&amp;body=Clique no link: {{paginaurl}}"><span class="mif-mail"></span>Email</a></li>
+					</ul>
+					<nav class="artigo-navegador">
+						<h4>Neste artigo</h4>
+						<ol>
+							<li ng-repeat="x in secoes"><a href="/bc/artigo.html?id={{bcid}}#ancora{{$index}}" ng-bind="x"></a></li>
+						</ol>
+					</nav>
+					<nav class="artigo-tags">
+						<h4>Tags</h4>
+						<span ng-repeat="x in tags" ng-bind="x"></span>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
