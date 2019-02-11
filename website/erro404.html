@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
 <head>
-<base href="/">
-<meta charset="UTF-8" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="sortcut icon" href="/favicon.png" type="image/png"/>
-<link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
-<script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
-<title>Página não encntrada</title>
-  <style>
-  .imagem {
-      float: left;      
-      margin: 16px 16px 15px 0px;
-  }
-  </style>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sortcut icon" href="/favicon.png" type="image/png"/>
+    <link rel="stylesheet" type="text/css" href="/css/metro-3.0.17.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/metro-icons-3.0.17.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/metro-responsive-3.0.17.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bhsul-0.0.1.css" />
+    <script type='text/javascript' src="/js/angular-1.6.4.min.js"></script>
+    <script type='text/javascript' src="/js/jquery-3.2.1.min.js"></script>
+    <script type='text/javascript' src="/js/metro-3.0.17.min.js"></script>
+    <script type='text/javascript' src="/js/bhsul-0.0.1.js"></script>
+    <title>Página não encntrada</title>
+    <style>
+      .imagem {
+          float: left;      
+          margin: 16px 16px 15px 0px;
+      }
+    </style>
 </head>
-<body ng-app="">
-<div ng-include="'/widgets/navbar.html'"></div>
-<div class="page-content container">
-  <div class="mif-blocked mif-4x fg-red imagem"></div>
-  <h2>Desculpe, a página não foi encontrada</h2>
-  <p>O endereço da página foi digitado incorretamente ou você está procurando por um recurso que não existe mais.</p>
-  <p style="margin-top: 64px;"><a href="/">Clique aqui para ir para a página inicial do Portal da BH Sul.</a></p>
-</div>
+<body ng-app="PortalBHSul" ng-controller="padraoCtrl">
+  <div ng-include="'/widgets/navbar.html'" data-onload="navbarCarregada()"></div>
+  <div class="container conteudo-pagina" ng-show="exibirPagina">
+    <div class="mif-blocked mif-4x fg-red imagem"></div>
+    <h2>Desculpe, a página não foi encontrada</h2>
+    <p>O endereço da página foi digitado incorretamente ou você está procurando por um recurso que não existe mais.</p>
+    <p style="margin-top: 64px;"><a href="/"><span class="mif-home"></span>Clique aqui para ir para a página inicial do Portal da BH Sul.</a></p>
+  </div>
 </body>
 </html>

@@ -1,3 +1,14 @@
-<div class="charm left-side" id="comentarios" style="left: -197px; top: 0px; right: auto; bottom: 0px; display: none; opacity: 1;" data-role="charm" data-position="left">
-  <h1 class="text-light">Sua opnião</h1><span class="charm-closer"></span>
-</div>
+<div class="enquete">
+		<button class="button primary" id="enquete-botao" onclick="metroDialog.toggle('#dialogo-enquete')">Feedback</button>
+	</div>
+	<div data-role="dialog" id="dialogo-enquete" class="padding20" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+		<h3>Enviar seus comentários</h3>
+   		<p>Que tipo de comentário é esse?</p>
+		<div class="input-control textarea full-size ng-binding">
+     			<textarea name="detalhes" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="128" placeholder="Digite aqui seu comentário."></textarea>
+  			<br>0/128
+   		</div>
+		<div style="height: 30px;"></div>
+		<button class="button js-dialog-close" style="position: absolute; bottom: 8px; right: 16px;">Cancelar</button>
+   		<span class="dialog-close-button"></span>
+	</div>
