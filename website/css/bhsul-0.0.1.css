@@ -4,7 +4,7 @@
 
 *::selection {
 	background-color: #e5f3fb;
-	color: black;
+	color: #000;
 	text-shadow: none;
 }
 
@@ -233,7 +233,7 @@
 }
 
 .tab-apps-cat a:focus {
-	border: 3px dotted rgba(0,0,0);
+	border: 3px dotted #000;
 }
 
 .tab-apps-cat a:focus:hover {
@@ -254,25 +254,25 @@
 .tab-conhecimento {
 	display: flex;
 	flex-wrap: wrap;
-	width: 99%;
+	width: 100%;
 }
 
-.tab-conhecimento > a {
+.tab-conhecimento a {
 	border: 3px solid transparent;
 	flex: 0 1 100%;
 	outline: none;
 	transition-duration: 0.2s;
 }
 
-.tab-conhecimento > a:hover {
+.tab-conhecimento a:hover {
 	border: 3px solid rgba(0,0,0,.2);
 }
 
-.tab-conhecimento > a:focus {
-	border: 3px dotted rgba(0,0,0);
+.tab-conhecimento a:focus {
+	border: 3px dotted #000;
 }
 
-.tab-conhecimento > a:focus:hover {
+.tab-conhecimento a:focus:hover {
 	border: 3px dotted rgba(0,0,0, 0.2);
 }
 
@@ -337,7 +337,7 @@
 }
 
 .tab-doc a:focus {
-	border: 3px dotted black;
+	border: 3px dotted #000;
 }
 
 .tab-doc a:focus:hover {
@@ -444,8 +444,12 @@
 	padding: 2px;
 }
 
+.tab-links-item a:hover{
+	border: 2px solid #ddd;
+}
+
 .tab-links-item a:focus{
-	border: 2px dotted black;
+	border: 2px dotted #000;
 }
   
 .tab-links-item a img {

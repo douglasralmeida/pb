@@ -28,9 +28,9 @@
 					<div class="tab-doc-cat">
 						<h3 class="uppercase" style="margin-left: 8px;"><small>Categorias</small></h3>
 						<div class="listview">
-							<div class="list" ng-repeat="x in dados">
-								<a class="list-tile" href="#categoria{{$index}}" target="_self" ng-bind="x.categoria"></a>
-							</div>
+							<a class="list" href="/docs.html#categoria{{$index}}" target="_self" ng-repeat="x in dados">
+								<span class="list-tile" ng-bind="x.categoria"></span>
+							</a>
 						</div>
 					</div>
 				</div>
