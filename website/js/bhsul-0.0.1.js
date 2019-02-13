@@ -8,6 +8,16 @@ var app = angular.module('PortalBHSul', []);
 var appSanitize = angular.module('AppSanitize', ['ngSanitize']);
 var ver = "Versão 2019.02";
 
+//IE11 não suporte startWith
+if (!String.prototype.startsWith) {
+    Object.defineProperty(String.prototype, 'startsWith', {
+        value: function(search, pos) {
+            pos = !pos || pos < 0 ? 0 : +pos;
+            return this.substring(pos, pos + search.length) === search;
+        }
+    });
+}
+
 //Controlador genérico
 app.controller('padraoCtrl',  function($scope) {
 	$scope.exibirPagina = false;
