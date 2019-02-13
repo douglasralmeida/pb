@@ -4,7 +4,7 @@
 	"versao": "11.0.44",
 	"publicadoem": "08/08/2017",
 	"descricao": "Use o Internet Explorer para abrir páginas da internet e da intranet do INSS.",
-	"detalhes": "<p>O Internet Explorer 11 permite navegar pelas páginas da inernet e da intranet do INSS. Certos sites funcionarão apenas no Internet Explorer.</p><p>Sites que funcionam apenas no Internet Exporer:</p><p>Sites que não funcionam corretamente no Internet Explorer:</p>",
+	"detalhes": "<p>O Internet Explorer 11 permite navegar pelas páginas da internet e da intranet do INSS. Certos sites funcionarão apenas no Internet Explorer.</p><p>Sites que funcionam apenas no Internet Exporer:<ul><li>SIPPS</li></ul></p>",
 	"imagens": [{
 		"arquivo": "tela1.png",
 		"mini": "minitela1.png",

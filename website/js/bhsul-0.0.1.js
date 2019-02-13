@@ -6,7 +6,7 @@
 
 var app = angular.module('PortalBHSul', []);
 var appSanitize = angular.module('AppSanitize', ['ngSanitize']);
-var ver = "Versão prerelease";
+var ver = "Versão 2019.02";
 
 //Controlador genérico
 app.controller('padraoCtrl',  function($scope) {
@@ -58,8 +58,8 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 app.controller('docsCtrl',  function($scope, $http) {
 	$scope.dados = [];
 	$scope.exibirPagina = false;
-	$scope.tipodoc = ["ODT", "PDF"];
-	$scope.fileimg = ["img/odt.png", "img/pdf.png"];
+	$scope.tipodoc = ["ODT", "PDF", "ODS"];
+	$scope.fileimg = ["img/odt.png", "img/pdf.png", "IMG/ods.png"];
 	$scope.pagina = 0;
 
 	$scope.navbarCarregada = function() {

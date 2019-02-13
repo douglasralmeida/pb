@@ -22,12 +22,12 @@
 	<div class="conteudo-pagina" ng-show="exibirPagina">
 		<div class="flex-grid no-responsive-future" style="height: 100%;">
 			<div class="row" style="height: 100%">
-				<div class="cell size-x200 barra-lateral" id="lista-lateral">
+				<div class="cell size-x200 barra-lateral-inicial" id="lista-lateral">
 					<ul class="tab-inicial-lateral unstyled-list" ng-repeat="x in listalateral">
 						<a href="{{x.atalho}}"><img ng-src="/img/{{x.imagem}}" height="48" width="48"/><span ng-bind="x.nome"></span></a>
 					</ul>
 				</div>
-				<div class="cell auto-size padding20 bg-white" id="lista-atalhos" style="margin-left: 156px;">
+				<div class="cell auto-size padding20 bg-white conteudo-inicial" id="lista-atalhos">
 					<div class="tab-inicial-secao" ng-repeat="y in listaatalhos">
 						<div ng-cloak>
 							<img ng-src="/img/{{y.icone}}" height="48" width="48" />
