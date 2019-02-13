@@ -8,7 +8,7 @@ var app = angular.module('PortalBHSul', []);
 var appSanitize = angular.module('AppSanitize', ['ngSanitize']);
 var ver = "Versão 2019.02";
 
-//IE11 não suporte startWith
+//IE11 não suporta startWith
 if (!String.prototype.startsWith) {
     Object.defineProperty(String.prototype, 'startsWith', {
         value: function(search, pos) {
@@ -210,24 +210,27 @@ appSanitize.controller('indiceBCCtrl', function($scope, $http) {
 });
 
 appSanitize.controller('artigoBCCtrl', function($scope, $http, $location) {
+	$scope.artigoexiste = true;
 	$scope.exibirPagina = false;
 
 	$scope.navbarCarregada = function() {
 		$scope.exibirPagina = true;
 	};
-	$http.get("/bc/servicos.json").then(function(response) {
-		$scope.servicos = response.data;
-	});
-	$http.get("/bc/categorias.json").then(function(response) {
-		$scope.categorias = response.data;
-	});
-	$http.get("/bc/artigos/" + id + ".html").then(function(response) {
-		$scope.artigoexiste = true;
-		$scope.bcid = id;
-		$scope.arquivohtml = response.data;
-		$scope.secoes = [];
-		manipularHtml($scope.arquivohtml);
-	}, function(response) {
+	$http.get("/bc/artigos/" + id + ".html").then(function(respArtigo) {
+		$http.get("/bc/servicos.json").then(function(respServicos) {
+			$scope.servicos = respServicos.data;
+			$http.get("/bc/categorias.json").then(function(respCat) {
+				$scope.categorias = respCat.data;
+				$scope.artigoexiste = true;
+				$scope.bcid = id;
+				$scope.arquivohtml = respArtigo.data;
+				$scope.secoes = [];
+				manipularHtml($scope.arquivohtml);
+			}, function () {
+				console.error("Erro ao baixar arquivo categorias.json.");
+			});
+		});
+	}, function() {
 		$scope.artigoexiste = false;
 	});
 
