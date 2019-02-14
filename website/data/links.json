@@ -173,6 +173,9 @@
 			"nome": "SRAR - Reposição de Greve",
 			"atalho": "http://www-srar/"
 		}, {
+			"nome": "Telefones da Dataprev",
+			"atalho": "http://www-webdatafone/"
+		},	{
 			"nome": "Tempo Real Dataprev",
 			"atalho": "http://www-temporeal/"
 		}]

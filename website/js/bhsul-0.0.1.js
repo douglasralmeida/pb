@@ -68,8 +68,8 @@ app.controller('paginicialCtrl',  function($scope, $http) {
 app.controller('docsCtrl',  function($scope, $http) {
 	$scope.dados = [];
 	$scope.exibirPagina = false;
-	$scope.tipodoc = ["ODT", "PDF", "ODS"];
-	$scope.fileimg = ["img/odt.png", "img/pdf.png", "IMG/ods.png"];
+	$scope.tipodoc = ["ODT", "PDF", "ODS", "ODP", "ZIP"];
+	$scope.fileimg = ["img/odt.png", "img/pdf.png", "img/ods.png", "img/odp.png", "img/zip.png"];
 	$scope.pagina = 0;
 
 	$scope.navbarCarregada = function() {
@@ -211,6 +211,7 @@ appSanitize.controller('indiceBCCtrl', function($scope, $http) {
 
 appSanitize.controller('artigoBCCtrl', function($scope, $http, $location) {
 	$scope.artigoexiste = true;
+	$scope.comentario = '';
 	$scope.exibirPagina = false;
 
 	$scope.navbarCarregada = function() {

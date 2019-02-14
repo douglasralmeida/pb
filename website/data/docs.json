@@ -5,11 +5,15 @@
 			"nome": "Carta de Agendamento de Atendimento",
 			"link": "docs/forms/carta_marcacao.ott",
 			"tipo": 1
-		}, {		
+		}, {
+			"nome": "Carta de Exigência",
+			"link": "docs/forms/carta_exig_generica.ott",
+			"tipo": 1
+		}, {
 			"nome": "Capa de Processo",
 			"link": "docs/forms/capaprocesso.pdf",
 			"tipo": 2
-		},{
+		}, {
 			"nome": "Certidão de inexistência de dependentes",
 			"link": "docs/forms/cert_inexist.odt",
 			"tipo": 1
@@ -30,6 +34,10 @@
 			"link": "docs/forms/desp_generico.ott",
 			"tipo": 1
 		}, {
+			"nome": "Despacho de Encaminhamento a Órgão Competente",
+			"link": "docs/forms/desp_encaminha.ott",
+			"tipo": 1
+		}, {
 			"nome": "Despacho de Encaminhamento de Requerimento",
 			"link": "docs/forms/desp_encaminha.ott",
 			"tipo": 1
@@ -37,6 +45,10 @@
 			"nome": "Guia da Previdência Social (GPS)",
 			"link": "docs/forms/gps.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Modelo de Apresentação",
+			"link": "docs/forms/apres_generico.otp",
+			"tipo": 4
 		}, {
 			"nome": "Procuração",
 			"link": "docs/forms/procuracao.pdf",
@@ -61,6 +73,14 @@
 			"link": "docs/forms/modelo_portaria.odt",
 			"tipo": 1
 		}, {
+			"nome": "Ofício a RFB sobre Mandato Eletivo",
+			"link": "docs/forms/oficio_rfb_mandeletivo.odt",
+			"tipo": 1
+		}, {
+			"nome": "Planilha para Cálculo de Diferenças",
+			"link": "docs/forms/pla_calc_diferenca.ots",
+			"tipo": 3
+		}, {
 			"nome": "Requerimento de Atualização Cadastral",
 			"link": "docs/forms/req_cnis_acerto.ott",
 			"tipo": 1
@@ -68,10 +88,26 @@
 			"nome": "Requerimento de Cálculo de Contribuições em Atraso",
 			"link": "docs/forms/req_contrib_atras.ott",
 			"tipo": 1
+		}, {
+			"nome": "Termo de Opçao do ME - Requerimento de Filiação como Facultativo",
+			"link": "docs/forms/termo_me_requerimento.odt",
+			"tipo": 1
+		}, {
+			"nome": "Termo de Opção do ME - Declaração do ME",
+			"link": "docs/forms/termo_me_declaracao.odt",
+			"tipo": 1
+		}, {
+			"nome": "Termo de Opção do ME - Discriminativo de Remunerações",
+			"link": "docs/forms/termo_me_valores.odt",
+			"tipo": 1
 		}]
 	}, {
 		"categoria": "Concessão de Benefício Assistencial",
 		"itens": [{
+			"nome": "Carta de Exigência do CADUNICO",
+			"link": "docs/forms/carta_exig_bpc_cadunico.ott",
+			"tipo": 1
+		}, {
 			"nome": "Carta de Exigência para Reanálise da Renda (ACP)",
 			"link": "docs/forms/carta_exig_bpc_reanaliserenda.ott",
 			"tipo": 1
@@ -126,7 +162,7 @@
 			"link": "docs/forms/carta_res_majo25p.ott",
 			"tipo": 1
 		}, {
-			"nome": "Ofício à Caixa ou Banco do Brasil solicitando info. sobre saque de PIS/PASEP/FGTS",
+			"nome": "Ofício à CEF ou BB solicitando info. sobre saque de PIS/PASEP/FGTS",
 			"link": "docs/forms/oficio_cancelaaposenta.ott",
 			"tipo": 1
 		}, {
@@ -138,11 +174,11 @@
 			"link": "docs/forms/req_consig_reclama.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Requerimento para Bloqueio de Empréstimos Consignados",
+			"nome": "Requerimento para Bloqueio de Empréstimo Consignado",
 			"link": "docs/forms/req_consig_bloq.pdf",
 			"tipo": 2
 		}, {
-			"nome": "Requerimento para Desbloqueio de Empréstimos Consignados",
+			"nome": "Requerimento para Desbloqueio de Empréstimo Consignado",
 			"link": "docs/forms/req_consig_desbloq.pdf",
 			"tipo": 2
 		}, {
@@ -152,7 +188,7 @@
 		}, {
 			"nome": "Requerimento de Atualização de BPC",
 			"link": "docs/forms/req_bpc_atualizacao.pdf",
-			"tipo": 1
+			"tipo": 2
 		}, {
 			"nome": "Termo de Responsabilidade para Representante Legal",
 			"link": "docs/forms/termo_respons_rl.ott",
@@ -173,6 +209,10 @@
 			"link": "docs/forms/cpm.pdf",
 			"tipo": 2
 		}, {
+			"nome": "Despacho e Decisão Técnica de Atividade Especial",
+			"link": "docs/forms/desp_aposespecial_medic.ott",
+			"tipo": 1
+		}, {
 			"nome": "Laudo para Isenção de IR",
 			"link": "docs/forms/med_laudoir.ott",
 			"tipo": 1
@@ -180,6 +220,10 @@
 			"nome": "Requerimento de Perícia em Trânsito",
 			"link": "docs/forms/req_pericia_transito.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Requerimento de Perícia Hospitalar",
+			"link": "docs/forms/req_pericia_hosp.odt",
+			"tipo": 1
 		}, {
 			"nome": "SIMA",
 			"link": "docs/forms/sima.ott",
@@ -191,6 +235,45 @@
 			"nome": "Parecer Social",
 			"link": "docs/forms/soc_parecer.ott",
 			"tipo": 1
+		}, {
+			"nome": "Planilha de Cálculo dos Qualificadores para Acesso ao BPC",
+			"link": "docs/forms/pla_calc_acessobpc.ots",
+			"tipo": 3
+		}, {
+			"nome": "SIS para BPC",
+			"link": "docs/forms/sis_bpc.odt",
+			"tipo": 1
+		}]
+	}, {
+		"categoria": "Reabilitação Profissional",
+		"itens": [{
+			"nome": "Avaliação de Reabilitação Profissional - FARP",
+			"link": "docs/forms/rp_farp.ott",
+			"tipo": 1
+		}, {
+			"nome": "Avaliação do Potencial Laboral - FAPL",
+			"link": "docs/forms/rp_fapl.ott",
+			"tipo": 1
+		}, {
+			"nome": "Avaliação Socio Profissional - FASP",
+			"link": "docs/forms/rp_fasp.ott",
+			"tipo": 1
+		}, {
+			"nome": "Conclusão da Reabilitação Profissional - FCRP",
+			"link": "docs/forms/rp_fcrp.ott",
+			"tipo": 1
+		}, {
+			"nome": "Ficha de Cadastro do Cliente",
+			"link": "docs/forms/rp_ficha_cadastro.ott",
+			"tipo": 1
+		}, {
+			"nome": "Folha de Evolução do Programa de RP",
+			"link": "docs/forms/rp_folha_evo.ott",
+			"tipo": 1
+		}, {
+			"nome": "Boletim Estatístico - BERP",
+			"link": "docs/forms/pla_rp_berp.ots",
+			"tipo": 3
 		}]
 	}, {
 		"categoria": "Recurso e Revisão",
@@ -198,6 +281,10 @@
 			"nome": "Requerimento de Recurso",
 			"link": "docs/forms/req_recurso.pdf",
 			"tipo": 2
+		}, {
+			"nome": "Requerimento de Recurso a CAJ",
+			"link": "docs/forms/req_recurso_caj.ott",
+			"tipo": 1
 		}, {
 			"nome": "Requerimento de Revisão de Benefício",
 			"link": "docs/forms/req_ben_revisao.ott",
@@ -208,7 +295,7 @@
 			"tipo": 1
 		}, {
 			"nome": "Revisão: Indeferimento da solicitação de não incidência do fator previdenciário",
-			"link": "docs/forms/carta_res_rev_ind_fator.odt",
+			"link": "docs/forms/carta_res_rev_ind_fator.ott",
 			"tipo": 1
 		}, {
 			"nome": "Revisão: Indeferimento para benefícios decadentes",
@@ -217,9 +304,40 @@
 		}]
 	}, {
 		"categoria": "Justificação Administrativa",
-		"itens": [{		
+		"itens": [{
 			"nome": "Requerimento de Justificação Administrativa",
 			"link": "docs/forms/ja_requerimento.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Termo de Assentada da JA",
+			"link": "docs/forms/ja_termo_assentada.ott",
+			"tipo": 1
+		}, {
+			"nome": "Termo de Depoimnento da JA",
+			"link": "docs/forms/ja_termo_depoimento.ott",
+			"tipo": 1
+		}, {
+			"nome": "Relatório do Processante",
+			"link": "docs/forms/ja_relatorio.ott",
+			"tipo": 1
+		}, {
+			"nome": "Despacho de Homologação da JA",
+			"link": "docs/forms/desp_ja_homolog.ott",
+			"tipo": 1
+		}, {
+			"nome": "Despacho de Não Homologação da JA",
+			"link": "docs/forms/desp_ja_naohomolog.ott",
+			"tipo": 1
+		}]
+	}, {
+		"categoria": "Seguro Desemprego do Pescador Artesanal",
+		"itens": [{
+			"nome": "Carta de Exigência do Seguro Defeso",
+			"link": "docs/forms/carta_exig_spda.pdf",
+			"tipo": 2
+		}, {
+			"nome": "Carta de Indeferimento do Seguro Defeso",
+			"link": "docs/forms/carta_indef_spda.pdf",
 			"tipo": 2
 		}]
 	}]

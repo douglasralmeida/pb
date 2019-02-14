@@ -138,6 +138,10 @@
 	outline: none;
 }
 
+.flex-grid .row .cell {
+	
+}
+
 .container-pesquisa {
 	background-color: rgb(0, 108, 216);
 	color: #ffffff;
@@ -340,6 +344,7 @@
 .tab-doc a {
 	background-color: white;
 	border: 1px dotted transparent;
+	margin: 1px;
 	outline: none;
 	padding: 2px;
 	text-align: center;
