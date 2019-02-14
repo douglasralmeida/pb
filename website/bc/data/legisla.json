@@ -48,8 +48,12 @@
 			"data": "http://sislex.previdencia.gov.br/paginas/38/inss-pres/2008/31.htm",
 			"tipo": "externo"
 		}, {
-			"nome": "Portaria Conjunta MDSA/INSS 1/2017 - Regulamenta regras e procedimentos relativos ao Benefício de Prestação Continuada",
-			"data": "http://sislex.previdencia.gov.br/paginas/64/MDSA-INSS/2017/1.htm",
+			"nome": "Portaria Conjunta MDS/INSS 2/2015 - Procedimentos e instrumentos para avaliação social e médica para acesso ao Benefício de Prestação Continuada",
+			"data": "http://sislex.previdencia.gov.br/paginas/64/INSS-MDS/2015/2.htm",
+			"tipo": "externo"
+		}, {
+			"nome": "Portaria Conjunta MDS/INSS 3/2018 - Regras e procedimentos relativos ao Benefício de Prestação Continuada",
+			"data": "http://sislex.previdencia.gov.br/paginas/64/INSS-MDS/2018/3.htm",
 			"tipo": "externo"
 		}]
 	}, {
