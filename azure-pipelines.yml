@@ -18,6 +18,6 @@ steps:
 - script: docker build -f Dockerfile -t $(dockerId)/$(imageName) .
   displayName: 'docker build'
 - script: |
-    docker login -e $(userMail) -u $(dockerId) -p $(pswd)
+    docker login -u $(dockerId) -p $(pswd)
     docker push $(dockerId)/$(imageName)
   displayName: 'docker push'
