@@ -90,6 +90,9 @@
 			"nome": "Busca Servidor",
 			"atalho": "http://www-inss/utilidade/pesquisa-servidor-2/"
 		}, {
+			"nome": "Declarações de Cárcere (MG)",
+			"atalho": "http://www.portalsigpri.mg.gov.br/servicos/validar-atestado-carcerario/"
+		}, {
 			"nome": "Índice Legislativo",
 			"atalho": "http://www-maringa/legis/"
 		}, {

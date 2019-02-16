@@ -4,7 +4,7 @@
 
 Projeto de intranet corporativa para uso interno no INSS.
 
-[![Portal da BH Sul](doc/img/portal.png)]
+![Portal da BH Sul](doc/img/portal.png)
 
 ## Requisitos:
 * Sistema Operacional: Windows, Linux, FreeBSD ou MacOS X.
