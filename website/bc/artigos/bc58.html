@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5k">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5k do Prisma.">
+		<meta name="DC.Modified" content="2017-02-02T12:00-03:00">
+		<meta name="DC.Identifier" content="58">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,carencia,auxilio acidente,acordos internacionais">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5k do Prisma, lançada em Fevereiro de 2017.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Concessão</h4>
+				<h5>Ação Civil Pública 08035188320164058000 – Atestado Médico – Todo o Estado de Alagoas</h5>
+				<p>Implementadas as regras para cumprimento, por todo o Estado de Alagoas, de Sentença contida na ACP 08035188320164058000 - concessão de auxílio-doença com base em atestado médico quando a agenda da pericia médica estiver superior a 45 DIAS, observados os seguintes parâmetros:</p>
+				<ul>
+					<li>Data de Entrada de Requerimento: a partir de 18/08/2016.</li>
+					<li>Município de Residência: todos do Estado de Alagoas.</li>
+					<li>OL's de atendimento: Todos, exceto o 02001180 que não é aberta ao público.</li>
+					<li>Comprovação de Endereço: Obrigatória.</li>
+					<li>FERR/SABI: não exige desativação.</li>
+					<li>Duração do benefício: até 60 (sessenta) dias.</li>
+				</ul>
+				<h5>Cadastramento de Administrador Provisório sem exigência de Tutela/Curatela em andamento</h5>
+				<p>O Prisma foi adequado para permitir o cadastramento de Administrador Provisório na condição de Representante Legal quando for cônjuge, pai, mãe, tutor ou curador, ou ainda, na ausência destes, herdeiro necessário do beneficiário, sendo inibida, consequentemente, a exigência de informação de curatela / tutela em andamento.</p>
+				<h5>Benefícios Assistenciais (B87 e B88) - Fixação da DIB/DIP na DER</h5>
+				<p>Uniformizada a regra de fixação da DIB/DIP na DER nos benefícios assistenciais concedidos via Prisma. Anteriormente a DIB/DIP vinha sendo fixada de acordo com a DRD informada.</p>
+				<p>A nova regra passa a ser executada a partir da implementação da demanda, mas cabendo revisão nos benefícios assistencias despachados a partir de 01.01.2009.</p>
+				<h5>Inibição de exigência indevida na concessão de salário a ex-empregada de MEI</h5>
+				<p>Nos despachos concessórios de Salário Maternidade às seguradas em período de graça cujo último empregador seja MEI, inibida a mensagem “A recisão sem justa causa ocorreu antes da confirmação da gravidez? (S/N) – Ver Declaração da Segurada.”</p>
+				<p>A regra visa verificar a responsabilidade pelo pagamento do benefício que no caso de o empregador ser MEI, por lei, é da Previdência Social.</p>
+				<h5>Implementação da nova regra de exigência de carência após a perda de qualidade de segurado, instituída pela Medida Provisória n° 767/2017 – Exigência de carência completa após o reingresso</h5>
+				<p>Nos requerimentos de auxílio-doença, aposentadoria por invalidez e salário-maternidade com fatos geradores a partir de 06/01/2017, data de publicação da Medida Provisória n° 767/2017, após a perda da qualidade de segurado será necessário o cumprimento do período integral de carência (quando aplicável), e não mais apenas 1/3 desse período.</p>
+				<p>Para indeferimento dos benefícios com fatos geradores (DII, Parto/Adoção/etc) a partir de 06/01/2017 não enquadrados no requisito de carência após perda de qualidade de segurado, foram criados os motivos de indeferimento a seguir relacionados:</p>
+				<ul>
+					<li>199 - Falta de periodo de carencia - MP no. 767/17 (benefícios por incapacidade);</li>
+					<li>200 - Falta de periodo de carencia - MP no. 767/17 (salário-maternidade).</li>
+				</ul>
+				<h4>Correções</h4>
+				<h5>Auxílio-Acidente x PBC de Aposentadoria</h5>
+				<p>Corrigida a inconsistência em que não era gerado o tempo de auxílio-acidente (B36 e B94) para fins de inclusão dos respectivos valores no PBC das aposentadorias, sendo consideradas consistentes as regras na tabela abaixo, conforme a DIB dos benefícios envolvidos.</p>
+				<table>
+					<tr><td>B94/B36</td><td>Aposentadoria</td><td>Resultado</td></tr>
+					<tr><td>Anterior a 11/11/97</td><td>Anterior a 11/11/97</td><td>São acumuláveis, por isso o B94/B36 não pode ir para o PBC.</td></tr>
+					<tr><td>A partir de 11/11/97</td><td>A partir de 11/11/97</td><td>Não são acumuláveis, por isso o B94/B36 vai para o PBC</td></tr>
+					<tr><td>A partir de 11/11/97</td><td>Anterior a 11/11/97</td><td>Essa situação não acontece</td></tr>
+					<tr><td>Anterior a 11/11/97</td><td>A partir de 11/11/97</td><td>São acumuláveis ou não em função de regras implementadas na determinação do Indicador de Acumulação de Auxílio-Acidente com Aposentadoria. Se o indicador for de início 3 (negativo), os benefícios não se acumulam e o B36/94 vai para o PBC). Se o indicador for de início 1 (positivo), os benefícios se acumulam e o B36/94 não vai para o PBC).</td></tr>
+				</table>
+				<h5>Pensão Indenizatória</h5>
+				<p>Corrigida aplicação de regra de extinção de cota de dependente (Lei 13135/2015) nas pensões indenizatórias que vinha sendo aplicada, indevidamente, como na espécie 86 (Dependente de Seringueiro), pois não estão sujeitas ao tempo mínimo de união estável ou ao mínimo de 18 contribuições.</p>
+				<h5>Exigência Indevida</h5>
+				<p>Correção na rotina que apresentava crítica na concessão de B25 e B80 "Atencao: consta data de ultima remuneracao (tela de opcoes especiais), mas nao consta remuneracao para essa competencia no CNIS.".  A data da última remuneração no presente campo pressupõe a existência de algum tipo de remuneração sem, necessariamente, ter migrado do CNIS.</p>
+				<h4>Acordos Internacionais</h4>
+				<h5>Atualização dos Códigos do Acordo Internacional</h5>
+				<p>Compatibilizados os códigos atuais e antigos dos países do Acordo Internacional. A existência de códigos divergentes para o mesmo país em benefícios mantidos no SUB impedia, por exemplo, numa eventual revisão, a alteração do tipo de cálculo 1 – totalização (paga abaixo do mínimo) para o tipo de cálculo 2 – independente, pois o SUB entendia como troca de país a revisão de benefícios com o código atual de benefício mantido no código antigo.</p>
+				<table>
+					<tr><td>País</td><td>Cod. Antigo</td><td>Cod. Atual</td></tr>
+					<tr><td>Argentina</td><td>032</td><td>007</td></tr>
+					<tr><td>Chile</td><td>152</td><td>035</td></tr>
+					<tr><td>Espanha</td><td>724</td><td>156</td></tr>
+					<tr><td>Grecia</td><td>300</td><td>067</td></tr>
+					<tr><td>Italia</td><td>380</td><td>083</td></tr>
+					<tr><td>Paraguai</td><td>600</td><td>129</td></tr>
+					<tr><td>Portugal</td><td>620</td><td>133</td></tr>
+					<tr><td>Uruguai</td><td>858</td><td>177</td></tr>
+				</table>
+				<h5>Tempo de Contribuição x Benefícios do Acordo Internacional</h5>
+				<p>Corrigida inconsistência nos benefícios do Acordo Internacional em que não era gravado o tempo de contribuição, provocando, indevidamente, o cálculo de extinção da cota do dependente de pensão por morte cuja regra atual da Lei 13135/2015 exige o tempo mínimo de 18 contribuições.</p>
+			</section>
+		</article>
+	</body>
+</html>

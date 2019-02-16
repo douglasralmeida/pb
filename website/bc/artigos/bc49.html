@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5h">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5h do Prisma.">
+		<meta name="DC.Modified" content="2016-06-30T12:00-03:00">
+		<meta name="DC.Identifier" content="49">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,fe de vida">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5h do Prisma, lançada em Junho de 2016.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Fé de Vida</h4>
+				<h5>Reativação de Benefício Cessados Por Não Comprovação de Fé de Vida</h5>
+				<p>Implementada a possibilidade de reativação de benefícios cessados pelo MOTIVO 02 - NAO COMPROVACAO DE FE DE VIDA por intermédio de comando no Módulo Atualização do Prisma.</p>
+				<p>A reativação ocorrerá mediante informação do MOTIVO 30 – APRESENTAÇÃO DE FÉ DE VIDA.</p>
+				<h4>Acordo Internacional</h4>
+				<h5>Reativação de benefícios do Acordo Internacional</h5>
+				<p>Implementado no Módulo de Atualização do Prisma o Motivo de Reativação 35 – APRESENTAÇÃO DA CONTA CORRENTE nos benefícios do Acordo Internacional vinculados aos Órgãos Pagadores abaixo que se encontrarem suspensos pelo Motivo de Suspensão 78 – BENEFÍCIO DE ACORDO SEM PROCURADOR:</p>
+				<ul>
+					<li>OP 367828 – Itália,</li>
+					<li>OP 367811 - Argentina,</li>
+					<li>OP 408585 - Chile,</li>
+					<li>OP 584616 - Paraguai,</li>
+					<li>OP 367804 - Uruguai</li>
+				</ul>
+				<h4>Ações Civis Públicas</h4>
+				<h5>Ação Civil Pública 200971000041034 – Contagem de Carência dos benefícios por incapacidade </h5>
+				<p>Nova alteração no Prisma para o cumprimento da decisão judicial proferida na ACP 200971000041034 nos OLs vinculados aos Estados do Rio Grande do Sul (19), Santa Catarina (20) e Paraná (14) a partir de 29.01.2009 (DER) e não mais a partir de 19.09.2011 como definido anteriormente, tratando-se do cômputo, para fins de carência, dos benefícios por incapacidade B31/32/91/92.</p>
+				<h5>Histórico dessa ACP</h5>
+				<p>Versão 9.4o, de 2012, implantada em todo o Brasil. Espécies consideradas B31/32;</p>
+				<p>Versão 9.4w, de 2013, incluídos os benefícios acidentários, B91/92;</p>
+				<p>Versão 9.4y, de 2014, alterada a data inicial de cumprimento da determinação judicial de 14/05/2012 para 19/09/2011;</p>
+				<p>Versão 9.5, de 2014, a ACP passou a ser aplicada somente aos residentes nos Estados do Sul (RS, PR e SC) tanto nos requeridos anteriormente (19/09/2011) e pendentes de despacho quanto nos novos requeridos a partir desta alteração ocorrida em 04/11/2014;</p>
+				<p>OBS: Os parâmetros implementados em cada uma das versões têm eficácia mantida durante seu período de vigência.</p>
+				<h5>Ação Civil Pública 200372000011080 – LOAS Santa Catarina</h5>
+				<p>Incluído os municípios de Canelinha, Tijucas e São João Batista na ACP 200372000011080/SC, implementada na Versão PRISMA 9.5d.</p>
+				<p>Em resumo, trata-se de ACP válida para requerimentos de B87/B88 com DER a partir de 07/11/2014 de residentes nos municípios listados abaixo, todos do Estado de Santa Catarina:</p>
+				<p>1. Aguas Mornas; 2. Alfredo Wagner; 3. Angelina; 4. Anitapolis; 5. Antonio Carlos; 6. Biguacu; 7. Florianopolis; 8. Governador Celso Ramos; 9. Palhoca; 10. Paulo Lopes; 11. Rancho Queimado; 12. Santo Amaro do Imperatriz; 13. Sao Bonifacio; 14. Sao Jose; 15. Sao Pedro de Alcantara 16. Canelinhas; 17. Tijucas, e 18. São João Batista</p>
+				<h5>Ação Civil Pública 200572050019471 – LOAS Blumenau/SC</h5>
+				<p>Implementada a ACP 200572050019471 para concessão de benefício assistencial B87 ou B88 com os parâmetros e municípios especificados.</p>
+				<p>	Mensagem de Alerta: "O interessado deverá apresentar declaração assinada e datada informando se possui ação individual ou se integra ação coletiva com a mesma finalidade e, caso positivo, se já requereu a sua suspensão".</p>
+				<p>Benefícios desconsiderados no cálculo da renda familiar:</p>
+				<p> - Benefício previdenciário de valor mínimo de outro membro do grupo familiar idoso com 65 anos;</p>
+				<p> - Benefícios assistenciais B87 e 88 de outro membro do grupo familiar.</p>
+				<p>DER: a partir de 11.07.2005.</p>
+				<p>DIB: anterior a 14/03/2014.</p>
+				<p>OLs autorizados: 20.021.01.0  -  20.021.02.0  -  20.021.03.0  -  20.021.04.0  -  20.021.05.0  -  20.021.06.0  -  20.021.07.0  -  20.021.08.0  -  20.021.11.0  -  20.021.12.0</p>
+				<p>Municípios de endereço do beneficiário - Comprovação obrigatória:</p>
+				<p>Apiúna, Ascurra, Benedito Novo, Blumenau, Botuverá, Brusque, Doutor Pedrinho, Gaspar, Guabiruba, Ilhota, Indaial, Luiz Alves, Pomerode, Rio dos Cedros, Rodeio e Timbó</p>
+				<h5>Ação Civil Pública 00042658220164036105 – LOAS Campinas/SP</h5>
+				<p>Decisão proferida na Ação Civil Pública 0004265-82.2016.4.03.6105 pela 8ª Vara Federal de Campinas/SP. Exclusão no cálculo da renda familiar de benefícios previdenciários e assistenciais no valor de até um salário mínimo recebidos por outro membro do grupo idoso ou deficiente.</p>
+				<p>Alerta: "O interessado deverá apresentar declaração assinada e datada informando se possui ação individual ou se integra ação coletiva com a mesma finalidade e se positivo se já requereu a sua suspensão".</p>
+				<p>Benefícios desconsiderados no cálculo da renda familiar: Benefício previdenciário ou assistencial de valor mínimo recebido por  membro do grupo familiar, idoso com 65 anos ou deficiente.</p>
+				<p>DER: 08.04.2016</p>
+				<p>DIB: 08.04.2016</p>
+				<p>OLs autorizados: Amparo - 21.026.010, Campinas – 21.024.020, Campinas Amoreira -21.024.080, Campinas Carlos Gomes – 21.024.100, Capivari – 21.029.020, Hortolândia - 21.024.120, Indaiatuba – 21.024.030, Itatiba - 21.026.040, Jarinu – 21.026.080, Jundiaí Eloy Chaves- 21.026.050, Mogi Mirim - 21.035.060,  Pedreira- 21.024.040; Sumaré – 21.024.060 e Valinhos - 21.024.070.</p>
+				<p>Municípios de endereço de beneficiário – Comprovação obrigatória:</p>
+				<p>Amparo, Campinas, Capivari, Elias Fausto, Holambra, Hortolândia, Indaiatuba, Itatiba, Jaguariúna, Jarinu, Mombuca, Monte Mor, Morungaba, Paulínia, Pedreira, Rafard, Santo Antônio de Posse, Sumaré, Valinhos, e Vinhedo.</p>
+			</section>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Notas de versão do SABI 10.0">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 10.0 do SABI.">
+		<meta name="DC.Modified" content="2015-03-03T09:00-03:00">
+		<meta name="DC.Identifier" content="13">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="sabi,controle do sabi,atendimento do sabi,sabiweb,dut,dat,auxilio doenca,dib,dip,rmi,qualidade de segurado,seguro desemprego,gcont,dir">
+		<meta name="DC.IsPartOf" content="D6">
+		<meta name="DC.Relation" content="aplicase sabi">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>				
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas na versão 10.0 do SABI, lançada em Março de 2015.</p>
+			</section>
+			<section>				
+				<h3>Situações</h3>
+				<h4>Prazo de espera</h4>
+				<p>PROBLEMA: O sistema aplica o prazo legal de 15 dias de afastamento para o segurado empregado, para fins de reconhecimento do direito ao auxílio-doença.</p>
+				<p>SOLUÇÃO: O prazo será de 31 dias para o segurado empregado para os afastamentos ocorridos a partir de 01/03/2015 (DAT >=01/03/2015).</p>
+				<h4>Agendamento</h4>
+				<p>PROBLEMA: O sistema impede requerimento de auxílio doença para o empregado quando a data do afastamento do trabalho (DAT) estiver há menos de 15 dias da data de entrada do requerimento (DER) ou da data corrente do requerimento.</p>
+				<p>SOLUÇÃO: O sistema não impedirá o requerimento do empregado antes de completar 31 dias de afastamento, mas a data do agendamento da perícia médica ocorrerá a partir de 31 dias da DUT (Data do último dia trabalhado).</p>
+				<p>Não será possível a marcação/remarcação/transferência da perícia para data anterior ao 31º da DUT. O sistema informará a impossibilidade através da mensagem: “Requerimento xxxxxxxxx não pode ser agendado para antes de 00/00/0000”.</p>
+				<p>Não será possível a realização da perícia para data anterior ao 31o dia pelo módulo Controle Operacional. Em caso de tentativa, o sistema emitirá a mensagem: “Não é permitido efetuar a perícia médica de requerimento de segurado empregado para data anterior ao 31o da DAT”.</p>
+				<p>Caso ocorra concessão de benefício cuja DIB/DIP seja posterior à data do processamento, o SUB devolverá a concessão com a crítica II “DIB/DIP maior que data do processamento”, devendo aguardar a data da DIB/DIP para retransmissão ao SUB.</p>
+				<h4>DIB/DIP</h4>
+				<p>PROBLEMA: Necessidade de alterar o cálculo da DIB do benefício de auxílio doença em atendimento às alterações implementadas pela MP 664/2014.</p>
+				<p>SOLUÇÃO: O sistema fixará a DIB/DIP:</p>
+				<ul>
+					<li>no 31o (trigésimo primeiro) dia do afastamento da atividade, se entre a data de afastamento do trabalho (DAT) e a Data da Entrada do requerimento/DER houver até 45 dias; ou</li>
+					<li>na DER, se entre a data do afastamento do trabalho (DAT) e a DER tiverem transcorrido mais de 45 (quarenta e cinco) dias.</li>
+				</ul>
+				<p>Para as demais categorias de segurado (desempregado, trabalhador avulso, contribuinte individual, facultativo, segurado especial e doméstico), não houve alteração na regra de fixação da DIB e DIP.</p>
+				<h4>RMI</h4>
+				<p>PROBLEMA: Necessidade de alteração o cálculo da RMI conforme art.29 §10 da MP 664/2014</p>
+				<p>SOLUÇÃO: Caso a DAT seja posterior a 01/03/2015, será calculada a média aritmética simples dos últimos doze salários-de-contribuição, inclusive no caso de remuneração variável, ou, se não alcançado o número de doze, a média aritmética simples dos salários-de-contribuição existentes, a fim de estabelecer o teto da Renda Mensal Inicial do benefício. Caso o cálculo da Renda Mensal Inicial, utilizando o PBC, ultrapasse o valor do teto, a RMI do benefício será igual ao teto calculado.</p>
+				<p>A informação da forma de cálculo será apresentada na consulta do PLENUS HISCAL e CONBAS.</p>
+				<h4>Qualidade de segurado</h4>
+				<p>PROBLEMA: A data da perda da qualidade estava sendo fixada pelo sistema no primeiro dia do mês subsequente ao 12°, 24° ou 36° mês do fim do vínculo, e para o facultativo no primeiro dia do mês seguinte ao 6o mês.</p>
+				<p>SOLUÇÃO: A perda da qualidade ocorrerá:</p>
+				<ul>
+					<li>Empregado, Contribuinte Individual (autônomo), empregado doméstico e segurado especial, no 16° dia do 14° mês ao mês subsequente do período fim do vínculo.</li>
+					<ul>
+						<li>Este prazo será acrescido de 12 (doze) meses se possuir 120, ou mais, contribuições sem perda de qualidade.</li>
+						<li>Este prazo será acrescido de 12 (doze) meses caso seja identificado informação de Seguro-Desemprego/Registro no SINE/Órgão MTE.</li>
+					</ul>
+					<li>Facultativo, no 16° dia do 8o mês após a data da última contribuição.</li>
+				</ul>
+				<h4>Carência do segurado especial</h4>
+				<p>PROBLEMA: Necessidade de alteração da regra do cálculo da carência do segurado especial</p>
+				<p>SOLUÇÃO: Não se exigirá 1/3 da carência para esta categoria, ou seja, contará os períodos intercalados, com ou sem perda de qualidade, exigindo-se o tempo de atividade igual a 12 meses e qualidade de segurado.</p>
+				<h4>Informação de Seguro-Desemprego/Registro no SINE/Órgão MTE</h4>
+				<p>PROBLEMA: Necessidade de alteração da nomenclatura do “Registro no SINE/Órgão MTE” na tabela de detalhes do vínculo.</p>
+				<p>SOLUÇÃO: Nomenclatura alterada para “Seguro-Desemprego/Registro no SINE/Órgão MTE”.</p>
+				<h4>Registro no SINE</h4>
+				<p>PROBLEMA: A tabela de benefício anterior não permitia informar o Registro no SINE/Órgão MTE.</p>
+				<p>SOLUÇÃO: Inclusão da opção de informar o “Registro no SINE/Órgão MTE” em detalhes da aba de benefício anterior. Está informação será utilizada no cálculo da qualidade.</p>
+				<h4>GCONT</h4>
+				<p>PROBLEMA: O cálculo da carência e qualidade de segurado ocorria apenas em alguns pontos, exigindo acionamento manual da função de cálculo de DIB/DIP/GCONT.</p>
+				<p>SOLUÇÃO: Expandido o cálculo da carência e qualidade de segurado de acordo com a DER, no momento:</p>
+				<ul>
+					<li>da conclusão do requerimento no aplicativo SABI;</li>
+					<li>dos requerimentos da INTERNET e Central 135; e</li>
+					<li>da inicialização da perícia médica de AX1 (independentemente da categoria), não apenas para empregado, tanto no módulo de atendimento médico como no controle operacional.</li>
+				</ul>
+				<h4>Pesquisa por CPF</h4>
+				<p>NECESSIDADE: Pesquisa de requerente por CPF</p>
+				<p>SOLUÇÃO: Foi incluído campo de pesquisa por CPF de requerente na Carteira de Benefícios – Pesquisa Avançada.</p>
+				<h4>Aba “Vínculos requerente”</h4>
+				<p>PROBLEMA: A informação do seguro desemprego era apresentada somente no detalhe do vínculo.</p>
+				<p>SOLUÇÃO: Incluída a informação do Registro no SINE/Órgão MTE na tabela de vínculos da aba “Vínculos”.</p>
+				<h4>DIR – Data da inclusão do requerimento</h4>
+				<p>PROBLEMA: Quando havia alteração da DER, não era possível identificar quando o requerimento foi incluído.</p>
+				<p>SOLUÇÃO: Inclusão do campo DIR – Data da inclusão do requerimento.</p>
+				<h4>DII/DAT</h4>
+				<p>PROBLEMA: Após a conclusão da perícia médica a DAT era alterada para o mesmo valor da DII.</p>
+				<p>SOLUÇÃO: A DAT não é mais alterada após a conclusão da perícia.</p>
+			</section>
+		</article>
+	</body>
+</html>

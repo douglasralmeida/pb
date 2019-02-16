@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Notas de versão do SABI 9.5">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5 do SABI.">
+		<meta name="DC.Modified" content="2010-07-30T12:00-03:00">
+		<meta name="DC.Identifier" content="13">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="notas de versao,sabi,9.5,controle do sabi,atendimento do sabi,sabiweb,dca,cessacao administrativa,aposentadoria por invalidez,revisao,revisao bienal,auxilio acidente, acp 2005.33.00.020219-8">
+		<meta name="DC.IsPartOf" content="D6">
+		<meta name="DC.Relation" content="aplicase sabi">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>				
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas na versão 9.5 do SABI, lançada em Julho de 2010.</p>
+			</section>
+			<section>				
+				<h3>Situações</h3>
+				<h4>Pagamento do benefício até a perícia de prorrogação, se posterior a DCB</h4>
+				<p>Implementada, devido à Ação Civil Pública 2005.33.00.020219-8, a manutenção do pagamento do benefício até a data da realização da perícia médica do Pedido de Prorrogação – PP.</p>
+				<ul>
+					<li>Criado o campo DCA – data da cessação administrativa.</li>
+					<li>Incluído o campo DCA no SABI na aba Detalhes/Benefício e na aba Histórico de Agendamento. No SUB, na tela do HISMED.</li>
+					<li>Criado o motivo de cessação 09 – DCA ACP 2005.33.00.020219-8. Esse motivo poderá ser reativado no SABI pelos motivos 02 (Decisão Judicial) e 03 (Revisão Administrativa/Recurso).</li>
+					<li>Criado o motivo de reativação 48 – Reativação para cessação administrativa.</li>
+					<li>Nas comunicações do resultado do requerimento – CRER – irá constar a frase “Informamos que o pagamento do seu benefício será mantido até dd/mm/aaaa“, nos casos de DCA.</li>
+					<li>Não será permitido novo protocolo de Pedido de Prorrogação, caso exista DCA preenchida no benefício.</li>
+					<li>Após o Pedido de Prorrogação com DCA, poderá protocolar o Pedido de Reconsideração, caso ainda não possua.</li>
+					<li>Alterado o texto do formulário de marcação de exame do requerimento do Pedido de Prorrogação para incluir a referência sobre a Ação Civil Pública, ficando o texto da seguinte forma: “O Instituto não se responsabilizará pelo pagamento dos dias em que o segurado permanecer afastado do trabalho enquanto aguarda a realização do exame da pericia médica do Pedido de Prorrogação, se a conclusão médica for contrária, exceto durante o período de vigência da ACP 2005.33.00.020.219-8”.</li>
+					<li>As regras de restabelecimento do benefício anterior continuará utilizando a data de cessação do benefício – DCB. Somente a data do início do pagamento (DIP) será alterada, nos casos com DCA, para DCA+1.</li>
+					<li>Será realizada semanalmente uma extração contendo os Pedidos de Prorrogação – PP – sem agendamento e com agendamento de perícia.</li>
+				</ul>
+				<p>Regras para a geração de DCA:</p>
+				<h5>Requerimento de Pedido de Prorrogação sem agendamento</h5>
+				<p>A DCA será nula, com pagamento até a data da realização do exame (DRE), se essa for posterior à DCB.</p>
+				<h5>Requerimento de Pedido de Prorrogação com agendamento</h5>
+				<p>Se o agendamento for posterior à DCB, a DCA será a data do agendamento.</p>
+				<p>Se o agendamento for anterior à DCB, não haverá DCA.</p>
+				<h5>Requerimento de Pedido de Prorrogação com remarcação ou transferência</h5>
+				<p>Se a remarcação ou transferência for a pedido do INSS, a DCA será a data do novo agendamento.</p>
+				<p>Se a remarcação ou transferência for a pedido do segurado para uma data posterior à data que estava agendada, a DCA permanecerá na data do agendamento anterior (data para qual já estava agendada).</p>
+				<p>Se a remarcação ou transferência for a pedido do segurado para uma data anterior à data que estava agendada, a DCA será a nova data do agendamento.</p>
+				<h5>Agendamento de Pedido de Prorrogação domiciliar ou hospitalar</h5>
+				<p>A DCA será nula, com pagamento até a data da realização do exame, se essa for posterior à DCB.</p>
+				<h5>Agendamento de Pedido de Prorrogação para aeronautas</h5>
+				<p>A DCA será nula, com pagamento até a data da realização do exame, se essa for posterior à DCB.</p>
+				<h5>Cancelamento do Pedido de Prorrogação</h5>
+				<p>Se o cancelamento for posterior à data do agendamento, a DCA será a data do agendamento, se essa for posterior à DCB.</p>
+				<p>Se o cancelamento for anterior à data do agendamento, a DCA será a data do cancelamento, se essa for posterior à DCB.</p>
+				<h5>Indeferimento do Pedido de Prorrogação por não comparecimento</h5>
+				<p>A DCA será a data do agendamento.</p>
+				<h5>Pedido de Prorrogação pendente por SIMA</h5>
+				<p>Se a perícia médica for concluída, a DCA será a data da realização do exame.</p>
+				<p>Se a perícia médica não for concluída, a DCA será a data do agendamento da perícia médica.</p>
+				<h5>Perícia médica concluída</h5>				
+				<p>PP com decisão contrária (T1): gera pagamento até a data da realização do exame – DRE, assim a DCA será igual à DRE.</p>
+				<p>PP com decisão favorável até a data da realização do exame (T2): gera pagamento até a data da realização do exame – DRE, assim a DCA será igual à DRE.</p>
+				<p>PP com decisão favorável após a data da realização do exame (T2 ou T4): gera pagamento com as regras atuais, assim não tem DCA.</p>
+				<h4>Revisão de Aposentadoria por Invalidez</h4>
+				<p>Incluída a frase “A patologia invalidante no momento é a mesma que gerou a concessão da aposentadoria?”. Se responder “Sim” prossegue a perícia médica, se responder “Não” será possível alterar o CID. A data do início da doença (DID) e a data do início da incapacidade/invalidez (DII), não poderão ser alteradas.</p>
+				<p>Alterado o nome do requerimento de “Revisão Bienal” para “Revisão Bienal de Aposentadoria por Invalidez”. Na carteira de benefícios irá aparecer “Rev Bienal”.</p>
+				<p>Incluída na carteira de benefícios, na pesquisa avançada no campo “Pendente”, a opção “Revisão Bienal de Aposentadoria por Invalidez”.</p>
+				<p>Será permitido mais de um requerimento de Revisão Bienal para uma mesma Aposentadoria por Invalidez, desde que entre os requerimentos tenha um prazo maior ou igual a 02 (dois) anos, entre a data de Entrada do Requerimento (DER) atual e a data da realização do
+exame do último requerimento de revisão bienal de aposentadoria por invalidez/Recurso de Revisão Bienal de Aposentadoria por Invalidez</p>
+				<h4>Recurso de Revisão Bienal de Aposentadoria por Invalidez</h4>
+				<p>Incluído o Recurso de Revisão Bienal de Aposentadoria por Invalidez.</p>
+				<p>Incluída a opção de requerimento “Recurso de Revisão Bienal de Aposentadoria por Invalidez”, no Atendimento ao Cliente.</p>
+				<p>Na carteira de benefícios irá aparecer “Rec Rev Bienal”.</p>
+				<p>Incluída na carteira de Benefício, na pesquisa avançada no campo “Pendente”, a opção “Recurso de Revisão Bienal de Aposentadoria por Invalidez”.</p>
+				<p>Incluída no SUB a fase 15, para Recurso de Revisão Bienal de Aposentadoria por Invalidez.</p>
+				<p>Incluídos no SABI os serviços médicos:</p>
+				<ul>
+					<li>Recurso de Revisão Bienal de Aposentadoria por Invalidez.</li>
+					<li>Perícia Domiciliar/Hospitalar/Recurso Revisão Bienal.</li>
+				</ul>
+				<p>O requerimento do Recurso de Revisão Bienal de Aposentadoria por Invalidez será agendado para um único perito médico que tiver o tipo de serviço correspondente. Somente será agendado para um perito médico diferente do qual concluiu a perícia médica da Revisão Bienal de Aposentadoria por Invalidez.</p>
+				<p>Será possível o protocolo do Recurso de Revisão Bienal de Aposentadoria por Invalidez, ainda que a Revisão da Aposentadoria por Invalidez não tenha sido realizada no SABI, desde que o respectivo benefício esteja cessado pelos motivos 40 ou 41.</p>
+				<p>Será possível reativar os beneficios de aposentadoria por invalidez durante o período de recebimento de mensalidade de recuperação, via SABI, utilizando os motivos: 02 (Decisão Judicial) e 03 (Revisão Administrativa/Recurso).</p>
+				<p>Nos casos em que ocorrer a reativação após o término do período de recebimento de 100% da renda mensal, o pagamento da diferença deverá ser realizado manualmente, pois o processamento automático para pagar 100% da renda novamente, será no pagamento seguinte após a data da reativação.</p>
+				<p>Não será permitido o protocolo de Recurso de Revisão Bienal de Aposentadoria por Invalidez, para os benefícios que foram concedidos ou reativados por ordem judicial.</p>
+				<p>Nos casos de benefício cessado, pelo motivo 40 (CESS.P/ RECUP.TOTAL DENTRO 5 ANOS), com data da cessação do benefício igual a data da cessação médica igual a data da realização do exame, sendo da categoria empregado, será possível na perícia médica alterar o CID.</p>
+				<p>Nos casos de benefício cessado pelo motivo 40 (CESS.P/ RECUP.TOTAL DENTRO 5 ANOS), com data da cessação do benefício maior que a data realização do exame ou motivo 41 (CESS.P/ RECUP. PARCIAL APOS 5 ANOS), não será possível na perícia médica alterar o CID.</p>
+				<p>Na perícia médica de Recurso de Revisão Bienal de Aposentadoria por Invalidez poderá deixar o laudo pendente por SIMA. Se após 30 (trinta) dias o segurado não apresentar o SIMA, o status do requerimento será alterado para “Aguard Parecer da JRPS” e o status do laudo será alterado para “Aguardando Parecer”.</p>
+				<p>Na tela do Parecer de Recurso, no TAB “Parecer JM/RA”, irá constar a frase “Esse laudo ficou pendente por Informação do Médico Assistente (IMA)”, conforme tela 01.</p>
+				<p>Será permitido protocolar novo requerimento de auxílio-doença, somente após o 1º dia do 7º mês de recebimento da mensalidade de recuperação, ou seja, enquanto o segurado estiver recebendo 100% da renda mensal, não será permitido novo protocolo.</p>
+				<p>Caso o novo auxílio-doença seja concedido, a aposentadoria por invalidez será cessada pelo motivo 29 (concessão de outro benefício), na véspera da DIB do auxílio-doença, caso seja enviado para o SUB no campo NB anterior o B32/92. Na situação em que não for enviado automaticamente o B 2/92, será gerado crítica II “Há 1 benefício em manutenção incompatível” no B31/91. Nesta situação, a aposentadoria por invalidez (B32/92) deverá ser cessada manualmente pelo motivo de cessação 29, com data de cessação (DCB) na véspera da DIB do auxílio-doença (B31/91) e, após retransmitir a crítica II.</p>
+				<p>Alterados os formulários de Recurso e incluída cartas/CRER para atender o Recurso de Revisão de Aposentadoria por Invalidez.</p>
+				<p>ATENÇÃO: Toda vez que for realizar um requerimento de Recurso de Revisão Bienal, realizar povoamento ou TBM nos benefícios, conforme o caso.</p>
+				<h4>Criação do link para requerimento da Revisão Bienal de Aposentadoria por Invalidez</h4>
+				<p>Criado o link de requerimento de “Revisão Bienal de Aposentadoria por Invalidez” para a Central 135 e para a página do MPS.</p>
+				<h4>Implementação na rotina de TBM e povoamento</h4>
+				<p>Implementada na rotina de TBM e povoamento para que utilize o campo NU-NB-ANT, para preencher o campo do SABI “NB Origem”, para os benefícios das espécies de Aposentadoria por Invalidez (B32/92).</p>
+				<h4>Inclusão de exigência nos requerimentos habilitados pela internet</h4>
+				<p>No módulo do Controle Operacional foi incluído no TAB “Alerta” o campo “Incluir Exigência”, o qual após o registro da exigência será alterado para “Cumprir Exigência”.</p>
+				<p>Criado o alerta “Exigências a cumprir”.</p>
+				<p>O registro da exigência poderá ocorrer antes ou depois da perícia médica, não impedindo a realização desta, quando possuir o registro da exigência.</p>
+				<p>O não cumprimento/tratamento da exigência no prazo de 45 (quarenta e cinco) dias, acarretará no indeferimento automático do requerimento.</p>
+				<p>Poderá ser impressa a 2ª via da carta de exigência, enquanto constar o alerta “Exigências a cumprir”, nos módulos Atendimento ao Cliente e Controle Operacional.</p>
+				<p>Criada no TAB Detalhes a opção “Histórico Alerta Pendência Exigência”.</p>
+				<p>Incluída na carteira de benefícios na pesquisa avançada no campo “Pendente”, a opção “Pendente de Exigência a cumprir”.</p>
+				<p>O alerta de “Exigências a cumprir” impede o tratamento dos outros alertas do requerimento; assim sempre deverá primeiramente tratar o alerta de exigência para após tratar os demais alertas.</p>
+				<p>Será possível registrar a exigência, somente para os requerimentos de AX1 (Perícia Inicial), para os seguintes alertas:</p>
+				<ul>
+					<li>Pendente de Entrevista Rural.</li>
+					<li>Pendente de Homologação Rural.</li>
+					<li>Pendente de SP/RD.</li>
+					<li>Pendente por Vínculos e Remunerações Divergentes.</li>
+					<li>Pendente Vínculo Extemporâneo.</li>
+				</ul>
+				<h4>Concessão de auxílio-acidente (B36/94) para segurados desempregados</h4>
+				<p>Alterado o SABI para permitir a concessão de auxílio-acidente (espécies 36 e 94), oriundo de auxílio-doença (espécies 31 ou 91) ocorridos no período de manutenção da qualidade de segurado, ou seja, com categoria de desempregado, baseado no que consta no § 7º do art 104 do Decreto 3.048/99, alterado pelo Decreto 6.722/08.</p>
+				<p>O direito ao auxílio-acidente (B36/94) para o segurado em período de graça, se aplica a todos os benefícios com data do início do benefício (DIB) a partir de 30/12/2008 – Data da Publicação do Decreto nº 6.722/08, incluindo o próprio dia 30.</p>
+				<p>Nos casos de requerimento de segurado desempregado cuja DIB seja anterior a 30/12/2008 irá mostrar para o perito médico a frase “O auxílio-acidente será devido para os segurados desempregados cuja DIB seja a partir de 30/12/2008, data da publicação do Decreto nº 6.722/08, que alterou o § 7º do art 104 do RPS”.</p>
+				<p>Incluída no SABI a CRER para o indeferimento dos benefícios com DIB fixada em data anterior a 30/12/2008.</p>
+				<p>Caso a decisão do perito médico seja favorável, mas a DIB seja anterior a 30/12/2008, automaticamente o sistema irá alterar a decisão para contrária, e incluir no final do parecer médico a justificativa do indeferimento devido ao disposto no § 7º do art 104 do RPS, o qual poderá ser visualizado no TAB “Detalhes”, opção “Pareceres”.</p>
+				<h4>Inclusão dos requerimentos de PP e PR na rotina de cancelamento</h4>
+				<p>Inclusão dos requerimentos de Pedido de Prorrogação (PP) e de Reconsideração (PR) sem agendamento, na rotina batch de cancelamento após 75 dias.</p>
+				<h4>Não indeferir requerimentos de BPC – B87 com agendamento de avaliação médica social Domiciliar/Hospitalar</h4>
+				<p>PROBLEMA: Atualmente está indeferindo os requerimentos de BPC LOAS – B87 por não comparecimento à avaliação médica, quando essas são agendadas como domiciliar ou hospitalar.</p>
+				<p>SOLUÇÃO: Retirado o serviço médico de avaliação médica Domiciliar/Hospitalar da rotina de indeferimento automático no prazo de 30 (trinta) dias.</p>
+				<h4>Indeferimento automático por Não Comparecimento para realização de Avaliação Social</h4>
+				<p>Incluído no módulo Atendimento ao Cliente a opção para informar a data e hora do agendamento da avaliação social, que foi agendada no SAE. A data do agendamento não poderá ser anterior à data da inclusão do requerimento.</p>
+				<p>No módulo Controle Operacional foram criados, na mesma tela da alteração da DER/DUT/DRD/Local de Pagamento, dois campos: “DT Avaliação Social” e “HR Avaliação Social” para informar a data e hora do agendamento da avaliação social, que constar no SAE.</p>
+				<p>Os campos “DT Avaliação Social” e “HR Avaliação Social” estarão disponíveis para alteração enquanto constar os alertas de “Aguardando agendamento de avaliação social” e “Pendente de avaliação social”.</p>
+				<p>No formulário de marcação da Avaliação Social serão impressas as informações “Data” e “Hora”, quando estiverem preenchidas.</p>
+				<p>O indeferimento por “Não comparecimento à avaliação social” será automático, após 30 dias da data informada no respectivo campo.</p>
+				<p>Os requerimentos que não tiverem a data informada terão que continuar sendo indeferidos manualmente.</p>
+				<h4>Concessão e acumulação das espécies B31/91/87/88 com B96 em manutenção</h4>
+				<p>PROBLEMA: Atualmente o sistema não permite a concessão das espécies B31, B91, B87 e B88 quando há um B96 concedido (em manutenção).</p>
+				<p>SOLUÇÃO: Implementada a possibilidade de acumulação das espécies auxílio-doença e amparos assistenciais com a espécie Pensão Hanseníase, quando em manutenção.</p>
+				<p>Referente aos requerimentos dos benefícios assistenciais da LOAS, poderão ser acumulados desde que a renda per capita familiar continue inferior a um ¼ do salário mínimo. Para isso foi corrigido o cálculo da renda dos benefícios assistenciais.</p>
+				<h4>Retirada dos alertas de Avaliação Social para os casos de transferências de B87</h4>
+				<p>PROBLEMA: Observou-se que os casos de B87 concedidos no PRISMA, quando da realização da transferência para o SABI, estavam ficando com os alertas de “Pendente de agendamento da avaliação Social” e “Pendente de avaliação social”.</p>
+				<p>SOLUÇÃO: Corrigida a inconsistência.</p>
+				<h4>Alterar a carta de concessão do Benefício de Prestação Continuada da Assistência Social - BPC</h4>
+				<p>Alterado o texto da carta de concessão do Benefício de Prestação Continuada da Assistência Social – BPC</p>
+				<h4>Desabilitar a opção de requerimento de Benefício de Prestação Continuada da Assistência Social (B87 e B88) nas Agências com SIBE</h4>
+				<p>Incluído no SUB, no aplicativo “FERR”, as opções: “APLSIBE” e “PESQSIBE”. Essa opção será para informar as Agências que estão com o SIBE instalado.</p>
+				<p>Incluído no modulo Apoio, no TAB “Tabelas Básicas, a opção “Espécies atendidas pelo SIBE”. Essa opção será para informar quais espécies já estão sendo atendidas pelo SIBE.</p>
+				<p>Incluído no modulo Apoio, no TAB “Organização”, na opção “Agência” o ícone “Esp. SIBE”. Essa opção será para informar qual é a espécie que já está sendo atendida pelo SIBE e qual a respectiva Agência também irá atender.</p>
+				<h4>Inserção da CID10</h4>
+				<p>PROBLEMA: Verificado que há códigos CID que inclusive estão associados a condições de trabalho no anexo II do Decreto 3.048/99 e que não constam no SABI, impedindo o reconhecimento de um nexo já positivado no ordenamento jurídico.</p>
+				<p>SOLUÇÃO: Incluída a CID 10 completa.</p>
+				<h4>Inclusão da frase para identificar que se trata de segurado empregado</h4>
+				<p>PROBLEMA: Devido a vários chamados no SUPORTE WEB INSS, informando que o ícone “novo exame” não fica habilitado para a realização do exame, verificou-se a necessidade de informar que isto ocorre devido à categoria do segurado ser “empregado” e não constar a DUT informada.</p>
+				<p>SOLUÇÃO: Incluída a frase “Trata-se de segurado empregado, obrigatório a informação da DUT”, no momento em que o perito médico clicar no botão “Nv.Exame” ou no botão “Parecer”.</p>
+				<h4>Envio da matricula 5555555 ao SUB</h4>
+				<p>PROBLEMA: Verificado que nos campos “Pré Habilitação” e “Habilitação” da tela CONHAB continua sendo enviada a matricula do gestor do posto (chefe de serviço de Benefício da APS), que consta no cadastro da Agência no SABI.</p>
+				<p>SOLUÇÃO: Implementado para que nos campos “Pré Habilitação” e “Habilitação” da tela CONHAB, seja enviada a matricula do sistema 5555555.</p>
+				<p>Orientamos que as auditorias dos benefícios concedidos, revisados ou indeferidos via SABI, sejam realizadas neste sistema.</p>
+				<h4>Alteração na rotina de agendamento de perícia médica em Porto Alegre</h4>
+				<p>Retirada a regra de agendamento de perícia médica de Porto Alegre, somente para a APSBI Porto Alegre (19.001.120). Assim, os agendamentos das perícias médicas serão realizados para as APS (19.001.010, 19.001.020, 19.001.040, 19.001.050, 19.001.060 e 19.001.070) que foram solicitados.</p>
+				<h4>Alteração do layout da tela inicial dos módulos Atendimento ao Cliente e Atendimento Médico</h4>
+				<p>Incluída no módulo Atendimento ao Cliente e Atendimento médico a opção “Relatórios”.</p>
+				<p>Retirada do módulo Atendimento ao Cliente a opção “Solicitação”; os itens que constavam nesta opção foram distribuídos entre as opções “Requerimento” e “Relatórios”.</p>
+				<p>No módulo de Atendimento do Cliente foi incluído um botão com a funcionalidade do item “Tratar Pendência Requerimentos Internet/Pendência Vínculos Extemporâneos”.</p>
+				<h4>Inibir a opção “Produção” do módulo Controle Operacional</h4>
+				<p>PROBLEMA: Observado que após a versão 9.4.8, a opção “Produção” do modulo Controle Operacional continuou habilitada em algumas situações.</p>
+				<p>SOLUÇÃO: Corrigida a inconsistência.</p>
+				<h4>Melhorias na tela de consulta da solicitação de TBM do Controle Operacional</h4>
+				<p>PROBLEMA: Na pesquisa de Gerência na tela de consulta da solicitação de TBM do módulo Controle Operacional, aparecem todas fora da ordem alfabética.</p>
+				<p>SOLUÇÃO: Corrigida a inconsistência.</p>
+				<h4>Distinguir os status “Aguardando Parecer” na carteira de benefícios</h4>
+				<p>Alterada a carteira de benefícios para que apareçam os status conforme abaixo:</p>
+				<ul>
+					<li>Aguard Parecer JRPS</li>
+					<li>Aguard Parecer CO</li>
+					<li>Aguad Parecer Conselho</li>
+					<li>Aguard Perícia CO</li>
+					<li>Aguard Per. J. Méd</li>
+					<li>Aguard Parecer SST</li>
+				</ul>
+				<p>Alterado nas telas onde constava “GBENIN”, para “SST”.</p>
+				<h4>Alteração do texto nos formulários de requerimentos de Revisão, Recurso e Encaminhamento à Reabilitação Profissional</h4>
+				<p>Alterado o texto dos formulários de Revisão, Recurso e Encaminhamento à Reabilitação Profissional para constar a informação da Central 135.</p>
+				<h4>Modificações nas rotinas para atender às alterações na TB0700</h4>
+				<p>Incluído o povoamento diário da TB0700.</p>
+				<p>No SABI irá constar exatamente o que constar na TB0700. Desta forma qualquer alteração dos dados deverá ocorrer na TB0700 para que no dia seguinte seja possível visualizar no SABI.</p>
+				<h4>Gravação do zero à esquerda dos códigos das Agências/Órgão Local</h4>
+				<p>Incluída a gravação do zero à esquerda para o OL. Ex: 02.001.030 – APS Maceió – Ary Pitombo.</p>
+				<p>No módulo Apoio, no TAB “Organização” opção “Gerência”, foram retirados os botões “Novo” e “Excluir” e incluído o botão “Editar”. Os dados da Gerência Executiva serão povoados diariamente pela rotina da TB0700, assim somente poderá informar no SABI se a GEX está ativa ou não. Para inativar a Gerência não poderá constar APS ativa.</p>
+				<p>No módulo Apoio, no TAB “Organização” opção “Gestor”, foram retirados os botões “Excluir” e “Detalhes” e incluído o botão “Alteração”. Continuará sendo incluído o Gestor, mas não será vinculado a uma gerência. A vinculação à GEX e a ativação do Gestor serão automáticas no momento em que vincular o gestor a uma APS. Enquanto um Gestor não estiver vinculado a uma APS, na tela de Gestor não irá aparecer Gerência vinculada e a situação ficará como “desativado”.</p>
+				<p>No módulo Apoio, no TAB “Organização” opção “Agência”, foram retirados os botões “Novo” e “Detalhes” e incluído o botão “Atualizar”. Os dados da APS serão povoados diariamente pela rotina da TB0700, assim no SABI somente irá informar se a APS está ativa e o Gestor. Para isso, deverá continuar a ser encaminhado o formulário com os dados da APS. No campo Gestor irá aparecer todos os Gestores sem Gerência vinculada mais os Gestores vinculados à Gerência para qual pertence a APS que está sendo atualizada. Para desativaruma APS, somente será possível se não constar requerimentos/benefícios em aberto.</p>
+				<p>Nos módulos de Atendimento ao Cliente, Atendimento Médico e Controle Operacional, na opção “configuração”, somente irão aparecer as APS ativas.</p>
+				<h4>Correção do Relógio da perícia médica</h4>
+				<p>PROBLEMA: O sistema não está gravando corretamente hora início e final da perícia médica.</p>
+				<p>SOLUÇÃO: Corrigida a rotina da gravação da data e hora do início e final da perícia médica.</p>
+				<h4>Automatização dos Suportes do SABI</h4>
+				<p>Incluídos os botões “Reprocessar Laudo” e “Reordenar Laudo” no TAB Detalhes/Perícia.</p>
+				<h4>Habilitar a regra de no máximo 4(quatro) remarcações/transferências de agendamento</h4>
+				<p>Colocado o limite de no máximo 4(quatro) remarcações/transferências de agendamento de perícia médica, sendo 3(três) a pedido do INSS e 1(uma) a pedido do segurado.</p>
+				<p>No dia 25/06/2010 foi retirado o limite de remarcações/transferências devido à greve dos peritos médicos.</p>
+				<h4>Correções de inconsistências no SABIWEB</h4>
+				<p>PROBLEMA: Verificou-se que em alguns formulários de requerimento de auxílio-doença emitidos pela internet não está sendo impressa a data do último dia de trabalhado-DUT e na finalização de alguns requerimentos pela internet está gerando a tela de erro com a seguinte informação: “Data de afastamento do Trabalho obrigatória para este requerimento”</p>
+				<p>SOLUÇÃO: Corrigidas as inconsistências.</p>
+				<h4>Bloqueio de Agendas Médicas</h4>
+				<p>Realizado o bloqueio das vagas não utilizadas das agendas médicas para os dias 15/06, 25/06, 28/06, 29/06 e 02/07/2010 (Copa do Mundo).</p>
+				<h4>Extração diária de perícias agendadas e concluídas</h4>
+				<p>Devido à greve dos peritos médicos verificou-se a necessidade de obter os dados diários referentes às perícias médicas concluídas. A extração está sendo realizada diariamente.</p>
+			</section>
+		</article>
+	</body>
+</html>

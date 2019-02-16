@@ -8,6 +8,22 @@
 			"data": "bc73",
 			"tipo": "artigo"
 		}, {
+			"nome": "Notas de versão do SABI 12.0.1",
+			"data": "bc70",
+			"tipo": "artigo"
+		}, {
+			"nome": "Notas de versão do SABI 12.0",
+			"data": "bc69",
+			"tipo": "artigo"
+		}, {
+			"nome": "Notas de versão do SABI 11.1",
+			"data": "bc64",
+			"tipo": "artigo"
+		}, {
+			"nome": "Notas de versão do SABI 11.0",
+			"data": "bc63",
+			"tipo": "artigo"
+		}, {
 			"nome": "Alterações trazidas pela Lei 13.135",
 			"data": "bc72",
 			"tipo": "artigo"
@@ -16,8 +32,20 @@
 			"data": "bc54",
 			"tipo": "artigo"
 		}, {
+			"nome": "Notas de versão do SABI 10.1 e 10.2",
+			"data": "bc38",
+			"tipo": "artigo"
+		}, {
 			"nome": "Alterações trazidas pela Lei 13.135",
 			"data": "bc32",
+			"tipo": "artigo"
+		}, {
+			"nome": "Notas de versão do SABI 10.0",
+			"data": "bc28",
+			"tipo": "artigo"
+		}, {
+			"nome": "Notas de versão do SABI 9.5",
+			"data": "bc13",
 			"tipo": "artigo"
 		}, {
 			"nome": "Ao agendar uma perícia, o SABI informa que já existe um requerimento em aberto",

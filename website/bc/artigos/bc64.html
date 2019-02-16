@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Notas de Versão do SABI 11.1">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 11.1 do SABI.">
+		<meta name="DC.Modified" content="2017-04-26T12:00-03:00">
+		<meta name="DC.Identifier" content="64">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="sabi,controle do sabi,atendimento do sabi,sabiweb">
+		<meta name="DC.IsPartOf" content="D6">
+		<meta name="DC.Relation" content="aplicase sabi">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>				
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 11.1 do SABI, lançada em Abril de 2017.</p>
+			</section>
+			<section>				
+				<h3>Situações</h3>
+				<h4>Correções</h4>
+				<p>NECESSIDADE: Correção de inconsistências encontradas na versão 11.0 do SABI.</p>
+				<p>SOLUÇÃO: Realizados acertos das seguintes inconsistências:</p>
+				<ul>
+					<li>Marcação/remarcação de agendamento de perícia médica quando a APS de origem não possui médicos para realizar o serviço solicitado;</li>
+					<li>Apresentação de APS diferente da APS de origem na marcação/remarcação de agendamento de perícia médica quando a APS de origem possui médicos para realizar o serviço solicitado;</li>
+					<li>Marcação/remarcação de agendamento de perícia médica quando a APS de origem possui médicos que foram cadastrados mais de uma vez com o mesmo CPF e matrícula diferente;</li>
+					<li>GFIP extemporânea de prestador de serviço está sendo considerada;</li>
+					<li>Impedimento de requerimento de PP em benefícios reativados por decisão judicial;</li>
+					<li>Permissão de requerimento de PP em situações não previstas nas normas;</li>
+					<li>Envio para o SUB da data de cessação do benefício diferente da informada;</li>
+					<li>TBM de auxílio-doença concedido por ACP de documento médico, quando da inclusão do laudo no SABI, está gravando a fase “Perícia-OJ”;</li>
+					<li>Apresentação do bairro do endereço do segurado diferente do que consta no CNIS, mesmo constando na tabela de Bairros;</li>
+					<li>Conclusão de perícia médica de requerimento de PP nas situações de alteração de CID;</li>
+					<li>Conclusão de perícia médica de requerimento de AX1 nas situações que possuía na conta corrente do segurado a letra “x”;</li>
+					<li>Conclusão de perícia médica ou reprocessamento do laudo alterando o status do requerimento para “Pendente por parecer”, quando não possuía pendências que justificasse a alteração;</li>
+					<li>Não apresentação da descrição do alerta nas situações pendentes de Parecer da Procuradoria dos casos anteriores à versão 11.0;</li>
+					<li>Apresentação na tela dos requerimentos de Revisão Analítica, campo “Ponto de Atendimento”, o nome da APS Maceió – Ary Pitombo;</li>
+					<li>Apresentação da letra “N” na tela de tratamento de Pendências da Internet/Vínculos Extemporâneos no campo tipo de pendência;</li>
+					<li>Implantação/reativação de benefícios judiciais:
+						<ul>
+							<li>apresentação de tela de erro com a frase “GESTOR NÃO CADASTRADO”;</li>
+							<li>apresentação de tela de erro com a frase “UPDATE BENEFÍCIO – EXPECTED DATE GOT NUMBER”;</li>
+							<li>envio da categoria de segurado especial para o SUB como 80, em vez de 87, gerando crítica II</li>
+							<li>não gravação da DII no laudo de reativação judicial fase 21 ou 22, quando possuía laudo com está informação;</li>
+							<li>não geração de AB de cessação em 120 dias quando escolhida o tipo de conclusão “DCB não informada pelo Juiz”;</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+					<h3>Observações</h3>
+					<p>As rotinas de TBM continuam sendo ajustadas. No caso de apresentação do requerimento com status “deferido”, sem exibição do número do benefício na carteira no módulo Controle Operacional, verificar se a retorno de “ERRO INESPERADO NA ATUALIZAÇÃO” (pesquisar NB na opção “Importar Benefício”). Em caso positivo, retransmitir a crítica. Retornando o mesmo erro ou não possuindo a crítica, realizar a triangulação entre Agências para concluir a TBM com sucesso.</p>
+					<p>Para as concessões ou reativações judiciais com informação de cessação do benefício, seja pelo tipo de conclusão “DCB informada pelo Juiz” ou “DCB não informada pelo Juiz”, sempre observar se constam no HISATU os AB’s preenchidos corretamente com os dados da cessação do benefício. Se constarem, aguardar o processamento dos mesmos para visualizar os dados da cessação no INFBEN. Caso não constar, deverá comandar a cessação do benefício manualmente, logo que possível.</p>
+					<p>Para os requerimentos de exame inicial (AX1) com origem “AD”, caso não possua a DAA preenchida (Data do Agendamento Administrativo, agendamento este realizado no SAG para atendimento das ACP’s com documento médico), será necessário verificar no SAG a data para qual o segurado foi agendado e informar esta no SABI, se e somente se a data for igual ou posterior à data atual, utilizando a opção “Serviços/Alterar a DAA”. Caso o segurado não tenha sido agendado no SAG, providenciar o agendamento e posterior informar no SABI.</p>
+					<p>Caso o segurado não se enquadre na ACP e impeça o atendimento via PRISMA, utilizar o requerimento de origem “AD” que consta no SABI para realizar a marcação da perícia médica para a avaliação do segurado. Após a conclusão da perícia, a origem do requerimento será alterada automaticamente para  “Internet”.</p>
+			</section>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de versão do Prisma 9.5l">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5l do Prisma.">
+		<meta name="DC.Modified" content="2017-07-20T12:00-03:00">
+		<meta name="DC.Identifier" content="76">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,lei 13.457,carencia,ctc">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5l do Prisma, lançada em Julho	 de 2017.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Concessão</h4>
+				<h5>Nova regra instituída pela Lei 13.457/2017 de exigência de metade do período da carência completa para o benefício após perda de qualidade de segurado e reingresso</h5>
+				<p>Na análise dos requerimentos de auxílio-doença, aposentadoria por invalidez ou salário-maternidade com fato gerador a partir de 27/06/2017, data de publicação da Lei nº 13.457/2017, ao segurado que tenha reigressado após perder essa qualidade, será exigida a implementação de metade do período de carência do benefício que somado ao período anterior à perda totalize a carência total exigida para o benefício.</p>
+				<p>Considerando as alternâncias das regras desde a MP 739/2016 até a publicação da lei, elaboramos Quadro abaixo detalhando o lapso temporal de aplicação, pelo Prisma, de cada uma das regras em função do fato gerador, entendendo-se como tal a DII no caso do aux.doença e ap. por invalidez, e a data do parto/adoção/antecipação/etc no caso do salário-maternidade:</p>
+				<table>
+				</table>
+				<p>Os pedidos com fato gerador a partir da publicação da nova lei que não cumpram os novos requisitos devem ser indeferidos pelos motivos a seguir relacionados:</p>
+				<p>- Aux. Doença ou Ap.Invalidez: 202 - Falta de periodo de carencia,</p>
+				<p>- Salário Maternidade: 203 – Falta de período de carência.</p>
+				<h5>Desnecessidade de desativação do FERR/CNIS para fins de inclusão de valores de benefício no PBC</h5>
+				<p>Desde o dia 30/03/2017 o Prisma passou a permitir a inclusão de valores de benefício como saláriomaternidade, auxílio-doença, aposentadoria por invalidez no PBC dos requerimentos das aposentadorias.</p>
+				<p>A medida foi adotada para dar maior resolutivamente na conclusão dos benefícios que dependiam da desativação do FERR/CNIS.</p>
+				<p>Ressaltamos, todavia, que não são todos os casos que necessitam dessa inclusão manual.</p>
+				<p>Em se tratando de valores de benefícios por incapacidade 31, 32, 91 e 92, o SUB reajusta e envia o SB caso exista no CONBAS.</p>
+				<p>Os benefícios sem SB ou benefícios das demais espécies como B36, B94 e B80 em que não há regra para migração carecem, necessariamente, da inclusão manual.</p>
+				<h5>Processamento automático de Reconhecimento de Direito exclusivamente para requerimentos de aposentadoria por idade via novo serviço no site da Previdência Social</h5>
+				<p>A partir desta versão, o Prisma passará a processar automaticamente os requerimentos de aposentadoria por idade recebidos da internet via Gerenciador de Tarefas - GET, tratando-se de novo serviço disponibilizado aos segurados da Previdência Social.</p>
+				<p>O processamento deverá gerar apenas dois tipos de conclusão: concessão do requerimento caso o Prisma detecte, apenas com os dados migrados do CNIS e de forma 100% automatizado, o preenchimento dos requisitos completos do benefício (idade, carência etc) ou cancelamento do requerimento, caso haja exigências automáticas a tratar, considerando que nesta fase ainda não há fluxo definido para tratamento de tais exigências, enfatizando que, nessa etapa do novo serviço, tanto a concessão quanto o eventual cancelamento serão 100% automatizamos e não irá gerar nenhuma ação por parte dos servidores da APS.</p>
+				<p>Os agendamentos realizados via Sistema de Agendamento - SAG não serão afetados por esse novo serviço e continuarão funcionando sem alterações no fluxo.</p>
+				<h5>Período Básico de Cálculo dos benefícios judiciais e recursais da LC 142/13</h5>
+				<p>Corrigido erro que não abria o PBC para informação dos salários de contribuição na concessão e revisão dos benefícios de aposentadoria com indicador da LC 142 (Deficiente) com despachos judiciais ou recursais.</p>
+				<h5>Alteração da DER no benefício em habilitação</h5>
+				<p>Permitida a alteração da DER por usuário não gerente/substituto do Prisma. A permissão se restringe a alteração para data maior que a habilitada originalmente, tendo em vista a reafirmação da DER prevista nas normas.</p>
+				<h5>Critérios para "Consolidação de Atividades no PBC" no Prisma</h5>
+				<p>Ajustada a regra que possibilita a inclusão no PBC de Pensão por Morte não precedida dos valores de auxílio-acidente recebidos pelo instituidor.</p>
+				<h5>Representante legal menor de 16 anos</h5>
+				<p>A crítica no Prisma "Representante Legal deve ter mais de 16 anos" está correta, mesmo tratando-se de menor casado(a).</p>
+				<p>Contudo, em casos concretos, em que o (a) menor apresentar certidão de casamento realizado nos termos dos incisos I a IV do art. 1525 do Código Civil, comprovando a legalidade do ato, a crítica poderá ser inibida para o caso concreto por demanda à Dataprev, devendo ser registrado pedido via Consultar com cópia do Registro Civil de Casamento.</p>
+				<h5>Motivo de indeferimento para as espécies 87 e 88</h5>
+				<p>Criado novo motivo de indeferimento para as espécies 87 e 88: “201 Falta de inscricao ou atualizacão dos dados do Cadastro Único”.</p>
+				<h5>Emissão de CPM em nome do dependente para fins de pensão por morte</h5>
+				<p>Corrigida a emissao da CPM de Dependente de requerimento de pensao por morte mesmo habilitado inicialmente como dependente capaz.</p>
+				<p>A CPM era impressa com o nome do segurado instituidor dificultando a identificação pelo Perito Médico do examinado.</p>
+				<h5>Inibida crítica na concesssão de salário-Maternidade</h5>
+				<p>Inibida, na concessão de Salário Maternidade da segurada empregada, as exigências automáticas descritas abaixo quando o objetivo for o pagamento proporcional do restante do período de 120 dias não pagos pelo empregador nos termos do Memorando-Circular nº 25 /DIRBEN/INSS de 20.07.2015.</p>
+				<p>“Salario Maternidade para empregadas apenas com DER ate 31/08/2003. Após esta data, só por adoção, exceto para empregadas de Microempreendedor Individual - MEI com fato gerador a partir de 01/09/2011.", e</p>
+				<p>"Obrigatório informar RMI".</p>
+				<p>A condição necessária para que a crítica deixe de ser exibida é a existência de informação data do último dia de remuneração no campo "Dt Ult Remun" em Opções Especiais na tela da habilitação.</p>
+				<h4>Correções Gerais</h4>
+				<ul>
+					<li>Correção na migração de vínculos em CARNÊ para benefícios de PENSÃO precedidos com recolhimento em NITs diferentes. Isto está ocasionando a migração de CARNÊ com NIT nulo e “congelamento” do sistema na formatação dos benefícios.</li>
+					<li>Correção na rotina de povoamento de benefícios do SUB que está provocando o erro de crítica I “Tempo de Serviço Exterior somente para Acordo Internacional”.</li>
+					<li>Correção de inconsistência na geração de competências com valores zerados no PBC em função da introdução das regras do e-Social.</li>
+					<li>Nos benefícios de Pensão por Morte, será permitido alterar a data fim do vínculo para a data do óbito em analogia à regra já aplicada nos requerimentos de aposentadoria.</li>
+					<li>Inibida a exigência automática “Filiação de DESEMPREGADO indevida para Período, identificar corretamente” relacionada a tempo em benefício com tipos de períodos “BD” “BT” ou “LI”.</li>
+					<li>Correção na formação do PBC dos benefícios de Salário Maternidade (B80) em período de graça que migrava benefícios por incapacidades sem volta ao trabalho;</li>
+					<li>Correção no tratamento de múltiplas atividades que geravam períodos de vínculos secundários indevidos no PBC;</li>
+					<li>Alterada rotina de migração para o PBC de todos os B80 concomitantes, já que trata-se acumulação legal.</li>
+					<li>Correção na migração do código CNAE do CNIS para o PBC.</li>
+					<li>Correção na revisão de perícia de fase 20 (Módulo Perícia Médica) concedido por força da ACP de Atestado Médico, sendo inibida consequentemente a crítica: “Necessário informar código do médico perito ou código do médico perito local.”</li>
+					<li>Correção na rotina de ATUALIZAÇÂO DE PERÍCIA MÉDICA DE TITULAR para não exigir a informação do CID (campo 7 - DIAGNÓSTICO) e a matrícula do médico do quadro se o Código da fase for recursal (02).</li>
+					<li>Inibida a migração que ocorria de forma indevida de período da Lei 8878/1994 para o PBC.</li>
+					<li>Correção na migração de vínculos do CNIS para CTC quando a data de início e/ou data forem nulos.</li>
+				</ul>
+				<h4>CTC</h4>
+				<p>A emissão da CTC, ainda que o tipo não seja judicial, poderá ocorrer diretamente no PRISMA quando o total de vínculos verificados ultrapassar a 60 períodos de atividade.</p>
+				<p>A impressão só será possível se a matrícula do emissor for do Gerente do Prisma, titular ou substituto, pois trata-se de regra de exceção tendo em vista que a exibição de vínculos no sitio www-ctc é limitada a 60 vínculos.</p>
+			</section>
+		</article>
+	</body>
+</html>

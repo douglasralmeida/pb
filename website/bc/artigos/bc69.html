@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Notas de Versão do SABI 12.0">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 12.0 do SABI.">
+		<meta name="DC.Modified" content="2017-07-03T12:00-03:00">
+		<meta name="DC.Identifier" content="69">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="sabi,controle do sabi,atendimento do sabi,sabiweb,empregado domestico,esocial">
+		<meta name="DC.IsPartOf" content=D6>
+		<meta name="DC.Relation" content="aplicase sabi">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>				
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 12.0 do SABI, lançada em Julho de 2017.</p>
+			</section>
+			<section>
+				<h3>Situações</h3>
+				<h4>Doméstico x eSocial – Tratamento das Remunerações e transformação em Contribuições</h4>
+				<p>NECESSIDADE: Alterações no SABI para tratar a migração de vínculos de doméstica, seja de fonte INSS ou eSocial.</p>
+				<p>SOLUÇÃO: Os vínculos de doméstico de fonte INSS ou eSocial serão tratados no SABI da seguinte forma:</p>
+				<ul>
+					<li>Constarão no SABI somente os períodos dos vínculos a partir da competência 06/2015, devido à publicação da LC 150/2015 em 02/06/2015.</li>
+					<li>Os períodos de vínculos (remunerações) serão transformados em períodos de atividade (contribuições), para manter a rotina existente quanto ao reconhecimento do direito para o empregado doméstico. Assim, as remunerações serão transformadas em contribuições.</li>
+					<li>Serão transformadas em período de contribuições as competências que tiverem remunerações no CNIS, mesmo sendo zeradas</li>
+					<li>Será apresentado no SABI somente o período contemporâneo do vínculo de doméstico existente no CNIS.</li>
+					<li>Para manter a rotina existente, a primeira competência paga em dia será a primeira competência do período de atividade.</li>
+					<li>A data início do período de atividade será o primeiro dia do mês da competência em que houver remuneração, quando o vínculo se iniciar antes de 06/2015.</li>
+					<li>Caso o vínculo de doméstico se inicie posteriormente a essa competência, a data de início será a própria data de admissão do vínculo.</li>
+					<li>A data fim do período de atividade será o último dia da competência que tiver remuneração.</li>
+					<li>Quando as contribuições referirem-se ao período de atividade origem INSS ou eSocial, não será apresentada a “data de pagamento” na tela “contribuições”.</li>
+					<li>Quando houver períodos de categoria de “empregado doméstico” concomitantes com outras contribuições, será gerado o alerta “vínculos e remunerações divergentes do CNIS”, para que os períodos sejam adequadamente tratados.</li>
+					<li>As competências com remunerações zeradas não serão enviadas ao SUB. O período de atividade será enviado normalmente.</li>
+				</ul>
+				<h4>Desabilitar funcionalidades relativas ao AERONAUTA</h4>
+				<p>NECESSIDADE: Atender ao disposto na Resolução nº 588/PRES/INSS, que estabelece procedimentos a serem adotados pelas Agências da Previdência Social para atendimento aos segurados aeronautas no requerimento do benefício por incapacidade.</p>
+				<p>SOLUÇÃO: No SABI-WEB, alterada a tela do requerimento de auxílio-doença, excluindo os botões “Aeronauta” e “Cart. de Aeronauta/DAC:”.</p>
+				<p>Será permitido agendar perícia médica para os requerimentos já realizados como Aeronauta. Permitirá, também, reagendar e transferir esses agendamentos de perícia médica.</p>
+				<p>Retirada dos peritos médicos a permissão para realizar a “perícia de aeronauta” e retornado o perfil de acesso da GEX de origem.</p>					
+				<h4>Fornecer acesso ao módulo Controle Operacional para efetivar as decisões da JR/CRSS</h4>
+				<p>NECESSIDADE: Viabilizar a efetivação das decisões das Juntas de Recurso do Conselho de Recursos do Seguro Social que dependem de homologação no SABI.</p>
+				<p>SOLUÇÃO: Habilitada para os peritos médicos cedidos às Juntas de Recurso/CRSS a funcionalidade que permite dar o parecer das sugestões médicas, no módulo do Controle Operacional.</p>
+				<h4>Correção de Inconsistências</h4>
+				<p>NECESSIDADE: Verificadas algumas inconsistências após a versão 11.1.</p>
+				<p>SOLUÇÃO: Realizados acertos nas seguintes inconsistências:</p>
+				<ul>
+					<li>Na reativação judicial, quando fixada a DCB em data menor ou igual ao mês atual (mês de atendimento da decisão judicial), será gravada no SABI e enviada ao SUB a data da reativação no primeiro dia do mês subsequente a ação. Para os casos de DCB futura, continuará gravando e enviando ao SUB a data de reativação informada na tela.</li>
+					<li>Incluído o campo “Data Reativação”, no botão detalhes ABA “Benefício”.</li>
+					<li>Alterado no SUB o prazo para receber a data de reativação de 15 para 35 dias, somente se a ação for de origem SABI.</li>
+					<li>Na reativação judicial, enviar para o SUB a marca de RP igual a Sim, para apresentar no INFBEN RP=S. Os casos passivos serão tratados pela Dataprev.</li>
+					<li>Correção na rotina de protocolo de Pedido de Prorrogação, quando utilizava o número do benefício no requerimento e quando a fase do último laudo estava nula.</li>
+					<li>Correção na comunicação com o CNIS e envio para o SABI de períodos de FACULTATIVO com pendência – PRECFACULTCONC.</li>
+					<li>Remarcação de R2 em APS que não tem médico: Apresentará a tela para escolher outra que possua médico para atendimento da perícia de R2.</li>
+					<li>Crítica II – CONSTA DEBITO ANT P/ NIT DO TITULAR. Para tratar os casos passivos, retransmitir a crítica II.</li>
+					<li>Impressão de laudos em branco: Será impresso os laudos de fase 20, 21 e 22, conforme os dados que constar gravado para cada respectivo campo.</li>
+					<li>Nos laudos de fase 21 e 22 gerados após versão 12.0, constará no campo “considerações” a seguinte frase: “Laudo devido ação judicial de concessão ou de reativação.”.</li>
+					<li>Correção na rotina de benefícios anteriores, para gravar a DCB/DCA do benefício conforme consta no SUB.</li>
+					<li>Correção na opção “atualização status transferido” e na ferramenta de suporte para alterar o status do benefício para “transferido”.</li>
+					<li>Geração do relatório de 2ª via da entrevista rural.</li>
+					<li>Correção nos períodos de segurado especial positivo migrados do CNIS, que solicitava entrevista rural indevidamente.</li>
+					<li>Melhoria na performance da lista de Reabilitação Profissional do módulo Atendimento Médico.</li>
+					<li> Correção do perfil de Auxiliar Controle com visualização de requerimentos não pertencentes à sua APS de Origem.</li>
+					<li>Correção de tela de erro no SABI WEB quando tentava protocolar auxílio-doença com o NIT Secundário.</li>
+					<li>Somente permitir protocolo de auxílio-doença no SABI WEB se a DER for maior que a DUT.</li>
+					<li>Correção na comunicação SABI WEB e SAG nos requerimentos de Ação Civil Pública.</li>
+					<li>Somente poderá alterar de/para o perfil ASSIST TEC MED, quem tiver perfil OUTROS.</li>
+					<li>Os peritos cedidos para a JR/CRSS somente continuarão sendo visualizados na APS nas quais tiveram escala/agenda e não foram excluídos.</li>
+					<li>Na concessão judicial, não permitir informar DID/DII maior que data atual. Inserida a frase para validação das datas: A Dt Início Incapacidade (DII) não deve ser maior que a data atual. / A Dt Início Doença (DID) não deve ser maior que a data atual.</li>
+					<li>Correção na conclusão de perícia de PP, após laudo de restabelecimento.</li>
+				</ul>
+			</section>
+		</article>
+	</body>
+</html>

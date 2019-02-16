@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5g">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5g do Prisma.">
+		<meta name="DC.Modified" content="2016-05-17T12:00-03:00">
+		<meta name="DC.Identifier" content="43">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,empregado domestico,lei complementar 150,auxilio acidente,b94">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5g do Prisma, lançada em Maio de 2016.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Adequação à LC 150/2015</h4>
+				<h5>Pagamento de salário-família para benefícios do empregado doméstico</h5>
+				<p>Será permitida a inclusão e alteração de dependentes de salário-família para os benefícios de empregado doméstico.</p>
+				<p>O efetivo pagamento de salário-família observará os critérios gerais vigentes para o segurado empregado, além dos seguintes critérios:</p>
+				<ul>
+					<li>Não haverá pagamento de salário-família para competências anteriores a 06/2015, competência de publicação da LC 150/2015;</li>
+					<li>Somente haverá pagamento de salário-família quando se tratar de empregado doméstico em atividade.</li>
+				</ul>
+				<h5>Benefícios concedidos antes da implementação do indicador de segurado em atividade</h5>
+				<p>A fim de possibilitar o pagamento de salário-família nos benefícios do empregado doméstico concedidos antes da criação do indicador de segurado em atividade, na atualização de dependente de salário-família de benefícios com forma de filiação 4 (empregado doméstico) com o indicador de segurado em atividade com valor falso, o Prisma somente permitirá a atualização mediante resposta afirmativa ao seguinte questionamento:</p>
+				<cite>Confirma que houve comprovação de que o segurado exercia a atividade de de empregado doméstico na data do fato gerador do benefício?</cite>
+				<p>Caso o usuário confirme que houve comprovação de que o segurado exercia atividade de empregado doméstico na data do fato gerador do benefício, a atualização de dependente de salário-família será permitida, e o SUB atualizará automaticamente o valor do indicativo de segurado em atividade para “sim”.</p>
+				<h5>Espécies de benefícios que passaram a ser válidas para o segurado empregado doméstico</h5>
+				<p>As seguintes espécies de benefícios passaram a ser válidas para o segurado empregado doméstico:</p>
+				<ul>
+					<li>36 – Auxílio-acidente previdenciário;</li>
+					<li>91 – Auxílio-doença decorrente de acidente do trabalho;</li>
+					<li>92 – Aposentadoria por invalidez decorrente de acidente do trabalho;</li>
+					<li>93 – Pensão por morte decorrente de acidente do trabalho;</li>
+					<li>94 – Auxílio-acidente.</li>
+				</ul>
+				<p>Reservada a possibilidade de concessões judiciais e recursais, as espécies acima relacionadas serão permitidas desde que a Data de Início da Doença – DID tenha se iniciado a partir de 02/06/2015, data de publicação da LC 150/2015.</p>
+				<h5>Pagamento de salário-família ao empregado doméstico</h5>
+				<p>Será permitida a informação de dependentes de salário-família na habilitação de benefícios do empregado doméstico.</p>
+				<h5>Identificação de se o segurado se encontra em atividade</h5>
+				<p>Considerando que o pagamento de salário-família não é devido ao segurado desempregado, e diante do fato de que não é possível determinar se o empregado doméstico está ou não empregado por meio da forma de filiação, foi criado um indicador próprio, destinado a identificar se o segurado está ou não em atividade.</p>
+				<p>Esse indicador será transmitido para o SUB, e exibido nas telas MOVCON/Dados do Beneficio, CONBAS e na consulta de benefício do Prisma.</p>
+				<p>Na tela CONBAS constará a informação “(em ativ)” quando se tratar de segurado em atividade. Quando não se tratar de segurado em atividade, o campo ficará em branco.</p>
+				<p>Nos casos passivos, o indicador de segurado em atividade ficará “não”, observado o disposto em Benefícios concedidos antes da implementação do indicador de segurado em atividade, deste relatório de versão.</p>
+				<p>O indicador de segurado em atividade será calculado tanto na fase de concessão quanto na fase de revisão de benefícios, em conjunto com a validação da forma de filiação.</p>
+				<h5>Cômputo do vínculo do empregado doméstico no cálculo de carência em contribuições</h5>
+				<p>Os vínculos de empregado doméstico serão computados para carência em contribuições a partir de 02/06/2015, data de publicação da LC 150/2015.</p>
+				<h5>Atribuição de valores nos vínculos de empregado doméstico para cálculo da RMI</h5>
+				<p>No caso de benefício ao empregado doméstico com carência em contribuições, a atribuição de valores no PBC para os vínculos de empregado doméstico observará os seguintes princípios:</p>
+				<ul>
+					<li>Os valores das competências anteriores a 06/2015 serão alimentadas a partir dos períodos de contribuição como empregado doméstico (documento “carnê”);</li>
+					<li>Para competências entre 06/2015 (inclusive) e 09/2015 (inclusive), será considerado prevalentemente o valor constante no próprio vínculo e, inexistindo valor no vínculo para a competência, será considerado o valor da contribuição como empregado doméstico (documento “carnê”);</li>
+					<li>Para competências a partir de 10/2015, será considerado exclusivamente o valor da remuneração constante no próprio vínculo como empregado doméstico;</li>
+					<li>Em qualquer caso, nas competências em que não houver valor do salário-de-contribuição, o sistema deverá considerar o valor do salário-mínimo, proporcionalmente aos dias de atividade na competência.</li>
+				</ul>
+				<h5>Alteração na recepção de vínculos de empregado doméstico</h5>
+				<p>Os vínculos de empregado doméstico receberão o mesmo tratamento geral em relação à migração a partir do CNIS, ou seja, será considerado até a data-fim ou até a última remuneração.</p>
+				<p>Foi desabilitada a regra que permitia considerar o vínculo de empregado doméstico até a DIB no caso de vínculo de empregado doméstico sem remuneração e sem data-fim.</p>
+				<h4>Concessão de auxílio-acidente não precedido</h4>
+				<p>Considerando o Parecer 18/2013/CONJUR-MPS/CGU/AGU, os sistemas Prisma e SUB foram adaptados para possibilitar a concessão de auxílio-acidente (B36 ou B94) independentemente da existência de auxílio-doença anterior.</p>
+				<h5>Alterações gerais válidas para auxílio-acidente</h5>
+				<p>Foram realizadas as seguintes alterações na habilitação de benefícios das espécies 36 e 94:</p>
+				<ul>
+					<li>O Prisma permitirá habilitação de auxílio-acidente independentemente de desabilitação FERR/APLSABI;</li>
+					<li>No lançamento de dados da avaliação médico-pericial, foram criados novos campos, destinado às informações específicas do auxílio-acidente:
+						<ul>
+							<li>Campo destinado a informar se trata-se de acidente (sim ou não);</li>
+							<li>Campo destinado a informar se trata-se de acidente de trabalho (sim ou não);</li>
+							<li>Campo destinado a informar a data do acidente apurada pela Perícia Médica;</li>
+							<li> Campo destinado a informar se a sequela enquadra-se na legislação aplicável (sim ou não).</li>
+						</ul>
+					</li>
+				</ul>
+				<p>Os valores informados nos novos campos referentes à avaliação médico-pericial serão utilizados para realizar as verificações de consistência, sugerindo, conforme o caso, o indeferimento do benefício. Nos casos habilitados antes da disponibilização desta versão poderá ser necessário complementar o lançamento de dados da avaliação médico-pericial.</p>
+				<h5>Novos motivos de indeferimento aplicáveis ao auxílio-acidente</h5>
+				<p>Foram criados os seguintes novos motivos de indeferimento aplicáveis ao auxílio-acidente:</p>
+				<ul>
+					<li>190 – Acidente anterior a 31/12/2008: motivo de indeferimento aplicável a quando se trata de segurado em período de graça e o acidente é anterior à data de publicação do Decreto n° 6.722/2008;</li>
+					<li>191 – Falta da qualidade de segurado na data do acidente;</li>
+					<li>192 – Filiação ao Regime Geral de Previdência Social, na data do acidente, em categoria diversa daquelas que tem direito ao beneficio Auxílio-Acidente;</li>
+					<li>193 – Inexistência de sequelas definitivas que impliquem em redução da capacidade laborativa: motivo de indeferimento a ser aplicado quando, segundo a avaliação médico-pericial, a sequela não se enquadra na legislação aplicável;</li>
+					<li>194 – O(a) requerente não compareceu para realização de exame médico-pericial;</li>
+					<li>195 – Não comprovação da data do acidente ocorrido;</li>
+					<li>196 – Sequela não decorrente de acidente.</li>
+				</ul>
+				<h5>Novo critério de validação da forma de filiação do segurado (todas as espécies)</h5>
+				<p>Considerando a necessidade de possibilitar o reconhecimento de direito ao auxílio-acidente para segurados que exerceram atividade após o acidente, a forma de filiação do segurado será validada pelo Prisma não mais considerando a última atividade4 do segurado, mas em função das atividades existentes até a data de referência da forma de filiação, a qual será determinada da seguinte forma:</p>
+				<ul>
+					<li>Tratando-se de auxílio-doença, será a DII.</li>
+					<li>Tratando-se de auxílio-acidente, será a data do acidente.</li>
+					<li>Tratando-se de auxílio-reclusão, será a data da reclusão.</li>
+					<li>Tratando-se de pensão por morte, será a data do óbito.</li>
+					<li>Tratando-se de salário-maternidade, será a data da licença.</li>
+				</ul>
+				<p>Em qualquer caso em que não seja possível determinar a data de referência da forma de filiação, será considerada a DER.</p>
+				<p>Especificamente no caso de auxílio-doença, o segurado só será considerado empregado (exceto o doméstico) quando estiver empregado na DER.</p>
+				<h5>Alteração de regra de ajuste manual da data-fim do vínculo do empregado no auxílio-doença</h5>
+				<p>Considerando que no caso de auxílio-doença o segurado só será considerado empregado (exceto o doméstico) quando se tratar de empregado na DER, na habilitação de auxílio-doença para o segurado empregado:</p>
+				<ul>
+					<li>Para caso o segurado permaneça empregado na DER, mas o vínculo seja migrado do CNIS apenas até a última remuneração (anterior à DER), será permitida a alteração manual da data-fim para a DER, substituindo a antiga regra de permitir a alteração da data-fim para a DAT+14 dias;</li>
+					<li>Deverá ser informado manualmente como período de licença o período de afastamento não pago pelo empregador – tipicamente entre o 16o dia de afastamento e a DER –, a fim de que o cômputo do vínculo para efeito de carência não ultrapasse o limite definido no inciso III do art. 153 da IN INSS/PRES No 77/2015.</li>
+				</ul>
+				<h5>Obrigatoriedade de informação de licença para o período de afastamento não pago pelo empregador no requerimento de auxílio-doença do segurado empregado</h5>
+				<p>Considerando o disposto no item anterior, na verificação de consistência das informações do auxílio-doença do segurado empregado, caso não conste período de licença que abranja o período entre o fim da responsabilidade do empregador (tipicamente DAT+15 dias) e a DER, será exibida a exigência automática “- Vinculo documento XX periodo XXX devera possuir periodo de licenca entre XX/XX/XXXX e a DER.”</p>
+				<p>A crítica em questão não impedirá as concessões judiciais e recursais.</p>
+				<h5>Recepção de períodos do CNIS sem limitação à DIB</h5>
+				<p>Considerando os critérios de validação da forma de filiação5, os períodos do CNIS passarão a ser recebidos sem estarem limitados à DIB. O limite à DIB será aplicado, quando devido, nos cálculos de carência e tempo de contribuição. Foram adaptadas as críticas de tela na inclusão de períodos e a verificação de consistência das informações.</p>
+				<h4>Concessão judicial ou recursal de benefícios da LC 142/2013</h4>
+				<p>Com objetivo de viabilizar concessões judiciais e recursais de benefícios da LC 142/2013 em que não estejam presentes os requisitos para concessão administrativa, as exigências automáticas a seguir relacionadas serão exibidas como “observações não impeditivas” no caso de benefícios despachos 03 ou 04:</p>
+				<ul>
+					<li>“Segurado não possui avaliação médico-social para efeito da LC 142/2013”;</li>
+					<li>“Segurado não foi considerado deficiente na DER/DIB”;</li>
+					<li>“Não possui período trabalhado como deficiente”;</li>
+					<li>“Segurado não cumpriu tempo de contribuição mínimo como deficiente (15 anos)”.</li>
+				</ul>
+				<h4>Correções</h4>
+				<h5>Correção do reconhecimento de direito ao auxílio-doença do empregado doméstico com carência em contribuições</h5>
+				<p>Corrigido defeito na verificação de direito ao auxílio-doença do empregado doméstico, em decorrência do qual não estava sendo possível conceder benefícios com cálculo de RMI, apesar de o segurado preencher o requisito de carência em contribuições.</p>
+				<p>Nos casos afetados pelo problema, o Prisma estava exigindo indevidamente a utilização do despacho 17.</p>
+				<h5>Correção de defeito na determinação de tipo de cálculo nas aposentadorias anteriores à Lei 9.876/1999 com parâmetro de liberação de tempo de contribuição (judiciais e recursais)</h5>
+				<p>Corrigido defeito na determinação do tipo de cálculo da RMI das aposentadorias com liberação de tempo de contribuição, pelo qual se estava considerando a DER e não a DIB para fixação da forma de cálculo de RMI.</p>
+				<p>O problema era observado em benefícios com DIB < DPL < DER, em que o tipo de cálculo selecionado era o cálculo na forma da Lei 9.876/1999, apesar de a DIB ser anterior à data de publicação da referida lei.</p>
+				<h5>Correção de defeito no cálculo de carência em meses e contribuições do empregado doméstico</h5>
+				<p>Corrigido defeito na apuração de carência em meses de atividade do empregado doméstico, que fazia com que fosse descontado do total de carência em meses o período de atividade como empregado doméstico iniciado após 06/2015.</p>
+				<p>A correção foi disponibilizada em ambiente de produção em 07/03/2016.</p>
+				<h5>Correção da exigência automática “DO/DR/Acidente ou DAT no mesmo mes o beneficio deve ser concedido com desp. 17</h5>
+				<p>Corrigida exigência automática “DO/DR/Acidente ou DAT no mesmo mes o beneficio deve ser concedido com desp. 17”, a qual estava ocorrendo indevidamente na concessão de pensão desdobrada, a exemplo do registro Consultar 024983/2016.</p>
+				<h4>Ações Civis Públicas</h4>
+				<h5>Mudança de parâmetros no cumprimento da ACP do BPC de São José do Rio Preto/SP (ACP nº 0011259-41.2007.403.6106/SP, antigo número 2007.61.06.0112598)</h5>
+				<p>Foi inibida a utilização do número de ACP 200761060112598, e cadastrado novo número de ACP (00112594120074036106), para atendimento à ACP do BPC de São José do Rio Preto/SP, ação a qual foi renumerada.</p>
+				<p>Como efeito da ACP, será desconsiderada renda de benefício de até 1 salário-mínimo de membro do grupo familiar com mais de 65 anos (modelo 014).</p>
+				<p>A ACP em questão poderá ser utilizada para benefícios de espécie 87 e 88 requeridos a partir de 08/10/2012 nos OLs 21021020, 21036020, 21036060, 21036070, 21036080, 21036090, 21036100, 21036110, 21036120, 21036150, 21036160 e 21036170, desde que o beneficiários seja residente em um dos seguintes municípios de abrangência: Adolfo, Altair, Álvares Florence, Américo de Campos, Bady Bassit, Bálsamo, Cardoso, Cedral, Cosmorama, Floreal, Guapiaçu, Guaraci, Icém, Ipiguá, Irapuã, Jaci, José Bonifácio, Macaubal, Magda, Mendonça, Mirassol, Mirassolândia, Monte Aprazível, Neves Paulista, Nhandeara, Nipoã, Nova Aliança, Nova Granada, Novo Horizonte, Olímpia, Onda Verde, Orindiúva, Palestina, Parisi, Paulo de Faria, Planalto, Poloni, Pontes Gestal, Potirendaba, Riolândia, Sales, São Josédo Rio Preto, Sebastianópolis do Sul, Severínia, Tanabi, Ubarana, Uchoa, União Paulista, Urupês, Valentim Gentil e Votuporanga.</p>
+				<p>As alterações em questão encontram-se disponíveis em ambiente de produção desde 17/02/2016.</p>
+				<h5>Cumprimento da ACP 2003.72.00.001108-0 – Concessão de Benefício de Prestação Continuada</h5>
+				<p>Alterando o disposto no item do Relatório da Versão Prisma 9.5d sobre a utilização da ACP 200372000011080. Será possível para benefícios com DER a partir de 31/01/1998.</p>
+				<p>As alterações em questão encontram-se disponíveis em ambiente de produção desde 15/02/2016.</p>
+				<h5>Ação Civil Pública 0000003-83.2015.4.05.8100/CE – Concessão de auxílio-doença previdenciário com base em documento médico </h5>
+				<p>No período de 08/01/2016 a 17/02/2016 foi possibilitada a concessão de benefício por incapacidade com base em documento médico para os segurados residentes nos municípios de Banabuiú, Boa Viagem, Choró, Ibaretama, Ibicuitinga, Quixadá e Quixeramobim, do estado do CE, mediante informação do número de ACP 00000038320154058100.</p>
+				<p>A utilização da ACP em questão foi desabilitada em razão da decisão proferida no Agravo de Instrumento nº 143374 – CE que suspendeu os efeitos da decisão liminar.</p>
+			</section>
+		</article>
+	</body>
+</html>

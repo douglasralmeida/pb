@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Guia Rápido do SIBE 4.0">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 4.0 do SIBE.">
+		<meta name="DC.Modified" content="2015-05-23T12:00-03:00">
+		<meta name="DC.Identifier" content="30">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="sibe,bpc,beneficio assistencial">
+		<meta name="DC.IsPartOf" content="K5">
+		<meta name="DC.Relation" content="aplicase sibe">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 4.0 do SIBE, lançada em Maio de 2015.</p>
+			</section>
+			<section>
+				<h3>Melhorias técnicas</h3>
+				<p>Para essa versão foram realizadas alterações na infraestrutura do sistema visando melhorar a performance e usabilidade, sendo:</p>
+				<ul>
+					<li>Melhorias de desempenho em consultas muito onerosas.</li>
+					<li>Maior utilização de chamadas assíncronas para desoneração do servidor de aplicação.</li>
+				</ul>
+				<h3>Melhorias de layout</h3>
+				<ul>
+					<li>Alinhamento da identidade visual com o CNIS.</li>
+					<li>Nova barra inferior com informações diversas e ajuda.</li>
+					<li>Inclusão de informações de acesso no cabeçalho.</li>
+					<li>Padronização dos componentes comuns aos sistemas SIBE e CNIS.</li>
+				</ul>
+				<h3>Requerimento de benefício</h3>
+				<p>Distribuição dos documentos constantes no cadastro do segurado em abas, tornando a utilização da tela de dados cadastrais mais amigável</p>
+				<h4>Melhoria na Integração com o Portal CNIS:</h4>
+				<p>Ao clicar no botão “Atualizar Dados Cadastrais no CNIS”, o CNIS será aberto dentro da funcionalidade de atualização de dados cadastrais, já com o NIT do requerimento selecionado.</p>
+				<h4>Informação da DER de contigência</h4>
+				<p>A possibilidade de informar a DER de contigência será disponibilizada na primeira tela do requerimento de benefício, evitando que seja permida a inclusão de benefícios que não preenchem os critérios mínimos para requerimento, já que essa veriﬁcação uliza a DER.</p>
+				<h4>Possibilidade de cadastrar exigência em todas as telas do requerimento</h4>
+				<p>Será permitida a inclusão de exigências em todas as telas a parr da tela em que é gerado o número de benefício, clicando no botão “Exigências” no ﬁm da tela.</p>
+				<h4>Consolidação de todas as informações referentes à renda em uma única tela</h4>
+				<p>As informações referentes à renda (vínculos, benefícios e outras rendas), de cada componente do grupo familiar, serão consolidadas em uma única tela. No ﬁm da tela será apresentada a renda total do componente, caso haja.</p>
+				<h4>Possibilidade de informar renda apurada</h4>						
+				<p>Na versão anterior, a única opção para informar renda que não foi identificada através dos sistemas institucionais era através do campo “renda declarada”. Considerando que esse campo não atende aos casos em que o requerente não declarava renda, mas esta era apurada por meio de outros procedimentos (solicitação de pesquisa externa, por exemplo), foi criado o campo “renda apurada”.</p>
+				<h4>Única tela para manutenção do grupo familiar</h4>
+				<p>As informações relacionadas ao grupo familiar, bem como a inclusão, alteração e exclusão de novos componentes será realizada em uma única tela.</p>
+				<p>Para inclusão de novo componente, será necessário informar o grau de parentesco e o NIT do componente. Caso não exista pendência nos dados cadastrais e/ou renda para esse componente, o mesmo será incluído sem passar pelas telas de dados cadastrais e renda. Se houver necessidade de alterar os dados cadastrais ou a renda, o usuário deve clicar em “Alterar”, no respectivo componente.</p>
+				<h3>Revisão</h3>
+				<p>Consolidação de todos os dados específicos da revisão nas três primeiras telas. No restante do ﬂuxo, são aproveitadas as mesmas telas do requerimento inicial, padronizando as funcionalidades que são comuns a ambos.</p>
+				<h3>Recurso</h3>
+				<p>Consolidação de todos os dados específicos do recurso em uma única tela. No restante do ﬂuxo, são aproveitadas as mesmas telas do requerimento inicial, padronizando as funcionalidades comuns.</p>
+				<h3>Demandas Judiciais</h3>
+				<p>Consolidação de todas as informações relativas ao cadastro da ação judicial em uma única tela.</p>
+				<p>Possibilidade de disparar o atendimento da demanda assim que o cadastro for concluído. Utilizando a funcionalidade “Atender”, o sistema irá cumprir a decisão, caso já possua todas as informações necessárias, ou direcionará para funcionalidade correspondente para obter os dados restantes. Ex.: Para demanda de Reconhecimento Inicial de Direitos será direcionado para o Requerimento Inicial.</p>
+				<h3>Monitor Operacional</h3>
+				<p>O ícone Acompanhar Defesa não está mais como subitem do Monitor Operacional, encontra-se disponível na aba principal do Monitor, tendo em vista que o referido módulo de defesa atende processos que não estão sendo apurados pelo Monitor Operacional, como exemplo os processos de revisão que tenham ocasionado perda do direito ou diminuição de renda.</p>
+				<p>Na tela de recebimento da defesa apresentada, foram excluídos os campos obrigatórios Número do SIPPS e Data de Encaminhamento (SIPPS).</p>
+				<h3>Serviço Social</h3>
+				<h4>Barra de Rolagem</h4>
+				<p>Dispõe das opções de história social, SIS, visita técnica e salvar. Estas opções poderão ser acessadas ao longo da realização da avaliação social, independente da tela visualizada no momento.</p>
+				<h4>Fatores Ambientais</h4>
+				<p>Ao ﬁnalizar o preenchimento dos domínios dos Fatores Ambientais, será visualizado o resultado ﬁnal de cada domínio assinalado e o seu qualiﬁcador ﬁnal.</p>
+				<h4>Atividades e Participação</h4>
+				<p>As colunas T e P, à direita dos qualificadores de cada domínio, destinam-se à sinalização de dependência Total ou Parcial de cuidados de terceiros, sempre que o avaliador julgar pertinente, com vistas a fornecer subsídios para polícas públicas de cuidados. Não representam o foco principal da avaliação, que deve estar centrado no desempenho para o exercício de atividades e participação social, conforme o grau de dificuldade estabelecido pelos cortes percentuais acima.</p>
+				<p>O preenchimento destas colunas não implicará em pontuação no qualiﬁcador ﬁnal do domínio. Ao ﬁnalizar o preenchimento dos domínios das Atividades e Participação, será visualizado o resultado final de cada domínio assinalado e o seu qualificador final.</p>
+				<h4>Emissão de SIS - Avaliação Social em fase de Instrução Recursal</h4>
+				<p>Após o pedido de solicitação da SIS, aparecerá uma mensagem que confirma a inclusão da SIS e que informa a pendência da avaliação social por retorno de SIS. Após a inserção da SIS, ao clicar na opção - Imprimir SIS – será gerado relatório em PDF para ser entregue ao avaliado.</p>
+				<h4>Retorno de SIS – Avaliação Social em fase de Instrução Recursal</h4>
+				<p>Aba: Serviços – Social - Realizar avaliação social.</p>
+				<p>Informar o NB para iniciar a Avaliação – Avançar.</p>
+				<p>Na tela seguinte, selecionar a Avaliação Social de Instrução Recursal do BPC com situação Pendente.</p>
+				<p>Será visualizada a seguinte pergunta: Deseja incluir o resultado de SIS (Solicitação de Informações Sociais) pendente?</p>
+				<p>Ao clicar em sim, deverão ser confirmados os dados de retorno.</p>
+				<p>Ao confirmar o profissional que forneceu os dados de retorno da SIS, prosseguir para informar:</p>
+				<ul>
+					<li>Dados do proﬁssional</li>
+					<li>Dados do resultado da SIS</li>
+					<li>Serviços existentes no município</li>
+				</ul>
+				<p>Após a inserção dos dados de retorno da SIS, será dado prosseguimento à tela de identificação dos dados do avaliado e do acompanhante, visualização das avaliações social e médico anteriores e prosseguimento da avaliação social recursal.</p>
+				<h3>Perícia Médica</h3>
+				<h4>Informações de caracteres restantes</h4>
+				<p>Agora o sistema informa qual o número de caracteres restantes nos campos de texto.</p>
+				<h4>Funcionalidade de incluir novo exame</h4>
+				<p>Na funcionalidade de incluir novo exame, ao preencher os dados de um exame e clicar em incluir o sistema continua na tela de incluir exames/laudos permindo que o perito médico possa incluir um novo exame/laudo, se for o caso.</p>
+				<p>Se não for incluir outro exame/laudo, é só clicar em “cancelar” que o sistema retorna para a tela da avaliação médico pericial, já apresentando os dados do exame/laudo que foi incluído.</p>
+				<h4>Pesquisa automática do CID</h4>
+				<p>Agora basta o perito médico colocar o código que o sistema fará a busca do CID apresentando código e informação por extenso.</p>
+				<h4>Barra de botão flutuante</h4>
+				<p>Agora, ao longo da perícia médica, o sistema apresenta a barra de botão ﬂutuante com a possibilidade de acesso a funcionalidades de modo mais rápido. Entre as funcionalidades sempre disponíveis estão a solicitação de SIMA e a possibilidade de Salvar. Outras funcionalidades são a inclusão de Exame/Laudo e a possibilidade de complementar dados da História Clínica e do Exame Físico. Nesses casos de uso do botão ﬂutuante o sistema sempre retorna para a tela onde o perito estiver quando do uso da funcionalidade.</p>
+				<p>Ex: Mesmo que esteja no final da perícia médica, o perito médico poderá clicar em história clínica ou exame físico para complementar os dados digitados anteriormente.</p>
+				<p>Ex: Também poderá fazer a inclusão de um novo laudo/exame médico que o avaliado tenha apresentado apenas no final da perícia médica.</p>
+				<h4>Funções do Corpo</h4>
+				<p>Quando houver clicado em um dos qualificadores, fica habilitado para o preenchimento do qualiﬁcador total do domínio não há mais necessidade de qualificar todas as unidades de classificação dos domínios de Funções do Corpo, somente as que foram consideradas para a qualificação final do domínio.</p>
+				<p>No entanto, se for atribuído qualificador 0 (zero) ao domínio, há necessidade de assinalar uma das duas justificativas.</p>
+				<h4>Atividades e participação</h4>
+				<p>Colunas de dependência Total e Parcial: As colunas T e P, à direita dos qualificadores de cada domínio, destinam-se à sinalização de dependência Total ou Parcial de cuidados de terceiros, sempre que o avaliador julgar pertinente, com vistas a fornecer subsídios para políticas públicas de cuidados. Não representam o foco principal da avaliação, que deve estar centrado no desempenho para o exercício de atividades e participação social, conforme o grau de dificuldade estabelecido. O preenchimento destas colunas não implicará em alteração na pontuação no qualificador ﬁnal do domínio.</p>
+				<h3>Autenticação e Controle de acesso</h3>
+				<p>A autenticação e controle de acesso ao sistema será realizado pelo Sistema de Gerenciamento de Identidades - GERID, que substuirá o atual Sistema de Autorização de Acesso – SAA.</p>
+				<p>O acesso ao SIBE será através do CPF e senha que será a mesma utilizada para acessar a caixa de e-mail.</p>
+				<p>O cadastro dos servidores pode ser visualizado através do endereço www-gerdic (Gerenciador web de diretório e correio), informando o usuário (nome e sobrenome ulizados para o e-mail), e senha (senha do e-mail). Neste sistema, também pode ser visualizado os papéis e gestões dos servidores através da opção “Credenciais”.</p>
+				<h4>Recomendações</h4>
+				<p>Não é recomendável a utilização do navegador Internet Explorer.</p>
+				<p>Endereço GERID/GPA: Utilizar o endereço https://geridinss.dataprev.gov.br/gpa.</p>
+				<p>Endereço SIBE: Não haverá alteração, continuará o endereço www-sibe.</p>
+				<h4>Suporte</h4>
+				<p>Atribuição de Gestão e Acesso ao GERID: Registrar ocorrência no SDM, endereço www-sdm/, opção “Área-Catálogo de Serviços>Sistemas/Serviços>GERID>Acesso”, sendo imprescindível o registro dos seguintes dados: Nome, CPF, NIT, e-mail, Matrícula SIAPE, descrição do erro e, quando possível, anexar imagem capturada da tela.</p>
+				<p>Regras (exemplo: cálculo incorreto da renda per capita): Registrar ocorrência no Suporte Web INSS, endereço www-suportewebinss.</p>
+				<p>Lentidão, instabilidade, indisponibilidade, bem como mensagens de Erro Geral, Exceção de Infraestrutura e Falha na Operação: Registrar ocorrência no SDM, endereço www-sdm, opção “Área-Catálogo de Serviços>Sistemas/Serviços>SIBE, e quando possível anexar imagem capturada da tela.</p>
+				<h4>Impactos</h4>
+				<p>Os requerimentos de revisão de benefício indeferido que iniciaram na versão 3.4.5.2 deverão ser cancelados e incluídos novamente.</p>
+				<p>Os requerimentos de revisão de benefício com solicitante Recurso que iniciaram na versão 3.4.5.2 deverão ser cancelados e incluídos novamente.</p>
+				<p>Caso ainda seja necessária a realização de Avaliação Social e Médica, incluir requerimento de Recurso com a fase de “Instrução”.</p>
+				<p>Caso a Avaliação Social e Médica já estiverem concluídas, através da antiga solicitação de recurso, incluir novo requerimento de recurso com a fase de “Diligência” e optar por não agendar Avaliação Social e Médica.</p>
+			</section>
+		</article>
+	</body>
+</html>

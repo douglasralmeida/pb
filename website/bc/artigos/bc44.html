@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5g1">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5g1 do Prisma.">
+		<meta name="DC.Modified" content="2016-05-24T12:00-03:00">
+		<meta name="DC.Identifier" content="44">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5g1 do Prisma, lançada em Maio de 2016.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Correções</h4>
+				<h5>Alteração na recepção dos vínculos migrados do CNIS que não possuam data de rescisão</h5>
+				<p>Os vínculos do CNIS que não possuam data de rescisão passarão a observar as seguintes regras:</p>
+				<ul>
+					<li>Vínculos sem data-fim nem remuneração serão considerados da admissão até a mesma admissão (apenas um dia de vínculo);</li>
+					<li>Vínculos com transferência serão considerados até a maior data entre as seguintes:
+						<ul>
+							<li>A data de transferência, se esta for anterior a 01/07/1994;</li>
+							<li>O último dia da competência da última remuneração;</li>
+							<li>A data de admissão.</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</article>
+	</body>
+</html>

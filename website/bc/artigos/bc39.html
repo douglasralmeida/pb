@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de versão do Prisma 9.5f">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5f do Prisma.">
+		<meta name="DC.Modified" content="2015-12-17T12:00-03:00">
+		<meta name="DC.Identifier" content="39">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5f do Prisma, lançada em Dezembro de 2015.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Cálculo da quantidade de contribuições para pensões desdobradas em que o segurado instituidor faleceu em gozo de benefício com presumivelmente mais de 18 contribuições</h4>
+				<p>No caso de pensões desdobradas (ou com NB desdobrado cessado), quando for detectado que o segurado instituidor faleceu em gozo de benefício com presumivelmente mais de 18 contribuições, a fim de que seja aplicada corretamente a duração da cota do cônjuge ou assemelhado, a quantidade de contribuições terá o valor fixado em “999”.</p>
+				<p>Conforme constante no relatório de versão do PRISMA 9.5e, entende-se por benefícios nos quais presumivelmente o segurado possuía mais de 18 contribuições os benefícios das seguintes espécies:</p>
+				<ul>
+					<li>07 ("APOSENTADORIA POR VELHICE - TRAB. RURAL");</li>
+					<li>08 ("APOSENT. POR IDADE - EMPREGADOR RURAL");</li>
+					<li>37 ("APOSENTADORIA EXTRANUMERARIO CAPIN");</li>
+					<li>38 ("APOSENT. EXTRANUM. FUNCIONARIO PUBLICO");</li>
+					<li>41 ("APOSENTADORIA POR IDADE");</li>
+					<li>42 ("APOSENTADORIA POR TEMPO DE CONTRIBUICAO");</li>
+					<li>43 ("APOSENT. POR TEMPO SERVICO EX-COMBATENTE");</li>
+					<li>44 ("APOSENTADORIA ESPECIAL DE AERONAUTA");</li>
+					<li>45 ("APOSENT. TEMPO SERVICO JORNALISTA");</li>
+					<li>46 ("APOSENTADORIA ESPECIAL");</li>
+					<li>49 ("APOSENTADORIA ORDINARIA");</li>
+					<li>52 ("APOSENT. IDADE EXTINTO PLANO BASICO");</li>
+					<li>57 ("APOSENT. TEMPO DE SERVICO DE PROFESSOR");</li>
+					<li>58 ("APOSENTADORIA DE ANISTIADOS");</li>
+					<li>72 ("APOSENT. TEMPO SERVICO - LEI DE GUERRA");</li>
+					<li>78 ("APOSENTADORIA IDADE - LEI DE GUERRA");</li>
+					<li>81 ("APOSENTADORIA COMPULSORIA EX-SASSE");</li>
+					<li>82 ("APOSENTADORIA TEMPO DE SERVICO EX-SASSE").</li>
+				</ul>
+				<h4>Implementação da ACP 50017962320154047127 - Salário-maternidade às seguradas indígenas com idade inferior a 16 anos</h4>
+				<p>Em atendimento à ACP 50017962320154047127, o PRISMA foi adaptado para possibilitar a concessão de salário-maternidade às seguradas com idade inferior a 16 anos (independentemente da idade), com objetivo de atender às seguradas indígenas residentes nos municípios abrangidos pela Subseção Judiciária de Palmeira das Missões/RS.</p>
+				<p>A utilização da referida ACP destina-se exclusivamente às seguradas indígenas, e será possível nos benefícios que atendam a todas as seguintes condições:</p>
+				<ul>
+					<li>Requerimento de salário-maternidade com DER a partir de 01/12/2015.</li>
+					<l>OL concessor 19023030, 19023110 ou 19023050.</l>
+					<li>Segurada residente em um dos seguintes municípios, do Estado do Rio Grande do Sul:</li>
+					<li>Ametista do Sul; Barra do Guarita; Boa Vista das Missoes; Bom Progresso; Braga; Caicara; Campo Novo; Cerro Grande; Coronel Bicaco; Cristal do Sul; Derrubadas; Dois Irmaos das Missoes; Erval Seco; Esperanca do Sul; Frederico Westphalen; Irai; Jaboticaba; Lajeado do Bugre; Miraguai; Novo Barreiro; Novo Tiradentes; Palmeira das Missoes; Palmitinho; Pinhal; Pinheirinho do Vale; Redentora; Rodeio Bonito; Sagrada Familia; Sao Jose das Missoes; Sao Pedro das Missoes; Seberi; Taquarucu do Sul; Tenente Portela; Tres Passos; Vicente Dutra; Vista Alegre e Vista Gaúcha.</li>
+				</ul>
+				<h4>Implementação da ACP 50040482620154047118 - Salário-maternidade às seguradas indígenas menores de 16 anos</h4>
+				<p>Em atendimento à ACP 50040482620154047118, o PRISMA foi adaptado para possibilitar a concessão de salário-maternidade às seguradas com idade inferior a 16 anos (independentemente da idade), com objetivo de atender às seguradas indígenas residentes nos municípios abrangidos pela Subseção Judiciária de Carazinho/RS.</p>
+				<p>A utilização da referida ACP destina-se exclusivamente às seguradas indígenas, e será possível nos benefícios que atendam a todas as seguintes condições:</p>
+				<ul>
+					<li>Requerimento de salário-maternidade com DER a partir de 09/11/2015.</li>
+					<li>OL concessor 19023030, 19023140, 19023060, 19025010, 19025120, 19025140, 19025060 ou 19025050.</li>
+					<li>Segurada residente em um dos seguintes municípios, do Estado do Rio Grande do Sul:</li>
+					<li>Almirante Tamandare do Sul; Alpestre; Alto Alegre; Barra Funda; Barros Cassal; Campos Borges; Carazinho; Chapada; Colorado; Constantina; Coqueiros do Sul; Engenho Velho; Espumoso; Fontoura Xavier; Gramado dos Loureiros; Ibirapuita; Lagoa dos Tres Cantos; Lagoao; Liberato Salzano; Mormaco; Nao Me Toque; Nonoai; Nova Boa Vista; Novo Xingu; Planalto; Rio dos Indios; Ronda Alta; Rondinha; Saldanha Marinho; Santa Barbara do Sul; Santo Antonio do Planalto; Sao Jose do Herval; Sarandi; Selbach; Soledade; Tapera;	Tio Hugo; Tres Palmeiras; Trindade do Sul; Tunas e Victor Graef.</li>
+				</ul>	
+				<h4>Implementação da ACP 50062687020144047105 - Salário-maternidade às seguradas indígenas da etnia Mbyá-Guarani com idade superior a 14 anos</h4>
+				<p>Em atendimento à ACP 50062687020144047105, o PRISMA foi adaptado para possibilitar a concessão de salário-maternidade às seguradas com idade superior a 14 anos, com objetivo de atender às seguradas indígenas da etnia Mbyá-Guarani residentes nos municípios abrangidos pela Subseção Judiciária de Santo Ângelo/RS.</p>
+				<p>A utilização da referida ACP destina-se exclusivamente às seguradas indígenas da etnia Mbyá-Guarani, e será possível nos benefícios que atendam a todas as seguintes condições:</p>
+				<ul>
+					<li>Requerimento de salário-maternidade com DER a partir de 24/09/2015.</li>
+					<li>OL concessor 19023040, 19023090, 19023010, 19023080, 19023120 ou 19023160.</li>
+					<li>Segurada residente em um dos seguintes municípios, do Estado do Rio Grande do Sul:</li>
+					<li>Ajuricaba; Augusto Pestana; Bozano; Caibate; Catuipe; Cerro Largo; Chiapetta; Coronel Barros; Dezesseis de Novembro; Entre Ijuis; Eugenio de Castro; Girua; Guarani das Missoes; Ijui; Inhacora; Joia; Mato Queimado; Nova Ramada; Pirapo; Porto Xavier; Rolador; Roque Gonzales; Salvador das Missoes; Santo Angelo; Santo Antonio das Missoes; Santo Augusto; Sao Luiz Gonzaga; Sao Miguel da Missoes; Sao Nicolau; Sao Pedro do Butia; Sao Valerio do Sul; Senador Salgado Filho; Sete de Setembro; Ubiretama e Vitoria das Missoes.</li>
+				</ul>
+				<h4>Implementação da ACP 50107235520124047200 - Salário-maternidade às seguradas com idade inferior a dezesseis anos</h4>
+				<p>Em atendimento à ACP 50107235520124047200, o PRISMA foi adaptado para possibilitar a concessão de salário-maternidade às seguradas com idade inferior a 16 anos (independentemente da idade), com objetivo de atender às seguradas indígenas residentes no Estado de Santa Catarina.</p>
+				<p>A utilização da referida ACP destina-se exclusivamente às seguradas indígenas, e será possível nos benefícios que atendam a todas as seguintes condições:</p>
+				<ul>
+					<li>Requerimento de salário-maternidade com DER a partir de 25/05/2014.</li>
+					<li>OL concessor de início 20 (todas as APSs do Estado de Santa Catarina).</li>
+					<li>Segurada residente no Estado de Santa Catarina.</li>
+				</ul>
+			</section>
+		</article>
+	</body>
+</html>

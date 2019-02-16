@@ -3,6 +3,10 @@
 	"categorias": [{
 		"nome": "Tópicos mais populares",
 		"icone": "mif-star-empty",
-		"itens": []
+		"itens": [{
+			"nome": "Guia Rápido do SIBE 4.0",
+			"data": "bc30",
+			"tipo": "artigo"
+		}]
 	}]
 }

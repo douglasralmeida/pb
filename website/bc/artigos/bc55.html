@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5j">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5j do Prisma.">
+		<meta name="DC.Modified" content="2016-11-10T12:00-03:00">
+		<meta name="DC.Identifier" content="55">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,carencia,qualidade de segurado,RPPS,francionamento,contribuinte individual,facultativo,multipla atividade,acordos internacionais,pensão,b21">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5j do Prisma, lançada em Novembro de 2016.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Carência e qualidade de segurado</h4>
+				<h5>Fim de vigência da Medida Provisória n° 739/2016 – Exigência de apenas 1/3 de carência após a perda de qualidade de segurado.</h5>
+				<p>A regra definida no relatório da Versão Prisma 9.5i (nova regra de exigência de carência após a perda de qualidade de segurado, instituída pela Medida Provisória n° 739/2016 – Exigência de carência completa após o reingresso) não se aplicará para benefícios com fato gerador a partir de 05/11/2016 (inclusive).</p>
+				<p>Para benefícios com fato gerador a partir de 05/11/2016 (inclusive), após perda de qualidade de segurado, somente será exigido o cumprimento de 1/3 do período de carência, quando for o caso.</p>
+				<h5>Cálculo de carência de períodos de CI e de contribuições de empregado doméstico</h5>
+				<p>O cálculo de carência de períodos de contribuição como contribuinte individual e como empregado doméstico (períodos em documento “CARNÊ”) foi reformulado no Prisma, a fim de atender a todos os seguintes enunciados:</p>
+				<ol>
+					<li>O período de prestador de serviço, inclusive o misto (quando há recolhimento na mesma competência como CI padrão e como CI prestador de serviços) é computável para carência;</li>
+					<li>O período de contribuição de empregado doméstico iniciado antes de 25/07/1991 é computável para carência, ainda que os recolhimentos tenham sido efetuados em atraso;</li>
+					<li>Quando o período de contribuição (de CI ou de doméstico até 02/06/2015) possui uma primeira competência paga em dia, o período é computável para carência pelo menos a partir dessa primeira contribuição em dia, consideradas as competências com efetivo recolhimento;</li>
+					<li>Quando se tratar de aposentadoria programada, o período de contribuição como contribuinte individual é computável para carência pelo menos a partir da competência em que recai a primeira contribuição paga em dia de todo o histórico contributivo do segurado;</li>
+					<li>O período de contribuição como contribuinte individual ou como empregado doméstico (este último até 02/06/2015) é computável para carência pelo menos a partir da competência em que haja algum período computável para carência, de qualquer categoria, dentro do mesmo período de manutenção de qualidade de segurado.</li>
+				</ol>
+				<p>As regras em questão não interferem nas regras instaladas fora do cálculo de carência, a exemplo das contribuições extemporâneas, contribuições com valor inferior ao mínimo exigido, contribuições com data de pagamento posterior à data do óbito do segurado e da exigência de vínculo de empregado doméstico para convalidação das contribuições pagas na referida categoria, dentre outras.</p>
+				<h5>Exibição de dados utilizados no cálculo de carência e qualidade de segurado no Extrato de Tempo de Contribuição</h5>
+				<p>Considerando a necessidade de que o relatório Extrato de Tempo de Contribuição exiba todos os dados considerados nos cálculos de tempo de contribuição, carência e qualidade de segurado – possibilitando assim a conferência dos cálculos realizados pelo sistema –, foram incluídas no referido relatório informações que antes só estavam disponíveis na tela de detalhamento do período no Prisma. Trata-se das seguintes informações:</p>
+				<ul>
+					<li>O indicativo de comprovação da condição de segurado desempregado no período de graça imediatamente após o período, se houver – valor do campo “REG.SINE/ORGAOS MTE”, exibido na tela de detalhes do período;</li>
+					<li>O tipo de contribuição do período, se houver – valor do campo “TIPO DE CONTRIB” exibido no detalhamento dos períodos em documento “CARNE”;</li>
+					<li>A primeira competência paga em dia do período, se houver – valor do campo “1a.CONTR.PG.DIA” exibido no detalhamento dos períodos em documento “CARNE”.</li>
+				</ul>
+				<p>Os códigos de tipo de contribuição são os descritos no relatório da Versão 9.4h1, de 26/01/2012, transcritos a seguir:</p>
+				<ul>
+					<li>Tipo 1 – Padrão: trata-se da forma típica de contribuição, não se enquadrando nas especificações seguintes.</li>
+					<li>Tipo 2 – Prestador de servico - L8212/91, Art. 12, Inc V, g: trata-se de período formado exclusivamente por contribuições contíguas como prestador de serviço, sem registro de contribuições sob responsabilidade do próprio contribuinte.</li>
+					<li>Tipo 3 – Misto (Padrao e Prestador de servico): trata-se de período em que todas as competências contêm simultaneamente contribuições a cargo do contribuinte e remunerações como prestador de serviço.</li>
+					<li>Tipo 4 – Optante pela LC 123/2006: trata-se de período formado exclusivamente por contribuições consecutivas na forma da Lei Complementar 123/2006 (11% do saláriomínimo).</li>
+					<li>Tipo 5 – Microempreendedor individual - L8212/91, Art. 21, §2, Inc II: trata-se de período por contribuições consecutivas do Microempreendedor Individual.</li>
+					<li>Tipo 6 – Facultativo sem renda propria - L8212, Art. 21, §2, Inc II: trata-se de contribuições do segurado facultativo sem renda própria, conforme embasamento legal citado na descrição.</li>
+				</ul>
+				<h5>Exibição dos períodos de qualidade de segurado no Extrato de Tempo de Contribuição</h5>
+				<p>A fim de dar mais agilidade e confiabilidade à análise do cálculo da qualidade de segurado feito pelo sistema, no Extrato de Tempo de Contribuição serão exibidos os períodos de qualidade de segurado calculados pelo Prisma.</p>
+				<p>O relatório em questão exibirá cada um dos períodos de qualidade de segurado, de forma que o início de cada período coincidirá com o início da atividade, e o fim corresponderá ao último dia do período de graça. Conforme o caso, poderá ser exibido um único período de qualidade de segurado ou vários, conforme a ocorrência ou não de perda de qualidade de segurado entre períodos de atividade.</p>
+				<h4>Pensão por morte</h4>
+				<h5>Alteração da regra de manutenção da cota do dependente cônjuge ou assemelhado</h5>
+				<p>Os sistemas PRISMA e SUB foram adequados para cálculo da data de extinção de cota do dependente cônjuge ou assemelhado na forma disposta no Memorando-Circular nº 23/DIRBEN/INSS, de 17 de maio de 2016.</p>
+				<p>No caso de fatos geradores entre 14/01/2015 (inclusive) e 28/02/2015 (inclusive), no tocante ao cálculo da extinção de cota do dependente cônjuge ou assemelhado:</p>
+				<ul>
+					<li>A quantidade de contribuições do segurado instituidor não é elemento relevante;</li>
+					<li>Excetuada a hipótese de extinção de cota em quatro meses decorrente da ausência de dois anos de união, não se aplica a extinção programada para dependente cônjuge ou assemelhado.</li>
+				</ul>
+				<h5>Não impedimento para concessão de pensão por morte aos filhos nascidos após 300 dias do óbito do segurado instituidor</h5>
+				<p>Considerando que há hipóteses em que fica comprovada a condição de filho ainda que o nascimento ocorra após 300 dias do óbito do segurado instituidor, o PRISMA e o SUB não impedirão a concessão de pensões por morte nessas circunstâncias.</p>
+				<h4>Acordos internacionais</h4>
+				<p>A tabela interna do Prisma para controle dos acordos internacionais passará a observar os seguintes dados:</p>
+				<table>
+					<tr><td></td><td></td><td></td><td>Bilaterais</td><td></td><td>Íberos Americanos</td><td></td><td></td></tr>
+					<tr><td>País</td><td>Bélgica</td><td>Coréia do Sul</td><td>Chile</td><td>Bolívia</td><td>El Salvador</td><td>Equador</td><td>Peru</td></tr>
+					<tr><td>Espécies</td><td>21/32/41</td><td>21/32/41</td><td>21/32/41</td><td>21/32/41/91/92/93</td><td>21/32/41/91/92/93</td><td>21/32/41/91/92/93</td><td>21/32/41/91/92/93</td></tr>
+					<tr><td>Micro</td><td>230392</td><td>142183</td><td>150774</td><td>142066</td><td>142115</td><td>142067</td><td>142232</td></tr>
+					<tr><td>APS</td><td>23001140</td><td>14001030</td><td>15001120</td><td>14001030</td><td>14001030</td><td>14001030</td><td>14001030</td></tr>
+					<tr><td>Forma de calc.</td><td>Total/Indepen</td><td>Total/Indepen</td><td>Total/Indepen</td><td>Total/Indepen</td><td>Total/Indepen</td><td>Total/Indepen</td><td>Total/Indepen</td></tr>
+					<tr><td>Tipo de IRRF</td><td>Exterior</td><td>Isento</td><td>Exterior</td><td>Exterior</td><td>Exterior</td><td>Exterior</td><td>Exterior</td></tr>
+					<tr><td>DER mínima</td><td>01/12/14</td><td>01/10/15</td><td>01/03/96</td><td>01/05/11</td><td>17/11/12</td><td>20/06/11</td><td>20/10/16</td></tr>
+				</table>
+				<h4>Regime Próprio</h4>
+				<p>O Prisma foi adaptado para possibilitar o tratamento manual dos períodos de alternância de regime previdenciário, tornando desnecessário solicitar “desabilitação FERR/CNISVR” para acerto de vínculos com essas características.</p>
+				<p>Os vínculos os quais anteriormente não eram migrados para a lista de vínculos do segurado (vínculos “estatutários”) passarão a serão exibidos na lista de vínculos com a marca “RPPS”, conforme exemplo a seguir:</p>
+				<p>Os vínculos em questão serão tratados como se extemporâneos fossem, não sendo contados para tempo de contribuição, qualidade de segurado, carência e outros, salvo caso seja especificado, diretamente no Prisma, que o vínculo pertence ao RGPS em uma ou mais partes.</p>
+				<p>Para identificar que uma parcela do vínculo é do RGPS, o usuário deverá:</p>
+				<ol>
+					<li>Fracionar o vínculo por meio da ferramenta de fracionamento disponibilizada na versão PRISMA 9.4h1, de forma que fiquem separadas as parcelas do vínculo com alternância de regime previdenciário.</li>
+					<li>Acessar a funcionalidade de cumprimento de pesquisa do Prisma.</li>
+					<li>Selecionar a parcela do vínculo que corresponde ao RGPS.</li>
+					<li>Responder “S” ao questionamento <i>“Confirma que se trata de parcela do RGPS de vinculo com mais de um regime previdenciario? (S/N):”</i></li>
+					<li>A partir desse momento o período do vínculo ficará identificado como sendo do RGPS, e passará a ser computado para efeito de tempo de contribuição, carência e qualidade de segurado. Na lista de vínculos, constará a observação “RGPS”.</li>
+				</ol>
+				<p>O cumprimento da pesquisa na forma aqui descrita estará disponível apenas se o vínculo tiver sido previamente fracionado, e desde que não se trate de vínculo extemporâneo no CNIS. Tratando-se de vínculo extemporâneo no CNIS será imprescindível o prévio tratamento de extemporaneidade por meio da ferramenta do CNIS, exceto no caso de APS com FERR/CNISVR desativado.</p>
+				<p>O cumprimento da pesquisa na forma em questão ficará registrado no relatório de auditoria.</p>
+				<h4>Cumprimento de Pesquisa</h4>
+				<p>Verificou-se que os períodos com cumprimento parcial de pesquisa diretamente no Prisma podem apresentar inconsistências em funcionalidades que não se encontram preparadas para lidar adequadamente com essa situação.</p>
+				<p>Diante disso, nas hipóteses em que é permitido o cumprimento de pesquisa diretamente no Prisma, não será permitido o cumprimento parcial do período; isto é, na tela “CUMPRIMENTO SOLICITACAO PESQUISA/REQUISICAO DILIGENCIA”, não será permitido que o valor do campo “DATA.INICIO.SP” tenha valor diferente do campo “DATA.INICIO.CUMPRIDA” ou que o campo “DATA.FIM.SP” tenha valor diferente do campo “DATA.FIM.CUMPRIDA”.</p>
+				<p>Nos casos que se fizer necessário cumprir a pesquisa apenas para parte do período, o período deve ser antes fracionado, por meio da ferramenta de fracionamento disponibilizada na versão PRISMA 9.4h1.</p>
+				<h4>Múltipla atividade</h4>
+				<p>Considerando que a comunicação PRISMA-SUB está limitada a 50 atividades no PBC, e considerando que as atividades secundárias (múltipla atividade) não estão sujeitas à consolidação na forma definida na Versão Prisma 9.4x1, na formatação de dados para o SUB o Prisma enviará as atividades secundárias ordenadas por ordem decrescente de duração.</p>
+				<p>A medida em questão pretende reduzir o impacto da limitação de atividades no SUB no cálculo da RMI, dado que as atividades secundárias de menor duração tendem a possuir menor expressividade no cálculo da RMI.</p>
+				<p>Exemplificando, dado um segurado com 10 atividades principais e 60 atividades secundárias, serão formatadas para o SUB as 10 atividades principais e mais as 40 atividades secundárias de maior duração, observada a limitação tecnológica de 50 atividades no total. Nesse caso, as 20 atividades secundárias de menor duração não serão consideradas no cálculo de RMI.</p>
+				<h4>Ações Civis Públicas</h4>
+				<h5>Inclusão de dois municípios válidos para utilização da ACP do LOAS de Chapecó/SC (ACP nº 50023509220134047202)</h5>
+				<p>A utilização da ACP 50023509220134047202, disponibilizada na Versão Prisma 9.4u, estará disponível também para segurados residentes nos municípios de Abelardo Luz e Águas de Chapecó, SC.</p>
+				<h5>Inclusão de três municípios válidos para utilização da ACP do LOAS da Subseção Judiciária de Florianópolis/SC (ACP n° 200372000011080)</h5>
+				<p>A utilização da ACP 200372000011080, disponibilizada noa Versão Prisma 9.5d (com modificações na Versão 9.5g e na Versão 9.5h), estará disponível também para segurados residentes nos municípios de Canelinha, Tijucas e São Joao Batista/SC.</p>
+				<h5>Concessão de Salário-maternidade (B80) para seguradas indígenas com idade inferior a 16 anos da etnia Wapixana (ACP nº 00045973220154014200)</h5>
+				<p>A fim de possibilitar a concessão de salário-maternidade (B80) às seguradas indígenas da etnia Wapixana com menos de 16 anos de idade, nos termos da ACP nº 00045973220154014200, serão inibidas as exigências automáticas “Salário Maternidade para Menor de 16 anos, só para Aluno Aprendiz” e “Segurado com idade entre 14 e 16 anos devera ser Aluno Aprendiz.”, mediante a informação do número de ACP em questão.</p>
+				<p>A utilização do número de ACP em questão deverá ocorrer exclusivamente nos casos de índias da etnia Wapixana, e somente será possível para seguradas residentes no estado de Roraima, em requerimentos a partir de 15/07/2016 habilitados em APSs vinculadas à Gex Boa Vista/RR (OLs 27001*).</p>
+				<h4>Revisão</h4>
+				<h5>Correção do formatador de dados de revisão – envio da quantidade de contribuições para efeito de manutenção de quota</h5>
+				<p>Corrigido formatador de benefícios na fase de revisão, que estava enviando indevidamente quantidade nula de contribuições para efeito de manutenção de cota, prejudicando o cálculo da duração de cota do cônjuge ou assemelhado, causando indevidamente extinção de cota em quatro meses.</p>
+				<p>Nos casos afetados pelo problema, a quantidade de contribuições era exibida com valor “999” na tela MOVCON.</p>
+			</section>
+		</article>
+	</body>
+</html>

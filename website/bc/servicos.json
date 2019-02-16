@@ -52,8 +52,8 @@
 	"sigla": "lo5x"
 }, {
 	"id": "14",
-	"nome": "LibreOffice 6.0",
-	"sigla": "lo60"
+	"nome": "LibreOffice 6.x",
+	"sigla": "lo6x"
 }, {
 	"id": "15",
 	"nome": "Tabelas e Índices Financeiros",
@@ -70,4 +70,8 @@
 	"id": "18",
 	"nome": "SABI",
 	"sigla": "sabi"
+}, {
+	"id": "19",
+	"nome": "SIBE",
+	"sigla": "sibe"
 }]

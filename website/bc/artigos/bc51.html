@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Relatório de vesão do Prisma 9.5i">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 9.5i do Prisma.">
+		<meta name="DC.Modified" content="2016-07-26T12:00-03:00">
+		<meta name="DC.Identifier" content="52">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="prisma,carencia,dip">
+		<meta name="DC.IsPartOf" content="I6">
+		<meta name="DC.Relation" content="aplicase prisma">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas nas versão 9.5i do Prisma, lançada em Julho de 2016.</p>
+			</section>
+			<section>
+				<h3>Demandas</h3>
+				<h4>Concessão de benefícios</h4>
+				<h5>Implementação da nova regra de exigência de carência após a perda de qualidade de segurado, instituída pela Medida Provisória n° 739/2016</h5>
+				<p>Nos requerimentos de auxílio-doença, aposentadoria por invalidez e salário-maternidade com fatos geradores a partir de 08/07/2016, data de publicação da Medida Provisória n° 739/2016, após a perda da qualidade de segurado será necessário o cumprimento do período integral de carência (quando aplicável), e não mais apenas 1/3 desse período.</p>
+				<p>Para indeferimento dos benefícios com fatos geradores a partir de 08/07/2016 não enquadrados no requisito de carência após perda de qualidade de segurado, foram criados os motivos de indeferimento a seguir relacionados:</p>
+				<ul>
+					<li>197 - Falta de periodo de carencia - MP 739/16 (benefícios por incapacidade);</li>
+					<li>198 - Falta de periodo de carencia - MP no. 739/16 (salário-maternidade).</li>
+				</ul>
+				<h5>Cálculo de DIP do auxílio-reclusão e salário-maternidade para segurados com remuneração após a data do fato gerador</h5>
+				<p>No menu de opções especiais encontra-se disponível o campo “Dt Ult Remun”, destinado a informar a data do último dia trabalhado ou data de última remuneração, a ser utilizada nos requerimentos de auxílio-reclusão e salário-maternidade nas hipóteses de atividade ou remuneração após a data do fato gerador.</p>
+				<p>No caso do salário-maternidade com afastamento após a data do fato gerador, a DIP deverá ser informada manualmente no dia imediatamente seguinte à data informada no campo “Dt Ult Remun”. No caso do auxílio-reclusão, a DIP será calculada automaticamente em data nunca anterior ao dia imediatamente seguinte à data informada no campo em questão, observadas as demais regras de cálculo de DIP.</p>
+				<p>No caso do benefício em fase de habilitação/concessão, o acesso ao campo “Dt Ult Remun” pode ser feito mediante os passos a seguir:</p>
+				<ul>
+					<li>Na tela de Habilitação/Concessão, pressione * (opção Opções Especiais).</li>
+					<li>Na tela Opções Especiais, preencha o campo 2 (Dt Ult Remun).</li>
+				</ul>
+				<p>Opção similar encontra-se no módulo de revisão de benefícios.</p>
+				<h5>Correção de defeito no cálculo do acréscimo à quantidade de meses de atividade rural para períodos de atividade como empregado rural entre 01/01/2016 e 31/12/2020 (Lei 11.718/2008)</h5>
+				<p>Corrigido cálculo do acréscimo à quantidade de meses de atividade rural para períodos de atividade de empregado rural entre 01/01/2016 e 31/12/2020. Trata-se do acréscimo instituído pela Lei 11.718/2008 e originalmente implementado na Versão Prisma 9.4h1, de 26/01/2012.</p>
+				<p>O problema consistia no fato de que no período de janeiro de 2016 a dezembro de 2020 o período de atividade como empregado rural (documento CTPS ou CTT) deve ser multiplicado por 2 na apuração de carência em meses de atividade rural. Antes dessa correção estava sendo aplicada a mesma multiplicação por 3, vigente para os períodos trabalhados entre janeiro de 2011 e dezembro de 2015.</p>
+				<h4>Perícia Médica</h4>
+				<h5>Alteração de perícia médica (AX1) do auxílio-acidente – solução da crítica “Dados de Avaliação médico-pericial Incompletos”</h5>
+				<p>Foram replicados no Módulo de Alteração (AX1) da Perícia Médica os mesmos campos implementados na Versão Prisma 9.5g, de forma a possibilitar a revisão de auxílio-acidente (B36 ou B94).</p>
+				<p>A implementação dos novos campos torna possível solucionar casos de crítica “Dados de Avaliação médico-pericial Incompletos” na revisão de benefícios de espécie 36 ou 94 a partir versão 9.5g.</p>
+			</section>
+		</article>
+	</body>
+</html>

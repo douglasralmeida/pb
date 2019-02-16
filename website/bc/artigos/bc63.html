@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">				
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+		<meta name="DC.Title" content="Notas de Versão do SABI 11.0">
+		<meta name="DC.Creator" content="Douglas Rodrigues de Almeida">
+		<meta name="DC.Description" content="Este artigo trata dos novos recursos e de correções incluídas na versão 11.0 do SABI.">
+		<meta name="DC.Modified" content="2017-04-04T07:00-03:00">
+		<meta name="DC.Identifier" content="63">
+		<meta name="DC.Type" content="Text">
+		<meta name="DC.Subject" content="sabi,controle do sabi,atendimento do sabi,pp,pedido de prorrogacao,sabiweb,bild,beneficio judicial">
+		<meta name="DC.IsPartOf" content="D6">
+		<meta name="DC.Relation" content="aplicase SABI">
+		<meta name="BC.NumRevisao" content="1">
+		<meta name="BC.estaDescontinuado" content="false">
+	</head>
+	<body>
+		<article>	
+			<section>				
+				<h3>Introdução</h3>
+				<p>Esse artigo trata dos novos recursos e das correções incluídas na versão 11.0 do SABI, lançadas em Abril de 2017.</p>
+			</section>
+			<section>				
+				<h3>Situações</h3>
+				<h4>BILD, MP 739/2016 e MP767/2017</h4>
+				<p>NECESSIDADE: Alterações no SABI para atender os processos de concessão e reativação judicial e os processos de revisão/atualização de benefícios por incapacidade de longa duração - BILD, em atendimento as MP's 739/2016 e 767/2017.</p>
+				<p>SOLUÇÃO: Incluído nas telas de concessão e reativação judicial o campo “Conclusão”. Neste campo caberão quatro possibilidades de conclusões:</p>
+				<ul>
+					<li>DCB informada pelo Juiz.
+						<p>Utilizar essa opção quando constar a DCB na sentença judicial.</p>
+						<p>Neste caso, será enviado ao SUB o tipo de conclusão “2”.</p>
+					</li>
+					<li>DCB não informada pelo Juiz.
+						<p>Utilizar essa opção quando não constar a DCB na sentença judicial</p>
+						<p>Nesta opção, o benefício será cessado automaticamente no prazo estipulado nas MP's 739/2016 e a 767/2017, sendo fixada a DCB em 120 dias da data da concessão ou reativação no SABI. Será enviado ao SUB o tipo de conclusão “2”.</p>
+					</li>
+					<li>NB impedido de cessar automaticamente/Sem DCB.
+						<p>Utilizar essa opção quando constar na sentença judicial impedimento de cessação no prazo estipulado nas MPs 739/2016 e a 767/2017.</p>
+						<p>Será enviado ao SUB o tipo de conclusão “4”.</p>
+					</li>
+					<li>Reabilitação Profissional.
+						<p>Utilizar essa opção quando constar na sentença judicial a indicação de encaminhamento à RP.</p>
+						<p>Será enviado ao SUB o tipo de conclusão “4”.</p>
+					</li>
+				</ul>
+				<p>O campo “Conclusão” é obrigatório para as espécies 31 e 91.</p>
+				<p>Será gerado laudo no SABI e enviado ao SUB nos casos de concessão e reativação judicial de benefícios de auxílio-doença (espécies 31 e 91).
+				<p>Criado o campo Fase na tela “Detalhes” TAB “Perícia”.</p>
+				<p>Criadas as fases 21 e 22.</p>
+				<ul>
+					<li>fase 21: Perícia Ordem Judicial. Esta fase será utilizada quando escolhida qualquer opção diferente de Reabilitação Profissional, no campo “Conclusão”.</li>
+					<li>fase 22: Perícia Ordem Judicial – RP. Esta fase será utilizada quando escolhida a opção Reabilitação Profissional no campo “Conclusão”.</li>
+				</ul>
+				<p>Na concessão judicial, constarão dois laudos no SABI:</p>
+				<ul>
+					<li>laudo 1.00, com status “Judicial”: laudo já gerado anteriormente pelo sistema.</li>
+					<li>laudo 1.00, com status “concluído”: novo laudo gerado no momento da inclusão do requerimento/benefício judicial.</li>
+				</ul>
+				<p>Na reativação judicial, constarão dois laudos no SABI:</p>
+				<ul>
+					<li>laudo 1.00, com status “Judicial”: laudo já gerado anteriormente pelo sistema.</li>
+					<li>laudo x.00 (x=n+1, onde “n” é o último laudo gravado para o benefício), com status “concluído”: novo laudo gerado no momento da reativação judicial.</li>
+				</ul>
+				<p>Este laudo será inserido com base nos dados informados na opção “Dados médicos”, lançados na concessão judicial ou com os dados constantes do benefício na reativação judicial.</p>
+				<ul>
+					<li>DRE: será a data da inclusão da ação no SABI, seja concessão ou reativação.</li>
+					<li>DID/DII: na concessão, o que informar nos respectivos campos da opção “Dados médicos” e não constando informação, serão preenchidos com a data de início do benefício (DIB). Na reativação, o que constar no laudo anterior.</li>
+					<li>Diagnóstico principal: na concessão: o que informar no campo “Diagnóstico” da opção “Dados médicos”, se não constar informação, apresentará em branco; na reativação: o que constar no laudo anterior.</li>
+					<li>DCB: conforme a escolha do campo “Conclusão”.</li>
+					<li>Médico(a) = em branco.</li>
+					<li>Fase: 21 (Perícia OJ) ou 22 (Perícia OJ-RP).</li>
+					<li>Matrícula: NULA. (Esse campo é visualizado no SUB/HISMED).</li>
+				</ul>
+				<p>No laudo com status judicial, somente constará DID/DII preenchidas se estas forem informadas na implantação judicial</p>
+				<p>No laudo com status concluído, sempre constará DID/DII preenchidas, seja por terem sido informadas na implantação judicial, ou fixadas na DIB ou ainda, no caso de reativação, utilizadas as datas do laudo anterior.</p>
+				<p>O laudo de fase 21, ao ser enviado ao SUB na reativação, gerará AB de cessação quando se tratar de tipo de conclusão “2”, com o motivo de cessação 33 (decisão judicial).</p>
+				<p>O laudo de fase 21 ou 22, ao ser enviado ao SUB, não gerará AB de reativação, independente do tipo de conclusão que tiver.</p>
+				<p>O laudo com fase 21 ou 22 com conclusão “4” não gerará AB de cessação.</p>
+				<p>O laudo de fase 21 ou 22, sendo o mais recente que constar no HISMED, o benefício não será cessado na rotina mensal e nem na maciça, quando se tratar de tipo de conclusão “4”.</p>
+				<p>O laudo de fase 21 aceitará a DCA e a data do próximo exame, normalmente.</p>
+				<p>No SUB, incluídos campos para gravar a informação da Reabilitação Profissional:</p>
+				<ul>
+					<li>MOVCON: “Indic. Reab. Prof.:” - Na tela da Perícia Médica, esse campo será preenchido com a informação do campo “Conclusão” – Sim ou Não.</li>
+					<li>HISATU: “RP:” Na segunda tela do detalhamento, esse campo será preenchido com “S” ou “N”, conforme informação do campo “Conclusão” – Sim ou Não.</li>
+					<li>INFBEN: “RP:” - Esse campo será preenchido com “S” ou “N”, conforme informação do MOVCON (CONCESSÃO) ou HISATU (REATIVAÇÃO);</li>
+				</lu>
+				<p>O campo “OL Manutenção” será de preenchimento obrigatório.</p>
+				<ul>
+					<li>na concessão terá que ser digitado.</li>
+					<li>na reativação será preenchido automaticamente com o OL que constar no benefício/requerimento. É recomendado que seja mantido o OL de manutenção do benefício.</li>
+				</ul>
+				<p>Mantida a obrigatoriedade de preenchimento das informações referentes à ação judicial, exclusivamente para os campos número do processo, número da vara, município e UF, que compõem a estrutura do CADJUD.</p>
+				<p>Desabilitado o serviço “Reabertura por decisão Judicial”.</p>
+				<p>Retirado o campo “Dt comprov. Incapacidade” da opção “Dados médicos”;</p>
+				<p>O prazo estipulado em medida provisória para cessação de benefícios (atualmente 120 dias), está parametrizado, (D+x=prazo a ser utilizado) para atender alterações legislativas.</p>
+				<p>ATENÇÃO: Na reativação judicial é enviado ao SUB o comando para reativar o benefício. Havendo a informação para cessar o benefício no campo “Conclusão”, o AB de cessação deverá ser automaticamente enviado em conjunto com o laudo criado. Sugerimos a verificação deste AB no SUB/HISATU após a reativação, e se identificado que não consta este AB de cessação, a APSADJ deverá comandar a cessação manualmente, na rotina normal hoje existente.</p>
+				<p>Incluídos na aba “Ordem Judicial” da opção “Detalhes”, os campos abaixo:</p>
+				<ul>
+					<li>Decisão: será preenchido com a opção escolhida no campo “Conclusão”.</li>
+					<li>DCB: será preenchido com a informação incluída no campo “Dt Cessação Benefício” do campo “Conclusão” ou com a data de cessação calculada se escolher a opção “DCB não informada pelo Juiz”.</li>
+					<li>Reabilitação Profissional: “S” ou “N”, conforme opção escolhida no campo Reabilitação Profissional do campo “Conclusão”.</li>
+					<li>OJ (Ordem Judicial): preenchido com um número gerado automaticamente pelo sistema. Esse número é gerado após uma ação judicial, seja de concessão, reativação, revisão, TBM ou povoamento.</li>
+					<li>Criado o campo “Data Exame Jud.” na tela “Detalhes” Tab “Ordem Judicial”: a data informada na opção “Marcação de Exame para Revisão de Benefício Judicial”, vinculada a primeira ordem judicial gerada para o benefício.< /li>
+				</ul>
+				<p>Alterado o prazo de geração do alerta de pendência de retorno para reavaliação judicial de 150 dias para 30 dias, sendo a marca retirada após a realização de perícia médica.</p>
+				<p>A regra para apresentar o benefício na situação de exames pendentes de retorno no módulo Controle Operacional, na pesquisa da Carteira “Ord. Jud. Pend. Exame retorno”, será:</p>
+				<ul>
+					<li>Status do benefício manutenção, com DCB/DCA nulas;</li>
+					<li>Judicial: seja concessão ou reativação;</li>
+					<li>Espécies: 31 ou 91;</li>
+					<li>Data da perícia judicial (DRE do laudo judicial) anterior a 30 dias da data atual;</li>
+					<li>Última perícia do INSS anterior a 02/09/2016 e, se posterior, apenas se tiver havido reativação judicial após esta perícia;</li>
+					<li>DRE (laudo fase = 21 ou 22) maior ou igual a 02/09/2016;</li>
+					<li>não existe laudo (seja laudo médico ou laudo fase = 21 ou 22);</li>
+				</ul>
+				<p>Para apresentar o alerta de retorno de exame judicial serão utilizados os dados da ordem judicial (OJ) mais recente;</p>
+				<p>Grid de “Exames Judiciais” no módulo Atendimento Médico:</p>
+				<ul>
+					<li>Inserida a opção de Pesquisa de Requerente. Nesta tela, foram incluídos os campos NIT e CPF.</li>
+					<li>Na lista dos benefícios pendentes de exame de retorno, somente serão apresentados os casos que deverão passar por perícia médica, conforme as regras informadas acima ou com a data da “marcação de exame para Revisão de Benefício Judicial” igual ou maior que a data atual.</li>
+					<li>No laudo de retorno de exame judicial, excluída a tela “Quesitos Judiciais”.</li>
+					<li>No laudo de retorno de exame judicial, serão exibidas as informações técnicas (DID, DII e CID), conforme constar na concessão/reativação judicial.</li>
+					<ul>
+						<li>Se a DID e DII não estiverem preenchidas, serão preenchidas automaticamente com a DIB.</li>
+						<li>Se a CID estiver nula, terá que ser preenchida pelo perito médico.</li>
+					</ul>
+					<li>Na conclusão do laudo de retorno de exame judicial, não gerará a pendência “Parecer da Procuradoria”, sendo finalizado com base na decisão informada. As pendências existentes terão de ser concluídas manualmente, conforme procedimentos anterior à versão;</li>
+				</ul>
+				<p>Grid de Revisão Analítica:</p>
+				<ul>
+					<li>Na lista dos benefícios que podem ser revisados, foi incluída a cor “verde” para diferenciar os requerimentos/benefícios judiciais, como já ocorre no módulo Controle Operacional.</li>
+					<li>Somente constarão na lista os benefícios que já tiveram perícias médicas concluídas, e ainda que concluídas em outro sistema.</li>
+					<li>Caso não exista perícia médica concluída, será exibida a frase: “Requerente sem laudo concluído”.</li>
+				</ul>
+				<p>Será permitida revisão médica no módulo Controle Operacional em benefícios judiciais se tiver perícia médica concluída.</p>
+				<p>Será permitido o restabelecimento de benefícios judiciais se tiver perícia médica concluída e estiver cessado por um dos seguintes motivos: 09, 12, 25, 44, 54, 51 e 95. Se estiver cessado pelo motivo 33, não permitirá restabelecer.</p>
+				<p>Pedido de Prorrogação em benefícios concedidos ou reativados por decisão judicial</p>
+				<ul>
+					<li>Será permitido o requerimento de Pedido de Prorrogação para benefícios judiciais, tendo ou não perícia médica concluída.</li>
+					<li>Se houver perícia médico do INSS, utilizará a DCB do laudo para validar as regras de admissibilidade do PP.</li>
+					<li>Se não houver, utilizará a DCB do benefício para validar as regras de admissibilidade do PP</li>
+					<li>Criado os serviços médicos listados abaixo, para identificar os protocolos de PP em benefícios sem perícia médica concluída:</li>
+					<ul>
+						<li>Perícia de PP – Judicial (PPJ)</li>
+						<li>Perícia domiciliar/hospitalar de PP – Judicial (PPJH)</li>
+						<li>Perícia de PR – Judicial (PRJ) (Não será utilizado devido a exclusão do PR)</li>
+						<li>Perícia domiciliar/hospitalar de PR – Judicial (PRJH) (Não será utilizado devido à exclusão do PR)</li>
+					</ul>
+					<li>Esses serviços deverão ser atribuídos pelo SST aos profissionais que atenderão as perícias.</li>
+					<li>Os agendamentos destes serviços poderão ser marcados, remarcados ou transferidos.</li>
+					<li>Nos requerimentos de PP em benefícios concedidos/reativados após a versão 11.0 e com DCB fixada, considerando que para esses requerimentos será gerado laudo fase 21,  a rotina da DCA será processada normalmente, via agendamento, conclusão de  perícia ou cancelamento do requerimento.</li>
+					<li>Para os casos passivos concedidos/reativados anteriormente à versão e que não possua qualquer laudo, embora  o campo DCA seja corretamente preenchido no SABI, essa informação não será processada no SUB.  Desta forma,  o benefício continuará com a DCB informada anteriormente.</li>
+					<ul>
+						<li>Nesta situação, deve-se reativar, se for o caso, o benefício pelo motivo 04 e cessá-lo pelo motivo 25 na data da DCA (DM.065661).</li>
+					</ul>
+					<li>Quando da avaliação pericial deste requerimento de PP sem perícia médica concluída, se caso não constar a CID preenchida o perito médico deverá informá-la,  e está  não terá  efeitos para conceder novo benefício, apenas prorrogará ou não, conforme a decisão médica, o próprio benefício.</li>
+				</ul>
+				<p>Na transferência de benefício em manutenção (TBM) ou povoamento serão gravados o número da ação judicial e dados complementares (vara, município e UF), conforme informação do RELJUD/SUB.</p>
+				<ul>
+					<li>Se os dados forem os mesmos que já constam no SABI, estes serão descartados</li>
+					<li>Se os dados forem diferentes (ou não houver dados no SABI), estes serão utilizados para criar uma ordem/laudo judicial.  Quando se tratar de reativação, a DRE do laudo judicial será a data da reativação  e não a data do processamento da reativação judicial. Quando tratar de concessão a DRE do laudo judicial será a DER.</li>
+					<li>Implementada a geração do alerta judicial na TBM ou povoamento.</li>
+				</ul>
+				<p>Mostrará o NB GERADO para os benefícios judiciais, na tela dos detalhes aba “Requerimento”, igual faz para o NB administrativo.</p>
+				<p>Criado o campo “OJ” na tela “Detalhes” Tab “Perícia”: constará o mesmo dado do campo OJ do TAB “Ordem Judicial”.</p>
+				<p>Corrigido o processamento da revisão com ordem judicial em benefícios com mais de 600 remunerações. </p>
+				<p>Tratado os campos “Parentesco”, “UF” e “Termo de Compromisso”  do TAB “REPRESENTANTE” do requerimento de benefício Judicial, que estava apresentando a descrição “cbofam”.</p>
+				<p>A versão 11.0 contempla somente a marcação para Reabilitação Profissional, e envio desta informação ao SUB, seja via concessão ou reativação.</p>
+				<ul>
+					<li>Para os casos com a marca da RP, pós versão, não será possível realizar perícia médica de desligamento da RP.</li>
+					<li>Até disponibilização da perícia de RP em nova versão, o processo da RP será realizado manualmente e ocorrendo o desligamento deverá cessar o benefício administrativamente, podendo ser utilizado motivo de cessação 25.</li>
+					<li>Os casos que já estão em reabilitação ou que foram encaminhados à RP via perícia médica poderão ser realizadas as perícias de desligamento normalmente, ocorrendo a cessação do benefício, conforme a decisão da perícia médica enviada ao SUB.</li>
+				</ul>
+				<p>ATENÇÃO: Considerando as novas implementações no SABI para cabimento de solicitação de PP em benefícios judiciais e para que ocorra o processamento correto da DCA, orientamos que ações em atendimento das sentenças judiciais das espécies 31, 91, 32, 92, 36, 94 e 96 (concessão e reativação) sejam realizadas neste sistema (SABI). Evitar as concessões judiciais destas espécies no PRISMA e reativações via PRISMA ou REATNB.</p>
+				<p>No  campo Fase  na tela  “Detalhes”  TAB “Perícia” constará  a descrição e não o número da fase, conforme tabela abaixo:</p>
+				<table>
+					<thead>
+						<tr><td>Nº</td><td>DESCRIÇÃO</td></tr>
+					</thead>
+					<tbody>
+						<tr><td>0</td><td>Normal</td></tr>
+						<tr><td>1</td><td>PR</td></tr>
+						<tr><td>2</td><td>Recurso</td></tr>
+						<tr><td>3</td><td>CRPS</td></tr>
+						<tr><td>4</td><td>Revisão Médica</td></tr>
+						<tr><td>5</td><td>Alta a Pedido</td></tr>
+						<tr><td>6</td><td>Encaminhamento a RP</td></tr>
+						<tr><td>7</td><td>Desligamento da RP</td></tr>
+						<tr><td>8</td><td>Permanência na RP</td></tr>
+						<tr><td>9</td><td>Reestabelecimento do Benefício Anterior</td></tr>
+						<tr><td>10</td><td>Revisão BPC</td></tr>
+						<tr><td>11</td><td>R2</td></tr>
+						<tr><td>12</td><td>PP</td></tr>
+						<tr><td>13</td><td>Revisão de Acordo Internacional</td></tr>
+						<tr><td>14</td><td>Revisão Bienal</td></tr>
+						<tr><td>15</td><td>Recurso da Revisão Bienal</td></tr>
+						<tr><td>16</td><td>Perícia Média de Instrução do Recurso</td></tr>
+						<tr><td>17</td><td>PM Pos AE</td></tr>
+						<tr><td>18</td><td>PM Pos AE S/Reg</td></tr>
+						<tr><td>19</td><td>AE</td></tr>
+						<tr><td>20</td><td>AD</td></tr>
+						<tr><td>21</td><td>Perícia Ordem Judicial</td></tr>
+						<tr><td>22</td><td>Perícia Ordem Judicial - RP</td></tr>
+					</tbody>
+				</table>
+				<h4>Adequação do SABI para acesso dos médicos peritos nas JR</h4>
+				<p>NECESSIDADE: Permitir aos Peritos Médicos que atuam nas Juntas de Recurso a realização de revisões de benefícios, com implantação das decisões de recurso.</p>
+				<p>SOLUÇÃO: Criado o perfil/TIPO  “Assistente Técnico Médico – JRPS”, código 15.</p>
+				<p>Apresentará na tela “ASSIST TEC MEDICO”</p>
+				<p>Criado o grupo “Atendimento Médico JRPS (ATM)”, código 37.</p>
+				<p>Esse perfil terá acesso ao módulo Atendimento Médico para realizar somente  “Revisão Analítica” e “Recurso”, com acesso em todas as APS (abrangência Nacional).</p>
+				<p>O perfil ASSIST TEC MEDICO  terá acesso ao módulo Controle Operacional, para realizar consultas, com acesso em todas as APS (abrangência Nacional).</p>
+				<p>Esse perfil não poderá realizar laudo no módulo Controle Operacional, somente consultá-los.</p>
+				<p>Retirada a obrigatoriedade do segundo médico nos exames das perícias de Recurso – Atendimento Médico  ou  Controle Operacional. As demais regras permanecem inalteradas.</p>
+				<p>Os peritos com esse perfil não serão considerados nas ações de marcação/remarcação e transferência de agendamento nas APS que efetivamente estavam lotados;</p>
+				<h4>Adequação do SABI para atendimento ao ofício 89/2015 DPU – RS</h4>
+				<p>PROBLEMA: Necesidade de atender ao solicitado no Ofício nº 89/DPU – RS/OFDHTC – RS, de 10/12/2015</p>
+				<p>SOLUÇÃO: Alterada a tela de Requerimento do módulo Atendimento ao Cliente e o relatório do Requerimento/Agendamento para apresentar “Benefício por Incapacidade”, onde apresentava “Auxílio-doença”.</p>
+				<p>Alteradas todas as telas do Requerimento de AX1 e o relatório do Requerimento/Agendamento para apresentar “Benefício por Incapacidade”, onde apresentava “Auxílio-doença”.</p>
+				<h4>Adequação do SABI para atender o novo pregão da folha de pagamentos</h4>
+				<p>NECESSIDADE: Alterações no SABI para atender ao novo pregão da folha de pagamento de benefícios – Pregão 2.</p>
+				<p>SOLUÇÃO: Alterada a rotina de povoamento das microrregiões e OP’s para receber os dados vinculados ao Pregão 2.</p>
+				<p>Na opção de recebimento em “conta corrente” também apresentará os OP’s com código CAR zerados.</p>
+				<p>No SABI-WEB, alterada a tela “Seleção da Agência Bancária” para reposicionar os campos Município, Bairro, Instituição Bancária e Agência Bancária.</p>
+				<p>A rotina de “empresas convenentes” não teve alteração referente ao Pregão.</p>
+				<h4>Gerão de Login automático</h4>
+				<p>NECESSIDADE: Alterações no SABI para geração automática do LOGIN a partir dos dados informados no cadastramento.</p>
+				<p>SOLUÇÃO: Alterada a tela de Inclusão de Usuário, no módulo SADS, para que seja gerado o login automaticamente, utilizando a UF e a matrícula informadas.</p>
+				<p>Para o perfil/TIPO “Credenciado”, o login será a letra “C” e a matrícula.</p>
+				<p>Para os usuários com perfil/TIPO “Outros” ou “Auditoria Geral ADM ou MED”, não será  permitida a inclusão direta destes usuários. Se tentar cadastrar, apresentará a mensagem: “Cadastre o servidor com o Tipo diferente do escolhido”.</p>
+				<p>Somente permitirá a alteração do tipo de usuário para estes tipos.</p>
+				<h4>Correção na fixação do tratamento do segurado especial</h4>
+				<p>NECESSIDAE: Alterações no SABI para que fixe tratamento 80 para a categoria de segurado especial, sem contribuição facultativa</p>
+				<p>SOLUÇÃO: Corrigida a rotina de fixação de tratamento para que nos casos de categoria “Segurado Especial” ( Ramo de Atividade “8”, Forma de Filiação “7”- RAFF 87), seja fixado tratamento 80.</p>
+				<p>No botão DIB/DIP/GCONT, recalculará o TRATAMENTO e o RAMO DE ATIVIDADE do benefício.</p>
+				<p>O SUB não criticará mais a RAFF 99.</p>
+				<p>Caso o benefício esteja com a Crítica II:  “1063 – AGUARDANDO ADEQUACAO DO SISTEMA”, clique no botão DIB/DIP/CGONT para recalcular o tratamento. Corrigido o tratamento, retransmita a crítica II, se devida a concessão.</p>
+				<h4>Extinção do PR e alteração do prazo para PP</h4>
+				<p>NECESSIDADE: Para cumprir a Portaria n° 152/MDSA, de 25/08/2016, faz-se necessário extinguir a possibilidade de registro de novos Pedidos de Reconsideração - PR e ajustar o prazo para realização do Pedido de Prorrogação - PP.</p>
+				<p>SOLUÇÃO: A extinção do PR e a alteração do prazo para o PP, foram liberadas para produção em 02/09/2016.</p>
+				<p>Nesta versão estão sendo tratadas as telas do SABI-WEB e SABI-APS para não apresentar mais a opção de requerimento e textos referentes ao Pedido de Reconsideração - PR.</p>
+				<p>Retirado da opção “Exames” a consulta “Exames de Pedido de Reconsideração”, no módulo Atendimento Médico.</p>
+				<p>A extinção do PR foi parametrizada por OL.</p>
+				<h4>Adequação do SABI para permitir imprimir a 2ª via da CRER para o motivo de indeferimento 133 – “Não comparecimento para concluir o exame médico pericial"</h4>
+				<p>PROBLEMA: O SABI não permitia a impressão da 2ª via da CRER correspondente.</p>
+				<p>SOLUÇÃO: Será possível a impressão da 2ª via da CRER para o motivo de indeferimento 133 - “Não comparecimento do segurado para concluir exame médico pericial”.</p>
+				<p>Na impressão do laudo que está pendente por SIMA, no campo “Resultado” constará: “Este laudo está pendente por SIMA”.</p>
+				<h4>Adequação do SABI para disponibilizar motivo de indeferimento de aposentadoria por invalidez</h4>
+				<p>NECESSIDAE: Disponibilizar motivo de indeferimento para aposentadoria por invalidez, quando constatado na concessão inicial, que o segurado não possui a carência para o benefício.</p>
+				<p>SOLUÇÃO: Disponibilizado os motivos abaixo, para permitir indeferir um benefício de aposentadoria por invalidez, seja espécie 32 ou 92, desde que esteja em Crítica II.</p>
+				<p>Motivo de falta de carência:</p>
+				<ul>
+					<li>falta de período de carência: motivo de indeferimento 69.</li>
+					<li>falta de período de carência MP 739/16: motivo de indeferimento 197.</li>
+					<li>falta de período de carência MP 767/2017: motivo de indeferimento 199.</li>
+				</ul>
+				<h4>Adequação do SABI para integração com o sistema de Comunicação de Acidente de Trabalho - CAT em plataforma baixa</h4>
+				<p>PROBLEMA: Verificou-se a necessidade da alteração do sistema de Comunicação de Acidente de Trabalho – CAT para a plataforma baixa.</p>
+				<p>SOLUÇÃO: Alterada a rotina de povoamento da CAT para obter os dados da CAT na plataforma baixa.</p>
+				<p>Na tela da CAT ocorreram as seguintes alterações:</p>
+				<ul>
+					<li>O nome do campo “Data Afastamento” alterado para “Data do Último dia de Trabalho”.</li>
+					<li>O número da CAT é obrigatório</li>
+					<li>Desabilitado o botão “comunicação”.</li>
+					<li>Alterada a frase que aparecia enquanto aguardava o retorno do SUB, para “Aguarde término da conexão”, considerando que não haverá mais comunicação com o SUB.</li>
+					<li>Tratada a tela de erro que ocorria na comunicação com o CNIS para segurados que possuía benefícios anteriores com CAT associada.</li>
+				</ul>
+				<h4>Parametrização do agendamento de perícia médica no SABI-APS nas remarcações e transferências</h4>
+				<p>PROBLEMA: Verificou-se a necessidade de parametrizar a quantidade de remarcações/transferências de agendamento de perícia  médica.</p>
+				<p>SOLUÇÃO: Parametrizado por OL/APS:</p>
+				<ul>
+					<li>A quantidade de remarcações/transferências por solicitante</li>
+					<li>O prazo de espera para buscar a primeira vaga disponível da agenda médica</li>
+				</ul>
+				<p>Para o SABI-APS, será possível definir a quantidade de remarcações por solicitante e o prazo de espera</p>
+				<p>Para o SABI-WEB, será possível definir qual o solicitante (INSS ou SEGURADO) para determinado período e, posteriormente, será verificada a quantidade por solicitante e o prazo de espera</p>
+				<p>Na marcação/remarcação/transferência de agendamento de requerimento de “Empregado” para data anterior ao período pago pela empresa, apresentará a mensagem: “Não é permitida a marcação/remarcação/transferência da Perícia Médica de requerimento de segurado Empregado para data anterior ao “yy” dia da DAT. O agendamento foi realizado para dd/mm/aaaa!”, onde “yy” é dia posterior ao período pago pela empresa (atualmente, o 16º dia).</p>
+				<p>Quanto a frase apresentada, que informa a quantidade de remarcações/transferências ainda existentes para o solicitante “segurado ou INSS”,  está será apresentada quando a diferença entre a quantidade permitida e a utilizada (histórico de alterações) for:</p>
+				<ul>
+					<li>INSS: diferença <= 3 (menor ou igual a três).</li>
+					<li>SEGURADO: diferença = 1 (igual a um).</li>
+				</ul>
+				<p>Somente permitirá a marcação/remarcação/transferência de agendamento de perícia médica se não tiver laudo associado ao requerimento que está sendo utilizado, exceto o agendamento de R2.</p>
+				<h4>Adequação do SABI para inativar a ACP nº 080351883.2016.405.8000/AL</h4>
+				<p>PROBLEMA: Em razão da suspensão da decisão liminar proferida na Ação Civil Pública nº 080351883.2016.405.8000/AL, faz-se necessária a desativação dessa Ação Civil Pública.</p>
+				<p>SOLUÇÃO: Desativada a Ação Civil Pública nº 0803518-83.2016.405.8000/AL.</p>
+				<h4>Adequações referente a categoria de Empregado Doméstico</h4>
+				<p>PROBLEMA: Após a implementação no Portal Cnis para tratar as informações do eSocial referente aos empregados domésticos, será necessária alterações no SABI para também tratar estas informações.</p>
+				<p>SOLUÇÃO: Até que seja possível o tratamento automático das informações dos empregados domésticos oriundas do eSocial, os requerimentos com categoria de empregado doméstico entrará na rotina de geração de alerta de “Vínculos e Remunerações divergentes do CNIS”. Desta forma, os requerimentos não serão indeferidos automaticamente após a realização da perícia médica.</p>
+				<p>Será possível informar os períodos de atividade de doméstico, com início posterior a 01/06/2015 e suas respectivas renumerações no módulo Atendimento ao Cliente no momento do tratamento da pendência de vínculos e remunerações divergentes.</p>
+				<p>Apesar de constar as informações de vínculos e remunerações no CNIS, quando incluir no SABI será como períodos de atividade e contribuições, com necessidade de informar a primeira competência paga em dia.</p>
+				<h4>Adequações na Ferramenta de Suporte</h4>
+				<p>PROBLEMA: Verificou-se a necessidade de incluir novas funcionalidades a ferramenta de suporte.</p>
+				<p>SOLUÇÃO: Incluída a opção “Alterar tipo de Requerimento”: Permite alterar o tipo de requerimento de PR para PP e vice-versa.</p>
+				<p>Incluídas duas opções:</p>
+				<ul>
+					<li>“Incluir dados Judiciais”.</li>
+					<li>“Alterar dados Judiciais”.</li>
+				</ul>
+				<p>Na opção “Alterar status do requerimento”, serão apresentados todos os motivos de indeferimento em ordem alfabética e o número do motivo no SUB.</p>
+				<p>Na opção “Reprocessar Laudo” , incluída rotina preenchimento da DCB do benefício com a informação do laudo, no caso de laudo com status “importado”.</p>
+				<h4>Adequação de rotinas que apresentavam inconsistências</h4>
+				<p>PROBLEMA: Necessidade de alterações em rotinas do sistema para corrigir inconsistências apresentadas.</p>
+				<p>SOLUÇÃO: Laudo Pendente por SIMA:</p>
+				<ul>
+					<li>Correção na alteração de CID no PP para concessão de novo benefício</li>
+					<li>Os casos passivos poderão ser tratados via Consultar ou mediante cancelamento do requerimento com status “normal” e laudo com status “pendente”, bem como protocolo de outro requerimento (com garantia de DER) e lançamento, neste novo requerimento, da perícia médica já realizada.</li>
+					<li>Correção para não gravar a DCB no laudo quando este for indeferido</li>
+				</ul>
+				<p>Restabelecimento e concessão de novo benefício:</p>
+				<ul>
+					<li>Implementada a Regra:</li>
+					<ul>
+						<li>Mesmo subgrupo de CID e mesma espécie:</li>
+						<ul>
+							<li>DIB dentro de 60 dias da DCB anterior – restabelece.</li>
+							<li>DIB após 60 dias da DCB anterior – concede novo</li>
+						</ul>
+						<li>Subgrupo de CID diferente – concede novo</li>
+						<li>Espécie diferente – concede novo.</li>
+					</ul>
+					<li>Requerimento de PP não restabelece, somente concede novo.</li>
+					<li>Corrigida situação de restabelecimento de NB posterior</li>
+					<li>Somente poderá restabelecer o NB anterior no momento do processamento da concessão do novo benefício. Assim, se o  beneficio posterior já estiver concedido, não irá mais restabelecer o NB anterior</li>
+					<li>Criado o campo “NB Reaberto” no TAB “Perícia”, opção “Detalhes”.</li>
+				</ul>
+				<p>Recurso Médico:</p>
+				<ul>
+					<li>Status “Aguard Parecer CO” não será mais gerado, seja para conclusão favorável ao INSS ou ao Segurado.</li>
+					<li>Os casos passivos deverão ser tratados via Consultar.</li>
+					<li>Tratada a tela de erro (Erro passo 12) que ocorria na conclusão do laudo de Recurso, quando as descrições nos campos do laudo alcançavam o limite permitido.</li>
+				</ul>
+				<p>Majoração de 25%:</p>
+				<ul>
+					<li>Corrigidos os erros que impediam a definição de majoração no SABI</li>
+					<li>Na conclusão da perícia de majoração solicitada pelo interessado, será gerado o alerta de “Pendente de Parecer de Majoração”.</li>
+					<li>Corrigida a situação de alteração indevida do status do requerimento para indeferido, no caso de parecer Favorável</li>
+					<li>Habilitado o botão “novo exame” do laudo no módulo Controle Operacional.</li>
+				</ul>
+				<p>TBM:</p>
+				<ul>
+					<li>Benefício com mais de 3 laudos: O SUB envia os 3 laudos mais recentes. No SABI constarão os laudos a partir do 2.00, pois o laudo 1.00 não foi enviado pelo SUB.</li>
+					<li>As rotinas de TBM estão sendo ajustadas. No caso de mensagem de erro na TBM (“O pedido de povoamento retornou com erro. Verifique detalhes no Controle Operacional” ou “O povoamento não pode ser completado. Não foi possível preencher Tabelas”), sem a apresentação do beneficio na carteira no módulo Controle Operacional, verificar se há retorno de “ERRO INESPERADO NA ATUALIZAÇÃO” (pesquisar NB na opção “Importar Benefício”). Em caso positivo, retransmitir a crítica. Retornando o mesmo erro, realizar a “triangulação” entre Agências para concluir a TBM com sucesso.</li>
+				</ul>
+				<p>Link para imprimir a CRER:</p>
+				<ul>
+					<li>Sempre que não for possível apresentar a CRER, apresentará as seguintes mensagens:</li>
+					<ul>
+						<li>Banco de dados: Compareça a uma Agência da Previdência Social para regularização de dados.</li>
+						<li>SABI-WEB: Compareça a uma Agência da Previdência Social para regularização de dados.</li>
+					</ul>
+				</ul>
+				<p>DCA:</p>
+				<ul>
+					<li>Correção na rotina de Cancelamento, nos casos em que o requerimento de PP é cancelado antes da DCB e DCA.</li>
+					<li>Correção na rotina de remarcação nos casos em que a remarcação é concluída para data anterior à DCB e à DCA.</li>
+				</ul>
+				<p>“C vermelho”:</p>
+				<ul>
+					<li>Requerimento sem DER (Erro RUNTIME 13): Apresentará a mensagem informativa: “DER e DRD estão nulas. Contacte o Suporte”, sem “fechar” o sistema.</li>
+					<li>Os casos serão tratados via Consultar, conforme já orientado atualmente.</li>
+				</ul>
+				<p>Revisão:</p>
+				<ul>
+					<li>Revisão Médica: habilitado o botão “Revisão” do laudo no módulo Controle Operacional.</li>
+					<li>Revisão Bienal: habilitado o botão “novo exame” do laudo no módulo Controle Operacional.</li>
+				</ul>
+				<p>Reabertura:</p>
+				<ul>
+					<li>Incluído os motivos de indeferido das MPs 739/16 e MP 767/2017 (Falta de Carência).</li>
+					<li>Corrigida a rotina para permitir a reabertura nestes motivos de indeferimento.</li>
+				</ul>
+				<p>Povoamento:</p>
+				<ul>
+					<li>Corrigida a rotina para atualizar o status do requerimento no povoamento quando há benefício concedido no SUB e o status deste requerimento está indevidamente “indeferido” ou “normal” no SABI.</li>
+				</ul>
+				<p>DII:</p>
+				<ul>
+					<li>Corrigida a rotina de cálculo da carência para não considerar a DII para completar as 12 contribuições, nas situações em que não couber.</li>
+					<li>Corrigida a rotina de cálculo da carência para considerar os períodos dos vínculos empregatícios após a cessação do benefício anterior.</li>
+					<li>Corrigida a rotina de fixação da DIB, para fixar a DIB na DER somente se a DER recair no 31º em diante da DII.</li>
+				</ul>
+				<p>Crítica II: MOTIVO DO DESPACHO INVALIDO</p>
+				<ul>
+					<li>Na concessão do benefício via Revisão Administrativa, Revisão Médica ou Recurso, será enviado o motivo do despacho, para não gerar a crítica.</li>
+				</ul>
+				<p>Caso a categoria não esteja preenchida, não apresentará a mensagem  para o perito: “Trata-se de empregado, incluir a DUT”.</p>
+				<p>Poderá apresentar a DII do Benefício, mesmo para o benefício “indeferido”.</p>
+				<p>Na homologação do período rural, quando escolher a opção para visualizar a Entrevista Rural, o campo “Estado Civil” estará preenchido com o que foi informado na Entrevista.</p>
+				<h4>Alterações realizadas via Banco de Dados entre Outubro/2016 e Fevereiro/2017</h4>
+				<p>SITUAÇÃO: Foram liberadas implementações entre Outubro/2016 e Fevereiro/2017, via banco de dados, conforme abaixo:</p>
+				<p>SOLUÇÃO:  ITEM LIBERADO EM 13/10/2016 - Adequação do processo de povoamento e TBM de benefícios com decisão judicial no SUB:</p>
+				<p>Alterado o layout de comunicação entre SUB e SABI, para processos de TBM e povoamento, de forma a transmitir todos os dados disponíveis do cadastro da ação judicial vinculada ao benefício.</p>
+				<p>ITEM LIBERADO EM 20/10/2016 - Criticar concessões/revisões de benefícios com categoria de Segurado Especial com tratamento 13, para evitar cálculo do PBC incorreto para a categoria:</p>
+				<p>Criada à crítica II: “1063 - AGUARDANDO ADEQUACAO DO SISTEMA”: Esta crítica será gerada quando o beneficio for da categoria de segurado especial (RAFF 87) com tratamento 13 e houver vínculos no período básico de cálculo (PBC) com períodos de atividade diferente de segurado especial.</p>
+				<p>ITEM LIBERADO EM 11/11/2016 - Retirada das regras de carência instituída pela MP 739/2016: Retornada a regra de cômputo de contribuições anteriores à perda da qualidade de segurado, para efeito de carência depois que o segurado contar, a partir da nova filiação à Previdência Social, com no mínimo 04 contribuições, para benefícios B31 e B32, com fato gerador (DII) ocorrido a partir de 05.11.2016.</p>
+				<p>ITENS LIBERADOS EM 22/12/2016 - Adequação no SUB das correspondências de auxílio-doença considerando as modificações decorrentes da Portaria n° 152/MDSA: Ajustadas as correspondências em questão, de forma a suprimir as menções ao Pedido de Reconsideração - PR e ao prazo para PP conforme os termos da Portaria n° 152/MDSA.</p>
+				<p>Implementar a ACP de Alagoas nº 0803518-83.2016.405.8000/AL: Disponibilizada a ACP nº 0803518-83.2016.405.8000/AL para todo o Estado de Alagoas, com agenda médica superior a 45 dias, nos mesmos moldes da ACP do RS.</p>
+				<p>ITEM LIBERADO EM 02/02/2017 - Adequação à regra de carência instituída pela MP 767/2017:</p>
+				<p>Alterada a rotina de verificação de carência nos casos de fato gerador (DII) a partir de 06.01.2017, para considerar o novo período completo de carência com  12 contribuições.</p>
+				<p>Períodos para recuperar a carência, após a perda da qualidade de segurado, com base na data da fixação do fato gerador (DII):</p>
+				<ul>
+					<li>Até 07/07/2016 (anterior à vigência da MP 739/2016) – 1/3 das contribuições (4 competências).</li>
+					<li>De 08/07/2016 a 04/11/2016 (vigência da MP 739/2016) – 12 contribuições (12 competências).</li>
+					<li>De 05/11/2016 a 05/01/2017 (posterior à vigência da MP 739/2016) – 1/3 das contribuições (4 competências).</li>
+					<li>A partir de 06/01/2017 (vigência da MP 767/2017) – 12 contribuições (12 competências)</li>
+				</ul>
+				<p>Criado o motivo de indeferimento: “199 – Falta de período de carência – MP 767/2017”.</p>
+				<p>Criada a Carta de indeferimento para o motivo 199, nos sistemas SABI e SUB.</p>
+				<h4>Alterações realizadas via Banco de Dados desde a Versão 10.02.04 até a 10.02.08</h4>
+				<p>SITUAÇÃO: Foram liberadas implementações e correções entre Junho/2016 e setembro/2016, via banco de dados, conforme abaixo:</p>
+				<p>SOLUÇÃO: ITENS LIBERADOS NA VERSÃO 10.2.4 DE BANCO DE DADOS – em 28/06/2016:</p>
+				<p>ACP PE: Disponibilizada a ACP de Pernambuco, nos mesmos moldes da ACP de Sergipe, em relação à prorrogação do benefício.</p>
+				<p>Correções:</p>
+				<ul>
+					<li>cálculo da DII do benefício - não deve ser recalculada se a mesma estiver preenchida, exceto para os seguintes requerimentos: AX1, PR de AX1 indeferido, Revisão médica, Revisão analítica ou Recurso médico de AX1 indeferido.</li>
+					<li>implementação do cálculo da DIB após revisão analítica.</li>
+					<li>alteração da DAA para data futura.</li>
+					<li>gravação do requerimento de PP para a ACP de SERGIPE.</li>
+					<li>link de remarcação da Central 135 – retorno da remarcação para solicitante “segurado” e sem limite de remarcações.</li>
+					<li>envio do PRICON: envio de contribuições em períodos de segurado especial – o identificador interno do vínculo coincidia com o Número de Beneficio existente.</li>
+					<li>retorno da rotina de indeferimento por não comparecimento para cumprir SIMA, com inclusão do requerimento de revisão bienal e melhoria no desempenho.</li>
+					<li>retorno da rotina de cancelamento sem agendamento em 125 dias.</li>
+					<li>observância da DCB do NB anterior para os casos de solicitação de novo AX1, independentemente do status do benefício.</li>
+					<li>na rotina de novo requerimento de AX1, desconsiderar os requerimentos de recurso e revisão no NB anterior em aberto.</li>
+				</ul>
+				<p>ITENS LIBERADOS NA VERSÃO 10.2.5 DE BANCO DE DADOS – em 29/07/2016:</p>
+				<p>Adequação à nova regra de carência instituída pela MP 739/2016.</p>
+				<ul>
+					<li>Alterada a rotina de verificação de carência: nos casos de fato gerador (DII) a partir De 08.07.2016, o novo período completo de carência será 12 contribuições.</li>
+					<li>Criado motivo de indeferimento 197 – Falta de período de carência – MP 739/16.</li>
+					<li>Criada a carta de indeferimento para motivo 197, nos sistemas SABI e SUB.</li>
+				</ul>
+				<p>Informação de recolhimento efetuado dentro do prazo legal pelo MEI, quando a data de recolhimento ocorrer até o dia 20 do mês subsequente. Considerar a competência paga até o dia 20 do mês subsequente como paga em dia.</p>
+				<p>Correções:</p>
+				<ul>
+					<li>rotina PP/PR</li>
+					<li>cálculo da DCA na conclusão da perícia médica: permanência da DCA anterior no caso de reagendamento pelo segurado.</li>
+					<li>rotina do GCONT, quando possui NB anterior.</li>
+					<li>correção na rechamada do CNIS: NIT's com vários períodos concomitantes, preferencialmente prestador de serviço com competências extemporâneas.</li>
+					<li>criado parâmetro de prazo de impedimento de novo requerimento de AX1 por OL.</li>
+				</ul>
+				<p>ITENS LIBERADOS NA VERSÃO 10.2.6 DE BANCO DE DADOS – em 11/08/2016:</p>
+				<p>Correções:</p>
+				<ul>
+					<li>após comunicação com o CNIS, os vínculos de segurado especial serão mantidos no SABI.</li>
+					<li>cálculo DIB/DIP/GCONT (VERIFICA BENEFÍCIO).</li>
+					<li>revisão administrativa com mais de 1000 renumerações.</li>
+					<li>rotina de NB incompatível.</li>
+				</ul>
+				<p>ITENS LIBERADOS NA VERSÃO 10.2.7 DE BANCO DE DADOS – em 02/09/2016:</p>
+				<p>PP e PR em NB judicial – posterior à perícia revisional:</p>
+				<ul>
+					<li>permitir requerimento de PP/PR para os benefícios concedidos/reativados judicialmente, desde que tenham perícia médica.</li>
+					<li>sempre que enviar uma perícia para o HISMED, mesmo para benefícios judiciais, o SUB executará a mesma rotina dos benefícios administrativos, ou seja, comandará AB nas mesmas regras e cessará pelos motivos 12 ou 54 (Limite Médico).</li>
+					<li>Será gerado AB no SUB também para as situações nas quais houver envio de perícia com a mesma DCB que consta no benefício.</li>
+				</ul>
+				<p>Retornar os prazos de requerimento de PP e PR para os originais:</p>
+				<ul>
+					<li>prazo de PP contado da DCB-14 dias até a DCB.</li>
+					<li>prazo de PR de requerimento indeferido contado da DRE à DRE+29 dias.</li>
+					<li>prazo de PR de cessação (com ou sem direito a PP) de DCB+1 à DCB+30 dias.</li>
+				</ul>
+				<p>Extinção do PR e alteração do prazo para PP: Extinta a possibilidade de registro de novos requerimentos de Pedido de Reconsideração – PR.</p>
+				<p>Alterado o prazo para requerimento de Pedido de Prorrogação - PP da DCB - 15 dias (inclusive) até a DCB, mantidas as regras normais de admissibilidade do pedido do PP.</p>
+				<p>Inibida a crítica 2 de atualização “0573 - ERRO: BI COM DESP/REAT JUDICIAL/RECURSAL”, para comandos de cessação por quaisquer motivos, para as espécies 04, 05, 06, 10, 13, 31, 32, 33, 34, 35, 50, 51, 83, 91, 92.</p>
+				<p>Correções:</p>
+				<ul>
+					<li>fixação da categoria.</li>
+					<li>carência e qualidade nos casos em que não possui 1ª paga em dia e há concomitância.</li>
+					<li>gravação do NB a ser reaberto no laudo do NB restabelecido.</li>
+					<li>parâmetros que validam o NB reaberto.</li>
+					<li>DIB/DIP/GCONT, quando o segurado não possui vínculos.</li>
+				</ul>
+				<p>ITENS LIBERADOS NA VERSÃO 10.2.8 DE BANCO DE DADOS – em 15/09/2016:</p>
+				<p>Adequação das CRERs, no SABI, considerando as modificações decorrentes da Portaria n° 152/MDSA:</p>
+				<ul>
+					<li>ajustadas as CRERs de forma a suprimir menção ao Pedido de Reconsideração – PR</li>
+					<li>mantidas as CRERs das conclusões dos requerimentos dos Pedidos de Reconsideração.</li>
+				</ul>
+				<p>Link para imprimir a CRER:</p>
+				<ul>
+					<li>somente apresentará as cartas constantes na PR_CRER.</li>
+					<li>não sendo possível apresentar a CRER, apresentará as seguintes mensagens:</li>
+					<ul>
+						<li>Banco de dados: Compareça a uma Agência da Previdência Social para regularização de dados e emissão da comunicação do resultado de sua avaliação médica pericial.</li>
+						<li>Internet: Compareça a uma Agência da Previdência Social para regularização de dados e emissão da comunicação do resultado.</li>
+						<li>Benefício em Critica II não apresentará a CRER.</li>
+						<li>A CRER será disponibilizada após 21 horas do dia, horário de Brasília.</li>
+					</ul>
+				</ul>
+				<p>Correções:</p>
+				<ul>
+					<li>PP após NB restabelecido, quando o último requerimento do NB restabelecido é indeferido.</li>
+					<li>retirada a frase “Procure a APS”, na tentativa de requerer PP, via Internet.</li>
+				</ul>
+			</section>
+		</article>
+	</body>
+</html>
