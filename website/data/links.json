@@ -110,6 +110,9 @@
 	}, {
 		"categoria": "Sistemas e Aplicativos",
 		"itens": [{
+			"nome": "CADPREV",
+			"atalho": "https://cadprev.previdencia.gov.br"
+		}, {
 			"nome": "e-recursos",
 			"atalho": "http://www-erecursos/"
 		}, {
@@ -142,6 +145,17 @@
 		}, {
 			"nome": "SIGRH",
 			"atalho": "http://www-siginss/"
+		}]
+	}, {"categoria": "Segurado Especial",
+		"itens": [{
+			"nome": "Consultar Certidão do INCRA",
+			"atalho": " http://saladacidadania.incra.gov.br/Validador"
+		}, {
+			"nome": "Declaração Apitdão PRONAF",
+			"atalho": "http://dap.mda.gov.br/"
+		}, {
+			"nome": "Consultar Registro de Pescador",
+			"atalho": " http://sisrgp.dataprev.gov.br/rgp/web/sargp/"
 		}]
 	}, {
 		"categoria": "Outros",

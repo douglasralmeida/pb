@@ -29,9 +29,9 @@ Projeto de intranet corporativa para uso interno no INSS.
     docker run --name portalbhsul -d -p 80:80 --restart unless-stopped douglasralmeida/portalbhsul
 ```
 
-## Para acessar:
+## Para acessar na intranet:
 ```
-    http://10.32.97.150/
+    http://10.32.97.160/
 ```
 
 ## Mais informações

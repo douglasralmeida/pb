@@ -45,6 +45,9 @@
 		}, {
 			"nome": "Hipnet",
 			"atalho": "http://www-hipnet/"
+		}, {
+			"nome": "SIRC",
+			"atalho": "http://www-sircinss/"
 		}]
 	}, {
 		"categoria": "Páginas Institucionais",
@@ -84,7 +87,7 @@
 			"nome": "Consulta FBR",
 			"atalho": "http://www-fbr/"
 		}, {
-			"nome": "Consultar Seguro Desemprego",
+			"nome": "Consultar Seg. Desemprego",
 			"atalho": "https://sd.maisemprego.mte.gov.br/sdweb/"
 		}, {
 			"nome": "Busca Servidor",
@@ -111,7 +114,7 @@
 			"nome": "Consulta Processual TRF1",
 			"atalho": "https://processual.trf1.jus.br/consultaProcessual/numeroProcesso.php?secao=MG"
 		}, {
-			"nome": "Consulta Processual TRF1 (eProc)",
+			"nome": "Consulta Processual TRF1 (eP)",
 			"atalho": "https://pje1g.trf1.jus.br/consultapublica/ConsultaPublica/listView.seam"
 		}, {
 			"nome": "Consulta Processual TRT3",
@@ -193,7 +196,7 @@
 			"nome": "Supervisão",
 			"atalho": "http://www-supervisao/"
 		}, {
-			"nome": "Desempenho no Plano de Ação",
+			"nome": "Plano de Ação",
 			"atalho": "http://www-planoacao/frontend/"
 		}]
 	}, {
@@ -209,7 +212,7 @@
 			"nome": "Consulta Acessos no Domínio",
 			"atalho": "http://www-acesso/"
 		}, {
-			"nome": "Alteraçao de Senha no Domínio",
+			"nome": "Alterar Senha do Domínio",
 			"atalho": "https://correio.inss.gov.br/trocasenha/"
 		}]
 	}, {
