@@ -36,3 +36,7 @@ Projeto de intranet corporativa para uso interno no INSS.
 
 ## Mais informações
 [Categorias do Banco de Conhecimento](bob/master/docs/bc-categorias.md)
+
+## Créditos
+Contém ícones feitos por Gregor Cresnar(https://www.flaticon.com/authors/gregor-cresnar). Licenciado por CC 3.0 BY.
+Contém ícones feitos por Eucalyp(https://www.flaticon.com/<?=_('authors').'/'?>eucalyp). Licenciado por CC 3.0 BY.
