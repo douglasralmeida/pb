@@ -188,6 +188,8 @@ appSanitize.controller('detalheDonwloadCtrl', function($scope, $http) {
 				return "Instruções de Instalação";
 			else if (codigo == "resrelac")
 				return "Recursos Relacionados";
+			else if (codigo == "adic")
+				return "Arquivos Adicionais";
 			return "Sem descrição";
 		};
 	});

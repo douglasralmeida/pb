@@ -1,8 +1,8 @@
 ﻿{
 	"nome": "LibreOffice 6.2",
 	"id": "libreoffice62",
-	"versao": "6.0.2",
-	"publicadoem": "12/02/2019",
+	"versao": "6.2.1",
+	"publicadoem": "11/03/2019",
 	"descricao": "O LibreOffice é um pacote de aplicativos de escritório que inclui planilha, editor de textos, produtor de apresentações entre outros.",
 	"detalhes": "O LibreOffice inclui processador de textos, planilha eletrônica, criador de apresentações, aplicativo de desenho e banco de dados. É compatível com o formato aberto ODF.",
 	"imagens": [{
@@ -15,15 +15,18 @@
 		"descricao": "Planilha Calc"		
 	}],
 	"arquivos": [{
-		"nome": "lo620_x86.msi",
+		"nome": "lo-62x86.msi",
 		"tamanho": "265 MB",
 		"plataforma": "x86"
 	}, {
-		"nome": "lo620_x64.msi",
+		"nome": "lo-62x64.msi",
 		"tamanho": "285 MB",
 		"plataforma": "x64"
 	}],
 	"subitens": [{
+		"id": "adic",
+		"conteudo": "<p>Antes de baixar algum dos arquivos abaixo, instale primeiramente o LibreOffice.</p><p><b>Dicionário de Sinônimos</b> - <a href='donwload/arquivos/lo-dicsin.oxt'>lo-dicsin.oxt</a></p><p><b>Tema do Office 2013</b> - <a href='donwload/arquivos/lo-tema.oxt'>lo-tema.oxt</a></p><p><b>Bandeiras dos estados brasileiros</b> - <a href='donwload/arquivos/lo-bandeiras.oxt'>lo-bandeiras.oxt</a></p>"
+	}, {
 		"id": "reqsis",
 		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8</li><li>Windows 8.1</li><li>Windows 10</li></ul>"
 	}, {
