@@ -24,13 +24,13 @@
         <small>Principais categorias de download</small>
       </h3>
     </div>
-    <div class="tab-apps-cat">
-      <a ng-repeat="x in categorias" href="download/lista.html?cat={{x.id-1}}">
-        <img ng-src="img/{{x.icone}}"/>
-        <h4 ng-bind="x.nome"></h4>
-        <h5 ng-bind="x.desc"></h5>
-      </a>
+    <div class="tab-apps">
+      <div ng-repeat="x in categorias">
+        <h3 ng-bind="x.nome"></h3>
+        <div ng-repeat="y in x.itens">
+          <p ng-bind="y.nome"></p>
+        </div>
+      </div>
     </div>
-  </div>
 </body>
 </html>

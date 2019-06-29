@@ -8,6 +8,10 @@
 	text-shadow: none;
 }
 
+.listview .list {
+	height: 38px;
+}
+
 .ancora::before {
 	content: '';
 	display: block;
@@ -136,10 +140,6 @@
 .bto-pesquisa:focus {
 	border: 3px dotted white;
 	outline: none;
-}
-
-.flex-grid .row .cell {
-	
 }
 
 .container-pesquisa {
@@ -376,6 +376,7 @@
 	border: 3px dotted rgb(0, 125, 170);
 	color: white;
 	float: left;
+	font-size: 1.1vw;
 	padding: 0.6%;
 	margin: 0.3%;
 	outline: none;
@@ -398,7 +399,7 @@
 
 .tab-inicial a:active {
 	box-shadow: 0px 0px 8px 0px rgba(0, 94, 128, 0.7);
-	padding: 10px 6px 6px 10px
+	transform: scale(0.98);
 }
 
 .tab-inicial-secao {
@@ -427,6 +428,7 @@
 	border: 3px dotted rgb(0, 53, 106);
 	color: white;
 	display: block;
+	font-size: 1.1vw;
 	outline: none;
 	overflow: hidden;
 	padding: 4%;
@@ -448,7 +450,7 @@
 
 .tab-inicial-lateral a:active {
 	box-shadow: 0px 0px 16px 0px rgba(0, 53, 106, 0.7);
-	padding: 12px 8px 8px 12px;
+	transform: scale(0.98);
 }
 
 .tab-inicial-lateral a img {

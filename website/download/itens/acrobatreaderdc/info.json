@@ -1,10 +1,10 @@
-﻿	{
+﻿{
 	"nome": "Adobe Acrobat Reader DC",
 	"id": "acrobatreaderdc",
 	"versao": "2019.10.20098",
 	"publicadoem": "11/03/2019",
 	"descricao": "Use o Adobe Acrobat Reader para visualizar, imprimir arquivos e preencher formulários no formato PDF.",
-	"detalhes": "<p>Após a a instalação do Acrobar Reader, instale a atualização de Fevereiro/2019 por cima.</p><p><a href='download/arquivos/AcroRdrDCUpdate.msp'>Atualização de Fevereiro/2019 para Adobe Reader DC 2019</a> (219 MB).</p>",
+	"detalhes": "",
 	"imagens": [{
 		"arquivo": "tela1.png",
 		"mini": "minitela1.png",
@@ -24,12 +24,12 @@
 		"conteudo": "<p>Antes de baixar algum dos arquivos abaixo, instale primeiramente o Adobe Reader DC.</p><p><b>Atualização de Fevereiro/2019 para Adobe Reader DC</b> - <a href='donwload/arquivos/AcroRdrDCUpdate.msp'>AcroRdrDCUpdate.msp</a></p>"
 	}, {
 		"id": "reqsis",
-		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8</li><li>Windows 8.1 Update</li><li>Windows 10</li></ul>"
+		"conteudo": "<b>Sistemas operacionais compatíveis:</b><ul><li>Windows 7 SP1</li><li>Windows 8</li><li>Windows 8.1 Update</li><li>Windows 10</li></ul><b>Componentes necessários:</b><ul>Microsoft Internet Explorer 11</ul>"
 	}, {
 		"id": "instalinstruc",
 		"conteudo": "<b>Instalando o Adobe Acrobat Reader DC</b><ol><li>Baixe o instalador para seu computador clicando no botão Baixar apropriado para o seu sistema operacional.</li><li>Execute o programa de instalação.</li><li>Baixe o atualizador para o seu computador clicando no seu atalho disponível na seção Detalhes.</li><li>Execute o programa de atualização.</li></ol><b>Instruções de uso</b><p>Para usar o Adobe Acrobat DC, basta clicar em um arquivo no formato PDF qualquer no seu computador.</p><b>Removendo o Adobe Acrobat Reader DC</b><ol><li>Clique no menu Iniciar e vá para o Painel de Controle.</li><li>Clique no item Adicionar ou Remover Programas.</li><li>Na lista de programas instalados atualmente, selecione Adobe Acrobat Reader DC e então clique em Desinstalar.</li><li>Clique em Sim para confirmar que você quer remover o programa.</li></ol>"
 	}, {
 		"id": "resrelac",
-		"conteudo": "<p><a href='docs.html'>Modelos de Documentos</a></p><p><a href='/download/detalhes.html?id=msdotnet47'>Microsoft .NET Framework 4.7</a></p>"
+		"conteudo": "<p><a href='docs.html'>Modelos de Documentos</a></p><p><a href='/download/detalhes.html?id=msie11'>Microsoft Internet Explorer 11</a></p>"
 	}]
 }

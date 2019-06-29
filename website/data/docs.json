@@ -102,7 +102,7 @@
 			"tipo": 1
 		}]
 	}, {
-		"categoria": "Concessão de Benefício Assistencial",
+		"categoria": "Benefício Assistencial",
 		"itens": [{
 			"nome": "Carta de Exigência do CADUNICO",
 			"link": "docs/forms/carta_exig_bpc_cadunico.ott",
@@ -117,7 +117,7 @@
 			"tipo": 2
 		}]
 	}, {
-		"categoria": "Concessão de Benefício Previdenciário",
+		"categoria": "Benefício Previdenciário",
 		"itens": [{
 			"nome": "Certidão de Tempo de Contribuição",
 			"link": "docs/forms/ctc.odt",
@@ -330,7 +330,7 @@
 			"tipo": 1
 		}]
 	}, {
-		"categoria": "Seguro Desemprego do Pescador Artesanal",
+		"categoria": "Seguro Defeso",
 		"itens": [{
 			"nome": "Carta de Exigência do Seguro Defeso",
 			"link": "docs/forms/carta_exig_spda.pdf",
